@@ -21,10 +21,10 @@ const POINT_LIST = [
  * @returns {Number}
  */
 export function score(rank, percent, minPercent) {
-    if (rank > 150) {
+    if (rank > 60) {
         return 0;
     }
-    if (rank > 75 && percent < 100) {
+    if (rank > 30 && percent < 100) {
         return 0;
     }
 
