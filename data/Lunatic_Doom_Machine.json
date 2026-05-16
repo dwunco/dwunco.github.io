@@ -1,0 +1,26 @@
+{
+    "id": 26955097,
+    "name": "Lunatic Doom Machine",
+    "author": "SrGuillester",
+    "creators": [
+        "SrGuillester",
+        "TheRealSalad",
+        "Giron",
+        "Hinds",
+        "Xaro",
+        "Maelstrom",
+        "Bycraftxx"
+    ],
+    "verifier": "SrGuillester",
+    "verification": "https://youtu.be/null",
+    "percentToQualify": 50,
+    "password": "Free Copy",
+    "records": [
+        {
+            "user": "dwunco",
+            "link": "https://youtu.be/null",
+            "percent": 89,
+            "hz": 240
+        }
+    ]
+}
