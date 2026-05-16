@@ -1,0 +1,18 @@
+{
+    "id": 10565866,
+    "name": "Acropolis",
+    "author": "Zobros",
+    "creators": ["Zobros"],
+    "verifier": "cookiedarookie",
+    "verification": "https://youtu.be/null",
+    "percentToQualify": 81,
+    "password": "Free Copy",
+    "records": [
+        {
+            "user": "dwunco",
+            "link": "https://youtu.be/null",
+            "percent": 100,
+            "hz": 240
+        }
+    ]
+}
