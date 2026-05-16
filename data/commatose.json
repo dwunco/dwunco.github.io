@@ -3,9 +3,16 @@
     "name": "commatose",
     "author": "rply",
     "creators": ["rply"],
-    "verifier": "cookiedarookie",
-    "verification": "https://youtu.be/mPGWmKjaUUw",
+    "verifier": "MaxxoRMeN",
+    "verification": "https://youtu.be/dQw4w9WgXcQ",
     "percentToQualify": 45,
     "password": "Free Copy",
-    "records": []
+    "records": [
+        {
+            "user": "dwunco",
+            "link": "https://youtu.be/dQw4w9WgXcQ",
+            "percent": 46,
+            "hz": 240
+        }
+    ]
 }
