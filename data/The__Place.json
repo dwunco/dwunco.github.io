@@ -1,0 +1,11 @@
+{
+    "id": 0,
+    "name": "The  Place",
+    "author": "Placeholder Author",
+    "creators": ["Placeholder Creator"],
+    "verifier": "Placeholder Verifier",
+    "verification": "https://youtu.be/dQw4w9WgXcQ",
+    "percentToQualify": 50,
+    "password": "Free Copy",
+    "records": []
+}
