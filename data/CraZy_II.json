@@ -1,0 +1,21 @@
+{
+    "id": 73670615,
+    "name": "CraZy II",
+    "author": "DavJT",
+    "creators": [
+      "DavJT",
+      "N R G"
+    ],
+    "verifier": "PixelPro11",
+    "verification": "https://youtu.be/xi3OfG8pVwA",
+    "percentToQualify": 52,
+    "password": "Free Copy",
+    "records": [
+        {
+            "user": "dwunco",
+            "link": "https://youtu.be/null",
+            "percent": 100,
+            "hz": 240
+        }
+    ]
+}
