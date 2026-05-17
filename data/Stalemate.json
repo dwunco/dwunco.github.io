@@ -1,24 +1,24 @@
 {
-    "id": 4545425,
-    "name": "Stalemate",
-    "author": "Nox",
-    "creators": ["Nox"],
-    "verifier": "ishowmonkeygmd",
-    "verification": "https://youtu.be/rtm0flhztcU",
-    "percentToQualify": 84,
-    "password": "NA",
-    "records": [
-        {
-            "user": "aCUB3R",
-            "link": "https://youtu.be/null",
-            "percent": 100,
-            "hz": 60
-        }
-        {
-            "user": "dwunco",
-            "link": "https://youtu.be/null",
-            "percent": 100,
-            "hz": 240
-        }
-    ]
+  "id": 4545425,
+  "name": "Stalemate",
+  "author": "Nox",
+  "creators": ["Nox"],
+  "verifier": "ishowmonkeygmd",
+  "verification": "https://youtu.be/rtm0flhztcU",
+  "percentToQualify": 84,
+  "password": "NA",
+  "records": [
+    {
+      "user": "aCUB3R",
+      "link": "https://youtu.be/null",
+      "percent": 100,
+      "hz": 60
+    },
+    {
+      "user": "dwunco",
+      "link": "https://youtu.be/null",
+      "percent": 100,
+      "hz": 240
+    }
+  ]
 }
