@@ -1,0 +1,18 @@
+{
+    "id": 9324641,
+    "name": "Poltergeist",
+    "author": "Andromeda",
+    "creators": ["Andromeda"],
+    "verifier": "Andromeda",
+    "verification": "https://youtu.be/Amyhrr_faUg",
+    "percentToQualify": 48,
+    "password": "Free Copy",
+    "records": [
+        {
+            "user": "dwunco",
+            "link": "https://youtu.be/null",
+            "percent": 100,
+            "hz": 240
+        }
+    ]
+}
