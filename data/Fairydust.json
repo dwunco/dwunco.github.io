@@ -4,10 +4,15 @@
     "author": "mkComic",
     "creators": ["mkComic"],
     "verifier": "Wawlzerz",
-    "verification": "https://youtu.be/lWmChOqLSyQ",
-    "percentToQualify": 52,
+    "verification": "https://youtu.be/UZ2b1dih2_U",
+    "percentToQualify": 75,
     "password": "Free Copy",
     "records": [
-        
+        {
+            "user": "fragment1345",
+            "link": "https://youtu.be/null",
+            "percent": 100,
+            "hz": 60
+        }
     ]
 }
