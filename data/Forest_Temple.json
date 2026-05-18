@@ -1,1 +1,18 @@
-
+{
+    "id": 11402965,
+    "name": "Forest Temple",
+    "author": "Michigun",
+    "creators": ["Michigun"],
+    "verifier": "IShowMonkeyGMD",
+    "verification": "https://youtu.be/ZKT1_Mq7hD0",
+    "percentToQualify": 76,
+    "password": "NA",
+    "records": [
+        {
+            "user": "cookiedarookie",
+            "link": "https://youtu.be/watch?v=null",
+            "percent": 100,
+            "hz": 60
+        }
+    ]
+}
