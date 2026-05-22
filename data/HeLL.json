@@ -2,7 +2,10 @@
     "id": 25706351,
     "name": "HeLL",
     "author": "Serponge",
-    "creators": ["Shig"],
+    "creators": [
+        "Serponge",
+        "Shig"
+    ],
     "verifier": "cookiedarookie",
     "verification": "https://youtu.be/ZRbjzf6_ZVQ-s",
     "percentToQualify": 100,
