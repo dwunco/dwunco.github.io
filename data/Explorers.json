@@ -1,1 +1,21 @@
-
+{
+    "id": 104138684,
+    "name": "Explorers",
+    "author": "MathisCreator",
+    "creators": [
+        "MathisCreator",
+        "SwitchStepGD"
+    ],
+    "verifier": "aCUB3R",
+    "verification": "https://youtu.be/Igo_WZqfkA0",
+    "percentToQualify": 100,
+    "password": "Free Copy",
+    "records": [
+        {
+            "user": "PixelPro11",
+            "link": "https://youtu.be/null",
+            "percent": 100,
+            "hz": 60
+        }
+    ]
+}
