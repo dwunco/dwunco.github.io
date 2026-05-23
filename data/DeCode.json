@@ -8,6 +8,11 @@
     "percentToQualify": 100,
     "password": "NA",
     "records": [
-      
+        {
+            "user": "dwunco",
+            "link": "https://youtu.be/watch?v=null",
+            "percent": 100,
+            "hz": 60
+        }
     ]
 }
