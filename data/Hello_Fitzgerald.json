@@ -1,0 +1,21 @@
+{
+    "id": 92270379,
+    "name": "Hello Fitzgerald",
+    "author": "vortrox",
+    "creators": [
+      "vortrox",
+      "more (will update later)"
+    ],
+    "verifier": "cookiedarookie",
+    "verification": "https://youtu.be/R4v0iUp9nYs",
+    "percentToQualify": 100,
+    "password": "1369",
+    "records": [
+        {
+            "user": "dwunco",
+            "link": "https://youtu.be/watch?v=null",
+            "percent": 100,
+            "hz": 240
+        }
+    ]
+}
