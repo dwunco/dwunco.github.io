@@ -11,7 +11,9 @@
     ],
     "verifier": "cookiedarookie",
     "verification": "https://youtu.be/rrCnjdytyHs",
-    "percentToQualify": 76,
+    "percentToQualify": 55,
     "password": "867354",
-    "records": []
+    "records": [
+        
+    ]
 }
