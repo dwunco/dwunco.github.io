@@ -106,3 +106,18 @@ tr.verifier-entry td.percent p,
 tr.verifier-entry td.hz p {
     color: #ffe875 !important; /* Slightly lighter gold for percentages/Hz text */
 }
+
+/* Colorizes rows flagged as verification entries inside the combined table */
+tr.verifier-highlight td.rank p,
+tr.verifier-highlight td.level a {
+    color: #ffd700 !important; /* Gold text */
+    font-weight: bold !important;
+    text-shadow: 0 0 6px rgba(255, 215, 0, 0.3); /* Soft subtle glow */
+}
+
+/* Optional styling adjustment for the inline indicator tag */
+tr.verifier-highlight .badge {
+    font-size: 0.8rem;
+    opacity: 0.8;
+    font-style: italic;
+}
