@@ -60,7 +60,7 @@ export default {
                     <p v-else-if="selected +1 <= 150"><strong>100%</strong> or better to qualify</p>
                     <p v-else>This level does not accept new records.</p>
                     <table class="records">
-                        <tr v-for="record in combinedRecords" class="record" :class="{ 'verifier-entry': record.isVerifier }">
+                        <tr v-for="record in level.records" class="record">
                             <td class="percent">
                                 <p>{{ record.percent }}%</p>
                             </td>
@@ -140,20 +140,7 @@ export default {
                 this.toggledShowcase
                     ? this.level.showcase
                     : this.level.verification
-                );
-        },
-        combinedRecords() {
-            if (!this.level) return [];
-            
-            const verifierRecord = {
-                percent: 100,
-                user: this.level.verifier + " (Verifier)",
-                link: this.level.verification,
-                hz: this.level.hz || 60,
-                isVerifier: true 
-            };
-
-            return [verifierRecord, ...this.level.records];
+            );
         },
     },
     async mounted() {
