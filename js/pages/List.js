@@ -68,7 +68,7 @@ export default {
                                 <a :href="record.link" target="_blank" class="type-label-lg">{{ record.user }}</a>
                             </td>
                             <td class="mobile">
-                                <img v-if="record.mobile" :src="`/assets/phone-landscape${store.dark ? '-dark' : ''}.svg`" alt="Mobile">
+                                <img v-if="record.mobile" :src="\`/assets/phone-landscape\${store.dark ? '-dark' : ''}.svg\`" alt="Mobile">
                             </td>
                             <td class="hz">
                                 <p>{{ record.hz }}Hz</p>
@@ -140,31 +140,26 @@ export default {
                 this.toggledShowcase
                     ? this.level.showcase
                     : this.level.verification
-            );
+                );
         },
-        // ADD THIS NEW PROPERTY HERE:
         combinedRecords() {
             if (!this.level) return [];
             
-            // 1. Create the verifier's record layout matching the list's structure
             const verifierRecord = {
                 percent: 100,
-                user: `${this.level.verifier} (Verifier)`,
+                user: this.level.verifier + " (Verifier)",
                 link: this.level.verification,
-                hz: this.level.hz || 60, // Uses level Hz, defaults to 60 if not specified
-                isVerifier: true // Flag so we can color it gold in the HTML
+                hz: this.level.hz || 60,
+                isVerifier: true 
             };
 
-            // 2. Return the verifier stacked on top of all normal completions
             return [verifierRecord, ...this.level.records];
         },
     },
     async mounted() {
-        // Hide loading spinner
         this.list = await fetchList();
         this.editors = await fetchEditors();
 
-        // Error handling
         if (!this.list) {
             this.errors = [
                 "Failed to load list. Retry in a few minutes or notify list staff.",
