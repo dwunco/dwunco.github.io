@@ -95,8 +95,14 @@ input[type="checkbox"] {
     margin: 0;
 }
 
-.verifier-record {
-    color: #ffd700 !important; /* Gold color */
-    font-weight: bold;
-    text-shadow: 0 0 5px rgba(255, 215, 0, 0.3); /* Optional: slight gold glow */
+/* Styling for the verifier entry inside the combined table row */
+tr.verifier-entry td.user a {
+    color: #ffd700 !important; /* Gold text color */
+    font-weight: bold !important;
+    text-shadow: 0 0 8px rgba(255, 215, 0, 0.4); /* Subtle golden glow */
+}
+
+tr.verifier-entry td.percent p, 
+tr.verifier-entry td.hz p {
+    color: #ffe875 !important; /* Slightly lighter gold for percentages/Hz text */
 }
