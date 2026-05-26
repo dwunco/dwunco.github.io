@@ -60,7 +60,7 @@ export default {
                     <p v-else-if="selected +1 <= 150"><strong>100%</strong> or better to qualify</p>
                     <p v-else>This level does not accept new records.</p>
                     <table class="records">
-                        <tr v-for="record in level.records" class="record">
+                        <tr v-for="record in combinedRecords" class="record" :class="{ 'verifier-entry': record.isVerifier }">
                             <td class="percent">
                                 <p>{{ record.percent }}%</p>
                             </td>
@@ -68,7 +68,7 @@ export default {
                                 <a :href="record.link" target="_blank" class="type-label-lg">{{ record.user }}</a>
                             </td>
                             <td class="mobile">
-                                <img v-if="record.mobile" :src="\`/assets/phone-landscape\${store.dark ? '-dark' : ''}.svg\`" alt="Mobile">
+                                <img v-if="record.mobile" :src="`/assets/phone-landscape${store.dark ? '-dark' : ''}.svg`" alt="Mobile">
                             </td>
                             <td class="hz">
                                 <p>{{ record.hz }}Hz</p>
@@ -141,6 +141,22 @@ export default {
                     ? this.level.showcase
                     : this.level.verification
             );
+        },
+        // ADD THIS NEW PROPERTY HERE:
+        combinedRecords() {
+            if (!this.level) return [];
+            
+            // 1. Create the verifier's record layout matching the list's structure
+            const verifierRecord = {
+                percent: 100,
+                user: `${this.level.verifier} (Verifier)`,
+                link: this.level.verification,
+                hz: this.level.hz || 60, // Uses level Hz, defaults to 60 if not specified
+                isVerifier: true // Flag so we can color it gold in the HTML
+            };
+
+            // 2. Return the verifier stacked on top of all normal completions
+            return [verifierRecord, ...this.level.records];
         },
     },
     async mounted() {
