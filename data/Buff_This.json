@@ -11,5 +11,12 @@
     "verification": "https://youtu.be/re6IU0mmHIo",
     "percentToQualify": 75,
     "password": "Free Copy",
-    "records": []
+    "records": [
+        {
+            "user": "dwunco",
+            "link": "https://youtu.be/null",
+            "percent": 75,
+            "hz": 240
+        }
+    ]
 }
