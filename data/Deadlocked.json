@@ -1,1 +1,11 @@
-
+{
+    "id": 20,
+    "name": "Deadlocked",
+    "author": "Robtop",
+    "creators": ["Robtop"],
+    "verifier": "dwunco",
+    "verification": "https://youtu.be/9r88HquLi_c",
+    "percentToQualify": 100,
+    "password": "NA",
+    "records": []
+}
