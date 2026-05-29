@@ -10,5 +10,12 @@
     "verification": "https://youtu.be/JC18JeojJEQ",
     "percentToQualify": 100,
     "password": "1905",
-    "records": []
+    "records": [
+        {
+            "user": "cookiedarookie",
+            "link": "https://youtu.be/null",
+            "percent": 100,
+            "hz": 144
+        }
+    ]
 }
