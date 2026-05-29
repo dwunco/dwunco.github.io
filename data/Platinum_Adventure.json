@@ -5,6 +5,7 @@
     "creators": ["Jerry4"],
     "verifier": "dwunco",
     "verification": "https://youtu.be/vKIo0d3a9bA",
+    "percentToQualify": 100,
     "password": "0000",
     "records": []
 }
