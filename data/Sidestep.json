@@ -12,7 +12,8 @@
             "user": "dwunco",
             "link": "https://youtu.be/null",
             "percent": 100,
-            "hz": Mobile
+            "hz": 60,
+            "mobile": True
         }
     ]
 }
