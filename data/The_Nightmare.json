@@ -9,17 +9,17 @@
     "password": "7813",
     "records": [
         {
-            "user": "cookiedarookie",
-            "link": "https://youtu.be/null",
-            "percent": 100,
-            "hz": 144
-        },
-        {
             "user": "PixelPro11",
             "link": "https://youtu.be/null",
             "percent": 100,
             "hz": 60,
             "mobile": true
+        },
+        {
+            "user": "cookiedarookie",
+            "link": "https://youtu.be/null",
+            "percent": 100,
+            "hz": 144
         }
     ]
 }
