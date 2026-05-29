@@ -1,1 +1,25 @@
-
+{
+  "id": 26245696,
+  "name": "VeritY",
+  "author": "Rlol",
+  "creators": 
+    ["Rlol",
+      "Axxorz",
+      "Moufi",
+      "Gibbon",
+      "Darwin",
+      "TiTi"
+  ],
+  "verifier": "cookiedarookie",
+  "verification": "https://youtu.be/iJaUAla1jJ8",
+  "percentToQualify": 100,
+  "password": "NA",
+  "records": [
+    {
+      "user": "dwunco",
+      "link": "https://youtu.be/null",
+      "percent": 100,
+      "hz": 60
+    }
+  ]
+}
