@@ -1,0 +1,18 @@
+{
+    "id": 70059,
+    "name": "yStep",
+    "author": "TheRealDarnoc",
+    "creators": ["TheRealDarnoc"],
+    "verifier": "cookiedarookie",
+    "verification": "https://youtu.be/JhfTlkgteEU",
+    "percentToQualify": 100,
+    "password": "NA",
+    "records": [
+        {
+            "user": "dwunco",
+            "link": "https://youtu.be/null",
+            "percent": 100,
+            "hz": 240
+        }
+    ]
+}
