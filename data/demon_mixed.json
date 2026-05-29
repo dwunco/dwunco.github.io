@@ -1,0 +1,18 @@
+{
+    "id": 566659,
+    "name": "demon mixed",
+    "author": "RealOggY",
+    "creators": ["RealOggY"],
+    "verifier": "dwunco",
+    "verification": "https://youtu.be/40HzFkEpwIM",
+    "percentToQualify": 100,
+    "password": "NA",
+    "records": [
+        {
+            "user": "aCUB3R",
+            "link": "https://youtu.be/null",
+            "percent": 100,
+            "hz": 60
+        }
+    ]
+}
