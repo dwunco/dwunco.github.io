@@ -8,6 +8,11 @@
     "percentToQualify": 100,
     "password": "4331",
     "records": [
-        
+        {
+            "user": "aCUB3R",
+            "link": "https://youtu.be/null",
+            "percent": 100,
+            "hz": 60
+        }
     ]
 }
