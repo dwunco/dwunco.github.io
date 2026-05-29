@@ -5,6 +5,7 @@
     "creators": ["ChaSe"],
     "verifier": "dwunco",
     "verification": "https://youtu.be/VCu2YRVru1w",
+    "percentToQualify": 100,
     "password": "NA",
     "records": []
 }
