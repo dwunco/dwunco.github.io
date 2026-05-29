@@ -7,5 +7,13 @@
     "verification": "https://youtu.be/yVxKTQPzyus",
     "percentToQualify": 100,
     "password": "Free Copy",
-    "records": []
+    "records": [
+        {
+            "user": "aCUB3R",
+            "link": "https://youtu.be/null",
+            "percent": 100,
+            "hz": 60,
+            "mobile": true
+        }
+    ]
 }
