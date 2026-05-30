@@ -7,10 +7,10 @@
 
         <!-- Replace your server icon by uploading an image file named "list_icon.png"-->
         <link rel="icon" href="./list_icon.png" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link rel="preconnect" href="https://googleapis.com" />
+        <link rel="preconnect" href="https://gstatic.com" crossorigin />
         <link
-            href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@500;700&display=swap"
+            href="https://googleapis.com/css2?family=Lexend+Deca:wght@500;700&display=swap"
             rel="stylesheet"
         />
         <link rel="stylesheet" type="text/css" href="./css/reset.css" />
@@ -30,8 +30,8 @@
             type="text/css"
             href="./css/components/tabs.css"
         />
-        <script src="https://unpkg.com/vue@3.2.31/dist/vue.global.js"></script>
-        <script src="https://unpkg.com/vue-router@4.0.14/dist/vue-router.global.prod.js"></script>
+        <script src="https://unpkg.com"></script>
+        <script src="https://unpkg.com"></script>
         <script type="module" src="./js/main.js"></script>
     </head>
     <body id="app">
@@ -41,7 +41,12 @@
                 <p>v1.0.0</p>
             </div>
             <nav class="nav">
+                <!-- Welcome Tab is now the root path (default home screen) -->
                 <router-link class="nav__tab" to="/">
+                    <span class="type-label-lg">Welcome</span>
+                </router-link>
+                <!-- Original Demon List moved to its own designated sub-page -->
+                <router-link class="nav__tab" to="/list">
                     <span class="type-label-lg">List</span>
                 </router-link>
                 <router-link class="nav__tab" to="/leaderboard">
@@ -61,13 +66,13 @@
                         />
                     </button>
                     <!-- Replace the '#' with your discord server's invite-->
-                    <a class="nav__icon" href="https://discord.gg/8DpA6kag3">
+                    <a class="nav__icon" href="https://discord.gg">
                         <img src="./assets/discord.svg" alt="Discord Logo"/>
                     </a>
                     <!-- List record submission form, add a link to replace the '#' when putting a link to your list submission form-->
                     <a
                         class="nav__cta type-label-lg"
-                        href="https://docs.google.com/forms/d/e/1FAIpQLSdAwzhftwBYZJJeBXjMDTALko24N3g6n45cRydd3HqtGY9B8w/viewform?usp=publish-editor"
+                        href="https://google.com"
                         target="_blank"
                         >Submit Record</a
                     >
