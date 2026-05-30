@@ -26,6 +26,12 @@
             "link": "https://youtu.be/watch?v=null",
             "percent": 100,
             "hz": 240
+        },
+        {
+            "user": "Fragment1345",
+            "link": "https://youtu.be/null",
+            "percent": 100,
+            "hz": 60
         }
     ]
 }
