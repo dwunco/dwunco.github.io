@@ -3,9 +3,16 @@
     "name": "SaDrop",
     "author": "OvniFella",
     "creators": ["OvniaFella"],
-    "verifier": "dwunco",
+    "verifier": "cookiedarookie",
     "verification": "https://youtu.be/ugNebX_tGBQ",
     "percentToQualify": 100,
     "password": "Free Copy",
-    "records": []
+    "records": [
+        {
+            "user": "dwunco",
+            "link": "https://youtu.be/null",
+            "percent": 100,
+            "hz": 240
+        },
+    ]
 }
