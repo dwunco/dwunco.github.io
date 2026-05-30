@@ -23,9 +23,9 @@
         <script type="module" src="./js/main.js"></script>
     </head>
     <body id="app">
-        <div>
-            <div>
-                <p>v1.0.0</p>
+        <header class="navbar">
+            <div class="navbar__version">
+                <p class="type-body-sm">v1.0.0</p>
             </div>
             <nav class="nav">
                 <router-link class="nav__tab" to="/">
@@ -38,11 +38,11 @@
                     <span class="type-label-lg">Leaderboard</span>
                 </router-link>
             </nav>
-            <div>
-                <button>
-                    <img src="./assets/theme.svg" alt="Theme Toggle" />
+            <div class="navbar__actions">
+                <button class="nav__icon" @click="store.toggleDark()">
+                    <img :src="`./assets/theme${store.dark ? '-dark' : ''}.svg`" alt="Theme Toggle" />
                 </button>
-                <a class="nav__icon" href="https://discord.gg/8DpA6kag3">
+                <a class="nav__icon" href="https://discord.gg/8DpA6kag3" target="_blank">
                     <img src="./assets/discord.svg" alt="Discord Logo"/>
                 </a>
                 <a
@@ -52,6 +52,8 @@
                     >Submit Record</a
                 >
             </div>
-        </div>
+        </header>
+
+        <router-view></router-view>
     </body>
 </html>
