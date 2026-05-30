@@ -2,7 +2,7 @@ import List from './pages/List.js';
 import Leaderboard from './pages/Leaderboard.js';
 import Roulette from './pages/Roulette.js';
 
-// We define the layout object normally
+// We isolate the Welcome layout template as a standalone constant object
 const Welcome = {
     template: `
         <div class="welcome-container-span">
@@ -32,7 +32,7 @@ const Welcome = {
                 </div>
             </section>
 
-            <div style="text-align: center;">
+            <div style="text-align: center; margin-bottom: 3rem;">
                 <router-link to="/list">
                     <button class="welcome-btn-enter">Enter the Demonlist ➔</button>
                 </router-link>
@@ -41,7 +41,7 @@ const Welcome = {
     `
 };
 
-// There can only be ONE export default block at the bottom of the file
+// Clean structural array: Only ONE export default statement is run at the bottom
 export default [
     { path: '/', component: Welcome },
     { path: '/list', component: List },
