@@ -41,7 +41,12 @@
                 <p>v1.0.0</p>
             </div>
             <nav class="nav">
+                <!-- Welcome Tab is now the root path (default home screen) -->
                 <router-link class="nav__tab" to="/">
+                    <span class="type-label-lg">Welcome</span>
+                </router-link>
+                <!-- Original Demon List moved to /list sub-page -->
+                <router-link class="nav__tab" to="/list">
                     <span class="type-label-lg">List</span>
                 </router-link>
                 <router-link class="nav__tab" to="/leaderboard">
