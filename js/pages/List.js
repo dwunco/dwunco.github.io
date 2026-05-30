@@ -23,24 +23,39 @@ export default {
         <main v-else class="page-list">
             <div class="list-container">
                 <table class="list" v-if="list">
-                    <tr v-for="([level, err], i) in list">
-                        <td class="rank">
-                            <p v-if="i + 1 <= 250" class="type-label-lg">#{{ i + 1 }}</p>
-                            <p v-else class="type-label-lg">Legacy</p>
-                        </td>
-                        <td class="level" :class="{ 'active': selected == i, 'error': !level }">
-                            <button @click="selected = i">
-                                <span class="type-label-lg">{{ level?.name || \`Error (\${err}.json)\` }}</span>
-                            </button>
-                        </td>
-                    </tr>
+                    <template v-for="([level, err], i) in list">
+                        
+                        <tr v-if="i === 0" class="list-header-row">
+                            <td colspan="2" class="list-header-label">Main List</td>
+                        </tr>
+
+                        <tr v-slot v-if="i === 75" class="list-header-row">
+                            <td colspan="2" class="list-header-label">Extended List</td>
+                        </tr>
+
+                        <tr v-if="i === 150" class="list-header-row">
+                            <td colspan="2" class="list-header-label">Extended+ List</td>
+                        </tr>
+
+                        <tr>
+                            <td class="rank">
+                                <p v-if="i + 1 <= 250" class="type-label-lg">#{{ i + 1 }}</p>
+                                <p v-else class="type-label-lg">Legacy</p>
+                            </td>
+                            <td class="level" :class="{ 'active': selected == i, 'error': !level }">
+                                <button @click="selected = i">
+                                    <span class="type-label-lg">{{ level?.name || \`Error (\${err}.json)\` }}</span>
+                                </button>
+                            </td>
+                        </tr>
+                    </template>
                 </table>
             </div>
             <div class="level-container">
                 <div class="level" v-if="level">
                     <h1>{{ level.name }}</h1>
                     <LevelAuthors :author="level.author" :creators="level.creators" :verifier="level.verifier"></LevelAuthors>
-                    <iframe v-if="video" class="video" id="videoframe" :src="video" frameborder="0"></iframe>
+                    <iframe class="video" id="videoframe" :src="video" frameborder="0"></iframe>
                     <ul class="stats">
                         <li>
                             <div class="type-title-sm">Points when completed</div>
@@ -99,10 +114,18 @@ export default {
                         </ol>
                     </template>
                     <h3>Submission Requirements</h3>
-                    <p>Achieved the record without using hacks</p>
-                    <p>Achieved the record on the level that is listed on the site - please check the level ID before you submit a record</p>
-                    <p>Do not use secret routes or bug routes</p>
-                    <p>Do not use easy modes, only a record of the unmodified level qualifies</p>
+                    <p>
+                        Achieved the record without using hacks
+                    </p>
+                    <p>
+                        Achieved the record on the level that is listed on the site - please check the level ID before you submit a record
+                    </p>
+                    <p>
+                        Do not use secret routes or bug routes
+                    </p>
+                    <p>
+                        Do not use easy modes, only a record of the unmodified level qualifies
+                    </p>
                 </div>
             </div>
         </main>
@@ -113,20 +136,23 @@ export default {
         loading: true,
         selected: 0,
         errors: [],
-        toggledShowcase: false, // Added this so it doesn't crash!
         roleIconMap,
         store
     }),
     computed: {
         level() {
-            return this.list[this.selected]?.[0]; // Added safety option here
+            return this.list[this.selected][0];
         },
         video() {
-            if (!this.level) return null;
-            
-            // Check if video uses 'video' directly or fallback fields
-            const videoUrl = this.level.video || this.level.verification || this.level.showcase;
-            return videoUrl ? embed(videoUrl) : null;
+            if (!this.level.showcase) {
+                return embed(this.level.verification);
+            }
+
+            return embed(
+                this.toggledShowcase
+                    ? this.level.showcase
+                    : this.level.verification
+            );
         },
     },
     async mounted() {
