@@ -2,6 +2,7 @@ import List from './pages/List.js';
 import Leaderboard from './pages/Leaderboard.js';
 import Roulette from './pages/Roulette.js';
 
+// We define the layout object normally
 const Welcome = {
     template: `
         <div class="welcome-container-span">
@@ -40,16 +41,10 @@ const Welcome = {
     `
 };
 
+// There can only be ONE export default block at the bottom of the file
 export default [
     { path: '/', component: Welcome },
     { path: '/list', component: List },
-    { path: '/leaderboard', component: Leaderboard },
-    { path: '/roulette', component: Roulette },
-];
-
-export default [
-    { path: '/', component: Welcome },      // Welcome tab is the default landing page
-    { path: '/list', component: List },        // The Demonlist grid moves to this path
     { path: '/leaderboard', component: Leaderboard },
     { path: '/roulette', component: Roulette },
 ];
