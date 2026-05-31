@@ -94,28 +94,28 @@ export default {
                     <div class="changelog-panel" style="margin-top: 30px; border-top: 2px solid #333; padding-top: 20px;">
                         <h2>Changelog History</h2>
                         <div v-if="levelHistory.length > 0" style="display: flex; flex-direction: column; gap: 12px; margin-top: 15px;">
-                            <div v-for="log in levelHistory" :key="log.date + log.type + log.notes" 
-                                 :style="{
-                                     background: 'rgba(255,255,255,0.03)',
-                                     borderLeft: '4px solid ' + getLogColor(log.type),
-                                     padding: '10px 15px',
-                                     borderRadius: '0 4px 4px 0'
-                                 }">
-                                <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 5px;">
+                            <div v-fosr="log in levelHistory" :key="log.date + log.type + log.notes" 
+                                :style="{
+                                    background: 'rgba(255,255,255,0.03)',
+                                    borderLeft: '4px solid ' + getLogColor(log.type),
+                                    padding: '10px 15px',
+                                    borderRadius: '0 4px 4px 0'
+                                }">
+                                <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0px;">
                                     <span :style="{
                                         fontWeight: 'bold',
                                         textTransform: 'uppercase',
                                         fontSize: '0.85rem',
                                         color: getLogColor(log.type)
                                     }">[{{ log.type }}]</span>
-                                    <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 2px;">
+                                    <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 0px;">
                                         <span style="font-size: 0.85rem; color: #888;">{{ log.date }}</span>
                                         <span v-if="log.rankLabel" style="font-size: 0.85rem; color: #aaa; font-family: monospace; letter-spacing: 0.5px;">
                                             {{ log.rankLabel }}
                                         </span>
                                     </div>
                                 </div>
-                                <p style="margin: 0; font-size: 0.95rem; line-height: 1.4; color: #ddd;">{{ log.notes }}</p>
+                                <p style="margin: 0; font-size: 0.95rem; line-height: 1.2; color: #ddd;">{{ log.notes }}</p>
                             </div>
                         </div>
                         <p v-else style="color: #666; font-style: italic; margin-top: 15px;">No structural changes recorded for this level.</p>
