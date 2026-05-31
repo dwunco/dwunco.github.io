@@ -94,7 +94,7 @@ export default {
                     <div class="changelog-panel" style="margin-top: 30px; border-top: 2px solid #333; padding-top: 20px;">
                         <h2>Changelog History</h2>
                         <div v-if="levelHistory.length > 0" style="display: flex; flex-direction: column; gap: 12px; margin-top: 15px;">
-                            <div v-for="log in levelHistory" :key="log.date" 
+                            <div v-for="log in levelHistory" :key="log.date + log.type + log.notes" 
                                  :style="{
                                      background: 'rgba(255,255,255,0.03)',
                                      borderLeft: '4px solid ' + getLogColor(log.type),
@@ -175,9 +175,27 @@ export default {
         },
         levelHistory() {
             if (!this.level || !this.level.id) return [];
-            return this.changelog
-                .filter(entry => entry.id === this.level.id)
-                .sort((a, b) => new Date(b.date) - new Date(a.date));
+            
+            const currentRank = this.selected + 1;
+            const history = [];
+
+            for (const log of this.changelog) {
+                // Scenario A: It's a localized note directly targeting this level's ID
+                if (log.id === this.level.id) {
+                    history.push({ ...log });
+                } 
+                // Scenario B: Global auto-push calculation rule
+                else if (log.type === 'added' && log.placement && currentRank >= log.placement) {
+                    history.push({
+                        date: log.date,
+                        type: 'moved-down',
+                        notes: `Pushed down due to a new level entry being added above at #${log.placement}.`
+                    });
+                }
+            }
+
+            // Keep the feed completely chronologically sorted
+            return history.sort((a, b) => new Date(b.date) - new Date(a.date));
         }
     },
     async mounted() {
@@ -210,7 +228,7 @@ export default {
         getLogColor(type) {
             switch (type) {
                 case 'added':
-                case 'list%': // Added list% capability right alongside added
+                case 'list%':
                     return '#ffc107'; // Yellow
                 case 'moved-up':
                     return '#00b54b'; // Green
