@@ -287,7 +287,6 @@ export default {
             if (log.type === 'moved' && log.oldPlacement && log.placement) {
                 label = log.placement > log.oldPlacement ? 'moved-down' : 'moved-up';
             }
-            // Strips out any existing hyphens and swaps them to a natural space!
             return label.replace(/-/g, ' ');
         },
         getLogColor(type, log = null) {
@@ -309,5 +308,5 @@ export default {
                     return '#888888';
             }
         }
-    },
+    }
 };
