@@ -94,13 +94,13 @@ export default {
                     <div class="changelog-panel" style="margin-top: 30px; border-top: 2px solid #333; padding-top: 20px;">
                         <h2>Changelog History</h2>
                         <div v-if="levelHistory.length > 0" style="display: flex; flex-direction: column; gap: 12px; margin-top: 15px;">
-                            <div v-fosr="log in levelHistory" :key="log.date + log.type + log.notes" 
-                                :style="{
-                                    background: 'rgba(255,255,255,0.03)',
-                                    borderLeft: '4px solid ' + getLogColor(log.type),
-                                    padding: '10px 15px',
-                                    borderRadius: '0 4px 4px 0'
-                                }">
+                            <div v-for="log in levelHistory" :key="log.date + log.type + log.notes" 
+                                 :style="{
+                                     background: 'rgba(255,255,255,0.03)',
+                                     borderLeft: '4px solid ' + getLogColor(log.type),
+                                     padding: '10px 15px',
+                                     borderRadius: '0 4px 4px 0'
+                                 }">
                                 <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0px;">
                                     <span :style="{
                                         fontWeight: 'bold',
@@ -165,7 +165,7 @@ export default {
     }),
     computed: {
         level() {
-            return this.list[this.selected]?.[0];
+            return this.list && this.list[this.selected]?.[0];
         },
         video() {
             if (!this.level?.showcase) {
@@ -178,22 +178,25 @@ export default {
             );
         },
         levelHistory() {
-            if (!this.level || !this.level.id) return [];
+            if (!this.level || !this.level.id || !this.changelog || !Array.isArray(this.changelog)) return [];
             
             const currentRank = this.selected + 1;
             
-            const addedLogs = this.changelog.filter(log => log.id === this.level.id && log.type === 'added');
+            // 1. Find the oldest addition date timestamp safely
+            const addedLogs = this.changelog.filter(log => log && log.id === this.level.id && log.type === 'added');
             const levelAddedTime = addedLogs.length 
                 ? Math.min(...addedLogs.map(log => new Date(log.date).getTime())) 
                 : null;
 
-            // Generate temporary timeline of all global additions to track shifting rank numbers
-            const globalAdditions = this.changelog
-                .filter(log => log.type === 'added' && log.placement)
+            // 2. Generate timeline of global additions cleanly using standard spread to avoid altering the source data array
+            const globalAdditions = [...this.changelog]
+                .filter(log => log && log.type === 'added' && log.placement)
                 .sort((a, b) => new Date(a.date) - new Date(b.date));
 
+            // 3. Filter out pre-birth history logs and format map
             const history = this.changelog
                 .filter(log => {
+                    if (!log) return false;
                     const logTime = new Date(log.date).getTime();
 
                     if (log.id === this.level.id) return true;
@@ -208,7 +211,6 @@ export default {
                 })
                 .map(log => {
                     if (log.id === this.level.id) {
-                        // Direct match formatting (e.g., "— #1")
                         let rankLabel = "";
                         if (log.type === 'added' && log.placement) {
                             rankLabel = `— #${log.placement}`;
@@ -216,7 +218,7 @@ export default {
                         return { ...log, rankLabel };
                     }
 
-                    // Dynamically calculate what the rank was right before this push-down item happened
+                    // Calculate old rank placements cleanly
                     const shiftsAfterUs = globalAdditions.filter(addition => {
                         const additionTime = new Date(addition.date).getTime();
                         const logTime = new Date(log.date).getTime();
@@ -224,10 +226,9 @@ export default {
                     }).length;
 
                     const historicalRank = currentRank - shiftsAfterUs;
-                    const oldRank = historicalRank - 1;
 
                     let levelName = log.name;
-                    if (!levelName) {
+                    if (!levelName && this.list) {
                         const targetInList = this.list.find(([l]) => l && l.id === log.id);
                         levelName = targetInList ? targetInList[0].name : "A new level";
                     }
@@ -236,11 +237,12 @@ export default {
                         date: log.date,
                         type: 'moved-down',
                         placement: log.placement,
-                        notes: `${levelName} was added above`,
+                        notes: `${levelName || "A level"} was added above`,
                         rankLabel: `↓1 #${historicalRank}`
                     };
                 });
 
+            // 4. Final chronologically reverse sort
             return history.sort((a, b) => {
                 const diff = new Date(b.date) - new Date(a.date);
                 if (diff !== 0) return diff;
