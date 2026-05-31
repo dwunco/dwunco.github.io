@@ -101,26 +101,28 @@ export default {
                                     padding: '10px 15px',
                                     borderRadius: '0 4px 4px 0',
                                     marginBottom: '12px',
-                                    display: 'flex',
-                                    flexDirection: 'column',
-                                    gap: '2px'
+                                    position: 'relative'
                                 }">
-                                <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                                
+                                <div style="position: absolute; top: 10px; right: 15px; display: flex; flex-direction: column; align-items: flex-end; line-height: 1.1;">
+                                    <span style="font-size: 0.85rem; color: #888;">{{ log.date }}</span>
+                                    <span v-if="log.rankLabel" style="font-size: 0.85rem; color: #aaa; font-family: monospace; letter-spacing: 0.5px; margin-top: 2px;">
+                                        {{ log.rankLabel }}
+                                    </span>
+                                </div>
+
+                                <p style="margin: 0; font-size: 0.95rem; line-height: 1.25; color: #ddd; padding-right: 90px;">
                                     <span :style="{
                                         fontWeight: 'bold',
                                         textTransform: 'uppercase',
                                         fontSize: '0.85rem',
                                         color: getLogColor(log.type),
-                                        lineHeight: '1'
+                                        display: 'block',
+                                        marginBottom: '4px' // <-- Tweaked from 1px to 4px for that perfect spacing
                                     }">[{{ log.type }}]</span>
-                                    <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 2px;">
-                                        <span style="font-size: 0.85rem; color: #888; line-height: 1;">{{ log.date }}</span>
-                                        <span v-if="log.rankLabel" style="font-size: 0.85rem; color: #aaa; font-family: monospace; letter-spacing: 0.5px; line-height: 1;">
-                                            {{ log.rankLabel }}
-                                        </span>
-                                    </div>
-                                </div>
-                                <p style="margin: 0; font-size: 0.95rem; line-height: 1.2; color: #ddd;">{{ log.notes }}</p>
+                                    {{ log.notes }}
+                                </p>
+
                             </div>
                         </div>
                         <p v-else style="color: #666; font-style: italic; margin-top: 15px;">No structural changes recorded for this level.</p>

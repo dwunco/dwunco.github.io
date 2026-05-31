@@ -30,7 +30,24 @@
         "date": "2026-05-31",
         "type": "added",
         "placement": 1,
+        "name": "Sakupen Hell",
         "notes": "Sakupen Hell added to the list."
+    },
+    {
+        "id": 3979721,
+        "date": "2026-04-21",
+        "type": "added",
+        "placement": 3,
+        "name": "Cataclysm",
+        "notes": "Cataclysm added to the list."
+    },
+    {
+        "id": 20761188,
+        "date": "2026-04-21",
+        "type": "added",
+        "placement": 2,
+        "name": "Allegiance",
+        "notes": "Allegiance added to the list."
     },
     {
         "id": 10565740,
@@ -38,6 +55,6 @@
         "type": "added",
         "placement": 1,
         "name": "Bloodbath",
-        "notes": "Bloodbath added to the list at #1."
+        "notes": "Bloodbath added to the list."
     }
 ]
