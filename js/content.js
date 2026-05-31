@@ -122,3 +122,16 @@ export async function fetchLeaderboard() {
     // Sort by total score
     return [res.sort((a, b) => b.total - a.total), errs];
 }
+
+/**
+ * NEW: Fetches the master changelog history array
+ */
+export async function fetchChangelog() {
+    try {
+        const response = await fetch(`${dir}/_changelog.json`);
+        return await response.json();
+    } catch {
+        console.error(`Failed to load changelog.`);
+        return [];
+    }
+}
