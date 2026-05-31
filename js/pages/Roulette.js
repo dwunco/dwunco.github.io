@@ -24,6 +24,10 @@ export default {
                         <input type="checkbox" id="extended" value="Extended List" v-model="useExtendedList">
                         <label for="extended">Extended List</label>
                     </div>
+                    <div class="check">
+                        <input type="checkbox" id="extended-plus" value="Extended+ List" v-model="useExtendedPlusList">
+                        <label for="extended-plus">Extended+ List</label>
+                    </div>
                     <Btn @click.native.prevent="onStart">{{ levels.length === 0 ? 'Start' : 'Restart'}}</Btn>
                 </form>
                 <p class="type-label-md" style="color: #aaa">
@@ -40,7 +44,6 @@ export default {
             <section class="levels-container">
                 <div class="levels">
                     <template v-if="levels.length > 0">
-                        <!-- Completed Levels -->
                         <div class="level" v-for="(level, i) in levels.slice(0, progression.length)">
                             <a :href="level.video" class="video">
                                 <img :src="getThumbnailFromId(getYoutubeIdFromUrl(level.video))" alt="">
@@ -51,7 +54,6 @@ export default {
                                 <p style="color: #00b54b; font-weight: 700">{{ progression[i] }}%</p>
                             </div>
                         </div>
-                        <!-- Current Level -->
                         <div class="level" v-if="!hasCompleted">
                             <a :href="currentLevel.video" target="_blank" class="video">
                                 <img :src="getThumbnailFromId(getYoutubeIdFromUrl(currentLevel.video))" alt="">
@@ -67,14 +69,12 @@ export default {
                                 <Btn @click.native.prevent="onGiveUp" style="background-color: #e91e63;">Give Up</Btn>
                             </form>
                         </div>
-                        <!-- Results -->
                         <div v-if="givenUp || hasCompleted" class="results">
                             <h1>Results</h1>
                             <p>Number of levels: {{ progression.length }}</p>
                             <p>Highest percent: {{ currentPercentage }}%</p>
                             <Btn v-if="currentPercentage < 99 && !hasCompleted" @click.native.prevent="showRemaining = true">Show remaining levels</Btn>
                         </div>
-                        <!-- Remaining Levels -->
                         <template v-if="givenUp && showRemaining">
                             <div class="level" v-for="(level, i) in levels.slice(progression.length + 1, levels.length - currentPercentage + progression.length)">
                                 <a :href="level.video" target="_blank" class="video">
@@ -108,6 +108,7 @@ export default {
         showRemaining: false,
         useMainList: true,
         useExtendedList: true,
+        useExtendedPlusList: false,
         toasts: [],
         fileInput: undefined,
     }),
@@ -163,7 +164,8 @@ export default {
                 return;
             }
 
-            if (!this.useMainList && !this.useExtendedList) {
+            // Updated catch condition to include Extended+ validation
+            if (!this.useMainList && !this.useExtendedList && !this.useExtendedPlusList) {
                 return;
             }
 
@@ -185,11 +187,13 @@ export default {
                 name: lvl.name,
                 video: lvl.verification,
             }));
+            
             const list = [];
             if (this.useMainList) list.push(...fullListMapped.slice(0, 75));
-            if (this.useExtendedList) {
-                list.push(...fullListMapped.slice(75, 150));
-            }
+            if (this.useExtendedList) list.push(...fullListMapped.slice(75, 150));
+            
+            // Handles slicing from index 150 (Rank 151) all the way to the end of the array
+            if (this.useExtendedPlusList) list.push(...fullListMapped.slice(150));
 
             // random 100 levels
             this.levels = shuffle(list).slice(0, 100);
