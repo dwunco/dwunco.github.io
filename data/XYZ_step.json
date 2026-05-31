@@ -9,5 +9,12 @@
     "verification": "https://youtu.be/4ifenuMucTw",
     "percentToQualify": 100,
     "password": "NA",
-    "records": []
+    "records": [
+        {
+            "user": "dwunco",
+            "link": "https://youtu.be/null",
+            "percent": 100,
+            "hz": 288
+        }
+    ]
 }
