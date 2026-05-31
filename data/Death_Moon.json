@@ -1,0 +1,18 @@
+{
+    "id": 8660411,
+    "name": "Death Moon",
+    "author": "Caustic",
+    "creators": ["Caustic"],
+    "verifier": "dwunco",
+    "verification": "https://youtu.be/rpmMdlDDda0",
+    "percentToQualify": 100,
+    "password": "NA",
+    "records": [
+        {
+            "user": "cookiedarookie",
+            "link": "https://youtu.be/null",
+            "percent": 100,
+            "hz": 144
+        }
+    ]
+}

@@ -1,0 +1,19 @@
+{
+    "id": 18025697,
+    "name": "Sidestep",
+    "author": "ChaSe",
+    "creators": ["ChaSe"],
+    "verifier": "cookiedarookie",
+    "verification": "https://youtu.be/VCu2YRVru1w",
+    "percentToQualify": 100,
+    "password": "NA",
+    "records": [
+        {
+            "user": "dwunco",
+            "link": "https://youtu.be/null",
+            "percent": 100,
+            "hz": 60,
+            "mobile": true
+        }
+    ]
+}

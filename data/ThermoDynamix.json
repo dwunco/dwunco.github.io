@@ -1,0 +1,24 @@
+{
+    "id": 38445559,
+    "name": "ThermoDynamix",
+    "author": "flash",
+    "creators": ["flash"],
+    "verifier": "PixelPro11",
+    "verification": "https://youtu.be/i9n-gVSEyfE",
+    "percentToQualify": 72,
+    "password": "Free Copy",
+    "records": [
+      {
+            "user": "IShowMonkeyGMD",
+            "link": "https://youtu.be/null",
+            "percent": 100,
+            "hz": 60
+        },
+      {
+            "user": "dwunco",
+            "link": "https://youtu.be/null",
+            "percent": 100,
+            "hz": 240
+        }
+    ]
+}

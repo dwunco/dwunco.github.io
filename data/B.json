@@ -1,0 +1,51 @@
+{
+    "id": 34085027,
+    "name": "B",
+    "author": "motleyorc",
+    "creators": [
+        "motleyorc",
+        "ScorchVX"
+    ],
+    "verifier": "dwunco",
+    "verification": "https://youtu.be/vtLGX7XiAUk",
+    "percentToQualify": 71,
+    "password": "Free Copy",
+    "records": [
+        {
+            "user": "WawLzerz",
+            "link": "https://youtu.be/null",
+            "percent": 100,
+            "hz": 60
+        },
+        {
+            "user": "IShowMonkeyGMD",
+            "link": "https://youtu.be/null",
+            "percent": 100,
+            "hz": 60
+        },
+        {
+            "user": "aCUB3R",
+            "link": "https://youtu.be/null",
+            "percent": 100,
+            "hz": 60
+        },
+        {
+            "user": "PixelPro11",
+            "link": "https://youtu.be/null",
+            "percent": 100,
+            "hz": 60
+        },
+        {
+            "user": "cookiedarookie",
+            "link": "https://youtu.be/null",
+            "percent": 100,
+            "hz": 144
+        },
+        {
+            "user": "Jamo1886",
+            "link": "https://youtu.be/null",
+            "percent": 71,
+            "hz": 60
+        }
+    ]
+}

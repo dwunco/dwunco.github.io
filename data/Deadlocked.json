@@ -1,0 +1,37 @@
+{
+    "id": 20,
+    "name": "Deadlocked",
+    "author": "Robtop",
+    "creators": ["Robtop"],
+    "verifier": "dwunco",
+    "verification": "https://youtu.be/9r88HquLi_c",
+    "percentToQualify": 100,
+    "password": "NA",
+    "records": [
+        {
+            "user": "IShowMonkeyGMD",
+            "link": "https://youtu.be/null",
+            "percent": 100,
+            "hz": 60,
+            "mobile": true
+        },
+        {
+            "user": "PixelPro11",
+            "link": "https://youtu.be/null",
+            "percent": 100,
+            "hz": 60
+        },
+        {
+            "user": "cookiedarookie",
+            "link": "https://youtu.be/null",
+            "percent": 100,
+            "hz": 144
+        },
+        {
+            "user": "Fragment1345",
+            "link": "https://youtu.be/null",
+            "percent": 100,
+            "hz": 60
+        }
+    ]
+}

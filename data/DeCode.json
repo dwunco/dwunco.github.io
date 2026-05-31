@@ -1,0 +1,18 @@
+{
+    "id": 2997354,
+    "name": "DeCode",
+    "author": "Rek3dge",
+    "creators": ["Rek3dge"],
+    "verifier": "cookiedarookie",
+    "verification": "https://youtu.be/IRTQZZ502J0",
+    "percentToQualify": 100,
+    "password": "NA",
+    "records": [
+        {
+            "user": "dwunco",
+            "link": "https://youtu.be/watch?v=null",
+            "percent": 100,
+            "hz": 60
+        }
+    ]
+}

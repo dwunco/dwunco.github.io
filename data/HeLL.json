@@ -1,0 +1,28 @@
+{
+    "id": 25706351,
+    "name": "HeLL",
+    "author": "Serponge",
+    "creators": [
+        "Serponge",
+        "Shig"
+    ],
+    "verifier": "IShowMonkeyGMD",
+    "verification": "https://youtu.be/gTtsrzNUJM8",
+    "percentToQualify": 100,
+    "password": "Free Copy",
+    "records": [
+        {
+            "user": "aCUB3R",
+            "link": "https://youtu.be/null",
+            "percent": 100,
+            "hz": 60,
+            "mobile": true
+        },
+        {
+            "user": "cookiedarookie",
+            "link": "https://youtu.be/null",
+            "percent": 100,
+            "hz": 144
+        }
+    ]
+}

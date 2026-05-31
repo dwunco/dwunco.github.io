@@ -1,0 +1,25 @@
+{
+    "id": 14000484,
+    "name": "Retro Circles",
+    "author": "Nacho21",
+    "creators": ["Macho21"],
+    "verifier": "dwunco",
+    "verification": "https://youtu.be/yVxKTQPzyus",
+    "percentToQualify": 100,
+    "password": "Free Copy",
+    "records": [
+        {
+            "user": "aCUB3R",
+            "link": "https://youtu.be/null",
+            "percent": 100,
+            "hz": 60,
+            "mobile": true
+        },
+        {
+            "user": "cookiedarookie",
+            "link": "https://youtu.be/null",
+            "percent": 100,
+            "hz": 144
+        }
+    ]
+}

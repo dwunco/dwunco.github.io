@@ -1,0 +1,24 @@
+{
+    "id": 58069223,
+    "name": "Gunslinga Corridor",
+    "author": "zEvilPrisma",
+    "creators": [
+        "Oreate",
+        "Flame",
+        "Shiangel",
+        "Rolopok",
+        "Sledgehammer"
+    ],
+    "verifier": "cookiedarookie",
+    "verification": "https://youtu.be/rrCnjdytyHs",
+    "percentToQualify": 76,
+    "password": "867354",
+    "records": [
+        {
+            "user": "dwunco",
+            "link": "https://youtu.be/QUxrUuqtPEk",
+            "percent": 100,
+            "hz": 240
+        }
+    ]
+}

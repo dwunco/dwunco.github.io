@@ -1,0 +1,32 @@
+{
+    "id": 5904109,
+    "name": "Platinum Adventure",
+    "author": "Jerry4",
+    "creators": ["Jerry4"],
+    "verifier": "dwunco",
+    "verification": "https://youtu.be/vKIo0d3a9bA",
+    "percentToQualify": 100,
+    "password": "0000",
+    "records": [
+        {
+            "user": "IShowMonkeyGMD",
+            "link": "https://youtu.be/null",
+            "percent": 100,
+            "hz": 60,
+            "mobile": true
+        },
+        {
+            "user": "PixelPro11",
+            "link": "https://youtu.be/null",
+            "percent": 100,
+            "hz": 60,
+            "mobile": true
+        },
+        {
+            "user": "aCUB3R",
+            "link": "https://youtu.be/null",
+            "percent": 100,
+            "hz": 60
+        }
+    ]
+}

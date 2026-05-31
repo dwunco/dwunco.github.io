@@ -1,0 +1,18 @@
+{
+    "id": 89743050,
+    "name": "Inane Demon",
+    "author": "KiwiPenguin",
+    "creators": ["KiwiPenguin"],
+    "verifier": "cookiedarookie",
+    "verification": "https://youtu.be/I5dkVwV5D9c",
+    "percentToQualify": 55,
+    "password": "Free Copy",
+    "records": [
+        {
+            "user": "dwunco",
+            "link": "https://youtu.be/null",
+            "percent": 100,
+            "hz": 240
+        }
+    ]
+}

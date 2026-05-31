@@ -1,0 +1,24 @@
+{
+    "id": 5098465,
+    "name": "Speed of Light",
+    "author": "TheRealSalad",
+    "creators": ["TheRealSalad"],
+    "verifier": "PixelPro11",
+    "verification": "https://youtu.be/JTTKvJustyQ",
+    "percentToQualify": 100,
+    "password": "NA",
+    "records": [
+        {
+            "user": "aCUB3R",
+            "link": "https://youtu.be/null",
+            "percent": 100,
+            "hz": 60
+        },
+        {
+            "user": "cookiedarookie",
+            "link": "https://youtu.be/null",
+            "percent": 100,
+            "hz": 144
+        }
+    ]
+}

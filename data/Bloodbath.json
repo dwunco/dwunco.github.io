@@ -1,0 +1,30 @@
+{
+    "id": 10565740,
+    "name": "Bloodbath",
+    "author": "Riot",
+    "creators": [
+        "weoweoteo",
+        "Vermillion",
+        "Michigun",
+        "Evasium622",
+        "xCrack",
+        "ASonicMen",
+        "Etzer",
+        "Havok",
+        "Giron",
+        "Ggb0y",
+        "Riot"
+    ],
+    "verifier": "dwunco",
+    "verification": "https://youtu.be/lX3IzC1aCew",
+    "percentToQualify": 52,
+    "password": "NA",
+    "records": [
+        {
+            "user": "cookiedarookie",
+            "link": "https://youtu.be/null",
+            "percent": 100,
+            "hz": 144
+        }
+    ]
+}
