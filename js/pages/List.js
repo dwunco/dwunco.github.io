@@ -44,7 +44,7 @@ export default {
                             </td>
                             <td class="level" :class="{ 'active': selected == i, 'error': !level }">
                                 <button @click="selected = i">
-                                    <span class="type-label-lg">{{ level?.name || \`Error (\${err}.json)\` }}</span>
+                                    <span class="type-label-lg">{{ level ? level.name : 'Error (' + err + '.json)' }}</span>
                                 </button>
                             </td>
                         </tr>
@@ -83,7 +83,7 @@ export default {
                                 <a :href="record.link" target="_blank" class="type-label-lg">{{ record.user }}</a>
                             </td>
                             <td class="mobile">
-                                <img v-if="record.mobile" :src="\`/assets/phone-landscape\${store.dark ? '-dark' : ''}.svg\`" alt="Mobile">
+                                <img v-if="record.mobile" :src="'/assets/phone-landscape' + (store.dark ? '-dark' : '') + '.svg'" alt="Mobile">
                             </td>
                             <td class="hz">
                                 <p>{{ record.hz }}FPS</p>
@@ -133,7 +133,7 @@ export default {
                         <h3>List Editors</h3>
                         <ol class="editors">
                             <li v-for="editor in editors">
-                                <img :src="\`/assets/\${roleIconMap[editor.role]}\${store.dark ? '-dark' : ''}.svg\`" :alt="editor.role">
+                                <img :src="'/assets/' + roleIconMap[editor.role] + (store.dark ? '-dark' : '') + '.svg'" :alt="editor.role">
                                 <a v-if="editor.link" class="type-label-lg link" target="_blank" :href="editor.link">{{ editor.name }}</a>
                                 <p v-else>{{ editor.name }}</p>
                             </li>
@@ -170,32 +170,49 @@ export default {
                 this.toggledShowcase
                     ? this.level.showcase
                     : this.level.verification
-            );
+                );
         },
         levelHistory() {
             if (!this.level || !this.level.id) return [];
             
             const currentRank = this.selected + 1;
-            const history = [];
+            
+            const addedLogs = this.changelog.filter(log => log.id === this.level.id && log.type === 'added');
+            const levelAddedTime = addedLogs.length 
+                ? Math.min(...addedLogs.map(log => new Date(log.date).getTime())) 
+                : null;
 
-            for (const log of this.changelog) {
-                // Scenario A: Direct note targeting this level's ID
-                if (log.id === this.level.id) {
-                    history.push({ ...log });
-                } 
-                // Scenario B: Global auto-push calculation with dynamic level names
-                else if (log.type === 'added' && log.placement && currentRank >= log.placement) {
+            const history = this.changelog
+                .filter(log => {
+                    const logTime = new Date(log.date).getTime();
+
+                    if (log.id === this.level.id) return true;
+
+                    if (log.type === 'added' && log.placement && currentRank >= log.placement) {
+                        if (levelAddedTime && logTime < levelAddedTime) return false;
+                        if (levelAddedTime && logTime === levelAddedTime && log.placement <= currentRank) return false;
+                        return true;
+                    }
+
+                    return false;
+                })
+                .map(log => {
+                    if (log.id === this.level.id) return { ...log };
+
                     const levelName = log.name || "A new level";
-                    history.push({
+                    return {
                         date: log.date,
                         type: 'moved-down',
+                        placement: log.placement,
                         notes: `${levelName} was added above`
-                    });
-                }
-            }
+                    };
+                });
 
-            // Keep the feed chronologically sorted (newest first)
-            return history.sort((a, b) => new Date(b.date) - new Date(a.date));
+            return history.sort((a, b) => {
+                const diff = new Date(b.date) - new Date(a.date);
+                if (diff !== 0) return diff;
+                return (a.placement || 999) - (b.placement || 999);
+            });
         }
     },
     async mounted() {
@@ -229,13 +246,13 @@ export default {
             switch (type) {
                 case 'added':
                 case 'list%':
-                    return '#ffc107'; // Yellow
+                    return '#ffc107';
                 case 'moved-up':
-                    return '#00b54b'; // Green
+                    return '#00b54b';
                 case 'moved-down':
-                    return '#ff4d4d'; // Red
+                    return '#ff4d4d';
                 default:
-                    return '#888888'; // Neutral fallback
+                    return '#888888';
             }
         }
     },
