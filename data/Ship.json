@@ -87,5 +87,12 @@
   "verification": "https://youtu.be/uU2ngeCcn2I",
   "percentToQualify": 100,
   "password": "020200",
-  "records": []
+  "records": [
+    {
+      "user": "dwunco",
+      "link": "https://youtu.be/null",
+      "percent": 100,
+      "hz": 288,
+    },
+  ]
 }
