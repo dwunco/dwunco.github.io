@@ -33,9 +33,11 @@
         "notes": "Sakupen Hell added to the list."
     },
     {
-        "id": 61079355,
-        "date": "2026-05-15",
-        "type": "list%",
-        "notes": "Acu qualification requirement updated: changed from 50% to 52%."
+        "id": 10565740,
+        "date": "2026-04-21",
+        "type": "added",
+        "placement": 1,
+        "name": "Bloodbath",
+        "notes": "Bloodbath added to the list at #1."
     }
 ]
