@@ -91,26 +91,31 @@ export default {
                         </tr>
                     </table>
 
-                    <div class="changelog-panel" style="margin-top: 25px; border-top: 2px solid #333; padding-top: 15px;">
+                    <div class="changelog-panel" style="margin-top: 30px; border-top: 2px solid #333; padding-top: 20px;">
                         <h2>Changelog History</h2>
-                        <div v-if="levelHistory.length > 0" style="display: flex; flex-direction: column; gap: 6px; margin-top: 10px;">
+                        <div v-if="levelHistory.length > 0" style="display: flex; flex-direction: column; margin-top: 15px;">
                             <div v-for="log in levelHistory" :key="log.date + log.type + log.notes" 
                                 :style="{
                                     background: 'rgba(255,255,255,0.03)',
                                     borderLeft: '4px solid ' + getLogColor(log.type),
-                                    padding: '6px 12px',
-                                    borderRadius: '0 4px 4px 0'
+                                    padding: '10px 15px',
+                                    borderRadius: '0 4px 4px 0',
+                                    marginBottom: '12px',
+                                    display: 'flex',
+                                    flexDirection: 'column',
+                                    gap: '2px'
                                 }">
-                                <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0px;">
+                                <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                                     <span :style="{
                                         fontWeight: 'bold',
                                         textTransform: 'uppercase',
                                         fontSize: '0.85rem',
-                                        color: getLogColor(log.type)
+                                        color: getLogColor(log.type),
+                                        lineHeight: '1'
                                     }">[{{ log.type }}]</span>
-                                    <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 0px;">
-                                        <span style="font-size: 0.85rem; color: #888;">{{ log.date }}</span>
-                                        <span v-if="log.rankLabel" style="font-size: 0.85rem; color: #aaa; font-family: monospace; letter-spacing: 0.5px;">
+                                    <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 2px;">
+                                        <span style="font-size: 0.85rem; color: #888; line-height: 1;">{{ log.date }}</span>
+                                        <span v-if="log.rankLabel" style="font-size: 0.85rem; color: #aaa; font-family: monospace; letter-spacing: 0.5px; line-height: 1;">
                                             {{ log.rankLabel }}
                                         </span>
                                     </div>
