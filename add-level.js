@@ -71,15 +71,17 @@ try {
     console.log(`Updating changelog history at ${CHANGELOG_PATH}...`);
     const changelogData = JSON.parse(fs.readFileSync(CHANGELOG_PATH, 'utf8'));
     
+    // Ensure your script pushes the name when generating a log entry:
     const newLogEntry = {
-        "id": parseInt(id),
-        "date": new Date().toISOString().split('T')[0],
-        "type": "added",
-        "placement": rank,
-        "name": name,
-        "notes": `${name} has been added at #${rank}!`
+        id: levelId,          // The ID of the level being added
+        name: levelName,      // <-- MAKE SURE THIS LINE IS ADDED!
+        date: new Date().toISOString().split('T')[0], // YYYY-MM-DD format
+        type: "added",
+        placement: placementNumber,
+        notes: `${levelName} has been added to the list at #${placementNumber}.`
     };
 
+// ... then it pushes to changelog and saves the file
     changelogData.unshift(newLogEntry);
     fs.writeFileSync(CHANGELOG_PATH, JSON.stringify(changelogData, null, 4));
     console.log(`\x1b[32m✔ Changelog entry added successfully!\x1b[0m`);

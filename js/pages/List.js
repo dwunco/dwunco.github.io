@@ -170,18 +170,20 @@ export default {
                 this.toggledShowcase
                     ? this.level.showcase
                     : this.level.verification
-                );
+            );
         },
         levelHistory() {
             if (!this.level || !this.level.id) return [];
             
             const currentRank = this.selected + 1;
             
+            // 1. Find the oldest addition date timestamp for this level
             const addedLogs = this.changelog.filter(log => log.id === this.level.id && log.type === 'added');
             const levelAddedTime = addedLogs.length 
                 ? Math.min(...addedLogs.map(log => new Date(log.date).getTime())) 
                 : null;
 
+            // 2. Filter out pre-birth history logs and format global push-downs
             const history = this.changelog
                 .filter(log => {
                     const logTime = new Date(log.date).getTime();
@@ -199,7 +201,13 @@ export default {
                 .map(log => {
                     if (log.id === this.level.id) return { ...log };
 
-                    const levelName = log.name || "A new level";
+                    // Pull name from log entry, or find it dynamically in the loaded list as a backup
+                    let levelName = log.name;
+                    if (!levelName) {
+                        const targetInList = this.list.find(([l]) => l && l.id === log.id);
+                        levelName = targetInList ? targetInList[0].name : "A new level";
+                    }
+
                     return {
                         date: log.date,
                         type: 'moved-down',
@@ -208,6 +216,7 @@ export default {
                     };
                 });
 
+            // 3. Sort chronologically (newest first)
             return history.sort((a, b) => {
                 const diff = new Date(b.date) - new Date(a.date);
                 if (diff !== 0) return diff;
