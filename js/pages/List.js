@@ -91,16 +91,16 @@ export default {
                         </tr>
                     </table>
 
-                    <div class="changelog-panel" style="margin-top: 30px; border-top: 2px solid #333; padding-top: 20px;">
+                    <div class="changelog-panel" style="margin-top: 25px; border-top: 2px solid #333; padding-top: 15px;">
                         <h2>Changelog History</h2>
-                        <div v-if="levelHistory.length > 0" style="display: flex; flex-direction: column; gap: 12px; margin-top: 15px;">
+                        <div v-if="levelHistory.length > 0" style="display: flex; flex-direction: column; gap: 6px; margin-top: 10px;">
                             <div v-for="log in levelHistory" :key="log.date + log.type + log.notes" 
-                                 :style="{
-                                     background: 'rgba(255,255,255,0.03)',
-                                     borderLeft: '4px solid ' + getLogColor(log.type),
-                                     padding: '10px 15px',
-                                     borderRadius: '0 4px 4px 0'
-                                 }">
+                                :style="{
+                                    background: 'rgba(255,255,255,0.03)',
+                                    borderLeft: '4px solid ' + getLogColor(log.type),
+                                    padding: '6px 12px',
+                                    borderRadius: '0 4px 4px 0'
+                                }">
                                 <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0px;">
                                     <span :style="{
                                         fontWeight: 'bold',
