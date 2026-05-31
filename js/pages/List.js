@@ -94,9 +94,20 @@ export default {
                     <div class="changelog-panel" style="margin-top: 30px; border-top: 2px solid #333; padding-top: 20px;">
                         <h2>Changelog History</h2>
                         <div v-if="levelHistory.length > 0" style="display: flex; flex-direction: column; gap: 12px; margin-top: 15px;">
-                            <div v-for="log in levelHistory" :key="log.date" style="background: rgba(255,255,255,0.03); border-left: 4px solid #00b54b; padding: 10px 15px; border-radius: 0 4px 4px 0;">
+                            <div v-for="log in levelHistory" :key="log.date" 
+                                 :style="{
+                                     background: 'rgba(255,255,255,0.03)',
+                                     borderLeft: '4px solid ' + getLogColor(log.type),
+                                     padding: '10px 15px',
+                                     borderRadius: '0 4px 4px 0'
+                                 }">
                                 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px;">
-                                    <span style="font-weight: bold; text-transform: uppercase; font-size: 0.85rem; color: #00b54b;">[{{ log.type }}]</span>
+                                    <span :style="{
+                                        fontWeight: 'bold',
+                                        textTransform: 'uppercase',
+                                        fontSize: '0.85rem',
+                                        color: getLogColor(log.type)
+                                    }">[{{ log.type }}]</span>
                                     <span style="font-size: 0.85rem; color: #888;">{{ log.date }}</span>
                                 </div>
                                 <p style="margin: 0; font-size: 0.95rem; line-height: 1.4; color: #ddd;">{{ log.notes }}</p>
@@ -106,7 +117,7 @@ export default {
                     </div>
 
                 </div>
-                <div class="level" v-else class="level" style="height: 100%; justify-content: center; align-items: center;">
+                <div class="level" v-else style="height: 100%; justify-content: center; align-items: center;">
                     <p>(ノಠ益ಠ)ノ彡┻━┻</p>
                 </div>
             </div>
@@ -140,7 +151,7 @@ export default {
     data: () => ({
         list: [],
         editors: [],
-        changelog: [], // Holds array from _changelog.json
+        changelog: [], 
         loading: true,
         selected: 0,
         errors: [],
@@ -162,7 +173,6 @@ export default {
                     : this.level.verification
             );
         },
-        // Automatically isolates and manages entries specific to the open level element
         levelHistory() {
             if (!this.level || !this.level.id) return [];
             return this.changelog
@@ -173,7 +183,7 @@ export default {
     async mounted() {
         this.list = await fetchList();
         this.editors = await fetchEditors();
-        this.changelog = await fetchChangelog(); // Loads core log system entries
+        this.changelog = await fetchChangelog(); 
 
         if (!this.list) {
             this.errors = [
@@ -197,5 +207,18 @@ export default {
     methods: {
         embed,
         score,
+        getLogColor(type) {
+            switch (type) {
+                case 'added':
+                case 'list%': // Added list% capability right alongside added
+                    return '#ffc107'; // Yellow
+                case 'moved-up':
+                    return '#00b54b'; // Green
+                case 'moved-down':
+                    return '#ff4d4d'; // Red
+                default:
+                    return '#888888'; // Neutral fallback
+            }
+        }
     },
 };
