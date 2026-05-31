@@ -101,14 +101,19 @@ export default {
                                      padding: '10px 15px',
                                      borderRadius: '0 4px 4px 0'
                                  }">
-                                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px;">
+                                <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 5px;">
                                     <span :style="{
                                         fontWeight: 'bold',
                                         textTransform: 'uppercase',
                                         fontSize: '0.85rem',
                                         color: getLogColor(log.type)
                                     }">[{{ log.type }}]</span>
-                                    <span style="font-size: 0.85rem; color: #888;">{{ log.date }}</span>
+                                    <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 2px;">
+                                        <span style="font-size: 0.85rem; color: #888;">{{ log.date }}</span>
+                                        <span v-if="log.rankLabel" style="font-size: 0.85rem; color: #aaa; font-family: monospace; letter-spacing: 0.5px;">
+                                            {{ log.rankLabel }}
+                                        </span>
+                                    </div>
                                 </div>
                                 <p style="margin: 0; font-size: 0.95rem; line-height: 1.4; color: #ddd;">{{ log.notes }}</p>
                             </div>
@@ -177,13 +182,16 @@ export default {
             
             const currentRank = this.selected + 1;
             
-            // 1. Find the oldest addition date timestamp for this level
             const addedLogs = this.changelog.filter(log => log.id === this.level.id && log.type === 'added');
             const levelAddedTime = addedLogs.length 
                 ? Math.min(...addedLogs.map(log => new Date(log.date).getTime())) 
                 : null;
 
-            // 2. Filter out pre-birth history logs and format global push-downs
+            // Generate temporary timeline of all global additions to track shifting rank numbers
+            const globalAdditions = this.changelog
+                .filter(log => log.type === 'added' && log.placement)
+                .sort((a, b) => new Date(a.date) - new Date(b.date));
+
             const history = this.changelog
                 .filter(log => {
                     const logTime = new Date(log.date).getTime();
@@ -199,9 +207,25 @@ export default {
                     return false;
                 })
                 .map(log => {
-                    if (log.id === this.level.id) return { ...log };
+                    if (log.id === this.level.id) {
+                        // Direct match formatting (e.g., "— #1")
+                        let rankLabel = "";
+                        if (log.type === 'added' && log.placement) {
+                            rankLabel = `— #${log.placement}`;
+                        }
+                        return { ...log, rankLabel };
+                    }
 
-                    // Pull name from log entry, or find it dynamically in the loaded list as a backup
+                    // Dynamically calculate what the rank was right before this push-down item happened
+                    const shiftsAfterUs = globalAdditions.filter(addition => {
+                        const additionTime = new Date(addition.date).getTime();
+                        const logTime = new Date(log.date).getTime();
+                        return additionTime > logTime && currentRank >= addition.placement;
+                    }).length;
+
+                    const historicalRank = currentRank - shiftsAfterUs;
+                    const oldRank = historicalRank - 1;
+
                     let levelName = log.name;
                     if (!levelName) {
                         const targetInList = this.list.find(([l]) => l && l.id === log.id);
@@ -212,11 +236,11 @@ export default {
                         date: log.date,
                         type: 'moved-down',
                         placement: log.placement,
-                        notes: `${levelName} was added above`
+                        notes: `${levelName} was added above`,
+                        rankLabel: `↓1 #${historicalRank}`
                     };
                 });
 
-            // 3. Sort chronologically (newest first)
             return history.sort((a, b) => {
                 const diff = new Date(b.date) - new Date(a.date);
                 if (diff !== 0) return diff;
