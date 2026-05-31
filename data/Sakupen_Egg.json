@@ -1,0 +1,39 @@
+{
+    "id": 25706351,
+    "name": "Sakupen Egg",
+    "author": "Sivlol",
+    "creators": [
+        "Sivlol",
+        "Skrypto",
+        "InfiniteStyle",
+        "Chuckgamer1",
+        "Scopal",
+        "Iris",
+        "ThinhVN",
+        "ImBK",
+        "Connected",
+        "AKSIS",
+        "Linear",
+        "Andhika",
+        "CDMusic"
+    ],
+    "verifier": "IShowMonkeyGMD",
+    "verification": "https://youtu.be/30MYwESIT8g",
+    "percentToQualify": 100,
+    "password": "Free Copy",
+    "records": [
+        {
+            "user": "aCUB3R",
+            "link": "https://youtu.be/null",
+            "percent": 100,
+            "hz": 60
+        },
+        {
+            "user": "dwunco",
+            "link": "https://youtu.be/null",
+            "percent": 100,
+            "hz": 240
+        }
+    ],
+    "history": []
+}

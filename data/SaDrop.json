@@ -1,0 +1,21 @@
+{
+    "id": 59495189,
+    "name": "SaDrop",
+    "author": "OvniFella",
+    "creators": [
+        "OvniaFella"
+    ],
+    "verifier": "cookiedarookie",
+    "verification": "https://youtu.be/ugNebX_tGBQ",
+    "percentToQualify": 100,
+    "password": "Free Copy",
+    "records": [
+        {
+            "user": "dwunco",
+            "link": "https://youtu.be/null",
+            "percent": 100,
+            "hz": 240
+        }
+    ],
+    "history": []
+}

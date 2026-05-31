@@ -1,0 +1,41 @@
+{
+    "id": 56210242,
+    "name": "Shiver",
+    "author": "SpKale",
+    "creators": [
+        "SpKale"
+    ],
+    "verifier": "dwunco",
+    "verification": "https://youtu.be/TRcvzgpTMO8",
+    "percentToQualify": 100,
+    "password": "Free Copy",
+    "records": [
+        {
+            "user": "IShowMonkeyGMD",
+            "link": "https://youtu.be/null",
+            "percent": 100,
+            "hz": 60,
+            "mobile": true
+        },
+        {
+            "user": "cookiedarookie",
+            "link": "https://youtu.be/null",
+            "percent": 100,
+            "hz": 144
+        },
+        {
+            "user": "PixelPro11",
+            "link": "https://youtu.be/null",
+            "percent": 100,
+            "hz": 60,
+            "mobile": true
+        },
+        {
+            "user": "aCUB3R",
+            "link": "https://youtu.be/null",
+            "percent": 100,
+            "hz": 60
+        }
+    ],
+    "history": []
+}

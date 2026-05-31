@@ -1,0 +1,22 @@
+{
+    "id": 105383537,
+    "name": "Chromatique",
+    "author": "StyphonTV",
+    "creators": [
+        "StyphonTV"
+    ],
+    "verifier": "cookiedarookie",
+    "verification": "https://youtu.be/JKEiTXA_hz0",
+    "percentToQualify": 100,
+    "password": "Free Copy",
+    "records": [
+        {
+            "user": "dwunco",
+            "link": "https://youtu.be/null",
+            "percent": 100,
+            "hz": 60,
+            "mobile": true
+        }
+    ],
+    "history": []
+}

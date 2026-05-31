@@ -1,0 +1,22 @@
+{
+    "id": 15625052,
+    "name": "Lunatic Doom Machine",
+    "author": "SrGuillester",
+    "creators": [
+        "Andromeda",
+        "Optagonus"
+    ],
+    "verifier": "cookiedarookie",
+    "verification": "https://youtu.be/Ggk3SkPrq04",
+    "percentToQualify": 50,
+    "password": "167298",
+    "records": [
+        {
+            "user": "dwunco",
+            "link": "https://youtu.be/null",
+            "percent": 100,
+            "hz": 240
+        }
+    ],
+    "history": []
+}

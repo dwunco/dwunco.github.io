@@ -1,0 +1,21 @@
+{
+    "id": 110067,
+    "name": "XYZ step",
+    "author": "Coke",
+    "creators": [
+        "Coke"
+    ],
+    "verifier": "cookiedarookie",
+    "verification": "https://youtu.be/4ifenuMucTw",
+    "percentToQualify": 100,
+    "password": "NA",
+    "records": [
+        {
+            "user": "dwunco",
+            "link": "https://youtu.be/null",
+            "percent": 100,
+            "hz": 288
+        }
+    ],
+    "history": []
+}

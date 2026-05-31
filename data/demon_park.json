@@ -1,0 +1,22 @@
+{
+    "id": 10109,
+    "name": "demon park",
+    "author": "M2coL",
+    "creators": [
+        "M2coL"
+    ],
+    "verifier": "cookiedarookie",
+    "verification": "https://youtu.be/1Ota3kIHlY0",
+    "percentToQualify": 100,
+    "password": "961031",
+    "records": [
+        {
+            "user": "dwunco",
+            "link": "https://youtu.be/null",
+            "percent": 100,
+            "hz": 60,
+            "mobile": true
+        }
+    ],
+    "history": []
+}

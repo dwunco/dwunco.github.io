@@ -1,0 +1,34 @@
+{
+    "id": 1347537,
+    "name": "invisible clubstep",
+    "author": "J4cKy",
+    "creators": [
+        "J4cKy"
+    ],
+    "verifier": "dwunco",
+    "verification": "https://youtu.be/O4beeMX5rAc",
+    "percentToQualify": 100,
+    "password": "NA",
+    "records": [
+        {
+            "user": "IShowMonkeyGMD",
+            "link": "https://youtu.be/null",
+            "percent": 100,
+            "hz": 60,
+            "mobile": true
+        },
+        {
+            "user": "PixelPro11",
+            "link": "https://youtu.be/null",
+            "percent": 100,
+            "hz": 60
+        },
+        {
+            "user": "aCUB3R",
+            "link": "https://youtu.be/null",
+            "percent": 100,
+            "hz": 60
+        }
+    ],
+    "history": []
+}

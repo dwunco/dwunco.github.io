@@ -1,0 +1,35 @@
+{
+    "id": 56587109,
+    "name": "phjork",
+    "author": "cerufiffy",
+    "creators": [
+        "cerufiffy"
+    ],
+    "verifier": "dwunco",
+    "verification": "https://youtu.be/F2lrVrKvErg",
+    "percentToQualify": 100,
+    "password": "Free Copy",
+    "records": [
+        {
+            "user": "IShowMonkeyGMD",
+            "link": "https://youtu.be/null",
+            "percent": 100,
+            "hz": 60,
+            "mobile": true
+        },
+        {
+            "user": "aCUB3R",
+            "link": "https://youtu.be/null",
+            "percent": 100,
+            "hz": 60,
+            "mobile": true
+        },
+        {
+            "user": "cookiedarookie",
+            "link": "https://youtu.be/null",
+            "percent": 100,
+            "hz": 144
+        }
+    ],
+    "history": []
+}

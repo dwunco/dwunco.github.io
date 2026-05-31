@@ -1,0 +1,21 @@
+{
+    "id": 80433444,
+    "name": "MAYMORY",
+    "author": "ItzKiba",
+    "creators": [
+        "ItzKiba"
+    ],
+    "verifier": "dwunco",
+    "verification": "https://youtu.be/EKP5rGdOf_o",
+    "percentToQualify": 100,
+    "password": "Free Copy",
+    "records": [
+        {
+            "user": "cookiedarookie",
+            "link": "https://youtu.be/null",
+            "percent": 100,
+            "hz": 144
+        }
+    ],
+    "history": []
+}

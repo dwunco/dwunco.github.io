@@ -1,0 +1,27 @@
+{
+    "id": 18834999,
+    "name": "VeritY",
+    "author": "Serponge",
+    "creators": [
+        "Serponge"
+    ],
+    "verifier": "dwunco",
+    "verification": "https://youtu.be/LE1DpqHjd2Q",
+    "percentToQualify": 100,
+    "password": "Free Copy",
+    "records": [
+        {
+            "user": "cookiedarookie",
+            "link": "https://youtu.be/null",
+            "percent": 100,
+            "hz": 144
+        },
+        {
+            "user": "WawLzerz",
+            "link": "https://youtu.be/null",
+            "percent": 100,
+            "hz": 60
+        }
+    ],
+    "history": []
+}

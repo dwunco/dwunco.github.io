@@ -1,0 +1,46 @@
+{
+    "id": 13519,
+    "name": "The Nightmare",
+    "author": "Jax",
+    "creators": [
+        "Jax"
+    ],
+    "verifier": "dwunco",
+    "verification": "https://youtu.be/i0dlZgqA8ds",
+    "percentToQualify": 100,
+    "password": "7813",
+    "records": [
+        {
+            "user": "PixelPro11",
+            "link": "https://youtu.be/null",
+            "percent": 100,
+            "hz": 60,
+            "mobile": true
+        },
+        {
+            "user": "aCUB3R",
+            "link": "https://youtu.be/null",
+            "percent": 100,
+            "hz": 60
+        },
+        {
+            "user": "WawLzerz",
+            "link": "https://youtu.be/null",
+            "percent": 100,
+            "hz": 60
+        },
+        {
+            "user": "cookiedarookie",
+            "link": "https://youtu.be/null",
+            "percent": 100,
+            "hz": 144
+        },
+        {
+            "user": "Fragment1345",
+            "link": "https://youtu.be/null",
+            "percent": 100,
+            "hz": 60
+        }
+    ],
+    "history": []
+}

@@ -1,0 +1,40 @@
+{
+    "id": 7116121,
+    "name": "Problematic",
+    "author": "Dhafin",
+    "creators": [
+        "Dhafin"
+    ],
+    "verifier": "dwunco",
+    "verification": "https://youtu.be/pZlQMTCgY6E",
+    "percentToQualify": 100,
+    "password": 6701,
+    "records": [
+        {
+            "user": "IShowMonkeyGMD",
+            "link": "https://youtu.be/null",
+            "percent": 100,
+            "hz": 60
+        },
+        {
+            "user": "PixelPro11",
+            "link": "https://youtu.be/null",
+            "percent": 100,
+            "hz": 60
+        },
+        {
+            "user": "aCUB3R",
+            "link": "https://youtu.be/null",
+            "percent": 100,
+            "hz": 60,
+            "mobile": true
+        },
+        {
+            "user": "cookiedarookie",
+            "link": "https://youtu.be/null",
+            "percent": 100,
+            "hz": 144
+        }
+    ],
+    "history": []
+}

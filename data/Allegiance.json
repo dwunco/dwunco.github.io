@@ -1,0 +1,21 @@
+{
+    "id": 20761188,
+    "name": "Allegiance",
+    "author": "nikrodox",
+    "creators": [
+        "nikrodox"
+    ],
+    "verifier": "Fragment1345",
+    "verification": "https://youtu.be/lHf6buYpbXU",
+    "percentToQualify": 58,
+    "password": "Free Copy",
+    "records": [
+        {
+            "user": "dwunco",
+            "link": "https://youtu.be/watch?v=null",
+            "percent": 100,
+            "hz": 240
+        }
+    ],
+    "history": []
+}

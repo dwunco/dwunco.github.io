@@ -1,0 +1,23 @@
+{
+    "id": 38306937,
+    "name": "Buff This",
+    "author": "BoyoftheCones",
+    "creators": [
+        "BoyoftheCones",
+        "CastriX",
+        "TEX02"
+    ],
+    "verifier": "cookiedarookie",
+    "verification": "https://youtu.be/re6IU0mmHIo",
+    "percentToQualify": 75,
+    "password": "Free Copy",
+    "records": [
+        {
+            "user": "dwunco",
+            "link": "https://youtu.be/null",
+            "percent": 100,
+            "hz": 240
+        }
+    ],
+    "history": []
+}

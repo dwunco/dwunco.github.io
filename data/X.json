@@ -1,0 +1,28 @@
+{
+    "id": 17235008,
+    "name": "X",
+    "author": "TriAxis",
+    "creators": [
+        "TriAxis",
+        "TamaN"
+    ],
+    "verifier": "dwunco",
+    "verification": "https://youtu.be/JC18JeojJEQ",
+    "percentToQualify": 100,
+    "password": "1905",
+    "records": [
+        {
+            "user": "IShowMonkeyGMD",
+            "link": "https://youtu.be/null",
+            "percent": 100,
+            "hz": 60
+        },
+        {
+            "user": "cookiedarookie",
+            "link": "https://youtu.be/null",
+            "percent": 100,
+            "hz": 144
+        }
+    ],
+    "history": []
+}

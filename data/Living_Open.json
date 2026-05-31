@@ -1,0 +1,38 @@
+{
+    "id": 96716452,
+    "name": "Living Open",
+    "author": "MaFFaKa",
+    "creators": [
+        "WarningGoat",
+        "Kotoriii",
+        "AlaskiFX",
+        "TheDolb1natoR",
+        "iMinAY",
+        "Kapycta999",
+        "UsteX",
+        "rndx",
+        "FawksGD",
+        "Electro543",
+        "Pineapple Cat",
+        "MaFFaKa"
+    ],
+    "verifier": "cookiedarookie",
+    "verification": "https://youtu.be/NKIg8lm48jk",
+    "percentToQualify": 100,
+    "password": "001337",
+    "records": [
+        {
+            "user": "dwunco",
+            "link": "https://youtu.be/watch?v=null",
+            "percent": 100,
+            "hz": 240
+        },
+        {
+            "user": "Fragment1345",
+            "link": "https://youtu.be/null",
+            "percent": 100,
+            "hz": 60
+        }
+    ],
+    "history": []
+}
