@@ -1,7 +1,7 @@
 import { store } from "../main.js";
 import { embed } from "../util.js";
 import { score } from "../score.js";
-import { fetchEditors, fetchList } from "../content.js";
+import { fetchEditors, fetchList, fetchChangelog } from "../content.js";
 
 import Spinner from "../components/Spinner.js";
 import LevelAuthors from "../components/List/LevelAuthors.js";
@@ -90,8 +90,23 @@ export default {
                             </td>
                         </tr>
                     </table>
+
+                    <div class="changelog-panel" style="margin-top: 30px; border-top: 2px solid #333; padding-top: 20px;">
+                        <h2>Changelog History</h2>
+                        <div v-if="levelHistory.length > 0" style="display: flex; flex-direction: column; gap: 12px; margin-top: 15px;">
+                            <div v-for="log in levelHistory" :key="log.date" style="background: rgba(255,255,255,0.03); border-left: 4px solid #00b54b; padding: 10px 15px; border-radius: 0 4px 4px 0;">
+                                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px;">
+                                    <span style="font-weight: bold; text-transform: uppercase; font-size: 0.85rem; color: #00b54b;">[{{ log.type }}]</span>
+                                    <span style="font-size: 0.85rem; color: #888;">{{ log.date }}</span>
+                                </div>
+                                <p style="margin: 0; font-size: 0.95rem; line-height: 1.4; color: #ddd;">{{ log.notes }}</p>
+                            </div>
+                        </div>
+                        <p v-else style="color: #666; font-style: italic; margin-top: 15px;">No structural changes recorded for this level.</p>
+                    </div>
+
                 </div>
-                <div v-else class="level" style="height: 100%; justify-content: center; align-items: center;">
+                <div class="level" v-else class="level" style="height: 100%; justify-content: center; align-items: center;">
                     <p>(ノಠ益ಠ)ノ彡┻━┻</p>
                 </div>
             </div>
@@ -114,18 +129,10 @@ export default {
                         </ol>
                     </template>
                     <h3>Submission Requirements</h3>
-                    <p>
-                        Achieved the record without using hacks
-                    </p>
-                    <p>
-                        Achieved the record on the level that is listed on the site - please check the level ID before you submit a record
-                    </p>
-                    <p>
-                        Do not use secret routes or bug routes
-                    </p>
-                    <p>
-                        Do not use easy modes, only a record of the unmodified level qualifies
-                    </p>
+                    <p>Achieved the record without using hacks</p>
+                    <p>Achieved the record on the level that is listed on the site - please check the level ID before you submit a record</p>
+                    <p>Do not use secret routes or bug routes</p>
+                    <p>Do not use easy modes, only a record of the unmodified level qualifies</p>
                 </div>
             </div>
         </main>
@@ -133,6 +140,7 @@ export default {
     data: () => ({
         list: [],
         editors: [],
+        changelog: [], // Holds array from _changelog.json
         loading: true,
         selected: 0,
         errors: [],
@@ -154,10 +162,18 @@ export default {
                     : this.level.verification
             );
         },
+        // Automatically isolates and manages entries specific to the open level element
+        levelHistory() {
+            if (!this.level || !this.level.id) return [];
+            return this.changelog
+                .filter(entry => entry.id === this.level.id)
+                .sort((a, b) => new Date(b.date) - new Date(a.date));
+        }
     },
     async mounted() {
         this.list = await fetchList();
         this.editors = await fetchEditors();
+        this.changelog = await fetchChangelog(); // Loads core log system entries
 
         if (!this.list) {
             this.errors = [
@@ -170,7 +186,7 @@ export default {
                     .map(([_, err]) => {
                         return `Failed to load level. (${err}.json)`;
                     })
-            );
+                );
             if (!this.editors) {
                 this.errors.push("Failed to load list editors.");
             }
