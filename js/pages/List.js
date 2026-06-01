@@ -171,6 +171,7 @@ export default {
     }),
     computed: {
         level() {
+            // Keep this cleanly matched to your template's [level, err] breakdown structure
             return this.list && this.list[this.selected]?.[0];
         },
         video() {
@@ -184,12 +185,10 @@ export default {
             );
         },
         levelHistory() {
-            // Read localized history from the specific level file
             if (!this.level || !this.level.history || !Array.isArray(this.level.history)) {
                 return [];
             }
         
-            // Map through the logs to dynamically generate the rankLabel badge text
             const processedHistory = this.level.history.map(log => {
                 let rankLabel = "";
         
@@ -197,22 +196,18 @@ export default {
                     rankLabel = `— #${log.placement}`;
                 } else if (log.type === 'moved' && log.oldPlacement && log.placement) {
                     const delta = log.oldPlacement - log.placement;
-                    // If delta is positive (e.g., 45 - 41 = 4), it moved UP ↑
-                    // If delta is negative (e.g., 41 - 45 = -4), it moved DOWN ↓
                     const indicator = delta > 0 ? `↑${delta}` : `↓${Math.abs(delta)}`;
                     rankLabel = `${indicator} #${log.placement}`;
                 } else if (log.type === 'moved' && log.oldPlacement && !log.placement) {
-                    // Level dropped off the active list into Legacy
                     rankLabel = `↓ Legacy`;
                 }
         
                 return {
                     ...log,
-                    rankLabel // Attach the computed badge text so the template can render it
+                    rankLabel
                 };
             });
         
-            // Standardize display chronologically (newest updates first)
             return processedHistory.sort((a, b) => new Date(b.date) - new Date(a.date));
         }
     },
