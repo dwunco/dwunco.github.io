@@ -17,5 +17,19 @@
             "hz": 240
         }
     ],
-    "history": []
+    "history": [
+        {
+            "date": "2026-04-21",
+            "type": "moved",
+            "oldPlacement": 7,
+            "placement": 8,
+            "notes": "Firewall was added above."
+        },
+        {
+            "date": "2026-04-21",
+            "type": "added",
+            "placement": 7,
+            "notes": "Acropolis added to the list"
+        }
+    ]
 }

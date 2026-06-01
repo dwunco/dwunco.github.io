@@ -41,5 +41,12 @@
             "hz": 144
         }
     ],
-    "history": []
+    "history": [
+        {
+            "date": "2026-04-21",
+            "type": "added",
+            "placement": 23,
+            "notes": "Jawbreaker added to the list"
+        }
+    ]
 }

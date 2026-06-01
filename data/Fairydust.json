@@ -17,5 +17,12 @@
             "hz": 60
         }
     ],
-    "history": []
+    "history": [
+        {
+            "date": "2026-04-21",
+            "type": "added",
+            "placement": 17,
+            "notes": "Fairydust added to the list"
+        }
+    ]
 }

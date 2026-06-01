@@ -17,5 +17,12 @@
             "hz": 144
         }
     ],
-    "history": []
+    "history": [
+        {
+            "date": "2026-04-21",
+            "type": "added",
+            "placement": 20,
+            "notes": "Forest Temple added to the list"
+        }
+    ]
 }

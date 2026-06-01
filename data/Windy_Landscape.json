@@ -10,5 +10,12 @@
     "percentToQualify": 52,
     "password": "Free Copy",
     "records": [],
-    "history": []
+    "history": [
+        {
+            "date": "2026-04-21",
+            "type": "added",
+            "placement": 11,
+            "notes": "Windy Landscape added to the list"
+        }
+    ]
 }

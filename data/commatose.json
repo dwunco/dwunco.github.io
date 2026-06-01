@@ -17,5 +17,12 @@
             "hz": 240
         }
     ],
-    "history": []
+    "history": [
+        {
+            "date": "2026-04-21",
+            "type": "added",
+            "placement": 9,
+            "notes": "commatose added to the list"
+        }
+    ]
 }

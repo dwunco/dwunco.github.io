@@ -53,5 +53,12 @@
             "hz": 60
         }
     ],
-    "history": []
+    "history": [
+        {
+            "date": "2026-04-21",
+            "type": "added",
+            "placement": 22,
+            "notes": "Nine Circles added to the list"
+        }
+    ]
 }

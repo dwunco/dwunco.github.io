@@ -29,5 +29,12 @@
             "hz": 144
         }
     ],
-    "history": []
+    "history": [
+        {
+            "date": "2026-04-21",
+            "type": "added",
+            "placement": 15,
+            "notes": "Stalemate added to the list"
+        }
+    ]
 }
