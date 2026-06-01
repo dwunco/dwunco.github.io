@@ -5,22 +5,32 @@ import { round, score } from './score.js';
  */
 const dir = './data';
 
-// Inside your content.js file:
 export async function fetchList() {
     const list = await fetch('/data/_list.json').then(res => res.json());
     
     const levelPromises = list.map(async (name) => {
         try {
-            // Fetch using the exact capitalization (e.g., Robi.json)
-            const res = await fetch(`/data/${name}.json`);
+            // Method B Fallback Logic:
+            // 1. Try loading the exact case from the list array (e.g., Robi.json)
+            let res = await fetch(`/data/${name}.json`);
+            
+            // 2. If it 404s, seamlessly try loading the lowercase file variant (e.g., robi.json)
+            if (!res.ok) {
+                res = await fetch(`/data/${name.toLowerCase()}.json`);
+            }
+            
             if (!res.ok) throw new Error(name);
             
             const data = await res.json();
             
-            // CRITICAL VUE FIX: Make sure the object has an author property
-            // your list.js uses level.author, but your script creates uploader/creators
+            // Normalize layout structure to protect downstream components
             if (data && !data.author) {
                 data.author = data.uploader || (data.creators && data.creators[0]) || "Unknown";
+            }
+            
+            // Critical Leaderboard Safety: Ensure records array exists so .forEach loop doesn't crash
+            if (data && !data.records) {
+                data.records = [];
             }
             
             return [data, null];
@@ -48,8 +58,8 @@ export async function fetchLeaderboard() {
     const scoreMap = {};
     const errs = [];
     list.forEach(([level, err], rank) => {
-        if (err) {
-            errs.push(err);
+        if (err || !level) {
+            if (err) errs.push(err);
             return;
         }
 
@@ -71,34 +81,36 @@ export async function fetchLeaderboard() {
         });
 
         // Records
-        level.records.forEach((record) => {
-            const user = Object.keys(scoreMap).find(
-                (u) => u.toLowerCase() === record.user.toLowerCase(),
-            ) || record.user;
-            scoreMap[user] ??= {
-                verified: [],
-                completed: [],
-                progressed: [],
-            };
-            const { completed, progressed } = scoreMap[user];
-            if (record.percent === 100) {
-                completed.push({
+        if (Array.isArray(level.records)) {
+            level.records.forEach((record) => {
+                const user = Object.keys(scoreMap).find(
+                    (u) => u.toLowerCase() === record.user.toLowerCase(),
+                ) || record.user;
+                scoreMap[user] ??= {
+                    verified: [],
+                    completed: [],
+                    progressed: [],
+                };
+                const { completed, progressed } = scoreMap[user];
+                if (record.percent === 100) {
+                    completed.push({
+                        rank: rank + 1,
+                        level: level.name,
+                        score: score(rank + 1, 100, level.percentToQualify),
+                        link: record.link,
+                    });
+                    return;
+                }
+
+                progressed.push({
                     rank: rank + 1,
                     level: level.name,
-                    score: score(rank + 1, 100, level.percentToQualify),
+                    percent: record.percent,
+                    score: score(rank + 1, record.percent, level.percentToQualify),
                     link: record.link,
                 });
-                return;
-            }
-
-            progressed.push({
-                rank: rank + 1,
-                level: level.name,
-                percent: record.percent,
-                score: score(rank + 1, record.percent, level.percentToQualify),
-                link: record.link,
             });
-        });
+        }
     });
 
     // Wrap in extra Object containing the user and total score
