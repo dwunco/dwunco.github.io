@@ -25,5 +25,26 @@
             "hz": 240
         }
     ],
-    "history": []
+    "history": [
+        {
+            "date": "2026-05-10",
+            "type": "moved",
+            "oldPlacement": 5,
+            "placement": 6,
+            "notes": "Acu was moved up past this demon"
+        },
+        {
+            "date": "2026-04-26",
+            "type": "moved",
+            "oldPlacement": 4,
+            "placement": 5,
+            "notes": "Sakupen Hell was added above"
+        },
+        {
+            "date": "2026-04-21",
+            "type": "added",
+            "placement": 4,
+            "notes": "Thanatophobia added to the list"
+        }
+    ]
 }

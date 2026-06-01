@@ -25,5 +25,145 @@
             "mobile": true
         }
     ],
-    "history": []
+    "history": [
+        {
+            "date": "2026-05-27",
+            "type": "moved",
+            "oldPlacement": 26,
+            "placement": 24,
+            "notes": "Moved"
+        },
+        {
+            "date": "2026-05-25",
+            "type": "moved",
+            "oldPlacement": 24,
+            "placement": 26,
+            "notes": "Moved"
+        },
+        {
+            "date": "2026-05-24",
+            "type": "moved",
+            "oldPlacement": 23,
+            "placement": 24,
+            "notes": "FFFFFF was added above"
+        },
+        {
+            "date": "2026-05-24",
+            "type": "moved",
+            "oldPlacement": 22,
+            "placement": 23,
+            "notes": "CHROMA was added above"
+        },
+        {
+            "date": "2026-05-23",
+            "type": "moved",
+            "oldPlacement": 21,
+            "placement": 22,
+            "notes": "Buff This was added above"
+        },
+        {
+            "date": "2026-05-23",
+            "type": "moved",
+            "oldPlacement": 20,
+            "placement": 21,
+            "notes": "CHROMA was added above"
+        },
+        {
+            "date": "2026-05-17",
+            "type": "moved",
+            "oldPlacement": 21,
+            "placement": 20,
+            "notes": "Sonic Wave was removed from the list"
+        },
+        {
+            "date": "2026-05-15",
+            "type": "moved",
+            "oldPlacement": 20,
+            "placement": 21,
+            "notes": "Sonic Wave was added above (prank)"
+        },
+        {
+            "date": "2026-05-12",
+            "type": "moved",
+            "oldPlacement": 19,
+            "placement": 20,
+            "notes": "Gunslinga Corridor was added above"
+        },
+        {
+            "date": "2026-05-08",
+            "type": "moved",
+            "oldPlacement": 18,
+            "placement": 19,
+            "notes": "Death Note was added above"
+        },
+        {
+            "date": "2026-05-05",
+            "type": "moved",
+            "oldPlacement": 17,
+            "placement": 18,
+            "notes": "Anya II was added above"
+        },
+        {
+            "date": "2026-04-26",
+            "type": "moved",
+            "oldPlacement": 12,
+            "placement": 17,
+            "notes": "Moved"
+        },
+        {
+            "date": "2026-04-26",
+            "type": "moved",
+            "oldPlacement": 11,
+            "placement": 12,
+            "notes": "Sakupen Hell was added above"
+        },
+        {
+            "date": "2026-04-24",
+            "type": "moved",
+            "oldPlacement": 10,
+            "placement": 11,
+            "notes": "Lunatic Doom Machine was added above"
+        },
+        {
+            "date": "2026-04-23",
+            "type": "moved",
+            "oldPlacement": 9,
+            "placement": 10,
+            "notes": "The  Place was moved up past this demon"
+        },
+        {
+            "date": "2026-04-22",
+            "type": "moved",
+            "oldPlacement": 15,
+            "placement": 9,
+            "notes": "Moved"
+        },
+        {
+            "date": "2026-04-22",
+            "type": "moved",
+            "oldPlacement": 9,
+            "placement": 15,
+            "notes": "Moved"
+        },
+        {
+            "date": "2026-04-22",
+            "type": "moved",
+            "oldPlacement": 7,
+            "placement": 9,
+            "notes": "Swapped with Acropolis"
+        },
+        {
+            "date": "2026-04-22",
+            "type": "moved",
+            "oldPlacement": 9,
+            "placement": 7,
+            "notes": "Swapped with Acropolis"
+        },
+        {
+            "date": "2026-04-21",
+            "type": "added",
+            "placement": 9,
+            "notes": "CraZy II added to the list"
+        }
+    ]
 }

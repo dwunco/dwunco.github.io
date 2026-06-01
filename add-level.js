@@ -1,94 +1,89 @@
-const fs = require('fs');
-const path = require('path');
+import fs from 'fs';
+import path from 'path';
 
-// 1. Grab all inputs from the command line
-const [
-    name, 
-    placement, 
-    id, 
-    filename, 
-    author, 
-    creatorsRaw, 
-    verifier, 
-    verification, 
-    percentToQualify, 
-    password
-] = process.argv.slice(2);
+const DATA_DIR = path.join(process.cwd(), 'data');
+const LIST_PATH = path.join(DATA_DIR, '_list.json');
 
-// Check for the core required arguments to safely run the script
-if (!name || !placement || !id || !filename) {
-    console.error("\x1b[31m%s\x1b[0m", "Error: Missing core arguments!");
-    console.log("\nUsage:");
-    console.log('node add-level.js "Level Name" <placement> <id> <filename-without-json> "Author" "Creator1,Creator2" "Verifier" "Verification-URL" <percent> "Password"');
-    process.exit(1);
-}
+/**
+ * Automatically adds a level, updates the list, and shifts histories down.
+ * @param {Object} levelConfig - The raw details of the new level
+ * @param {number} placement - The 1-indexed rank where this level is being inserted
+ */
+async function insertLevel(levelConfig, placement) {
+    try {
+        const currentDate = new Date().toISOString().split('T')[0]; // Format: YYYY-MM-DD
 
-// 2. Define your folder structures and file paths
-const LIST_PATH = './data/_list.json';
-const CHANGELOG_PATH = './data/_changelog.json';
-const LEVELS_FOLDER = './data'; 
+        // 1. Read and parse the current _list.json
+        if (!fs.existsSync(LIST_PATH)) {
+            console.error('❌ Error: _list.json not found.');
+            return;
+        }
+        const list = JSON.parse(fs.readFileSync(LIST_PATH, 'utf-8'));
 
-const rank = parseInt(placement);
-const targetFileName = `${filename.toLowerCase()}.json`;
+        // Convert 1-based rank to 0-based array index
+        const insertIndex = placement - 1; 
+        const filename = levelConfig.name.toLowerCase().replace(/[^a-z0-9]/g, '_');
+        const newFilePath = path.join(DATA_DIR, `${filename}.json`);
 
-try {
-    // ---- STEP 1: UPDATE THE CENTRAL INDEX FILE ----
-    console.log(`Reading central list from ${LIST_PATH}...`);
-    const listData = JSON.parse(fs.readFileSync(LIST_PATH, 'utf8'));
-    
-    listData.splice(rank - 1, 0, filename.toLowerCase());
-    
-    fs.writeFileSync(LIST_PATH, JSON.stringify(listData, null, 4));
-    console.log(`\x1b[32m✔ Central list updated. Inserted at #${rank}.\x1b[0m`);
+        if (fs.existsSync(newFilePath)) {
+            console.error(`❌ Error: A level file named ${filename}.json already exists!`);
+            return;
+        }
 
-    // ---- STEP 2: CREATE THE INDIVIDUAL DETAILED LEVEL JSON ----
-    const newLevelFilePath = path.join(LEVELS_FOLDER, targetFileName);
-    
-    const creatorsArray = creatorsRaw 
-        ? creatorsRaw.split(',').map(c => c.trim()) 
-        : [author || "Unknown"];
+        // 2. Build the new level object with its initial "added" history entry
+        const newLevelData = {
+            ...levelConfig,
+            history: [
+                {
+                    date: currentDate,
+                    type: "added",
+                    oldPlacement: null,
+                    placement: placement,
+                    notes: `Added to the list at #${placement}.`
+                }
+            ]
+        };
 
-    const levelData = {
-        "id": parseInt(id),
-        "name": name,
-        "author": author || "Unknown",
-        "creators": creatorsArray,
-        "verifier": verifier || "Unknown",
-        "verification": verification || "https://www.youtube.com/watch?v=",
-        "percentToQualify": percentToQualify ? parseInt(percentToQualify) : 100,
-        "password": password || "Free to Copy",
-        "records": []
-    };
+        // 3. Scan and shift existing levels that are pushed down
+        console.log(`🔄 Shifting levels below #${placement}...`);
+        
+        // Loop through the levels that come after the insertion point in the list
+        for (let i = insertIndex; i < list.length; i++) {
+            const affectedPath = list[i];
+            const affectedFilePath = path.join(DATA_DIR, `${affectedPath}.json`);
 
-    if (!fs.existsSync(newLevelFilePath)) {
-        fs.writeFileSync(newLevelFilePath, JSON.stringify(levelData, null, 4));
-        console.log(`\x1b[32m✔ Created new level file with all parameters: ${newLevelFilePath}\x1b[0m`);
-    } else {
-        console.log(`\x1b[33m⚠ File ${targetFileName} already exists. Skipping file creation to protect records.\x1b[0m`);
+            if (fs.existsSync(affectedFilePath)) {
+                const affectedData = JSON.parse(fs.readFileSync(affectedFilePath, 'utf-8'));
+                const oldRank = i + 1;
+                const newRank = oldRank + 1;
+
+                // Initialize history array if missing
+                affectedData.history ??= [];
+
+                // Push the "moved-down" notification log
+                affectedData.history.push({
+                    date: currentDate,
+                    type: "moved",
+                    oldPlacement: oldRank,
+                    placement: newRank,
+                    notes: `${newLevelData.name} was added above.`
+                });
+
+                // Save the shifted level file back to disk
+                fs.writeFileSync(affectedFilePath, JSON.stringify(affectedData, null, 4), 'utf-8');
+            }
+        }
+
+        // 4. Write the brand new level file
+        fs.writeFileSync(newFilePath, JSON.stringify(newLevelData, null, 4), 'utf-8');
+        console.log(`📝 Created ${filename}.json at #${placement}.`);
+
+        // 5. Update and save _list.json
+        list.splice(insertIndex, 0, filename);
+        fs.writeFileSync(LIST_PATH, JSON.stringify(list, null, 4), 'utf-8');
+        console.log(`✅ Successfully updated _list.json!`);
+
+    } catch (error) {
+        console.error('❌ Insertion failed:', error);
     }
-
-    // ---- STEP 3: AUTOMATICALLY GENERATE CHANGELOG ENTRY ----
-    console.log(`Updating changelog history at ${CHANGELOG_PATH}...`);
-    const changelogData = JSON.parse(fs.readFileSync(CHANGELOG_PATH, 'utf8'));
-    
-    // Ensure your script pushes the name when generating a log entry:
-    const newLogEntry = {
-        id: levelId,          // The ID of the level being added
-        name: levelName,      // <-- MAKE SURE THIS LINE IS ADDED!
-        date: new Date().toISOString().split('T')[0], // YYYY-MM-DD format
-        type: "added",
-        placement: placementNumber,
-        notes: `${levelName} added to the list`
-    };
-
-// ... then it pushes to changelog and saves the file
-    changelogData.unshift(newLogEntry);
-    fs.writeFileSync(CHANGELOG_PATH, JSON.stringify(changelogData, null, 4));
-    console.log(`\x1b[32m✔ Changelog entry added successfully!\x1b[0m`);
-    
-    console.log(`\x1b[42m\x1b[30m%s\x1b[0m`, ` Success! ${name} is live at #${rank}. `);
-
-} catch (error) {
-    console.error("\x1b[31m%s\x1b[0m", "An error occurred while modifying files:");
-    console.error(error);
 }

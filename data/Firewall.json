@@ -10,5 +10,75 @@
     "percentToQualify": 52,
     "password": "Free Copy",
     "records": [],
-    "history": []
+    "history": [
+        {
+            "date": "2026-05-30",
+            "type": "moved",
+            "oldPlacement": 11,
+            "placement": 10,
+            "notes": "Moved"
+        },
+        {
+            "date": "2026-05-23",
+            "type": "moved",
+            "oldPlacement": 10,
+            "placement": 11,
+            "notes": "CHROMA was moved past this demon"
+        },
+        {
+            "date": "2026-05-23",
+            "type": "moved",
+            "oldPlacement": 9,
+            "placement": 10,
+            "notes": "Lunatic Doom Machine was moved up past this demon"
+        },
+        {
+            "date": "2026-05-17",
+            "type": "moved",
+            "oldPlacement": 10,
+            "placement": 9,
+            "notes": "Sonic Wave was removed from the list"
+        },
+        {
+            "date": "2026-05-15",
+            "type": "moved",
+            "oldPlacement": 9,
+            "placement": 10,
+            "notes": "Sonic Wave was added above (prank)"
+        },
+        {
+            "date": "2026-05-12",
+            "type": "moved",
+            "oldPlacement": 8,
+            "placement": 9,
+            "notes": "Gunslinga Corridor was added above"
+        },
+        {
+            "date": "2026-05-10",
+            "type": "moved",
+            "oldPlacement": 9,
+            "placement": 8,
+            "notes": "Moved"
+        },
+        {
+            "date": "2026-04-26",
+            "type": "moved",
+            "oldPlacement": 7,
+            "placement": 8,
+            "notes": "Sakupen Hell was added above"
+        },
+        {
+            "date": "2026-04-24",
+            "type": "moved",
+            "oldPlacement": 9,
+            "placement": 10,
+            "notes": "Lunatic Doom Machine was added above"
+        },
+        {
+            "date": "2026-04-21",
+            "type": "added",
+            "placement": 7,
+            "notes": "Firewall added to the list"
+        }
+    ]
 }

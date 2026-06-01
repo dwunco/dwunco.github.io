@@ -1,7 +1,7 @@
 import { store } from "../main.js";
 import { embed } from "../util.js";
 import { score } from "../score.js";
-import { fetchEditors, fetchList, fetchChangelog } from "../content.js";
+import { fetchEditors, fetchList } from "../content.js";
 
 import Spinner from "../components/Spinner.js";
 import LevelAuthors from "../components/List/LevelAuthors.js";
@@ -163,7 +163,6 @@ export default {
     data: () => ({
         list: [],
         editors: [],
-        changelog: [], 
         loading: true,
         selected: 0,
         errors: [],
@@ -185,80 +184,41 @@ export default {
             );
         },
         levelHistory() {
-            if (!this.level || !this.level.id || !this.changelog || !Array.isArray(this.changelog)) return [];
-
-            const chronologicalChangelog = this.changelog
-                .map((log, index) => ({ ...log, originalIndex: index }))
-                .filter(log => log && log.date)
-                .sort((a, b) => {
-                    const dateDiff = new Date(a.date) - new Date(b.date);
-                    if (dateDiff !== 0) return dateDiff;
-                    return b.originalIndex - a.originalIndex;
-                });
-
-            const addedLog = chronologicalChangelog.find(log => log.id === this.level.id && log.type === 'added');
-            if (!addedLog) return [];
-            const placementAtBirth = addedLog.placement || 1;
-            const birthTime = new Date(addedLog.date).getTime();
-
-            let currentSimulatedRank = placementAtBirth;
-            const processedHistory = [];
-
-            for (const log of chronologicalChangelog) {
-                const logTime = new Date(log.date).getTime();
-                if (logTime < birthTime) continue; 
-                
-                if (logTime === birthTime) {
-                    const birthIndex = chronologicalChangelog.indexOf(addedLog);
-                    const currentIndex = chronologicalChangelog.indexOf(log);
-                    if (currentIndex < birthIndex) continue;
-                }
-
-                let levelName = log.name;
-                if (!levelName && this.list) {
-                    const targetInList = this.list.find(([l]) => l && l.id === log.id);
-                    levelName = targetInList ? targetInList[0].name : "A level";
-                }
-
-                if (log.id === this.level.id) {
-                    if (log.type === 'added') {
-                        processedHistory.push({
-                            ...log,
-                            rankLabel: `— #${currentSimulatedRank}`
-                        });
-                    } else if (log.type === 'moved' && log.oldPlacement && log.placement) {
-                        const delta = log.oldPlacement - log.placement;
-                        const indicator = delta > 0 ? `↑${delta}` : `↓${Math.abs(delta)}`;
-                        currentSimulatedRank = log.placement;
-
-                        processedHistory.push({
-                            ...log,
-                            rankLabel: `${indicator} #${currentSimulatedRank}`
-                        });
-                    }
-                } 
-                else if (log.type === 'added' && log.placement) {
-                    if (log.placement <= currentSimulatedRank) {
-                        currentSimulatedRank += 1;
-
-                        processedHistory.push({
-                            date: log.date,
-                            type: 'moved-down',
-                            placement: log.placement,
-                            notes: `${levelName} was added above`,
-                            rankLabel: `↓1 #${currentSimulatedRank}`
-                        });
-                    }
-                }
+            // Read localized history from the specific level file
+            if (!this.level || !this.level.history || !Array.isArray(this.level.history)) {
+                return [];
             }
-
-            return processedHistory.reverse();
+        
+            // Map through the logs to dynamically generate the rankLabel badge text
+            const processedHistory = this.level.history.map(log => {
+                let rankLabel = "";
+        
+                if (log.type === 'added' && log.placement) {
+                    rankLabel = `— #${log.placement}`;
+                } else if (log.type === 'moved' && log.oldPlacement && log.placement) {
+                    const delta = log.oldPlacement - log.placement;
+                    // If delta is positive (e.g., 45 - 41 = 4), it moved UP ↑
+                    // If delta is negative (e.g., 41 - 45 = -4), it moved DOWN ↓
+                    const indicator = delta > 0 ? `↑${delta}` : `↓${Math.abs(delta)}`;
+                    rankLabel = `${indicator} #${log.placement}`;
+                } else if (log.type === 'moved' && log.oldPlacement && !log.placement) {
+                    // Level dropped off the active list into Legacy
+                    rankLabel = `↓ Legacy`;
+                }
+        
+                return {
+                    ...log,
+                    rankLabel // Attach the computed badge text so the template can render it
+                };
+            });
+        
+            // Standardize display chronologically (newest updates first)
+            return processedHistory.sort((a, b) => new Date(b.date) - new Date(a.date));
         }
     },
     async mounted() {
         this.list = await fetchList();
         this.editors = await fetchEditors();
-        this.changelog = await fetchChangelog(); 
 
         if (!this.list) {
             this.errors = [
@@ -283,8 +243,8 @@ export default {
         embed,
         score,
         getLogTypeLabel(log) {
-            let label = log.type;
-            if (log.type === 'moved' && log.oldPlacement && log.placement) {
+            let label = log.type || 'moved';
+            if (label === 'moved' && log.oldPlacement && log.placement) {
                 label = log.placement > log.oldPlacement ? 'moved-down' : 'moved-up';
             }
             return label.replace(/-/g, ' ');

@@ -24,5 +24,19 @@
     "percentToQualify": 100,
     "password": "Free Copy",
     "records": [],
-    "history": []
+    "history": [
+        {
+            "date": "2026-04-21",
+            "type": "added",
+            "placement": 3,
+            "notes": "Cataclysm added to the list"
+        },
+        {
+            "date": "2026-04-26",
+            "type": "moved",
+            "oldPlacement": 3,
+            "placement": 4,
+            "notes": "Sakupen Hell was added above."
+        }
+    ]
 }

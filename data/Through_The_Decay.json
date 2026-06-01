@@ -17,5 +17,54 @@
             "hz": 144
         }
     ],
-    "history": []
+    "history": [
+        {
+            "date": "2026-05-25",
+            "type": "moved",
+            "oldPlacement": 8,
+            "placement": 7,
+            "notes": "Moved"
+        },
+        {
+            "date": "2026-05-17",
+            "type": "moved",
+            "oldPlacement": 9,
+            "placement": 8,
+            "notes": "Sonic Wave was removed from the list"
+        },
+        {
+            "date": "2026-05-15",
+            "type": "moved",
+            "oldPlacement": 8,
+            "placement": 9,
+            "notes": "Sonic Wave was added above (prank)"
+        },
+        {
+            "date": "2026-05-12",
+            "type": "moved",
+            "oldPlacement": 7,
+            "placement": 8,
+            "notes": "Gunslinga Corridor was added above."
+        },
+        {
+            "date": "2026-04-26",
+            "type": "moved",
+            "oldPlacement": 6,
+            "placement": 7,
+            "notes": "Sakupen Hell was added above."
+        },
+        {
+            "date": "2026-04-24",
+            "type": "moved",
+            "oldPlacement": 8,
+            "placement": 9,
+            "notes": "Lunatic Doom Machine was added above."
+        },
+        {
+            "date": "2026-04-21",
+            "type": "added",
+            "placement": 6,
+            "notes": "Through The Decay added to the list"
+        }
+    ]
 }

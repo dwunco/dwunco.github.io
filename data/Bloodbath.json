@@ -27,5 +27,33 @@
             "hz": 144
         }
     ],
-    "history": []
+    "history": [
+        {
+            "date": "2026-05-17",
+            "type": "moved",
+            "oldPlacement": 3,
+            "placement": 2,
+            "notes": "Sonic Wave was removed from the list"
+        },
+        {
+            "date": "2026-05-15",
+            "type": "moved",
+            "oldPlacement": 2,
+            "placement": 3,
+            "notes": "Sonic Wave was added above (prank)"
+        },
+        {
+            "date": "2026-04-26",
+            "type": "moved",
+            "oldPlacement": 1,
+            "placement": 2,
+            "notes": "Sakupen Hell was added above"
+        },
+        {
+            "date": "2026-04-21",
+            "type": "added",
+            "placement": 1,
+            "notes": "Bloodbath added to the list"
+        }
+    ]
 }

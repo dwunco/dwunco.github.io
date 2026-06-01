@@ -11,5 +11,26 @@
     "percentToQualify": 32,
     "password": "895562",
     "records": [],
-    "history": []
+    "history": [
+        {
+            "date": "2026-05-17",
+            "type": "moved",
+            "oldPlacement": 2,
+            "placement": 1,
+            "notes": "Sonic Wave was removed from the list"
+        },
+        {
+            "date": "2026-05-12",
+            "type": "moved",
+            "oldPlacement": 1,
+            "placement": 2,
+            "notes": "Sonic Wave was added above (prank)"
+        },
+        {
+            "date": "2026-04-26",
+            "type": "added",
+            "placement": 1,
+            "notes": "Sakupen Hell added to the list"
+        }
+    ]
 }

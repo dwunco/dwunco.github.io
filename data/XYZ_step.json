@@ -17,5 +17,12 @@
             "hz": 288
         }
     ],
-    "history": []
+    "history": [
+        {
+            "date": "2026-05-31",
+            "type": "added",
+            "placement": 155,
+            "notes": "XYZ step added to the list"
+        }
+    ]
 }

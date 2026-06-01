@@ -10,5 +10,26 @@
     "percentToQualify": 71,
     "password": "NA",
     "records": [],
-    "history": []
+    "history": [
+        {
+            "date": "2026-05-30",
+            "type": "moved",
+            "oldPlacement": 10,
+            "placement": 11,
+            "notes": "Firewall was moved up past this demon"
+        },
+        {
+            "date": "2026-05-23",
+            "type": "moved",
+            "oldPlacement": 12,
+            "placement": 10,
+            "notes": "Moved"
+        },
+        {
+            "date": "2026-05-23",
+            "type": "added",
+            "placement": 12,
+            "notes": "CHROMA added to the list"
+        }
+    ]
 }

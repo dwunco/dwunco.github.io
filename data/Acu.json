@@ -17,5 +17,40 @@
             "hz": 60
         }
     ],
-    "history": []
+    "history": [
+        {
+            "date": "2026-05-17",
+            "type": "moved",
+            "oldPlacement": 6,
+            "placement": 5,
+            "notes": "Sonic Wave was removed from the list"
+        },
+        {
+            "date": "2026-05-15",
+            "type": "moved",
+            "oldPlacement": 5,
+            "placement": 6,
+            "notes": "Sonic Wave was added above (prank)"
+        },
+        {
+            "date": "2026-05-10",
+            "type": "moved",
+            "oldPlacement": 6,
+            "placement": 5,
+            "notes": "Moved"
+        },
+        {
+            "date": "2026-04-26",
+            "type": "moved",
+            "oldPlacement": 5,
+            "placement": 6,
+            "notes": "Sakupen Hell was added above."
+        },
+        {
+            "date": "2026-04-21",
+            "type": "added",
+            "placement": 5,
+            "notes": "Acu added to the list"
+        }
+    ]
 }
