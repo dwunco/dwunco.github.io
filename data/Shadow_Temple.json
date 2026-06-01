@@ -10,5 +10,13 @@
     "percentToQualify": 62,
     "password": "NA",
     "records": [],
-    "history": []
+    "history": [
+        {
+            "date": "2026-06-01",
+            "type": "moved",
+            "oldPlacement": 33,
+            "placement": 34,
+            "notes": "Robi was added above"
+        }
+    ]
 }

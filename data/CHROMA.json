@@ -30,6 +30,13 @@
             "type": "added",
             "placement": 12,
             "notes": "CHROMA added to the list"
+        },
+        {
+            "date": "2026-06-01",
+            "type": "moved",
+            "oldPlacement": 11,
+            "placement": 12,
+            "notes": "Robi was added above"
         }
     ]
 }

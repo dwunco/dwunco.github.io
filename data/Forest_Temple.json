@@ -23,6 +23,13 @@
             "type": "added",
             "placement": 20,
             "notes": "Forest Temple added to the list"
+        },
+        {
+            "date": "2026-06-01",
+            "type": "moved",
+            "oldPlacement": 28,
+            "placement": 29,
+            "notes": "Robi was added above"
         }
     ]
 }

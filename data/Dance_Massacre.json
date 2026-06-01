@@ -16,6 +16,13 @@
             "type": "added",
             "placement": 18,
             "notes": "Dance Massacre added to the list"
+        },
+        {
+            "date": "2026-06-01",
+            "type": "moved",
+            "oldPlacement": 31,
+            "placement": 32,
+            "notes": "Robi was added above"
         }
     ]
 }

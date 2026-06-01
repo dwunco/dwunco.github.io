@@ -31,5 +31,13 @@
             "mobile": true
         }
     ],
-    "history": []
+    "history": [
+        {
+            "date": "2026-06-01",
+            "type": "moved",
+            "oldPlacement": 122,
+            "placement": 123,
+            "notes": "Robi was added above"
+        }
+    ]
 }

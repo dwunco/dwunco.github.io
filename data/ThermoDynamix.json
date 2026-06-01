@@ -29,6 +29,13 @@
             "type": "added",
             "placement": 21,
             "notes": "ThermoDynamix added to the list"
+        },
+        {
+            "date": "2026-06-01",
+            "type": "moved",
+            "oldPlacement": 37,
+            "placement": 38,
+            "notes": "Robi was added above"
         }
     ]
 }

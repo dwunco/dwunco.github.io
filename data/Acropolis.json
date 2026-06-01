@@ -30,6 +30,13 @@
             "type": "added",
             "placement": 7,
             "notes": "Acropolis added to the list"
+        },
+        {
+            "date": "2026-06-01",
+            "type": "moved",
+            "oldPlacement": 13,
+            "placement": 14,
+            "notes": "Robi was added above"
         }
     ]
 }

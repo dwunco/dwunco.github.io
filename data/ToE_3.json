@@ -16,6 +16,13 @@
             "type": "added",
             "placement": 24,
             "notes": "TOE III (wrong level) added to list"
+        },
+        {
+            "date": "2026-06-01",
+            "type": "moved",
+            "oldPlacement": 47,
+            "placement": 48,
+            "notes": "Robi was added above"
         }
     ]
 }

@@ -23,6 +23,13 @@
             "type": "added",
             "placement": 155,
             "notes": "XYZ step added to the list"
+        },
+        {
+            "date": "2026-06-01",
+            "type": "moved",
+            "oldPlacement": 153,
+            "placement": 154,
+            "notes": "Robi was added above"
         }
     ]
 }

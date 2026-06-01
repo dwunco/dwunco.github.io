@@ -16,6 +16,13 @@
             "type": "added",
             "placement": 14,
             "notes": "Magma Bound added to the list"
+        },
+        {
+            "date": "2026-06-01",
+            "type": "moved",
+            "oldPlacement": 16,
+            "placement": 17,
+            "notes": "Robi was added above"
         }
     ]
 }

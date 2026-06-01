@@ -93,6 +93,13 @@
             "type": "added",
             "placement": 7,
             "notes": "Firewall added to the list"
+        },
+        {
+            "date": "2026-06-01",
+            "type": "moved",
+            "oldPlacement": 10,
+            "placement": 11,
+            "notes": "Robi was added above"
         }
     ]
 }

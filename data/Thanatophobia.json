@@ -45,6 +45,13 @@
             "type": "added",
             "placement": 4,
             "notes": "Thanatophobia added to the list"
+        },
+        {
+            "date": "2026-06-01",
+            "type": "moved",
+            "oldPlacement": 6,
+            "placement": 7,
+            "notes": "Robi was added above"
         }
     ]
 }

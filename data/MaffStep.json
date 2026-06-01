@@ -37,6 +37,13 @@
             "oldPlacement": 3,
             "placement": 4,
             "notes": "Sakupen Hell was added above."
+        },
+        {
+            "date": "2026-06-01",
+            "type": "moved",
+            "oldPlacement": 90,
+            "placement": 91,
+            "notes": "Robi was added above"
         }
     ]
 }

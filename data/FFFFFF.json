@@ -16,6 +16,13 @@
             "type": "added",
             "placement": 12,
             "notes": "FFFFFF added to the list"
+        },
+        {
+            "date": "2026-06-01",
+            "type": "moved",
+            "oldPlacement": 12,
+            "placement": 13,
+            "notes": "Robi was added above"
         }
     ]
 }

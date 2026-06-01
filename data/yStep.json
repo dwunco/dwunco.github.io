@@ -23,5 +23,13 @@
             "hz": 240
         }
     ],
-    "history": []
+    "history": [
+        {
+            "date": "2026-06-01",
+            "type": "moved",
+            "oldPlacement": 136,
+            "placement": 137,
+            "notes": "Robi was added above"
+        }
+    ]
 }

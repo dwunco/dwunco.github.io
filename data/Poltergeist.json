@@ -23,6 +23,13 @@
             "type": "added",
             "placement": 12,
             "notes": "Poltergeist added to the list"
+        },
+        {
+            "date": "2026-06-01",
+            "type": "moved",
+            "oldPlacement": 18,
+            "placement": 19,
+            "notes": "Robi was added above"
         }
     ]
 }

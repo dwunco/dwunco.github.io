@@ -23,6 +23,13 @@
             "type": "added",
             "placement": 17,
             "notes": "Fairydust added to the list"
+        },
+        {
+            "date": "2026-06-01",
+            "type": "moved",
+            "oldPlacement": 29,
+            "placement": 30,
+            "notes": "Robi was added above"
         }
     ]
 }

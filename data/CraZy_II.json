@@ -164,6 +164,13 @@
             "type": "added",
             "placement": 9,
             "notes": "CraZy II added to the list"
+        },
+        {
+            "date": "2026-06-01",
+            "type": "moved",
+            "oldPlacement": 24,
+            "placement": 25,
+            "notes": "Robi was added above"
         }
     ]
 }

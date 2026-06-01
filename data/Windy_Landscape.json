@@ -16,6 +16,13 @@
             "type": "added",
             "placement": 11,
             "notes": "Windy Landscape added to the list"
+        },
+        {
+            "date": "2026-06-01",
+            "type": "moved",
+            "oldPlacement": 14,
+            "placement": 15,
+            "notes": "Robi was added above"
         }
     ]
 }

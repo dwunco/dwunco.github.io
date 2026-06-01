@@ -17,6 +17,13 @@
             "type": "added",
             "placement": 10,
             "notes": "Denouement added to the list"
+        },
+        {
+            "date": "2026-06-01",
+            "type": "moved",
+            "oldPlacement": 22,
+            "placement": 23,
+            "notes": "Robi was added above"
         }
     ]
 }

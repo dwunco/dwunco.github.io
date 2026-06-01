@@ -47,6 +47,13 @@
             "type": "added",
             "placement": 23,
             "notes": "Jawbreaker added to the list"
+        },
+        {
+            "date": "2026-06-01",
+            "type": "moved",
+            "oldPlacement": 40,
+            "placement": 41,
+            "notes": "Robi was added above"
         }
     ]
 }
