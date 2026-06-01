@@ -1,21 +1,21 @@
 {
-    "name": "Robi",
-    "id": 88172786,
-    "uploader": "robianny",
-    "creators": [
-        "robianny",
-        "Patrick61804"
-    ],
-    "verifier": "cookiedarookie",
-    "ytUrl": "https://youtu.be/vXgNhvmMj3w",
-    "listPercent": 67,
-    "password": "Free Copy",
-    "history": [
-        {
-            "date": "2026-06-01",
-            "type": "added",
-            "placement": 5,
-            "notes": "Robi added to the list"
-        }
-    ]
+  "name": "Robi",
+  "id": 88172786,
+  "uploader": "robianny",
+  "creators": [
+    "robianny",
+    "Patrick61804"
+  ],
+  "verifier": "cookiedarookie",
+  "ytUrl": "https://youtu.be/vXgNhvmMj3w",
+  "listPercent": 67,
+  "password": "Free Copy",
+  "history": [
+    {
+      "date": "2026-06-01",
+      "type": "added",
+      "placement": 5,
+      "notes": "Robi added to the list"
+    }
+  ]
 }
