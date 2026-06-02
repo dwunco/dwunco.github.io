@@ -1,101 +1,110 @@
 import fs from 'fs';
 import path from 'path';
+import { fileURLToPath } from 'url';
 
-const DATA_DIR = path.join(process.cwd(), 'data');
-const LIST_PATH = path.join(DATA_DIR, '_list.json');
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
-// 1. Capture terminal arguments cleanly
-const [
-    ,, 
-    levelName, 
-    placementStr, 
-    levelId, 
-    fileName, 
-    uploader, 
-    rawCreators, 
-    verifier, 
-    ytUrl, 
-    listPercent, 
-    password
-] = process.argv;
+const levelName     = process.argv[2];
+const placement     = parseInt(process.argv[3], 10);
+const levelId       = parseInt(process.argv[4], 10) || 0;
+const fileName      = process.argv[5];
+const uploader      = process.argv[6] || "Unknown";
+const creatorsRaw   = process.argv[7] || "";
+const verifier      = process.argv[8] || "Unknown";
+const ytUrl         = process.argv[9] || "";
+const listPercent   = parseInt(process.argv[10], 10) || 100;
+const password      = process.argv[11] || "Free Copy";
+const customDate    = process.argv[12];
 
-// Basic validation check
-if (!levelName || !placementStr || !fileName) {
-    console.error("❌ Missing arguments! Make sure you fill out all fields.");
+if (!levelName || isNaN(placement) || !fileName) {
+    console.error('❌ Error: Missing required arguments.');
     process.exit(1);
 }
 
-const placement = parseInt(placementStr, 10);
-const insertIndex = placement - 1; // 1-indexed rank to 0-indexed array index
-const currentDate = new Date().toISOString().split('T')[0];
+const creatorsArray = creatorsRaw.split(',').map(c => c.trim()).filter(c => c !== "");
 
-try {
-    // 2. Read master list
-    if (!fs.existsSync(LIST_PATH)) {
-        fs.writeFileSync(LIST_PATH, JSON.stringify([], null, 4));
-    }
-    const list = JSON.parse(fs.readFileSync(LIST_PATH, 'utf-8'));
+// Standardize incoming date strictly to YYYY-MM-DD format
+let finalLogDate = customDate || new Date().toISOString().split('T')[0];
+finalLogDate = finalLogDate.replace(/\//g, '-'); 
 
-    // 3. Process the creator string into an array automatically
-    const creatorsArray = rawCreators ? rawCreators.split(',').map(c => c.trim()) : [];
+const dataDir = path.join(__dirname, 'data');
+const listPath = path.join(dataDir, '_list.json');
+let masterList = [];
 
-    // 4. Create the new level file data structure
-    const newLevelData = {
-        name: levelName,
-        id: parseInt(levelId, 10) || null,
-        uploader: uploader || "",
-        creators: creatorsArray,
-        verifier: verifier || "",
-        ytUrl: ytUrl || "",
-        listPercent: parseInt(listPercent, 10) || 100,
-        password: password || "",
-        history: [
-            {
-                date: currentDate,
-                type: "added",
-                placement: placement,
-                notes: `${levelName} added to the list`
-            }
-        ]
-    };
+if (fs.existsSync(listPath)) {
+    masterList = JSON.parse(fs.readFileSync(listPath, 'utf8'));
+}
 
-    // 5. CASCADE UPDATE: Shift ranks for all affected levels BELOW the new one
-    console.log(`🔄 Shifting history for levels pushed down by the new addition...`);
-    for (let i = insertIndex; i < list.length; i++) {
-        const affectedFilename = list[i];
-        const affectedFilePath = path.join(DATA_DIR, `${affectedFilename}.json`);
+// Strip out the level if it already exists in the list to avoid duplication
+masterList = masterList.filter(name => name.toLowerCase() !== fileName.toLowerCase());
 
-        if (fs.existsSync(affectedFilePath)) {
-            const affectedData = JSON.parse(fs.readFileSync(affectedFilePath, 'utf-8'));
-            const oldRank = i + 1;
-            const newRank = oldRank + 1;
+// Directly respect the user's explicit placement request
+let targetIndex = Math.max(0, placement - 1);
+if (targetIndex > masterList.length) {
+    targetIndex = masterList.length; // Prevent array fragmentation gaps
+}
 
-            affectedData.history ??= [];
-            affectedData.history.push({
-                date: currentDate,
-                type: "moved",
-                oldPlacement: oldRank,
-                placement: newRank,
-                notes: `${levelName} was added above`
+// Grab all levels sitting at or below our target insertion point
+const shiftedLevels = masterList.slice(targetIndex);
+
+// Inject the new file name straight into the true index position inside _list.json
+masterList.splice(targetIndex, 0, fileName);
+fs.writeFileSync(listPath, JSON.stringify(masterList, null, 4));
+
+console.log(`📝 Splice Complete. Generating history cascading updates...\n`);
+
+// Update the history array inside EVERY affected level file
+shiftedLevels.forEach((existingFileName) => {
+    const filePath = path.join(dataDir, `${existingFileName}.json`);
+    
+    if (fs.existsSync(filePath)) {
+        try {
+            const fileData = JSON.parse(fs.readFileSync(filePath, 'utf8'));
+            
+            const newRank = masterList.indexOf(existingFileName) + 1;
+            const oldRank = newRank - 1;
+
+            if (!fileData.history) fileData.history = [];
+
+            // Add the "added above" notice to the history of the level that got pushed down
+            fileData.history.unshift({
+                "date": finalLogDate,
+                "type": "moved",
+                "oldPlacement": oldRank,
+                "placement": newRank,
+                "notes": `${levelName} was added above`
             });
 
-            fs.writeFileSync(affectedFilePath, JSON.stringify(affectedData, null, 4), 'utf-8');
+            fs.writeFileSync(filePath, JSON.stringify(fileData, null, 4));
+            console.log(`🔄 Cascaded update to ${existingFileName}.json (Moved #${oldRank} -> #${newRank})`);
+        } catch (e) {
+            console.error(`⚠️ Failed to cascade update to ${existingFileName}.json:`, e.message);
         }
     }
+});
 
-    // 6. Splice new level file name into master list and save
-    list.splice(insertIndex, 0, fileName);
-    fs.writeFileSync(LIST_PATH, JSON.stringify(list, null, 4), 'utf-8');
+// Generate the new level's individual JSON file
+const newLevelData = {
+    "name": levelName,
+    "id": levelId,
+    "author": uploader,
+    "creators": creatorsArray,
+    "verifier": verifier,
+    "verification": ytUrl,
+    "percentToQualify": listPercent,
+    "password": password,
+    "records": [],
+    "history": [
+        {
+            "date": finalLogDate,
+            "type": "added",
+            "placement": targetIndex + 1,
+            "notes": `${levelName} added to the list`
+        }
+    ]
+};
 
-    // 7. Write the brand new level file to disk
-    const newLevelFilePath = path.join(DATA_DIR, `${fileName}.json`);
-    fs.writeFileSync(newLevelFilePath, JSON.stringify(newLevelData, null, 4), 'utf-8');
-
-    console.log(`\n==================================================`);
-    console.log(`✅ Successfully added "${levelName}" at Rank #${placement}!`);
-    console.log(`📝 Shifted ranks and updated logs for all subsequent levels.`);
-    console.log(`==================================================`);
-
-} catch (err) {
-    console.error("❌ Failed to add level:", err);
-}
+const levelFilePath = path.join(dataDir, `${fileName}.json`);
+fs.writeFileSync(levelFilePath, JSON.stringify(newLevelData, null, 4));
+console.log(`\n✅ Successfully generated ${levelFilePath} at ranking position #${targetIndex + 1}`);

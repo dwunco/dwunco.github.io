@@ -12,6 +12,20 @@
     "records": [],
     "history": [
         {
+            "date": "2026-06-02",
+            "type": "moved",
+            "oldPlacement": 67,
+            "placement": 68,
+            "notes": "Sweater Weather was added above"
+        },
+        {
+            "date": "2026-06-01",
+            "type": "moved",
+            "oldPlacement": 66,
+            "placement": 67,
+            "notes": "Nilscapes was added above"
+        },
+        {
             "date": "2026-06-01",
             "type": "moved",
             "oldPlacement": 65,

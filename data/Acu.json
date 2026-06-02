@@ -25,6 +25,13 @@
     ],
     "history": [
         {
+            "date": "2026-06-02",
+            "type": "moved",
+            "oldPlacement": 6,
+            "placement": 7,
+            "notes": "Sweater Weather was added above"
+        },
+        {
             "date": "2026-05-17",
             "type": "moved",
             "oldPlacement": 6,

@@ -19,17 +19,11 @@
     ],
     "history": [
         {
-            "date": "2026-04-21",
+            "date": "2026-06-02",
             "type": "moved",
-            "oldPlacement": 7,
-            "placement": 8,
-            "notes": "Firewall was added above."
-        },
-        {
-            "date": "2026-04-21",
-            "type": "added",
-            "placement": 7,
-            "notes": "Acropolis added to the list"
+            "oldPlacement": 14,
+            "placement": 15,
+            "notes": "Sweater Weather was added above"
         },
         {
             "date": "2026-06-01",
@@ -37,6 +31,61 @@
             "oldPlacement": 13,
             "placement": 14,
             "notes": "Robi was added above"
+        },
+        {
+            "date": "2026-05-24",
+            "type": "moved",
+            "oldPlacement": 12,
+            "placement": 13,
+            "notes": "FFFFFF was added above"
+        },
+        {
+            "date": "2026-05-23",
+            "type": "moved",
+            "oldPlacement": 11,
+            "placement": 12,
+            "notes": "CHROMA was added above"
+        },
+        {
+            "date": "2026-05-17",
+            "type": "moved",
+            "oldPlacement": 12,
+            "placement": 11,
+            "notes": "Sonic Wave was removed from the list"
+        },
+        {
+            "date": "2026-05-15",
+            "type": "moved",
+            "oldPlacement": 11,
+            "placement": 12,
+            "notes": "Sonic Wave was added above (prank)"
+        },
+        {
+            "date": "2026-05-12",
+            "type": "moved",
+            "oldPlacement": 10,
+            "placement": 11,
+            "notes": "Gunslinga Corridor was added above"
+        },
+        {
+            "date": "2026-04-26",
+            "type": "moved",
+            "oldPlacement": 9,
+            "placement": 10,
+            "notes": "Sakupen Hell was added above"
+        },
+        {
+            "date": "2026-04-24",
+            "type": "moved",
+            "oldPlacement": 8,
+            "placement": 9,
+            "notes": "Lunatic Doom Machine was added above"
+        },
+        {
+            "date": "2026-04-21",
+            "type": "added",
+            "placement": 8,
+            "notes": "Acropolis added to the list"
         }
     ]
 }
