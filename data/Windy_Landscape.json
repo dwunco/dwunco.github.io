@@ -28,50 +28,64 @@
         {
             "date": "2026-05-24",
             "type": "moved",
-            "oldPlacement": 13,
-            "placement": 14,
+            "oldPlacement": 16,
+            "placement": 17,
             "notes": "FFFFFF was added above"
         },
         {
             "date": "2026-05-23",
             "type": "moved",
-            "oldPlacement": 12,
-            "placement": 11,
+            "oldPlacement": 15,
+            "placement": 16,
             "notes": "CHROMA was added above"
         },
         {
             "date": "2026-05-17",
             "type": "moved",
-            "oldPlacement": 12,
-            "placement": 11,
+            "oldPlacement": 16,
+            "placement": 15,
             "notes": "Sonic Wave was removed from the list"
         },
         {
             "date": "2026-05-15",
             "type": "moved",
-            "oldPlacement": 11,
-            "placement": 12,
+            "oldPlacement": 15,
+            "placement": 16,
             "notes": "Sonic Wave was added above (prank)"
         },
         {
             "date": "2026-05-12",
             "type": "moved",
-            "oldPlacement": 10,
-            "placement": 11,
+            "oldPlacement": 14,
+            "placement": 15,
             "notes": "Gunslinga Corridor was added above"
         },
         {
             "date": "2026-04-26",
             "type": "moved",
-            "oldPlacement": 9,
-            "placement": 10,
+            "oldPlacement": 15,
+            "placement": 14,
+            "notes": "CraZy II was moved down past this demon"
+        },
+        {
+            "date": "2026-04-26",
+            "type": "moved",
+            "oldPlacement": 14,
+            "placement": 15,
             "notes": "Sakupen Hell was added above"
+        },
+        {
+            "date": "2026-04-26",
+            "type": "moved",
+            "oldPlacement": 15,
+            "placement": 14,
+            "notes": "Moved"
         },
         {
             "date": "2026-04-24",
             "type": "moved",
-            "oldPlacement": 8,
-            "placement": 9,
+            "oldPlacement": 14,
+            "placement": 15,
             "notes": "Lunatic Doom Machine was added above"
         },
         {
