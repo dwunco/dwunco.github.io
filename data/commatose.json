@@ -40,6 +40,27 @@
             "notes": "Robi was added above"
         },
         {
+            "date": "2026-04-22",
+            "type": "moved",
+            "oldPlacement": 9,
+            "placement": 10,
+            "notes": "CraZy II was moved up past this demon"
+        },
+        {
+            "date": "2026-04-22",
+            "type": "moved",
+            "oldPlacement": 10,
+            "placement": 9,
+            "notes": "CraZy II was moved down past this demon"
+        },
+        {
+            "date": "2026-04-21",
+            "type": "moved",
+            "oldPlacement": 9,
+            "placement": 10,
+            "notes": "CraZy II was added above"
+        },
+        {
             "date": "2026-04-21",
             "type": "added",
             "placement": 9,
