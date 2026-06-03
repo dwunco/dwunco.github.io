@@ -40,6 +40,26 @@
             "oldPlacement": 15,
             "placement": 16,
             "notes": "Robi was added above"
+        },
+        {
+            "date": "2026-05-24",
+            "type": "moved",
+            "oldPlacement": 14,
+            "placement": 15,
+            "notes": "FFFFFF was added above"
+        },
+        {
+            "date": "2026-05-23",
+            "type": "moved",
+            "oldPlacement": 13,
+            "placement": 14,
+            "notes": "Windy Landscape was moved up past this demon"
+        },
+        {
+            "date": "2026-05-23",
+            "type": "added",
+            "placement": 13,
+            "notes": "Buff This added to the list"
         }
     ]
 }

@@ -26,11 +26,32 @@
             "notes": "Robi was added above"
         },
         {
-            "date": "2026-05-24",
+            "date": "2026-05-27",
+            "type": "moved",
+            "oldPlacement": 15,
+            "placement": 14,
+            "notes": "Moved"
+        },
+        {
+            "date": "2026-05-25",
             "type": "moved",
             "oldPlacement": 16,
-            "placement": 17,
+            "placement": 15,
+            "notes": "Moved"
+        },
+        {
+            "date": "2026-05-24",
+            "type": "moved",
+            "oldPlacement": 15,
+            "placement": 16,
             "notes": "FFFFFF was added above"
+        },
+        {
+            "date": "2026-05-23",
+            "type": "moved",
+            "oldPlacement": 16,
+            "placement": 15,
+            "notes": "Denouement was moved down past this demon"
         },
         {
             "date": "2026-05-23",

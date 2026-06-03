@@ -9,7 +9,14 @@
     "verification": "https://youtu.be/oWbd4yMze54",
     "percentToQualify": 100,
     "password": "NA",
-    "records": [],
+    "records": [
+        {
+            "user": "hd123401",
+            "link": "https://youtu.be/null",
+            "percent": 100,
+            "hz": 60
+        }
+    ],
     "history": [
         {
             "date": "2026-06-02",
