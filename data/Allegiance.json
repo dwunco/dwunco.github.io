@@ -26,18 +26,32 @@
             "notes": "Sonic Wave was removed from the list"
         },
         {
+            "date": "2026-05-16",
+            "type": "moved",
+            "oldPlacement": 5,
+            "placement": 4,
+            "notes": "Moved"
+        },
+        {
             "date": "2026-05-15",
+            "type": "moved",
+            "oldPlacement": 4,
+            "placement": 5,
+            "notes": "Sonic Wave was added above (prank)"
+        },
+        {
+            "date": "2026-05-10",
             "type": "moved",
             "oldPlacement": 3,
             "placement": 4,
-            "notes": "Sonic Wave was added above (prank)"
+            "notes": "Cataclysm was moved up past this demon"
         },
         {
             "date": "2026-04-26",
             "type": "moved",
             "oldPlacement": 2,
             "placement": 3,
-            "notes": "Sakupen Hell was added above."
+            "notes": "Sakupen Hell was added above"
         },
         {
             "date": "2026-04-21",
