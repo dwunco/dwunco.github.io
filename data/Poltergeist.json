@@ -40,17 +40,73 @@
             "notes": "Nilscapes was added above"
         },
         {
-            "date": "2026-04-21",
-            "type": "added",
-            "placement": 12,
-            "notes": "Poltergeist added to the list"
-        },
-        {
             "date": "2026-06-01",
             "type": "moved",
             "oldPlacement": 18,
             "placement": 19,
             "notes": "Robi was added above"
+        },
+        {
+            "date": "2026-06-01",
+            "type": "moved",
+            "oldPlacement": 15,
+            "placement": 16,
+            "notes": "Sakupen Hell was added above"
+        },
+        {
+            "date": "2026-04-26",
+            "type": "moved",
+            "oldPlacement": 14,
+            "placement": 15,
+            "notes": "Windy Landscape was moved up past this demon"
+        },
+        {
+            "date": "2026-04-24",
+            "type": "moved",
+            "oldPlacement": 13,
+            "placement": 14,
+            "notes": "Lunatic Doom Machine was added above"
+        },
+        {
+            "date": "2026-04-23",
+            "type": "moved",
+            "oldPlacement": 14,
+            "placement": 13,
+            "notes": "commatose was moved down past this demon"
+        },
+        {
+            "date": "2026-04-22",
+            "type": "moved",
+            "oldPlacement": 13,
+            "placement": 14,
+            "notes": "CraZy II was moved up past this demon"
+        },
+        {
+            "date": "2026-04-22",
+            "type": "moved",
+            "oldPlacement": 12,
+            "placement": 13,
+            "notes": "The  Place was moved up past this demon"
+        },
+        {
+            "date": "2026-04-22",
+            "type": "moved",
+            "oldPlacement": 13,
+            "placement": 12,
+            "notes": "CraZy II was moved down past this demmon"
+        },
+        {
+            "date": "2026-04-21",
+            "type": "moved",
+            "oldPlacement": 12,
+            "placement": 13,
+            "notes": "CraZy II was added above"
+        },
+        {
+            "date": "2026-04-21",
+            "type": "added",
+            "placement": 12,
+            "notes": "Poltergeist added to the list"
         }
     ]
 }
