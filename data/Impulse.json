@@ -9,8 +9,22 @@
     "verification": "https://youtu.be/hMzQIllaUjI",
     "percentToQualify": 100,
     "password": "NA",
-    "records": [],
+    "records": [
+        {
+            "user": "Jamo1886",
+            "link": "https://youtu.be/null",
+            "percent": 100,
+            "hz": 60
+        }
+    ],
     "history": [
+        {
+            "date": "2026-06-03",
+            "type": "moved",
+            "oldPlacement": 138,
+            "placement": 139,
+            "notes": "HelioPOSSIBLE was added above"
+        },
         {
             "date": "2026-06-02",
             "type": "moved",

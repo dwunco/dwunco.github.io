@@ -19,12 +19,18 @@
         {
             "user": "dwunco",
             "link": "https://youtu.be/watch?v=null",
-            "percent": 89,
+            "percent": 100,
             "hz": 288
         }
-        
     ],
     "history": [
+        {
+            "date": "2026-06-03",
+            "type": "moved",
+            "oldPlacement": 31,
+            "placement": 32,
+            "notes": "HelioPOSSIBLE was added above"
+        },
         {
             "date": "2026-06-02",
             "type": "moved",

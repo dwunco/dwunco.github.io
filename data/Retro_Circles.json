@@ -26,6 +26,13 @@
     ],
     "history": [
         {
+            "date": "2026-06-03",
+            "type": "moved",
+            "oldPlacement": 108,
+            "placement": 109,
+            "notes": "HelioPOSSIBLE was added above"
+        },
+        {
             "date": "2026-06-02",
             "type": "moved",
             "oldPlacement": 107,
