@@ -144,3 +144,11 @@ tr.verifier-highlight .badge {
     padding: 0;
     vertical-align: middle;
 }
+
+/* 🌗 Native Theme Fix for Changelog Text */
+.changelog p,
+[class*="changelog"] p,
+.Changelog-History p {
+    color: var(--color-on-background) !important;
+    opacity: 1.0; /* Optional: gives it a slightly softer, cleaner look than the headers */
+}
