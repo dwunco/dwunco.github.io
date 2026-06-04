@@ -13,6 +13,13 @@
     "history": [
         {
             "date": "2026-06-04",
+            "type": "moved",
+            "oldPlacement": 127,
+            "placement": 128,
+            "notes": "NothinG was added above"
+        },
+        {
+            "date": "2026-06-04",
             "type": "added",
             "placement": 127,
             "notes": "Nether step added to the list"

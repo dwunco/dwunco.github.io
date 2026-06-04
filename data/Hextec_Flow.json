@@ -14,6 +14,13 @@
         {
             "date": "2026-06-04",
             "type": "moved",
+            "oldPlacement": 140,
+            "placement": 141,
+            "notes": "NothinG was added above"
+        },
+        {
+            "date": "2026-06-04",
+            "type": "moved",
             "oldPlacement": 139,
             "placement": 140,
             "notes": "Nether step was added above"
