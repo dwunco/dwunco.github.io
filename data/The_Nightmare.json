@@ -65,6 +65,13 @@
         {
             "date": "2026-06-04",
             "type": "moved",
+            "oldPlacement": 164,
+            "placement": 165,
+            "notes": "Tabby was added above"
+        },
+        {
+            "date": "2026-06-04",
+            "type": "moved",
             "oldPlacement": 163,
             "placement": 164,
             "notes": "Nether step was added above"
