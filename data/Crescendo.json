@@ -34,6 +34,13 @@
         {
             "date": "2026-06-04",
             "type": "moved",
+            "oldPlacement": 138,
+            "placement": 139,
+            "notes": "Nether step was added above"
+        },
+        {
+            "date": "2026-06-04",
+            "type": "moved",
             "oldPlacement": 137,
             "placement": 138,
             "notes": "Dystopia was added above"

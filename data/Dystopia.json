@@ -13,6 +13,13 @@
     "history": [
         {
             "date": "2026-06-04",
+            "type": "moved",
+            "oldPlacement": 137,
+            "placement": 138,
+            "notes": "Nether step was added above"
+        },
+        {
+            "date": "2026-06-04",
             "type": "added",
             "placement": 137,
             "notes": "Dystopia added to the list"

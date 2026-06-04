@@ -12,6 +12,13 @@
     "records": [],
     "history": [
         {
+            "date": "2026-06-04",
+            "type": "moved",
+            "oldPlacement": 132,
+            "placement": 133,
+            "notes": "Nether step was added above"
+        },
+        {
             "date": "2026-06-03",
             "type": "moved",
             "oldPlacement": 131,
