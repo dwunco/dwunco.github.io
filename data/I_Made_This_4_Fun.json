@@ -9,7 +9,15 @@
     "verification": "https://youtu.be/zyfa1aHAqM8",
     "percentToQualify": 100,
     "password": "Free Copy",
-    "records": [],
+    "records": [
+        {
+            "user": "PixelPro11",
+            "link": "https://youtu.be/watch?v=null",
+            "percent": 100,
+            "hz": 60,
+            "mobile": true
+        }
+    ],
     "history": [
         {
             "date": "2026-06-04",
