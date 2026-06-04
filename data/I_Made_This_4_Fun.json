@@ -12,6 +12,20 @@
     "records": [],
     "history": [
         {
+            "date": "2026-06-04",
+            "type": "moved",
+            "oldPlacement": 160,
+            "placement": 161,
+            "notes": "Dystopia was added above"
+        },
+        {
+            "date": "2026-06-04",
+            "type": "moved",
+            "oldPlacement": 159,
+            "placement": 160,
+            "notes": "Skyline Pt II was added above"
+        },
+        {
             "date": "2026-06-03",
             "type": "moved",
             "oldPlacement": 158,

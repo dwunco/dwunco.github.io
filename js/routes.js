@@ -1,20 +1,18 @@
-// 1. Import your existing page components at the top...
-import List from './pages/List.js'; // (or whatever your homepage component is called)
+import List from './pages/List.js';
 import Leaderboard from './pages/Leaderboard.js';
 import Roulette from './pages/Roulette.js';
-
-// 2. IMPORT THE NEW LEVEL PAGE HERE:
-import Level from './pages/Level.js';
+import Welcome from './pages/Welcome.js';
 
 export default [
-    { path: '/', component: List },
+    // 1. When someone lands on the base site (/#/), instantly redirect them to the welcome route
+    { path: '/', redirect: '/welcome' },
+    
+    // 2. This loads your welcome page component when the URL is /#/welcome
+    { path: '/welcome', component: Welcome },
+    
+    // Your other pages stay right here
+    { path: '/list', component: List },
     { path: '/leaderboard', component: Leaderboard },
     { path: '/roulette', component: Roulette },
-
-    // 3. ADD THIS DYNAMIC ROUTE TO THE ARRAY:
-    { 
-        path: '/level/:id', 
-        component: Level, 
-        props: true 
-    },
+    { path: '/level/:id', component: List }
 ];
