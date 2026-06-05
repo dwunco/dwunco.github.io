@@ -47,6 +47,62 @@
             "notes": "Robi was added above"
         },
         {
+            "date": "2026-05-24",
+            "type": "moved",
+            "oldPlacement": 19,
+            "placement": 18,
+            "notes": "FFFFFF was added above"
+        },
+        {
+            "date": "2026-05-23",
+            "type": "moved",
+            "oldPlacement": 16,
+            "placement": 17,
+            "notes": "Buff This was added above"
+        },
+        {
+            "date": "2026-05-23",
+            "type": "moved",
+            "oldPlacement": 17,
+            "placement": 16,
+            "notes": "Denouement was moved down past this demon"
+        },
+        {
+            "date": "2026-05-23",
+            "type": "moved",
+            "oldPlacement": 16,
+            "placement": 17,
+            "notes": "CHROMA was added above"
+        },
+        {
+            "date": "2026-05-17",
+            "type": "moved",
+            "oldPlacement": 17,
+            "placement": 16,
+            "notes": "Sonic Wave was removed from the list"
+        },
+        {
+            "date": "2026-05-16",
+            "type": "moved",
+            "oldPlacement": 18,
+            "placement": 17,
+            "notes": "The  Place was moved down past this demon"
+        },
+        {
+            "date": "2026-05-15",
+            "type": "moved",
+            "oldPlacement": 17,
+            "placement": 18,
+            "notes": "Sonic Wave was added above (prank)"
+        },
+        {
+            "date": "2026-05-12",
+            "type": "moved",
+            "oldPlacement": 16,
+            "placement": 17,
+            "notes": "Gunslinga Corridor was added above"
+        },
+        {
             "date": "2026-04-26",
             "type": "moved",
             "oldPlacement": 15,
@@ -93,7 +149,7 @@
             "type": "moved",
             "oldPlacement": 13,
             "placement": 12,
-            "notes": "CraZy II was moved down past this demmon"
+            "notes": "CraZy II was moved down past this demon"
         },
         {
             "date": "2026-04-21",
