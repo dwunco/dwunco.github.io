@@ -33,17 +33,38 @@
             "notes": "Nilscapes was added above"
         },
         {
-            "date": "2026-04-21",
-            "type": "added",
-            "placement": 13,
-            "notes": "The  Place added to the list"
-        },
-        {
             "date": "2026-06-01",
             "type": "moved",
             "oldPlacement": 20,
             "placement": 21,
             "notes": "Robi was added above"
+        },
+        {
+            "date": "2026-05-16",
+            "type": "moved",
+            "oldPlacement": 17,
+            "placement": 16,
+            "notes": "Moved"
+        },
+        {
+            "date": "2026-04-22",
+            "type": "moved",
+            "oldPlacement": 9,
+            "placement": 10,
+            "notes": "Moved"
+        },
+        {
+            "date": "2026-04-21",
+            "type": "moved",
+            "oldPlacement": 13,
+            "placement": 14,
+            "notes": "CraZy II was added above"
+        },
+        {
+            "date": "2026-04-21",
+            "type": "added",
+            "placement": 13,
+            "notes": "The  Place added to the list"
         }
     ]
 }
