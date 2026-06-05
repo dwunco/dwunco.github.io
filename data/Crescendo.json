@@ -32,6 +32,13 @@
     ],
     "history": [
         {
+            "date": "2026-06-05",
+            "type": "moved",
+            "oldPlacement": 140,
+            "placement": 141,
+            "notes": "weird was added above"
+        },
+        {
             "date": "2026-06-04",
             "type": "moved",
             "oldPlacement": 139,

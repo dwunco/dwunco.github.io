@@ -1,0 +1,28 @@
+{
+    "name": "StyX",
+    "id": 35335759,
+    "author": "Whirl",
+    "creators": [
+        "Whirl"
+    ],
+    "verifier": "cookiedarookie",
+    "verification": "https://youtu.be/H-hv9plJ1Ks",
+    "percentToQualify": 100,
+    "password": "Free Copy",
+    "records": [],
+    "history": [
+        {
+            "date": "2026-06-05",
+            "type": "moved",
+            "oldPlacement": 160,
+            "placement": 161,
+            "notes": "Aurora Veil was added above"
+        },
+        {
+            "date": "2026-06-05",
+            "type": "added",
+            "placement": 160,
+            "notes": "StyX added to the list"
+        }
+    ]
+}

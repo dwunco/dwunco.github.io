@@ -69,6 +69,27 @@
     ],
     "history": [
         {
+            "date": "2026-06-05",
+            "type": "moved",
+            "oldPlacement": 168,
+            "placement": 169,
+            "notes": "Aurora Veil was added above"
+        },
+        {
+            "date": "2026-06-05",
+            "type": "moved",
+            "oldPlacement": 167,
+            "placement": 168,
+            "notes": "StyX was added above"
+        },
+        {
+            "date": "2026-06-05",
+            "type": "moved",
+            "oldPlacement": 166,
+            "placement": 167,
+            "notes": "weird was added above"
+        },
+        {
             "date": "2026-06-04",
             "type": "moved",
             "oldPlacement": 165,
