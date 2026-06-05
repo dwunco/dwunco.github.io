@@ -22,6 +22,34 @@
         {
             "date": "2026-06-05",
             "type": "moved",
+            "oldPlacement": 170,
+            "placement": 171,
+            "notes": "Ladaschi was added above"
+        },
+        {
+            "date": "2026-06-05",
+            "type": "moved",
+            "oldPlacement": 169,
+            "placement": 170,
+            "notes": "Blend Travel was added above"
+        },
+        {
+            "date": "2026-06-05",
+            "type": "moved",
+            "oldPlacement": 168,
+            "placement": 169,
+            "notes": "BLOCKVEMBER was added above"
+        },
+        {
+            "date": "2026-06-05",
+            "type": "moved",
+            "oldPlacement": 167,
+            "placement": 168,
+            "notes": "frequent visitor was added above"
+        },
+        {
+            "date": "2026-06-05",
+            "type": "moved",
             "oldPlacement": 166,
             "placement": 167,
             "notes": "Aurora Veil was added above"

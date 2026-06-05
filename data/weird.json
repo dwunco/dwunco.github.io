@@ -20,6 +20,20 @@
     "history": [
         {
             "date": "2026-06-05",
+            "type": "moved",
+            "oldPlacement": 138,
+            "placement": 139,
+            "notes": "Ladaschi was added above"
+        },
+        {
+            "date": "2026-06-05",
+            "type": "moved",
+            "oldPlacement": 137,
+            "placement": 138,
+            "notes": "BLOCKVEMBER was added above"
+        },
+        {
+            "date": "2026-06-05",
             "type": "added",
             "placement": 137,
             "notes": "weird added to the list"

@@ -14,6 +14,27 @@
         {
             "date": "2026-06-05",
             "type": "moved",
+            "oldPlacement": 154,
+            "placement": 155,
+            "notes": "Ladaschi was added above"
+        },
+        {
+            "date": "2026-06-05",
+            "type": "moved",
+            "oldPlacement": 153,
+            "placement": 154,
+            "notes": "Blend Travel was added above"
+        },
+        {
+            "date": "2026-06-05",
+            "type": "moved",
+            "oldPlacement": 152,
+            "placement": 153,
+            "notes": "BLOCKVEMBER was added above"
+        },
+        {
+            "date": "2026-06-05",
+            "type": "moved",
             "oldPlacement": 151,
             "placement": 152,
             "notes": "weird was added above"

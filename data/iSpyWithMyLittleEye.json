@@ -46,6 +46,20 @@
         {
             "date": "2026-06-05",
             "type": "moved",
+            "oldPlacement": 139,
+            "placement": 140,
+            "notes": "Ladaschi was added above"
+        },
+        {
+            "date": "2026-06-05",
+            "type": "moved",
+            "oldPlacement": 138,
+            "placement": 139,
+            "notes": "BLOCKVEMBER was added above"
+        },
+        {
+            "date": "2026-06-05",
+            "type": "moved",
             "oldPlacement": 137,
             "placement": 138,
             "notes": "weird was added above"

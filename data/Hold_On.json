@@ -12,6 +12,20 @@
     "records": [],
     "history": [
         {
+            "date": "2026-06-05",
+            "type": "moved",
+            "oldPlacement": 135,
+            "placement": 136,
+            "notes": "Ladaschi was added above"
+        },
+        {
+            "date": "2026-06-05",
+            "type": "moved",
+            "oldPlacement": 134,
+            "placement": 135,
+            "notes": "BLOCKVEMBER was added above"
+        },
+        {
             "date": "2026-06-04",
             "type": "moved",
             "oldPlacement": 133,

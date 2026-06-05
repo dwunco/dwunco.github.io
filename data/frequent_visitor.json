@@ -1,12 +1,12 @@
 {
-    "name": "StyX",
-    "id": 35335759,
-    "author": "Whirl",
+    "name": "frequent visitor",
+    "id": 93082352,
+    "author": "R3XX3R",
     "creators": [
-        "Whirl"
+        "R3XX3R"
     ],
     "verifier": "cookiedarookie",
-    "verification": "https://youtu.be/H-hv9plJ1Ks",
+    "verification": "https://youtu.be/Z7KbKtCJUzQ",
     "percentToQualify": 100,
     "password": "Free Copy",
     "records": [],
@@ -14,36 +14,29 @@
         {
             "date": "2026-06-05",
             "type": "moved",
-            "oldPlacement": 163,
-            "placement": 164,
+            "oldPlacement": 166,
+            "placement": 167,
             "notes": "Ladaschi was added above"
         },
         {
             "date": "2026-06-05",
             "type": "moved",
-            "oldPlacement": 162,
-            "placement": 163,
+            "oldPlacement": 165,
+            "placement": 166,
             "notes": "Blend Travel was added above"
         },
         {
             "date": "2026-06-05",
             "type": "moved",
-            "oldPlacement": 161,
-            "placement": 162,
+            "oldPlacement": 164,
+            "placement": 165,
             "notes": "BLOCKVEMBER was added above"
         },
         {
             "date": "2026-06-05",
-            "type": "moved",
-            "oldPlacement": 160,
-            "placement": 161,
-            "notes": "Aurora Veil was added above"
-        },
-        {
-            "date": "2026-06-05",
             "type": "added",
-            "placement": 160,
-            "notes": "StyX added to the list"
+            "placement": 164,
+            "notes": "frequent visitor added to the list"
         }
     ]
 }
