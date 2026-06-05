@@ -13,6 +13,13 @@
     "records": [],
     "history": [
         {
+            "date": "2026-06-06",
+            "type": "moved",
+            "oldPlacement": 158,
+            "placement": 159,
+            "notes": "DNIDs Fantastic Ride was added above"
+        },
+        {
             "date": "2026-06-05",
             "type": "moved",
             "oldPlacement": 157,

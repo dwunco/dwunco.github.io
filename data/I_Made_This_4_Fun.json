@@ -20,6 +20,20 @@
     ],
     "history": [
         {
+            "date": "2026-06-06",
+            "type": "moved",
+            "oldPlacement": 172,
+            "placement": 173,
+            "notes": "DNIDs Fantastic Ride was added above"
+        },
+        {
+            "date": "2026-06-05",
+            "type": "moved",
+            "oldPlacement": 171,
+            "placement": 172,
+            "notes": "IDEOLOOCHY was added above"
+        },
+        {
             "date": "2026-06-05",
             "type": "moved",
             "oldPlacement": 170,
