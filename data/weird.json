@@ -1,0 +1,49 @@
+{
+    "name": "weird",
+    "id": 76564776,
+    "author": "llertt",
+    "creators": [
+        "llertt"
+    ],
+    "verifier": "cookiedarookie",
+    "verification": "https://youtu.be/E6K5x5XRJOQ",
+    "percentToQualify": 100,
+    "password": "Free Copy",
+    "records": [
+        {
+            "user": "dwunco",
+            "link": "https://youtu.be/null",
+            "percent": 100,
+            "hz": 240
+        }
+    ],
+    "history": [
+        {
+            "date": "2026-06-06",
+            "type": "moved",
+            "oldPlacement": 139,
+            "placement": 140,
+            "notes": "DNIDs Fantastic Ride was added above"
+        },
+        {
+            "date": "2026-06-05",
+            "type": "moved",
+            "oldPlacement": 138,
+            "placement": 139,
+            "notes": "Ladaschi was added above"
+        },
+        {
+            "date": "2026-06-05",
+            "type": "moved",
+            "oldPlacement": 137,
+            "placement": 138,
+            "notes": "BLOCKVEMBER was added above"
+        },
+        {
+            "date": "2026-06-05",
+            "type": "added",
+            "placement": 137,
+            "notes": "weird added to the list"
+        }
+    ]
+}

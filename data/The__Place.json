@@ -12,10 +12,25 @@
     "records": [],
     "history": [
         {
-            "date": "2026-04-21",
-            "type": "added",
-            "placement": 13,
-            "notes": "The  Place added to the list"
+            "date": "2026-06-03",
+            "type": "moved",
+            "oldPlacement": 23,
+            "placement": 24,
+            "notes": "HelioPOSSIBLE was added above"
+        },
+        {
+            "date": "2026-06-02",
+            "type": "moved",
+            "oldPlacement": 22,
+            "placement": 23,
+            "notes": "Sweater Weather was added above"
+        },
+        {
+            "date": "2026-06-01",
+            "type": "moved",
+            "oldPlacement": 21,
+            "placement": 22,
+            "notes": "Nilscapes was added above"
         },
         {
             "date": "2026-06-01",
@@ -23,6 +38,33 @@
             "oldPlacement": 20,
             "placement": 21,
             "notes": "Robi was added above"
+        },
+        {
+            "date": "2026-05-16",
+            "type": "moved",
+            "oldPlacement": 17,
+            "placement": 16,
+            "notes": "Moved"
+        },
+        {
+            "date": "2026-04-22",
+            "type": "moved",
+            "oldPlacement": 9,
+            "placement": 10,
+            "notes": "Moved"
+        },
+        {
+            "date": "2026-04-21",
+            "type": "moved",
+            "oldPlacement": 13,
+            "placement": 14,
+            "notes": "CraZy II was added above"
+        },
+        {
+            "date": "2026-04-21",
+            "type": "added",
+            "placement": 13,
+            "notes": "The  Place added to the list"
         }
     ]
 }

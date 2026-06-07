@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Level Details</title>
+    <style>
+        body { font-family: sans-serif; background: #1a1a1a; color: #fff; padding: 20px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        a { color: #4caf50; text-decoration: none; }
+        .section { background: #2a2a2a; padding: 15px; margin: 15px 0; border-radius: 5px; }
+        ul { list-style-type: none; padding: 0; }
+        li { padding: 8px 0; border-bottom: 1px solid #333; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html">← Back to Leaderboard</a>
+        
+        <h1 id="level-name">Loading Level...</h1>
+        <p id="level-meta">Creator: -- | Verifier: --</p>
+
+        <div class="section">
+            <h3>🏆 Records</h3>
+            <ul id="records-list"></ul>
+        </div>
+
+        <div class="section">
+            <h3>📜 History & Lore</h3>
+            <ul id="history-list"></ul>
+        </div>
+    </div>
+
+    <script>
+        // 1. Get the level ID from the URL string (?id=level_name)
+        const urlParams = new URLSearchParams(window.location.search);
+        const levelId = urlParams.get('id');
+
+        if (!levelId) {
+            document.body.innerHTML = "<h1>Level not found</h1><a href='index.html'>Back</a>";
+        } else {
+            loadLevelData(levelId);
+        }
+
+        // 2. Fetch the specific JSON file and inject it into the HTML
+        async function loadLevelData(id) {
+            try {
+                // Adjust this path if your JSON files live somewhere else relative to level.html
+                const response = await fetch(`data/${id}.json`);
+                if (!response.ok) throw new Error("File not found");
+                
+                const data = await response.json();
+
+                // Update basic text
+                document.getElementById('level-name').innerText = data.name || id;
+                document.getElementById('level-meta').innerText = `Creator: ${data.creator || 'Unknown'} | Verifier: ${data.verifier || 'Unknown'}`;
+
+                // Loop through records array
+                const recordsList = document.getElementById('records-list');
+                if (data.records && data.records.length > 0) {
+                    data.records.forEach(rec => {
+                        const li = document.createElement('li');
+                        li.innerHTML = `<strong>${rec.player}</strong> - ${rec.progress}% (<a href="${rec.link}" target="_blank">Video</a>)`;
+                        recordsList.appendChild(li);
+                    });
+                } else {
+                    recordsList.innerHTML = "<li>No records submitted yet!</li>";
+                }
+
+                // Loop through history array (displays newest events first)
+                const historyList = document.getElementById('history-list');
+                if (data.history && data.history.length > 0) {
+                    // .reverse() puts newest entries at the top, or omit it to keep chronological order
+                    data.history.forEach(event => {
+                        const li = document.createElement('li');
+                        li.innerHTML = `<small>[${event.date || 'Date N/A'}]</small> ${event.note || 'Rank/status shift'}`;
+                        historyList.appendChild(li);
+                    });
+                } else {
+                    historyList.innerHTML = "<li>No history logged for this level.</li>";
+                }
+
+            } catch (error) {
+                console.error(error);
+                document.getElementById('level-name').innerText = "Error loading level data.";
+            }
+        }
+    </script>
+</body>
+</html>

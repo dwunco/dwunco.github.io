@@ -5,7 +5,6 @@
         <meta name="viewport" content="width=1024" />
         <title>Epic 8 Demonlist</title>
 
-        <!-- Replace your server icon by uploading an image file named "list_icon.png"-->
         <link rel="icon" href="/list_icon.png" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -41,9 +40,18 @@
                 <p>v1.0.0</p>
             </div>
             <nav class="nav">
-                <router-link class="nav__tab" to="/">
-                    <span class="type-label-lg">List</span>
+                <router-link class="nav__tab" to="/welcome">
+                    <span class="type-label-lg">Welcome</span>
                 </router-link>
+
+                <a 
+                    href="#/list" 
+                    class="nav__tab" 
+                    :class="{ 'router-link-active': $route.path === '/list' || $route.path.startsWith('/level/') }"
+                >
+                    <span class="type-label-lg">List</span>
+                </a>
+
                 <router-link class="nav__tab" to="/leaderboard">
                     <span class="type-label-lg">Leaderboard</span>
                 </router-link>
@@ -60,11 +68,9 @@
                             alt=""
                         />
                     </button>
-                    <!-- Replace the '#' with your discord server's invite-->
                     <a class="nav__icon" href="https://discord.gg/4UqrTZskj">
                         <img src="/assets/discord.svg" alt="Discord Logo" />
                     </a>
-                    <!-- List record submission form, add a link to replace the '#' when putting a link to your list submission form-->
                     <a
                         class="nav__cta type-label-lg"
                         href="https://docs.google.com/forms/d/e/1FAIpQLSdAwzhftwBYZJJeBXjMDTALko24N3g6n45cRydd3HqtGY9B8w/viewform?usp=header"

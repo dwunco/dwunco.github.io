@@ -12,6 +12,20 @@
     "records": [],
     "history": [
         {
+            "date": "2026-06-03",
+            "type": "moved",
+            "oldPlacement": 13,
+            "placement": 14,
+            "notes": "HelioPOSSIBLE was added above"
+        },
+        {
+            "date": "2026-06-02",
+            "type": "moved",
+            "oldPlacement": 12,
+            "placement": 13,
+            "notes": "Sweater Weather was added above"
+        },
+        {
             "date": "2026-05-30",
             "type": "moved",
             "oldPlacement": 10,

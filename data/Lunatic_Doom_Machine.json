@@ -20,6 +20,20 @@
     ],
     "history": [
         {
+            "date": "2026-06-03",
+            "type": "moved",
+            "oldPlacement": 11,
+            "placement": 12,
+            "notes": "HelioPOSSIBLE was added above"
+        },
+        {
+            "date": "2026-06-02",
+            "type": "moved",
+            "oldPlacement": 10,
+            "placement": 11,
+            "notes": "Sweater Weather was added above"
+        },
+        {
             "date": "2026-05-23",
             "type": "moved",
             "oldPlacement": 10,

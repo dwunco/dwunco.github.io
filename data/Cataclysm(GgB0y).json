@@ -19,11 +19,25 @@
             "notes": "Sonic Wave was removed from the list"
         },
         {
-            "date": "2026-05-52",
+            "date": "2026-05-16",
             "type": "moved",
             "oldPlacement": 4,
             "placement": 5,
+            "notes": "Allegiance was moved up past this demon"
+        },
+        {
+            "date": "2026-05-15",
+            "type": "moved",
+            "oldPlacement": 3,
+            "placement": 4,
             "notes": "Sonic Wave was added above (prank)"
+        },
+        {
+            "date": "2026-05-10",
+            "type": "moved",
+            "oldPlacement": 4,
+            "placement": 3,
+            "notes": "Moved"
         },
         {
             "date": "2026-04-26",

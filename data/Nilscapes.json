@@ -1,0 +1,35 @@
+{
+    "name": "Nilscapes",
+    "id": 126213470,
+    "author": "L41GD",
+    "creators": [
+        "L41GD"
+    ],
+    "verifier": "cookiedarookie",
+    "verification": "https://youtu.be/zIbardyGrRk",
+    "percentToQualify": 65,
+    "password": "Free Copy",
+    "records": [],
+    "history": [
+        {
+            "date": "2026-06-03",
+            "type": "moved",
+            "oldPlacement": 17,
+            "placement": 18,
+            "notes": "HelioPOSSIBLE was added above"
+        },
+        {
+            "date": "2026-06-02",
+            "type": "moved",
+            "oldPlacement": 16,
+            "placement": 17,
+            "notes": "Sweater Weather was added above"
+        },
+        {
+            "date": "2026-06-01",
+            "type": "added",
+            "placement": 16,
+            "notes": "Nilscapes added to the list"
+        }
+    ]
+}

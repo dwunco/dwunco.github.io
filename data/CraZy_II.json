@@ -1,5 +1,5 @@
 {
-    "id": 73670615,
+    "id": 47620786,
     "name": "CraZy II",
     "author": "DavJT",
     "creators": [
@@ -26,6 +26,27 @@
         }
     ],
     "history": [
+        {
+            "date": "2026-06-03",
+            "type": "moved",
+            "oldPlacement": 27,
+            "placement": 28,
+            "notes": "HelioPOSSIBLE was added above"
+        },
+        {
+            "date": "2026-06-02",
+            "type": "moved",
+            "oldPlacement": 26,
+            "placement": 27,
+            "notes": "Sweater Weather was added above"
+        },
+        {
+            "date": "2026-06-01",
+            "type": "moved",
+            "oldPlacement": 25,
+            "placement": 26,
+            "notes": "Nilscapes was added above"
+        },
         {
             "date": "2026-05-27",
             "type": "moved",
@@ -125,7 +146,7 @@
             "notes": "Lunatic Doom Machine was added above"
         },
         {
-            "date": "2026-04-23",
+            "date": "2026-04-22",
             "type": "moved",
             "oldPlacement": 9,
             "placement": 10,

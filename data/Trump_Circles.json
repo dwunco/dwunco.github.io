@@ -1,6 +1,6 @@
 {
     "id": 26245696,
-    "name": "VeritY",
+    "name": "Trump Circles",
     "author": "Rlol",
     "creators": [
         "Rlol",
@@ -23,6 +23,27 @@
         }
     ],
     "history": [
+        {
+            "date": "2026-06-03",
+            "type": "moved",
+            "oldPlacement": 92,
+            "placement": 93,
+            "notes": "HelioPOSSIBLE was added above"
+        },
+        {
+            "date": "2026-06-02",
+            "type": "moved",
+            "oldPlacement": 91,
+            "placement": 92,
+            "notes": "Sweater Weather was added above"
+        },
+        {
+            "date": "2026-06-01",
+            "type": "moved",
+            "oldPlacement": 90,
+            "placement": 91,
+            "notes": "Nilscapes was added above"
+        },
         {
             "date": "2026-06-01",
             "type": "moved",

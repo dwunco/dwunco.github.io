@@ -1,0 +1,28 @@
+{
+    "name": "IDEOLOOCHY",
+    "id": 125198275,
+    "author": "Asterna",
+    "creators": [
+        "Asterna"
+    ],
+    "verifier": "cookiedarookie",
+    "verification": "https://youtu.be/iGMyqgnDSmA",
+    "percentToQualify": 100,
+    "password": "Free Copy",
+    "records": [],
+    "history": [
+        {
+            "date": "2026-06-06",
+            "type": "moved",
+            "oldPlacement": 171,
+            "placement": 172,
+            "notes": "DNIDs Fantastic Ride was added above"
+        },
+        {
+            "date": "2026-06-05",
+            "type": "added",
+            "placement": 171,
+            "notes": "IDEOLOOCHY added to the list"
+        }
+    ]
+}

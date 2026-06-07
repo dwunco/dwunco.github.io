@@ -29,9 +29,36 @@
             "link": "https://youtu.be/null",
             "percent": 100,
             "hz": 60
+        },
+        {
+            "user": "Urbanscorpion37",
+            "link": "https://youtu.be/null",
+            "percent": 100,
+            "hz": 60
         }
     ],
     "history": [
+        {
+            "date": "2026-06-03",
+            "type": "moved",
+            "oldPlacement": 110,
+            "placement": 111,
+            "notes": "HelioPOSSIBLE was added above"
+        },
+        {
+            "date": "2026-06-02",
+            "type": "moved",
+            "oldPlacement": 109,
+            "placement": 110,
+            "notes": "Sweater Weather was added above"
+        },
+        {
+            "date": "2026-06-01",
+            "type": "moved",
+            "oldPlacement": 108,
+            "placement": 109,
+            "notes": "Nilscapes was added above"
+        },
         {
             "date": "2026-06-01",
             "type": "moved",

@@ -1,5 +1,5 @@
 {
-    "id": 3979721,
+    "id": 109185557,
     "name": "MaffStep",
     "author": "MaFFaKa",
     "creators": [
@@ -25,6 +25,27 @@
     "password": "Free Copy",
     "records": [],
     "history": [
+        {
+            "date": "2026-06-03",
+            "type": "moved",
+            "oldPlacement": 93,
+            "placement": 94,
+            "notes": "HelioPOSSIBLE was added above"
+        },
+        {
+            "date": "2026-06-02",
+            "type": "moved",
+            "oldPlacement": 92,
+            "placement": 93,
+            "notes": "Sweater Weather was added above"
+        },
+        {
+            "date": "2026-06-01",
+            "type": "moved",
+            "oldPlacement": 91,
+            "placement": 92,
+            "notes": "Nilscapes was added above"
+        },
         {
             "date": "2026-04-21",
             "type": "added",

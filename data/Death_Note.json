@@ -12,11 +12,94 @@
     "records": [],
     "history": [
         {
+            "date": "2026-06-03",
+            "type": "moved",
+            "oldPlacement": 22,
+            "placement": 23,
+            "notes": "HelioPOSSIBLE was added above"
+        },
+        {
+            "date": "2026-06-02",
+            "type": "moved",
+            "oldPlacement": 21,
+            "placement": 22,
+            "notes": "Sweater Weather was added above"
+        },
+        {
+            "date": "2026-06-01",
+            "type": "moved",
+            "oldPlacement": 20,
+            "placement": 21,
+            "notes": "Nilscapes was added above"
+        },
+        {
             "date": "2026-06-01",
             "type": "moved",
             "oldPlacement": 19,
             "placement": 20,
             "notes": "Robi was added above"
+        },
+        {
+            "date": "2026-05-26",
+            "type": "moved",
+            "oldPlacement": 23,
+            "placement": 19,
+            "notes": "Moved"
+        },
+        {
+            "date": "2026-05-24",
+            "type": "moved",
+            "oldPlacement": 22,
+            "placement": 23,
+            "notes": "FFFFFF was added above"
+        },
+        {
+            "date": "2026-05-24",
+            "type": "moved",
+            "oldPlacement": 21,
+            "placement": 22,
+            "notes": "Trip was added above"
+        },
+        {
+            "date": "2026-05-23",
+            "type": "moved",
+            "oldPlacement": 20,
+            "placement": 21,
+            "notes": "Buff This was added above"
+        },
+        {
+            "date": "2026-05-23",
+            "type": "moved",
+            "oldPlacement": 19,
+            "placement": 20,
+            "notes": "CHROMA was added above"
+        },
+        {
+            "date": "2026-05-17",
+            "type": "moved",
+            "oldPlacement": 20,
+            "placement": 19,
+            "notes": "Sonic Wave was removed from the list"
+        },
+        {
+            "date": "2026-05-15",
+            "type": "moved",
+            "oldPlacement": 19,
+            "placement": 20,
+            "notes": "Sonic Wave was added above (prank)"
+        },
+        {
+            "date": "2026-05-12",
+            "type": "moved",
+            "oldPlacement": 18,
+            "placement": 19,
+            "notes": "Gunslinga Corridor was added above"
+        },
+        {
+            "date": "2026-05-08",
+            "type": "added",
+            "placement": 18,
+            "notes": "Death Note added to the list"
         }
     ]
 }

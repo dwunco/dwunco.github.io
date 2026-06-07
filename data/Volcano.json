@@ -12,6 +12,83 @@
     "records": [],
     "history": [
         {
+            "date": "2026-06-06",
+            "type": "moved",
+            "oldPlacement": 155,
+            "placement": 156,
+            "notes": "DNIDs Fantastic Ride was added above"
+        },
+        {
+            "date": "2026-06-05",
+            "type": "moved",
+            "oldPlacement": 154,
+            "placement": 155,
+            "notes": "Ladaschi was added above"
+        },
+        {
+            "date": "2026-06-05",
+            "type": "moved",
+            "oldPlacement": 153,
+            "placement": 154,
+            "notes": "Blend Travel was added above"
+        },
+        {
+            "date": "2026-06-05",
+            "type": "moved",
+            "oldPlacement": 152,
+            "placement": 153,
+            "notes": "BLOCKVEMBER was added above"
+        },
+        {
+            "date": "2026-06-05",
+            "type": "moved",
+            "oldPlacement": 151,
+            "placement": 152,
+            "notes": "weird was added above"
+        },
+        {
+            "date": "2026-06-04",
+            "type": "moved",
+            "oldPlacement": 150,
+            "placement": 151,
+            "notes": "NothinG was added above"
+        },
+        {
+            "date": "2026-06-04",
+            "type": "moved",
+            "oldPlacement": 149,
+            "placement": 150,
+            "notes": "Nether step was added above"
+        },
+        {
+            "date": "2026-06-04",
+            "type": "moved",
+            "oldPlacement": 148,
+            "placement": 149,
+            "notes": "Dystopia was added above"
+        },
+        {
+            "date": "2026-06-03",
+            "type": "moved",
+            "oldPlacement": 147,
+            "placement": 148,
+            "notes": "HelioPOSSIBLE was added above"
+        },
+        {
+            "date": "2026-06-02",
+            "type": "moved",
+            "oldPlacement": 146,
+            "placement": 147,
+            "notes": "Sweater Weather was added above"
+        },
+        {
+            "date": "2026-06-01",
+            "type": "moved",
+            "oldPlacement": 145,
+            "placement": 146,
+            "notes": "Nilscapes was added above"
+        },
+        {
             "date": "2026-06-01",
             "type": "moved",
             "oldPlacement": 144,

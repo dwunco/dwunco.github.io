@@ -21,11 +21,52 @@
     ],
     "history": [
         {
+            "date": "2026-06-03",
+            "type": "moved",
+            "oldPlacement": 18,
+            "placement": 19,
+            "notes": "HelioPOSSIBLE was added above"
+        },
+        {
+            "date": "2026-06-02",
+            "type": "moved",
+            "oldPlacement": 17,
+            "placement": 18,
+            "notes": "Sweater Weather was added above"
+        },
+        {
+            "date": "2026-06-01",
+            "type": "moved",
+            "oldPlacement": 16,
+            "placement": 17,
+            "notes": "Nilscapes was added above"
+        },
+        {
             "date": "2026-06-01",
             "type": "moved",
             "oldPlacement": 15,
             "placement": 16,
             "notes": "Robi was added above"
+        },
+        {
+            "date": "2026-05-24",
+            "type": "moved",
+            "oldPlacement": 14,
+            "placement": 15,
+            "notes": "FFFFFF was added above"
+        },
+        {
+            "date": "2026-05-23",
+            "type": "moved",
+            "oldPlacement": 13,
+            "placement": 14,
+            "notes": "Windy Landscape was moved up past this demon"
+        },
+        {
+            "date": "2026-05-23",
+            "type": "added",
+            "placement": 13,
+            "notes": "Buff This added to the list"
         }
     ]
 }

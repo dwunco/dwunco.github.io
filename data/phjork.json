@@ -25,6 +25,13 @@
             "mobile": true
         },
         {
+            "user": "PixelPro11",
+            "link": "https://youtu.be/watch?v=null",
+            "percent": 100,
+            "hz": 60,
+            "mobile": true
+        },
+        {
             "user": "cookiedarookie",
             "link": "https://youtu.be/null",
             "percent": 100,
@@ -32,6 +39,90 @@
         }
     ],
     "history": [
+        {
+            "date": "2026-06-06",
+            "type": "moved",
+            "oldPlacement": 160,
+            "placement": 161,
+            "notes": "DNIDs Fantastic Ride was added above"
+        },
+        {
+            "date": "2026-06-05",
+            "type": "moved",
+            "oldPlacement": 159,
+            "placement": 160,
+            "notes": "Ladaschi was added above"
+        },
+        {
+            "date": "2026-06-05",
+            "type": "moved",
+            "oldPlacement": 158,
+            "placement": 159,
+            "notes": "Blend Travel was added above"
+        },
+        {
+            "date": "2026-06-05",
+            "type": "moved",
+            "oldPlacement": 157,
+            "placement": 158,
+            "notes": "BLOCKVEMBER was added above"
+        },
+        {
+            "date": "2026-06-05",
+            "type": "moved",
+            "oldPlacement": 156,
+            "placement": 157,
+            "notes": "Aurora Veil was added above"
+        },
+        {
+            "date": "2026-06-05",
+            "type": "moved",
+            "oldPlacement": 155,
+            "placement": 156,
+            "notes": "weird was added above"
+        },
+        {
+            "date": "2026-06-04",
+            "type": "moved",
+            "oldPlacement": 154,
+            "placement": 155,
+            "notes": "NothinG was added above"
+        },
+        {
+            "date": "2026-06-04",
+            "type": "moved",
+            "oldPlacement": 153,
+            "placement": 154,
+            "notes": "Nether step was added above"
+        },
+        {
+            "date": "2026-06-04",
+            "type": "moved",
+            "oldPlacement": 152,
+            "placement": 153,
+            "notes": "Dystopia was added above"
+        },
+        {
+            "date": "2026-06-03",
+            "type": "moved",
+            "oldPlacement": 151,
+            "placement": 152,
+            "notes": "HelioPOSSIBLE was added above"
+        },
+        {
+            "date": "2026-06-02",
+            "type": "moved",
+            "oldPlacement": 150,
+            "placement": 151,
+            "notes": "Sweater Weather was added above"
+        },
+        {
+            "date": "2026-06-01",
+            "type": "moved",
+            "oldPlacement": 149,
+            "placement": 150,
+            "notes": "Nilscapes was added above"
+        },
         {
             "date": "2026-06-01",
             "type": "moved",

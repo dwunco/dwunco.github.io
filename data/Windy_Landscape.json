@@ -12,10 +12,18 @@
     "records": [],
     "history": [
         {
-            "date": "2026-04-21",
-            "type": "added",
-            "placement": 11,
-            "notes": "Windy Landscape added to the list"
+            "date": "2026-06-03",
+            "type": "moved",
+            "oldPlacement": 16,
+            "placement": 17,
+            "notes": "HelioPOSSIBLE was added above"
+        },
+        {
+            "date": "2026-06-02",
+            "type": "moved",
+            "oldPlacement": 15,
+            "placement": 16,
+            "notes": "Sweater Weather was added above"
         },
         {
             "date": "2026-06-01",
@@ -23,6 +31,138 @@
             "oldPlacement": 14,
             "placement": 15,
             "notes": "Robi was added above"
+        },
+        {
+            "date": "2026-05-27",
+            "type": "moved",
+            "oldPlacement": 15,
+            "placement": 14,
+            "notes": "Moved"
+        },
+        {
+            "date": "2026-05-25",
+            "type": "moved",
+            "oldPlacement": 16,
+            "placement": 15,
+            "notes": "Moved"
+        },
+        {
+            "date": "2026-05-24",
+            "type": "moved",
+            "oldPlacement": 15,
+            "placement": 16,
+            "notes": "FFFFFF was added above"
+        },
+        {
+            "date": "2026-05-23",
+            "type": "moved",
+            "oldPlacement": 16,
+            "placement": 15,
+            "notes": "Denouement was moved down past this demon"
+        },
+        {
+            "date": "2026-05-23",
+            "type": "moved",
+            "oldPlacement": 15,
+            "placement": 16,
+            "notes": "CHROMA was added above"
+        },
+        {
+            "date": "2026-05-17",
+            "type": "moved",
+            "oldPlacement": 16,
+            "placement": 15,
+            "notes": "Sonic Wave was removed from the list"
+        },
+        {
+            "date": "2026-05-15",
+            "type": "moved",
+            "oldPlacement": 15,
+            "placement": 16,
+            "notes": "Sonic Wave was added above (prank)"
+        },
+        {
+            "date": "2026-05-12",
+            "type": "moved",
+            "oldPlacement": 14,
+            "placement": 15,
+            "notes": "Gunslinga Corridor was added above"
+        },
+        {
+            "date": "2026-04-26",
+            "type": "moved",
+            "oldPlacement": 15,
+            "placement": 14,
+            "notes": "CraZy II was moved down past this demon"
+        },
+        {
+            "date": "2026-04-26",
+            "type": "moved",
+            "oldPlacement": 14,
+            "placement": 15,
+            "notes": "Sakupen Hell was added above"
+        },
+        {
+            "date": "2026-04-26",
+            "type": "moved",
+            "oldPlacement": 15,
+            "placement": 14,
+            "notes": "Moved"
+        },
+        {
+            "date": "2026-04-24",
+            "type": "moved",
+            "oldPlacement": 14,
+            "placement": 15,
+            "notes": "Lunatic Doom Machine was added above"
+        },
+        {
+            "date": "2026-04-23",
+            "type": "moved",
+            "oldPlacement": 15,
+            "placement": 14,
+            "notes": "commatose was moved down past this demon"
+        },
+        {
+            "date": "2026-04-23",
+            "type": "moved",
+            "oldPlacement": 13,
+            "placement": 15,
+            "notes": "Swapped with Magma Bound"
+        },
+        {
+            "date": "2026-04-22",
+            "type": "moved",
+            "oldPlacement": 12,
+            "placement": 13,
+            "notes": "CraZy II was moved up past this demon"
+        },
+        {
+            "date": "2026-04-22",
+            "type": "moved",
+            "oldPlacement": 11,
+            "placement": 12,
+            "notes": "The  Place was moved up past this demon"
+        },
+        {
+            "date": "2026-04-22",
+            "type": "moved",
+            "oldPlacement": 12,
+            "placement": 11,
+            "notes": "CraZy II was moved down past this demon"
+        },
+        {
+            "date": "2026-04-21",
+            "type": "moved",
+            "oldPlacement": 11,
+            "placement": 12,
+            "notes": "CraZy II was added above"
+        },
+        {
+            "date": "2026-04-21",
+            "type": "added",
+            "placement": 11,
+            "notes": "Windy Landscape added to the list"
         }
     ]
 }

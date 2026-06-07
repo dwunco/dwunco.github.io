@@ -1,26 +1,47 @@
 .nav {
     display: flex;
     column-gap: 2rem;
+    align-items: center; /* Perfectly centers your text tabs vertically */
+    width: 100%;        
+    height: 100%;
 }
 .nav .nav__tab {
+    position: relative;  /* Creates a positioning anchor for the absolute underline */
     padding-top: 4px;
-    border-bottom: 4px solid transparent;
+    padding-bottom: 4px; /* Balanced spacing around the text */
     display: flex;
-    align-items: center;
+    align-items: center;  
     padding-inline: 0.5rem;
-    transition: border-color 100ms ease;
+    height: 100%;        /* Forces the clickable area to span nicely */
+    text-decoration: none;
+    color: inherit;
+    flex-shrink: 0; 
 }
-.nav .nav__tab.router-link-active {
-    border-color: var(--color-on-primary);
+
+/* We create a virtual underline bar using a pseudo-element */
+.nav .nav__tab::after {
+    content: '';
+    position: absolute;
+    bottom: 0px;       /* Pushes the line down past the text to the absolute bottom of the header */
+    left: 0;
+    width: 100%;
+    height: 4px;         /* Thickness of the underline matching your style */
+    background-color: transparent;
+    transition: background-color 100ms ease;
 }
-.nav .nav__tab:hover {
-    border-color: var(--color-on-primary);
+
+/* Lights up the underline when active or hovered */
+.nav .nav__tab.router-link-active::after,
+.nav .nav__tab:hover::after {
+    background-color: var(--color-on-primary);
 }
+
 .nav .nav__actions {
-    flex: 1;
+    margin-left: auto; 
     display: flex;
-    align-items: center;
+    align-items: center;  
     justify-content: flex-end;
+    flex-shrink: 0;   
 }
 .nav .nav__actions .nav__icon {
     height: 3rem;
@@ -33,6 +54,7 @@
     align-items: center;
     justify-content: center;
     transition: background-color 100ms ease;
+    flex-shrink: 0; 
 }
 .nav .nav__actions .nav__icon:hover {
     background-color: rgba(255, 255, 255, 0.2);
@@ -48,6 +70,7 @@
     border-radius: 0.5rem;
     box-shadow: 0 1px 0.5rem 0 rgba(0, 0, 102, 0.5);
     transition: transform 100ms ease;
+    white-space: nowrap; 
 }
 .nav .nav__actions .nav__cta:hover:not(:active) {
     transform: translateY(-2px);

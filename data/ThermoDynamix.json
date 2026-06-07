@@ -25,6 +25,27 @@
     ],
     "history": [
         {
+            "date": "2026-06-03",
+            "type": "moved",
+            "oldPlacement": 40,
+            "placement": 41,
+            "notes": "HelioPOSSIBLE was added above"
+        },
+        {
+            "date": "2026-06-02",
+            "type": "moved",
+            "oldPlacement": 39,
+            "placement": 40,
+            "notes": "Sweater Weather was added above"
+        },
+        {
+            "date": "2026-06-01",
+            "type": "moved",
+            "oldPlacement": 38,
+            "placement": 39,
+            "notes": "Nilscapes was added above"
+        },
+        {
             "date": "2026-04-21",
             "type": "added",
             "placement": 21,

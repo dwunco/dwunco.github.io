@@ -43,7 +43,7 @@ export default {
                                 <p v-else class="type-label-lg">Legacy</p>
                             </td>
                             <td class="level" :class="{ 'active': selected == i, 'error': !level }">
-                                <button @click="selected = i">
+                                <button @click="$router.push('/level/' + (level ? level.id : err))">
                                     <span class="type-label-lg">{{ level ? level.name : 'Error (' + err + '.json)' }}</span>
                                 </button>
                             </td>
@@ -171,7 +171,6 @@ export default {
     }),
     computed: {
         level() {
-            // Keep this cleanly matched to your template's [level, err] breakdown structure
             return this.list && this.list[this.selected]?.[0];
         },
         video() {
@@ -230,13 +229,36 @@ export default {
             if (!this.editors) {
                 this.errors.push("Failed to load list editors.");
             }
+
+            // Route parsing: Automatically select a level if initialized via deep link ID
+            if (this.$route.params.id) {
+                this.selectLevelById(this.$route.params.id);
+            }
         }
 
         this.loading = false;
     },
+    watch: {
+        // Watch for manual browser back/forward changes or structural link redirects
+        '$route.params.id'(newId) {
+            if (newId) {
+                this.selectLevelById(newId);
+            }
+        }
+    },
     methods: {
         embed,
         score,
+        selectLevelById(id) {
+            if (!this.list) return;
+            const index = this.list.findIndex(([level, err]) => {
+                const currentId = level ? level.id : err;
+                return String(currentId) === String(id);
+            });
+            if (index !== -1) {
+                this.selected = index;
+            }
+        },
         getLogTypeLabel(log) {
             let label = log.type || 'moved';
             if (label === 'moved' && log.oldPlacement && log.placement) {
