@@ -12,6 +12,13 @@
     "records": [],
     "history": [
         {
+            "date": "2026-06-07",
+            "type": "moved",
+            "oldPlacement": 172,
+            "placement": 173,
+            "notes": "Fire Temple was added above"
+        },
+        {
             "date": "2026-06-06",
             "type": "moved",
             "oldPlacement": 171,
