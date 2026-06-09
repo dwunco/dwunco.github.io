@@ -9,7 +9,14 @@
     "verification": "https://youtu.be/sVjC-qvuSTc",
     "percentToQualify": 65,
     "password": "Free Copy",
-    "records": [],
+    "records": [
+        {
+            "user": "dwunco",
+            "link": "https://youtu.be/null",
+            "percent": 69,
+            "hz": 288
+        }
+    ],
     "history": [
         {
             "date": "2026-06-02",
