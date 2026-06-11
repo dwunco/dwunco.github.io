@@ -17,6 +17,13 @@
     "records": [],
     "history": [
         {
+            "date": "2026-06-11",
+            "type": "moved",
+            "oldPlacement": 99,
+            "placement": 100,
+            "notes": "Water Temple was added above"
+        },
+        {
             "date": "2026-06-07",
             "type": "moved",
             "oldPlacement": 98,
