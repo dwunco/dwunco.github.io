@@ -12,6 +12,20 @@
     "records": [],
     "history": [
         {
+            "date": "2026-06-12",
+            "type": "moved",
+            "oldPlacement": 75,
+            "placement": 76,
+            "notes": "Azurite was added above"
+        },
+        {
+            "date": "2026-06-12",
+            "type": "moved",
+            "oldPlacement": 76,
+            "placement": 75,
+            "notes": "hell and heaven was moved down past this demon"
+        },
+        {
             "date": "2026-06-11",
             "type": "moved",
             "oldPlacement": 75,

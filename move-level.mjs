@@ -6,159 +6,128 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const CHANGELOG_PATH = path.resolve(__dirname, '../data/_changelog.json'); 
-const LIST_PATH = path.resolve(__dirname, '../data/_list.json'); 
-const DATA_DIR = path.resolve(__dirname, '../data');
+const dataDir = path.join(__dirname, 'data');
+const listPath = path.join(dataDir, '_list.json');
 
-const [,, levelIdArg, targetPlacementArg] = process.argv;
+// --- MIRRORED ARGUMENT HANDLING ---
+const fileNameArg        = process.argv[2]; // e.g., Theory_of_Everything_2
+const targetPlacementArg = parseInt(process.argv[3], 10); // e.g., 103
+const customDate         = process.argv[4];
 
-if (!levelIdArg || !targetPlacementArg) {
-    console.error('\x1b[31m%s\x1b[0m', 'Usage: node move-level.js <level_id_or_name> <target_placement>');
+if (!fileNameArg || isNaN(targetPlacementArg)) {
+    console.error('❌ Error: Usage: node move-level.mjs <file_name_in_list> <target_placement> [optional_date]');
     process.exit(1);
 }
 
-const LEVEL_INPUT = levelIdArg.trim();
-const LEVEL_ID = parseInt(LEVEL_INPUT, 10);
-const TARGET_PLACEMENT = parseInt(targetPlacementArg, 10);
-const TODAY_DATE = new Date().toISOString().split('T')[0];
+// Standardize incoming date strictly to YYYY-MM-DD format
+let finalLogDate = customDate || new Date().toISOString().split('T')[0];
+finalLogDate = finalLogDate.replace(/\//g, '-');
 
 function autoMoveDetailed() {
-    if (!fs.existsSync(CHANGELOG_PATH) || !fs.existsSync(LIST_PATH)) {
-        console.error('\x1b[31m%s\x1b[0m', 'Error: Files not found!');
+    if (!fs.existsSync(listPath)) {
+        console.error(`❌ Error: Cannot find _list.json at ${listPath}`);
         process.exit(1);
     }
 
-    const changelog = JSON.parse(fs.readFileSync(CHANGELOG_PATH, 'utf-8'));
-    const listData = JSON.parse(fs.readFileSync(LIST_PATH, 'utf-8'));
+    let masterList = JSON.parse(fs.readFileSync(listPath, 'utf8'));
 
-    // Find the moving level
-    const targetIdx = listData.findIndex(item => {
-        if (!item) return false;
-        if (typeof item === 'string') return item.toLowerCase() === LEVEL_INPUT.toLowerCase() || item.toLowerCase().includes(LEVEL_INPUT.toLowerCase());
-        if (item.id && !isNaN(LEVEL_ID)) return item.id === LEVEL_ID;
-        if (Array.isArray(item) && item[0]) {
-            if (item[0].id && !isNaN(LEVEL_ID)) return item[0].id === LEVEL_ID;
-            if (item[0].name) return item[0].name.toLowerCase() === LEVEL_INPUT.toLowerCase();
-        }
-        return false;
-    });
+    // Find the current location of the level via case-insensitive filename check
+    const targetIdx = masterList.findIndex(name => name.toLowerCase() === fileNameArg.toLowerCase());
 
     if (targetIdx === -1) {
-        console.error('\x1b[31m%s\x1b[0m', `Error: Level "${LEVEL_INPUT}" not found.`);
+        console.error(`❌ Error: Level filename "${fileNameArg}" not found in _list.json.`);
         process.exit(1);
     }
 
     const oldPlacement = targetIdx + 1;
-    if (oldPlacement === TARGET_PLACEMENT) {
-        console.log('\x1b[33m%s\x1b[0m', `Already at rank #${TARGET_PLACEMENT}. No changes.`);
+    if (oldPlacement === targetPlacementArg) {
+        console.log(`⚠️ Already at rank #${targetPlacementArg}. No changes made.`);
         process.exit(0);
     }
 
-    // Get moving level details
-    let movingLevelFileName = "";
-    let movingLevelName = "Acu"; 
-    let finalMovingId = !isNaN(LEVEL_ID) ? LEVEL_ID : 0;
-    
-    if (typeof listData[targetIdx] === 'string') {
-        movingLevelFileName = listData[targetIdx];
-        movingLevelName = listData[targetIdx].replace('.json', '').replace(/_/g, ' ');
-    } else if (Array.isArray(listData[targetIdx]) && listData[targetIdx][0]) {
-        movingLevelFileName = listData[targetIdx][0].filename || listData[targetIdx][0].name;
-        movingLevelName = listData[targetIdx][0].name || "Acu";
-        finalMovingId = listData[targetIdx][0].id || finalMovingId;
+    // Determine safe array boundaries for insertion point
+    let targetIndex = Math.max(0, targetPlacementArg - 1);
+    if (targetIndex > masterList.length - 1) {
+        targetIndex = masterList.length - 1;
     }
 
-    const isMovingUp = TARGET_PLACEMENT < oldPlacement;
-    const newLogsToInsert = [];
+    // Read the moving file directly to discover its real display name (e.g., "Theory of Everything 2")
+    let movingLevelDisplayName = fileNameArg.replace(/_/g, ' ');
+    const movingFilePath = path.join(dataDir, `${masterList[targetIdx]}.json`);
+    if (fs.existsSync(movingFilePath)) {
+        try {
+            const movingData = JSON.parse(fs.readFileSync(movingFilePath, 'utf8'));
+            if (movingData.name) movingLevelDisplayName = movingData.name;
+        } catch (e) {}
+    }
 
-    // Helper to safely write back to individual level JSON files
-    function addHistoryToIndividualFile(fileNameOrId, logEntry) {
-        if (!fileNameOrId) return;
-        
-        // Normalize filename string
-        let cleanFileName = typeof fileNameOrId === 'string' ? fileNameOrId : String(fileNameOrId);
-        if (!cleanFileName.endsWith('.json')) {
-            cleanFileName += '.json';
+    const isMovingUp = targetPlacementArg < oldPlacement;
+    console.log(`📝 Splice Shifting. Generating history cascading updates...\n`);
+
+    // 1. Log the target level's individual move entry
+    if (fs.existsSync(movingFilePath)) {
+        try {
+            const movingData = JSON.parse(fs.readFileSync(movingFilePath, 'utf8'));
+            if (!movingData.history) movingData.history = [];
+            
+            movingData.history.unshift({
+                "date": finalLogDate,
+                "type": "moved",
+                "oldPlacement": oldPlacement,
+                "placement": targetIndex + 1,
+                "notes": `Moved`
+            });
+            fs.writeFileSync(movingFilePath, JSON.stringify(movingData, null, 4));
+        } catch (e) {
+            console.error(`⚠️ Failed to update moving level log:`, e.message);
         }
+    }
 
-        const individualFilePath = path.join(DATA_DIR, cleanFileName);
-        
-        if (fs.existsSync(individualFilePath)) {
+    // 2. DETAILED LOOP: Find and write custom histories to EVERY bypassed level file
+    const startIdx = Math.min(targetIdx, targetIndex);
+    const endIdx = Math.max(targetIdx, targetIndex);
+
+    for (let i = startIdx; i <= endIdx; i++) {
+        if (i === targetIdx) continue; // Skip logging the moving level inside this specific loop
+
+        const existingFileName = masterList[i];
+        const filePath = path.join(dataDir, `${existingFileName}.json`);
+
+        if (fs.existsSync(filePath)) {
             try {
-                const fileData = JSON.parse(fs.readFileSync(individualFilePath, 'utf-8'));
-                if (!fileData.history) {
-                    fileData.history = [];
-                }
-                // Prepend the new history log to the top of the history array
-                fileData.history.unshift(logEntry);
-                fs.writeFileSync(individualFilePath, JSON.stringify(fileData, null, 4), 'utf-8');
-            } catch (err) {
-                console.error(`\x1b[33mWarning:\x1b[0m Failed to update individual file: ${cleanFileName}`);
+                const fileData = JSON.parse(fs.readFileSync(filePath, 'utf8'));
+                if (!fileData.history) fileData.history = [];
+
+                const currentRank = i + 1;
+                const newRank = isMovingUp ? currentRank + 1 : currentRank - 1;
+
+                // Sets precise notes depending on direction: "X was moved up/down past this demon"
+                const directionText = isMovingUp ? "up" : "down";
+
+                fileData.history.unshift({
+                    "date": finalLogDate,
+                    "type": "moved",
+                    "oldPlacement": currentRank,
+                    "placement": newRank,
+                    "notes": `${movingLevelDisplayName} was moved ${directionText} past this demon`
+                });
+
+                fs.writeFileSync(filePath, JSON.stringify(fileData, null, 4));
+                console.log(`🔄 Cascaded update to ${existingFileName}.json (Moved #${currentRank} -> #${newRank})`);
+            } catch (e) {
+                console.error(`⚠️ Failed to cascade update to ${existingFileName}.json:`, e.message);
             }
         }
     }
 
-    // 1. Log the level that is actually moving
-    const movingLevelLog = {
-        id: finalMovingId,
-        date: TODAY_DATE,
-        type: "moved",
-        oldPlacement: oldPlacement,
-        placement: TARGET_PLACEMENT,
-        notes: `Moved`
-    };
-    newLogsToInsert.push(movingLevelLog);
-    addHistoryToIndividualFile(movingLevelFileName, movingLevelLog);
+    // --- PHYSICALLY REARRANGE THE ARRAY ---
+    const [extractedLevel] = masterList.splice(targetIdx, 1);
+    masterList.splice(targetIndex, 0, extractedLevel);
 
-    // 2. DETAILED LOOP: Find EVERY level that gets skipped or shifted by this move
-    const startIdx = Math.min(oldPlacement, TARGET_PLACEMENT) - 1;
-    const endIdx = Math.max(oldPlacement, TARGET_PLACEMENT) - 1;
+    // --- SAVE CHANGES ---
+    fs.writeFileSync(listPath, JSON.stringify(masterList, null, 4));
 
-    for (let i = startIdx; i <= endIdx; i++) {
-        if (i === targetIdx) continue; // Skip the moving level itself
-
-        const affectedLevel = listData[i];
-        let affectedId = 0;
-        let affectedFileName = "";
-
-        if (typeof affectedLevel === 'string') {
-            affectedFileName = affectedLevel;
-        } else if (Array.isArray(affectedLevel) && affectedLevel[0]) {
-            affectedId = affectedLevel[0].id || 0;
-            affectedFileName = affectedLevel[0].filename || affectedLevel[0].name;
-        }
-
-        const currentRank = i + 1;
-        // If moving up, bypassed levels shift down by 1. If moving down, they shift up by 1.
-        const newRank = isMovingUp ? currentRank + 1 : currentRank - 1;
-
-        // Custom note text applied directly to the bypassed levels
-        const noteText = `${movingLevelName} was moved ${isMovingUp ? 'up' : 'down'} past this demon`;
-
-        const affectedLevelLog = {
-            id: affectedId,
-            date: TODAY_DATE,
-            type: "moved",
-            oldPlacement: currentRank,
-            placement: newRank,
-            notes: noteText
-        };
-
-        newLogsToInsert.push(affectedLevelLog);
-        addHistoryToIndividualFile(affectedFileName, affectedLevelLog);
-    }
-
-    // --- PHYSICALLY MOVE LEVEL INSIDE ARRAY ---
-    const [extractedLevel] = listData.splice(targetIdx, 1); 
-    listData.splice(TARGET_PLACEMENT - 1, 0, extractedLevel); 
-
-    // --- SAVE REARRANGED LIST AND UPDATED CHANGELOG ---
-    const updatedChangelog = [...newLogsToInsert, ...changelog];
-    fs.writeFileSync(CHANGELOG_PATH, JSON.stringify(updatedChangelog, null, 4), 'utf-8');
-    fs.writeFileSync(LIST_PATH, JSON.stringify(listData, null, 4), 'utf-8');
-
-    console.log('\x1b[32m%s\x1b[0m', `✔ Success! ${movingLevelName} shifted to #${TARGET_PLACEMENT}.`);
-    console.log('\x1b[32m%s\x1b[0m', `✔ Generated ${newLogsToInsert.length} history updates across global changelog and individual JSON files.`);
+    console.log(`\n✅ Successfully shifted ${movingLevelDisplayName} to position #${targetIndex + 1}`);
 }
 
 autoMoveDetailed();

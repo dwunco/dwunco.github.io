@@ -12,6 +12,13 @@
     "records": [],
     "history": [
         {
+            "date": "2026-06-12",
+            "type": "moved",
+            "oldPlacement": 4,
+            "placement": 5,
+            "notes": "Azurite was added above"
+        },
+        {
             "date": "2026-05-17",
             "type": "moved",
             "oldPlacement": 5,

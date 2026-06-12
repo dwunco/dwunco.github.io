@@ -1,29 +1,36 @@
 {
-  "name": "Robi",
-  "id": 88172786,
-  "uploader": "robianny",
-  "creators": [
-    "robianny",
-    "Patrick61804"
-  ],
-  "verifier": "cookiedarookie",
-  "verification": "https://youtu.be/vXgNhvmMj3w",
-  "percentToQualify": 67,
-  "password": "Free Copy",
-  "records": [
-    {
-      "user": "dwunco",
-      "link": "https://youtu.be/null",
-      "percent": 84,
-      "hz": 288
-    }
-  ],
-  "history": [
-    {
-      "date": "2026-06-01",
-      "type": "added",
-      "placement": 5,
-      "notes": "Robi added to the list"
-    }
-  ]
+    "name": "Robi",
+    "id": 88172786,
+    "uploader": "robianny",
+    "creators": [
+        "robianny",
+        "Patrick61804"
+    ],
+    "verifier": "cookiedarookie",
+    "verification": "https://youtu.be/vXgNhvmMj3w",
+    "percentToQualify": 67,
+    "password": "Free Copy",
+    "records": [
+        {
+            "user": "dwunco",
+            "link": "https://youtu.be/null",
+            "percent": 84,
+            "hz": 288
+        }
+    ],
+    "history": [
+        {
+            "date": "2026-06-12",
+            "type": "moved",
+            "oldPlacement": 5,
+            "placement": 6,
+            "notes": "Azurite was added above"
+        },
+        {
+            "date": "2026-06-01",
+            "type": "added",
+            "placement": 5,
+            "notes": "Robi added to the list"
+        }
+    ]
 }

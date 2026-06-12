@@ -36,6 +36,20 @@
     ],
     "history": [
         {
+            "date": "2026-06-12",
+            "type": "moved",
+            "oldPlacement": 89,
+            "placement": 90,
+            "notes": "Azurite was added above"
+        },
+        {
+            "date": "2026-06-12",
+            "type": "moved",
+            "oldPlacement": 90,
+            "placement": 89,
+            "notes": "hell and heaven was moved down past this demon"
+        },
+        {
             "date": "2026-06-11",
             "type": "moved",
             "oldPlacement": 89,
