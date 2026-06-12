@@ -14,6 +14,13 @@
         {
             "date": "2026-06-12",
             "type": "moved",
+            "oldPlacement": 15,
+            "placement": 16,
+            "notes": "Acropolis was moved up past this demon"
+        },
+        {
+            "date": "2026-06-12",
+            "type": "moved",
             "oldPlacement": 14,
             "placement": 15,
             "notes": "Azurite was added above"

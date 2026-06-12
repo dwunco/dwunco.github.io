@@ -9,7 +9,14 @@
     "verification": "https://youtu.be/EQgGR998PMI",
     "percentToQualify": 100,
     "password": "NA",
-    "records": [],
+    "records": [
+        {
+            "user": "Urbanscorpion37",
+            "link": "https://youtu.be/watch?v=null",
+            "percent": 100,
+            "hz": 60
+        }
+    ],
     "history": [
         {
             "date": "2026-06-12",

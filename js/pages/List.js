@@ -22,29 +22,45 @@ export default {
         </main>
         <main v-else class="page-list">
             <div class="list-container">
+                <div class="list-search" style="padding: 15px; border-bottom: 1px solid #333; background: rgba(0,0,0,0.15);">
+                    <input 
+                        v-model="filter" 
+                        type="text" 
+                        placeholder="Search levels..." 
+                        style="width: 100%; padding: 10px 14px; background: rgba(255,255,255,0.05); border: 1px solid #444; color: #fff; border-radius: 6px; font-size: 0.95rem; outline: none; transition: border-color 0.2s;"
+                        onfocus="this.style.borderColor='#666'"
+                        onblur="this.style.borderColor='#444'"
+                    />
+                </div>
+
                 <table class="list" v-if="list">
-                    <template v-for="([level, err], i) in list">
+                    <template v-for="([level, err], i) in filteredList">
                         
-                        <tr v-if="i === 0" class="list-header-row">
+                        <tr v-if="i === 0 && !filter" class="list-header-row">
                             <td colspan="2" class="list-header-label">Main List</td>
                         </tr>
 
-                        <tr v-slot v-if="i === 75" class="list-header-row">
+                        <tr v-slot v-if="i === 75 && !filter" class="list-header-row">
                             <td colspan="2" class="list-header-label">Extended List</td>
                         </tr>
 
-                        <tr v-if="i === 150" class="list-header-row">
+                        <tr v-if="i === 150 && !filter" class="list-header-row">
                             <td colspan="2" class="list-header-label">Extended+ List</td>
                         </tr>
 
                         <tr>
-                            <td class="rank">
-                                <p v-if="i + 1 <= 250" class="type-label-lg">#{{ i + 1 }}</p>
+                            <td class="rank" style="width: 60px; min-width: 60px; max-width: 60px; text-align: left;">
+                                <p v-if="list.indexOf(filteredList[i]) + 1 <= 250" class="type-label-lg">
+                                    #{{ list.indexOf(filteredList[i]) + 1 }}
+                                </p>
                                 <p v-else class="type-label-lg">Legacy</p>
                             </td>
-                            <td class="level" :class="{ 'active': selected == i, 'error': !level }">
-                                <button @click="$router.push('/level/' + (level ? level.id : err))">
-                                    <span class="type-label-lg">{{ level ? level.name : 'Error (' + err + '.json)' }}</span>
+                            <td class="level" :class="{ 'active': selected == list.indexOf(filteredList[i]), 'error': !level }" style="width: auto;">
+                                <button @click="selected = list.indexOf(filteredList[i]); $router.push('/level/' + (level ? level.id : err))" style="overflow: visible; width: 100%; text-align: left;">
+                                    <div style="display: flex; align-items: center; white-space: nowrap; overflow: visible; padding: 2px 0;">
+                                        <span class="type-label-lg" style="line-height: 1.2; display: inline-block;">{{ level ? level.name : 'Error (' + err + '.json)' }}</span>
+                                        <span v-if="level && isNewLevel(level.history)" style="color: #ff4d4d; font-weight: bold; margin-left: 8px; font-size: 0.85rem; letter-spacing: 0.5px; flex-shrink: 0;">NEW!</span>
+                                    </div>
                                 </button>
                             </td>
                         </tr>
@@ -167,7 +183,8 @@ export default {
         selected: 0,
         errors: [],
         roleIconMap,
-        store
+        store,
+        filter: "" // Linked directly to the text query box string binding
     }),
     computed: {
         level() {
@@ -181,7 +198,7 @@ export default {
                 this.toggledShowcase
                     ? this.level.showcase
                     : this.level.verification
-            );
+                );
         },
         levelHistory() {
             if (!this.level || !this.level.history || !Array.isArray(this.level.history)) {
@@ -208,6 +225,17 @@ export default {
             });
         
             return processedHistory.sort((a, b) => new Date(b.date) - new Date(a.date));
+        },
+        // Live computed evaluation process running search term matching
+        filteredList() {
+            if (!this.list) return [];
+            if (!this.filter) return this.list;
+            
+            const cleanFilter = this.filter.toLowerCase().trim();
+            return this.list.filter(([level, err]) => {
+                const name = level ? level.name : `Error (${err}.json)`;
+                return name.toLowerCase().includes(cleanFilter);
+            });
         }
     },
     async mounted() {
@@ -230,7 +258,6 @@ export default {
                 this.errors.push("Failed to load list editors.");
             }
 
-            // Route parsing: Automatically select a level if initialized via deep link ID
             if (this.$route.params.id) {
                 this.selectLevelById(this.$route.params.id);
             }
@@ -239,7 +266,6 @@ export default {
         this.loading = false;
     },
     watch: {
-        // Watch for manual browser back/forward changes or structural link redirects
         '$route.params.id'(newId) {
             if (newId) {
                 this.selectLevelById(newId);
@@ -284,6 +310,18 @@ export default {
                 default:
                     return '#888888';
             }
+        },
+        isNewLevel(historyArray) {
+            if (!historyArray || !Array.isArray(historyArray)) return false;
+            
+            const addedLog = historyArray.find(log => log.type === 'added');
+            if (!addedLog || !addedLog.date) return false;
+
+            const addedDate = new Date(addedLog.date);
+            const currentDate = new Date();
+            const sevenDaysInMs = 7 * 24 * 60 * 60 * 1000;
+
+            return (currentDate - addedDate) < sevenDaysInMs;
         }
     }
 };
