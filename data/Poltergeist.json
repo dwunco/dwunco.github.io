@@ -125,6 +125,20 @@
             "type": "moved",
             "oldPlacement": 15,
             "placement": 16,
+            "notes": "commatose was moved up past this demon"
+        },
+        {
+            "date": "2026-04-26",
+            "type": "moved",
+            "oldPlacement": 16,
+            "placement": 15,
+            "notes": "CraZy II was moved down past this demon"
+        },
+        {
+            "date": "2026-04-26",
+            "type": "moved",
+            "oldPlacement": 15,
+            "placement": 16,
             "notes": "Sakupen Hell was added above"
         },
         {

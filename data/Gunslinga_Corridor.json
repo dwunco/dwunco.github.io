@@ -45,6 +45,13 @@
             "notes": "Sweater Weather was added above"
         },
         {
+            "date": "2026-06-01",
+            "type": "moved",
+            "oldPlacement": 8,
+            "placement": 9,
+            "notes": "Robi was added above"
+        },
+        {
             "date": "2026-05-25",
             "type": "moved",
             "oldPlacement": 7,
@@ -70,13 +77,6 @@
             "type": "added",
             "placement": 7,
             "notes": "Gunslinga Corridor added to the list"
-        },
-        {
-            "date": "2026-06-01",
-            "type": "moved",
-            "oldPlacement": 8,
-            "placement": 9,
-            "notes": "Robi was added above"
         }
     ]
 }

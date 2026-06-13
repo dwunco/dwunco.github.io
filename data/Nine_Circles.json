@@ -101,17 +101,164 @@
             "notes": "Nilscapes was added above"
         },
         {
-            "date": "2026-04-21",
-            "type": "added",
-            "placement": 22,
-            "notes": "Nine Circles added to the list"
-        },
-        {
             "date": "2026-06-01",
             "type": "moved",
             "oldPlacement": 39,
             "placement": 40,
             "notes": "Robi was added above"
+        },
+        {
+            "date": "2026-05-24",
+            "type": "moved",
+            "oldPlacement": 40,
+            "placement": 39,
+            "notes": "ToE 3 was moved down past this demon"
+        },
+        {
+            "date": "2026-05-24",
+            "type": "moved",
+            "oldPlacement": 39,
+            "placement": 40,
+            "notes": "Inane Demon was added above"
+        },
+        {
+            "date": "2026-05-24",
+            "type": "moved",
+            "oldPlacement": 38,
+            "placement": 39,
+            "notes": "Inane Demon was added above"
+        },
+        {
+            "date": "2026-05-24",
+            "type": "moved",
+            "oldPlacement": 37,
+            "placement": 38,
+            "notes": "GD10 was added above"
+        },
+        {
+            "date": "2026-05-24",
+            "type": "moved",
+            "oldPlacement": 36,
+            "placement": 37,
+            "notes": "Trip was added above"
+        },
+        {
+            "date": "2026-05-23",
+            "type": "moved",
+            "oldPlacement": 35,
+            "placement": 36,
+            "notes": "Buff This was added above"
+        },
+        {
+            "date": "2026-05-23",
+            "type": "moved",
+            "oldPlacement": 34,
+            "placement": 35,
+            "notes": "CHROMA was added above"
+        },
+        {
+            "date": "2026-05-22",
+            "type": "moved",
+            "oldPlacement": 33,
+            "placement": 34,
+            "notes": "Robtop Rave was added above"
+        },
+        {
+            "date": "2026-05-17",
+            "type": "moved",
+            "oldPlacement": 34,
+            "placement": 33,
+            "notes": "Sonic Wave was removed from the list"
+        },
+        {
+            "date": "2026-05-17",
+            "type": "moved",
+            "oldPlacement": 33,
+            "placement": 34,
+            "notes": "Future Funk was added above"
+        },
+        {
+            "date": "2026-05-15",
+            "type": "moved",
+            "oldPlacement": 32,
+            "placement": 33,
+            "notes": "Sonic Wave was added above (prank)"
+        },
+        {
+            "date": "2026-05-12",
+            "type": "moved",
+            "oldPlacement": 31,
+            "placement": 32,
+            "notes": "Gunslinga Corridor was added above"
+        },
+        {
+            "date": "2026-05-08",
+            "type": "moved",
+            "oldPlacement": 30,
+            "placement": 31,
+            "notes": "Death Note was added above"
+        },
+        {
+            "date": "2026-05-05",
+            "type": "moved",
+            "oldPlacement": 29,
+            "placement": 30,
+            "notes": "TOE III (ToE 3) was moved up past this demon"
+        },
+        {
+            "date": "2026-05-05",
+            "type": "moved",
+            "oldPlacement": 28,
+            "placement": 29,
+            "notes": "Anya II was added above"
+        },
+        {
+            "date": "2026-04-28",
+            "type": "moved",
+            "oldPlacement": 27,
+            "placement": 28,
+            "notes": "Desert Temple was added above"
+        },
+        {
+            "date": "2026-04-26",
+            "type": "moved",
+            "oldPlacement": 26,
+            "placement": 27,
+            "notes": "Sakupen Hell was added above"
+        },
+        {
+            "date": "2026-04-24",
+            "type": "moved",
+            "oldPlacement": 25,
+            "placement": 26,
+            "notes": "Lunatic Doom Machine was added above"
+        },
+        {
+            "date": "2026-04-23",
+            "type": "moved",
+            "oldPlacement": 24,
+            "placement": 25,
+            "notes": "Forsaken Neon was added above"
+        },
+        {
+            "date": "2026-04-21",
+            "type": "moved",
+            "oldPlacement": 23,
+            "placement": 24,
+            "notes": "CraZy was moved up past this demon"
+        },
+        {
+            "date": "2026-04-21",
+            "type": "moved",
+            "oldPlacement": 22,
+            "placement": 23,
+            "notes": "CraZy II was added above"
+        },
+        {
+            "date": "2026-04-21",
+            "type": "added",
+            "placement": 22,
+            "notes": "Nine Circles added to the list"
         }
     ]
 }
