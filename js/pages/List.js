@@ -22,29 +22,91 @@ export default {
         </main>
         <main v-else class="page-list">
             <div class="list-container">
-                <div class="list-search" style="padding: 15px; border-bottom: 1px solid #333; background: rgba(0,0,0,0.15);">
-                    <input 
-                        v-model="filter" 
-                        type="text" 
-                        placeholder="Search levels..." 
-                        style="width: 100%; padding: 10px 14px; background: rgba(255,255,255,0.05); border: 1px solid #444; color: #fff; border-radius: 6px; font-size: 0.95rem; outline: none; transition: border-color 0.2s;"
-                        onfocus="this.style.borderColor='#666'"
-                        onblur="this.style.borderColor='#444'"
-                    />
+                <div class="list-search" style="padding: 15px; border-bottom: 1px solid var(--border-color, #333); background: rgba(0,0,0,0.15);">
+                    <div style="display: flex; gap: 8px; align-items: center; width: 100%;">
+                        <input 
+                            v-model="filter" 
+                            type="text" 
+                            placeholder="Search levels..." 
+                            style="flex-grow: 1; min-width: 0; padding: 10px 14px; background: rgba(255,255,255,0.05); border: 1px solid var(--border-color, #444); color: var(--text-color, #fff); border-radius: 6px; outline: none; font-size: 0.95rem;"
+                        />
+                        <button 
+                            @click="advancedOpen = !advancedOpen"
+                            :style="{
+                                padding: '10px 16px',
+                                background: advancedOpen ? '#ff4d4d' : 'rgba(255,255,255,0.1)',
+                                border: '1px solid ' + (advancedOpen ? '#ff4d4d' : 'var(--border-color, #444)'),
+                                color: '#fff',
+                                borderRadius: '6px',
+                                cursor: 'pointer',
+                                whiteSpace: 'nowrap',
+                                flexShrink: '0',
+                                display: 'inline-flex',
+                                alignItems: 'center',
+                                justifyContent: 'center'
+                            }">
+                            <span class="type-label-md" style="font-weight: bold;">Filters {{ advancedOpen ? '▲' : '▼' }}</span>
+                        </button>
+                    </div>
+
+                    <div v-if="advancedOpen" style="margin-top: 12px; padding-top: 12px; border-top: 1px dashed var(--border-color, #444); display: flex; flex-direction: column; gap: 10px;">
+                        
+                        <label style="display: flex; align-items: center; gap: 8px; cursor: pointer; user-select: none;">
+                            <input type="checkbox" v-model="filterNewOnly" style="cursor: pointer;" />
+                            <span class="type-label-md" style="color: var(--text-color-muted, #ccc);">
+                                Show Only <span style="color: #ff4d4d; font-weight: bold;">NEW!</span> Levels
+                            </span>
+                        </label>
+
+                        <div style="display: flex; flex-direction: column; gap: 8px;">
+                            <input 
+                                v-model="filterCreator" 
+                                type="text" 
+                                placeholder="Filter by Creator..." 
+                                style="width: 100%; padding: 8px 12px; background: rgba(255,255,255,0.03); border: 1px solid var(--border-color, #333); color: var(--text-color, #fff); border-radius: 4px; outline: none; font-size: 0.85rem;"
+                            />
+                            <input 
+                                v-model="filterVerifier" 
+                                type="text" 
+                                placeholder="Filter by Verifier..." 
+                                style="width: 100%; padding: 8px 12px; background: rgba(255,255,255,0.03); border: 1px solid var(--border-color, #333); color: var(--text-color, #fff); border-radius: 4px; outline: none; font-size: 0.85rem;"
+                            />
+                            <input 
+                                v-model="filterUploader" 
+                                type="text" 
+                                placeholder="Filter by Uploader..." 
+                                style="width: 100%; padding: 8px 12px; background: rgba(255,255,255,0.03); border: 1px solid var(--border-color, #333); color: var(--text-color, #fff); border-radius: 4px; outline: none; font-size: 0.85rem;"
+                            />
+                        </div>
+
+                        <div style="margin-top: 4px;">
+                            <span class="type-title-sm" style="display: block; margin-bottom: 6px; color: var(--text-color-muted, #888); font-weight: bold; letter-spacing: 0.5px;">Active Tag Filters:</span>
+                            <div style="display: flex; flex-wrap: wrap; gap: 6px;">
+                                <span v-if="filterTags.length === 0" class="type-label-md" style="color: var(--text-color-muted, #555); font-style: italic;">No tags selected</span>
+                                <button 
+                                    v-for="tag in filterTags" 
+                                    :key="tag"
+                                    @click="toggleTag(tag)"
+                                    style="background: #ff4d4d; color: white; border: none; padding: 4px 8px; border-radius: 4px; cursor: pointer; display: inline-flex; align-items: center;">
+                                    <span class="type-label-sm" style="font-weight: bold; color: #fff;">{{ tag }} ×</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <table class="list" v-if="list">
                     <template v-for="([level, err], i) in filteredList">
                         
-                        <tr v-if="i === 0 && !filter" class="list-header-row">
+                        <tr v-if="i === 0 && !filter && !filterNewOnly && !filterCreator && !filterVerifier && !filterUploader && filterTags.length === 0" class="list-header-row">
                             <td colspan="2" class="list-header-label">Main List</td>
                         </tr>
 
-                        <tr v-slot v-if="i === 75 && !filter" class="list-header-row">
+                        <tr v-slot v-if="i === 75 && !filter && !filterNewOnly && !filterCreator && !filterVerifier && !filterUploader && filterTags.length === 0" class="list-header-row">
                             <td colspan="2" class="list-header-label">Extended List</td>
                         </tr>
 
-                        <tr v-if="i === 150 && !filter" class="list-header-row">
+                        <tr v-if="i === 150 && !filter && !filterNewOnly && !filterCreator && !filterVerifier && !filterUploader && filterTags.length === 0" class="list-header-row">
                             <td colspan="2" class="list-header-label">Extended+ List</td>
                         </tr>
 
@@ -67,6 +129,7 @@ export default {
                     </template>
                 </table>
             </div>
+            
             <div class="level-container">
                 <div class="level" v-if="level">
                     <h1>{{ level.name }}</h1>
@@ -86,6 +149,31 @@ export default {
                             <p>{{ level.password || 'Free to Copy' }}</p>
                         </li>
                     </ul>
+
+                    <div class="level-tags" style="margin: -10px 0 25px 0; padding: 10px 0; display: flex; flex-wrap: wrap; gap: 8px; align-items: center;">
+                        <span class="type-title-sm" style="color: var(--text-color-muted, #888); font-weight: bold; text-transform: uppercase; letter-spacing: 0.5px;">Tags:</span>
+                        <template v-if="level.tags && level.tags.length > 0">
+                            <button 
+                                v-for="tag in level.tags" 
+                                :key="tag"
+                                @click="toggleTag(tag)"
+                                :style="{
+                                    background: filterTags.includes(tag) ? '#ff4d4d' : 'rgba(255,255,255,0.06)',
+                                    color: '#fff',
+                                    border: '1px solid ' + (filterTags.includes(tag) ? '#ff4d4d' : 'var(--border-color, #333)'),
+                                    padding: '6px 12px',
+                                    borderRadius: '4px',
+                                    cursor: 'pointer',
+                                    display: 'inline-flex',
+                                    alignItems: 'center',
+                                    transition: 'all 0.15s ease'
+                                }">
+                                <span class="type-label-md" style="font-weight: bold; color: #fff;">{{ tag }}</span>
+                            </button>
+                        </template>
+                        <span v-else class="type-label-md" style="color: var(--text-color-muted, #555); font-style: italic;">None assigned</span>
+                    </div>
+
                     <h2>Records</h2>
                     <p v-if="selected + 1 <= 75"><strong>{{ level.percentToQualify }}%</strong> or better to qualify</p>
                     <p v-else-if="selected + 1 <= 250"><strong>100%</strong> or better to qualify</p>
@@ -107,7 +195,7 @@ export default {
                         </tr>
                     </table>
 
-                    <div class="changelog-panel" style="margin-top: 30px; border-top: 2px solid #333; padding-top: 20px;">
+                    <div class="changelog-panel" style="margin-top: 30px; border-top: 2px solid var(--border-color, #333); padding-top: 20px;">
                         <h2>Changelog History</h2>
                         <div v-if="levelHistory.length > 0" style="display: flex; flex-direction: column; margin-top: 15px;">
                             <div v-for="log in levelHistory" :key="log.date + log.type + log.notes" 
@@ -146,7 +234,7 @@ export default {
 
                 </div>
                 <div class="level" v-else style="height: 100%; justify-content: center; align-items: center;">
-                    <p>(ノಠ益ಠ)ノ彡┻━┻</p>
+                    <p>(ノಠ益┬)ノ彡┻━┻</p>
                 </div>
             </div>
             <div class="meta-container">
@@ -184,7 +272,13 @@ export default {
         errors: [],
         roleIconMap,
         store,
-        filter: "" // Linked directly to the text query box string binding
+        filter: "",
+        advancedOpen: false,
+        filterNewOnly: false,
+        filterVerifier: "",
+        filterUploader: "",
+        filterCreator: "",
+        filterTags: []
     }),
     computed: {
         level() {
@@ -226,15 +320,47 @@ export default {
         
             return processedHistory.sort((a, b) => new Date(b.date) - new Date(a.date));
         },
-        // Live computed evaluation process running search term matching
         filteredList() {
             if (!this.list) return [];
-            if (!this.filter) return this.list;
             
-            const cleanFilter = this.filter.toLowerCase().trim();
             return this.list.filter(([level, err]) => {
-                const name = level ? level.name : `Error (${err}.json)`;
-                return name.toLowerCase().includes(cleanFilter);
+                if (!level) {
+                    return !this.filter && !this.filterNewOnly && !this.filterVerifier && !this.filterUploader && !this.filterCreator && this.filterTags.length === 0;
+                }
+
+                if (this.filter) {
+                    const cleanFilter = this.filter.toLowerCase().trim();
+                    if (!level.name.toLowerCase().includes(cleanFilter)) return false;
+                }
+
+                if (this.filterNewOnly) {
+                    if (!this.isNewLevel(level.history)) return false;
+                }
+
+                if (this.filterVerifier) {
+                    const cleanVerifier = this.filterVerifier.toLowerCase().trim();
+                    if (!level.verifier || !level.verifier.toLowerCase().includes(cleanVerifier)) return false;
+                }
+
+                if (this.filterUploader) {
+                    const cleanUploader = this.filterUploader.toLowerCase().trim();
+                    if (!level.author || !level.author.toLowerCase().includes(cleanUploader)) return false;
+                }
+
+                if (this.filterCreator) {
+                    const cleanCreator = this.filterCreator.toLowerCase().trim();
+                    if (!level.creators || !level.creators.some(c => c.toLowerCase().includes(cleanCreator))) return false;
+                }
+
+                if (this.filterTags.length > 0) {
+                    if (!level.tags || !Array.isArray(level.tags)) return false;
+                    const hasAllTags = this.filterTags.every(tag => 
+                        level.tags.some(t => t.toLowerCase() === tag.toLowerCase())
+                    );
+                    if (!hasAllTags) return false;
+                }
+
+                return true;
             });
         }
     },
@@ -322,6 +448,14 @@ export default {
             const sevenDaysInMs = 7 * 24 * 60 * 60 * 1000;
 
             return (currentDate - addedDate) < sevenDaysInMs;
+        },
+        toggleTag(tag) {
+            const index = this.filterTags.indexOf(tag);
+            if (index === -1) {
+                this.filterTags.push(tag);
+            } else {
+                this.filterTags.splice(index, 1);
+            }
         }
     }
 };
