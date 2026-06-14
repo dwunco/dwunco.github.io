@@ -18,7 +18,7 @@ const roleIconMap = {
 const TAGS_POOL = {
     "UPDATE": ["1.0", "1.1", "1.2", "1.3", "1.4", "1.5", "1.6", "1.7", "1.8", "1.9", "2.0", "2.1", "2.2"],
     "LENGTH": ["Tiny", "Short", "Medium", "Long", "XL", "XXL", "XXL+"],
-    "GAMEPLAY": ["Timings", "Clicksync", "Chokepoints", "High CPS", "Flow", "Memory", "Gimmicky", "Learny", "Fast-Paced", "Slow-Paced"],
+    "GAMEPLAY": ["Timings", "Clicksync", "Chokepoints", "High CPS", "Flow", "Memory", "Gimmicky", "Learny", "Fast-Paced", "Slow-Paced", "Overall"],
     "GAMEMODES": ["Cube", "Ship", "Ball", "UFO", "Wave", "Robot", "Spider", "Swing", "Mirror", "Duals"],
     "MISCELLANEOUS": ["NONG"]
 };
