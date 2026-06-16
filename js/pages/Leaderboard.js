@@ -12,6 +12,11 @@ export default {
         loading: true,
         selected: 0,
         err: [],
+        
+        // Add usernames here to completely wipe them off the global rankings dynamically
+        blacklist: [
+            "cookiedarookie"
+        ],
     }),
     template: `
         <main v-if="loading">
@@ -26,7 +31,7 @@ export default {
                 </div>
                 <div class="board-container">
                     <table class="board">
-                        <tr v-for="(ientry, i) in leaderboard">
+                        <tr v-for="(ientry, i) in filteredLeaderboard">
                             <td class="rank">
                                 <p class="type-label-lg">#{{ i + 1 }}</p>
                             </td>
@@ -83,15 +88,20 @@ export default {
         </main>
     `,
     computed: {
+        filteredLeaderboard() {
+            if (!this.leaderboard) return [];
+            // Dynamically filters out users matching the blacklist (case-insensitive check)
+            return this.leaderboard.filter(entry => !this.isBlacklisted(entry.user));
+        },
         entry() {
-            return this.leaderboard[this.selected];
+            return this.filteredLeaderboard[this.selected];
         },
         combinedList() {
             if (!this.entry) return [];
 
             // Label where each record originated
-            const verifications = this.entry.verified.map(score => ({ ...score, isVerification: true }));
-            const completions = this.entry.completed.map(score => ({ ...score, isVerification: false }));
+            const verifications = this.entry.verified ? this.entry.verified.map(score => ({ ...score, isVerification: true })) : [];
+            const completions = this.entry.completed ? this.entry.completed.map(score => ({ ...score, isVerification: false })) : [];
 
             // Merge and sort in ascending order based on the level rank assignment (#1, #2, #3...)
             return [...verifications, ...completions].sort((a, b) => a.rank - b.rank);
@@ -105,5 +115,9 @@ export default {
     },
     methods: {
         localize,
+        isBlacklisted(username) {
+            if (!username) return false;
+            return this.blacklist.some(b => b.toLowerCase().trim() === username.toLowerCase().trim());
+        }
     },
 };

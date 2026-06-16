@@ -21,6 +21,13 @@
     "records": [],
     "history": [
         {
+            "date": "2026-06-15",
+            "type": "moved",
+            "oldPlacement": 19,
+            "placement": 20,
+            "notes": "Buff This was moved up past this demon"
+        },
+        {
             "date": "2026-06-12",
             "type": "moved",
             "oldPlacement": 18,

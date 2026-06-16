@@ -31,6 +31,13 @@
     ],
     "history": [
         {
+            "date": "2026-06-15",
+            "type": "moved",
+            "oldPlacement": 20,
+            "placement": 16,
+            "notes": "Moved"
+        },
+        {
             "date": "2026-06-12",
             "type": "moved",
             "oldPlacement": 19,

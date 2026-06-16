@@ -180,16 +180,9 @@
         {
             "date": "2026-04-22",
             "type": "moved",
-            "oldPlacement": 14,
-            "placement": 9,
-            "notes": "Moved"
-        },
-        {
-            "date": "2026-04-22",
-            "type": "moved",
             "oldPlacement": 15,
-            "placement": 14,
-            "notes": "CraZy II was moved down past this demon"
+            "placement": 9,
+            "notes": "Swapped with CraZy II"
         },
         {
             "date": "2026-04-21",

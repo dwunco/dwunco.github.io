@@ -83,7 +83,13 @@ export default {
             <div class="level-container">
                 <div class="level" v-if="level">
                     <h1>{{ level.name }}</h1>
-                    <LevelAuthors :author="level.author" :creators="level.creators" :verifier="level.verifier"></LevelAuthors>
+                    
+                    <LevelAuthors 
+                        :author="isBlacklisted(level.author) ? '-' : level.author" 
+                        :creators="level.creators ? level.creators.filter(c => !isBlacklisted(c)) : []" 
+                        :verifier="isBlacklisted(level.verifier) ? '-' : level.verifier">
+                    </LevelAuthors>
+
                     <iframe class="video" id="videoframe" :src="video" frameborder="0"></iframe>
                     <ul class="stats">
                         <li>
@@ -119,7 +125,7 @@ export default {
                     <p v-else-if="selected + 1 <= 250"><strong>100%</strong> or better to qualify</p>
                     <p v-else>This level does not accept new records.</p>
                     <table class="records">
-                        <tr v-for="record in level.records" class="record">
+                        <tr v-for="record in filteredRecords" class="record">
                             <td class="percent">
                                 <p>{{ record.percent }}%</p>
                             </td>
@@ -296,7 +302,13 @@ export default {
         errors: [],
         roleIconMap,
         store,
-        tagsPool: TAGS_POOL, 
+        tagsPool: TAGS_POOL,
+        
+        // Add usernames here to fully mask their records and verification tags dynamically
+        blacklist: [
+            "cookiedarookie"
+        ],
+        
         searchQuery: "", 
         filter: "",
         showModal: false, 
@@ -320,6 +332,11 @@ export default {
     computed: {
         level() {
             return this.list && this.list[this.selected]?.[0];
+        },
+        filteredRecords() {
+            if (!this.level || !this.level.records) return [];
+            // Completely hides any rows on individual level leaderboards belonging to blacklisted accounts
+            return this.level.records.filter(record => !this.isBlacklisted(record.user));
         },
         video() {
             if (!this.level?.showcase) {
@@ -446,6 +463,10 @@ export default {
     methods: {
         embed,
         score,
+        isBlacklisted(username) {
+            if (!username) return false;
+            return this.blacklist.some(b => b.toLowerCase().trim() === username.toLowerCase().trim());
+        },
         selectLevelById(id) {
             if (!this.list) return;
             const index = this.list.findIndex(([level, err]) => {

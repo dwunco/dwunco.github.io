@@ -23,6 +23,13 @@
     "records": [],
     "history": [
         {
+            "date": "2026-06-15",
+            "type": "moved",
+            "oldPlacement": 18,
+            "placement": 19,
+            "notes": "Buff This was moved up past this demon"
+        },
+        {
             "date": "2026-06-12",
             "type": "moved",
             "oldPlacement": 17,
@@ -167,7 +174,7 @@
             "type": "moved",
             "oldPlacement": 12,
             "placement": 11,
-            "notes": "CraZy II was moved down past this demon"
+            "notes": "Magma Bound was moved down past this demon"
         },
         {
             "date": "2026-04-21",
