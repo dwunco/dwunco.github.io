@@ -19,6 +19,20 @@
     ],
     "history": [
         {
+            "date": "2026-06-17",
+            "type": "moved",
+            "oldPlacement": 41,
+            "placement": 42,
+            "notes": "64 was added above"
+        },
+        {
+            "date": "2026-06-17",
+            "type": "moved",
+            "oldPlacement": 40,
+            "placement": 41,
+            "notes": "Hopes and Dreams was added above"
+        },
+        {
             "date": "2026-06-12",
             "type": "moved",
             "oldPlacement": 39,

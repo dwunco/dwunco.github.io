@@ -1,0 +1,32 @@
+{
+    "name": "64",
+    "id": 65731116,
+    "author": "Sillow",
+    "creators": [
+        "Sillow"
+    ],
+    "verifier": "dwunco",
+    "verification": "https://youtu.be/krqG3TlfjeA",
+    "percentToQualify": 75,
+    "password": "2401",
+    "tags": [
+        "2.1",
+        "Long",
+        "Timings",
+        "Wave",
+        "Chokepoints",
+        "Ship",
+        "Slow-Paced",
+        "Memory",
+        "Gimmicky"
+    ],
+    "records": [],
+    "history": [
+        {
+            "date": "2026-06-17",
+            "type": "added",
+            "placement": 34,
+            "notes": "64 added to the list"
+        }
+    ]
+}

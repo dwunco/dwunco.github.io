@@ -92,7 +92,35 @@
             "notes": "Moved"
         },
         {
-            "date": "2026-04-21",
+            "date": "2026-04-26",
+            "type": "moved",
+            "oldPlacement": 13,
+            "placement": 14,
+            "notes": "Sakupen Hell was added above"
+        },
+        {
+            "date": "2026-04-24",
+            "type": "moved",
+            "oldPlacement": 12,
+            "placement": 13,
+            "notes": "Lunatic Doom Machine was added above"
+        },
+        {
+            "date": "2026-04-22",
+            "type": "moved",
+            "oldPlacement": 11,
+            "placement": 12,
+            "notes": "CraZy II was moved up past this demon"
+        },
+        {
+            "date": "2026-04-22",
+            "type": "moved",
+            "oldPlacement": 10,
+            "placement": 11,
+            "notes": "The  Place was moved up past this demon"
+        },
+        {
+            "date": "2026-04-22",
             "type": "moved",
             "oldPlacement": 11,
             "placement": 10,
