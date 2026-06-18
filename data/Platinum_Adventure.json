@@ -51,6 +51,13 @@
     ],
     "history": [
         {
+            "date": "2026-06-18",
+            "type": "moved",
+            "oldPlacement": 172,
+            "placement": 173,
+            "notes": "Zafari was added above"
+        },
+        {
             "date": "2026-06-17",
             "type": "moved",
             "oldPlacement": 171,

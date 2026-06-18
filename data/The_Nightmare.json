@@ -12,7 +12,7 @@
     "tags": [
         "1.2",
         "1.7",
-        "XL",
+        "Long",
         "Nerve Control",
         "Chokepoints",
         "Wave",
@@ -92,6 +92,13 @@
         }
     ],
     "history": [
+        {
+            "date": "2026-06-18",
+            "type": "moved",
+            "oldPlacement": 180,
+            "placement": 181,
+            "notes": "Zafari was added above"
+        },
         {
             "date": "2026-06-17",
             "type": "moved",
