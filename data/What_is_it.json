@@ -12,6 +12,34 @@
     "records": [],
     "history": [
         {
+            "date": "2026-06-19",
+            "type": "moved",
+            "oldPlacement": 164,
+            "placement": 165,
+            "notes": "vvvvvv was added above"
+        },
+        {
+            "date": "2026-06-18",
+            "type": "moved",
+            "oldPlacement": 163,
+            "placement": 164,
+            "notes": "Zafari was added above"
+        },
+        {
+            "date": "2026-06-17",
+            "type": "moved",
+            "oldPlacement": 162,
+            "placement": 163,
+            "notes": "64 was added above"
+        },
+        {
+            "date": "2026-06-17",
+            "type": "moved",
+            "oldPlacement": 161,
+            "placement": 162,
+            "notes": "Hopes and Dreams was added above"
+        },
+        {
             "date": "2026-06-12",
             "type": "moved",
             "oldPlacement": 160,

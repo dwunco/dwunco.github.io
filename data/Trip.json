@@ -96,6 +96,14 @@
     "verification": "https://youtu.be/7qCHrYxvxQ4",
     "percentToQualify": 50,
     "password": "Free Copy",
+    "tags": [
+        "2.1",
+        "Long",
+        "Cube",
+        "Timings",
+        "Chokepoints",
+        "Nerve Control"
+        ],
     "records": [],
     "history": [
         {
@@ -132,6 +140,19 @@
             "oldPlacement": 21,
             "placement": 22,
             "notes": "Robi was added above"
+        },
+        {
+            "date": "2026-05-24",
+            "type": "moved",
+            "oldPlacement": 20,
+            "placement": 21,
+            "notes": "FFFFFF was added above"
+        },
+        {
+            "date": "2026-05-24",
+            "type": "added",
+            "placement": 20,
+            "notes": "Trip added to the list"
         }
     ]
 }

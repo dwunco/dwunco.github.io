@@ -10,6 +10,19 @@
     "verification": "https://youtu.be/xi3OfG8pVwA",
     "percentToQualify": 52,
     "password": "Free Copy",
+    "tags": [
+        "2.1",
+        "Long",
+        "Chokepoints",
+        "Overall",
+        "Fast-Paced",
+        "Ship",
+        "Nerve Control",
+        "Timings",
+        "Learny",
+        "High CPS",
+        "Flow"
+    ],
     "records": [
         {
             "user": "dwunco",
@@ -80,7 +93,7 @@
             "type": "moved",
             "oldPlacement": 22,
             "placement": 23,
-            "notes": "CHROMA was added above"
+            "notes": "Trip was added above"
         },
         {
             "date": "2026-05-23",
@@ -171,7 +184,7 @@
             "type": "moved",
             "oldPlacement": 9,
             "placement": 15,
-            "notes": "Moved"
+            "notes": "Swapped with Magma Bound"
         },
         {
             "date": "2026-04-22",

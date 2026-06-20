@@ -26,6 +26,27 @@
     "records": [],
     "history": [
         {
+            "date": "2026-06-18",
+            "type": "moved",
+            "oldPlacement": 99,
+            "placement": 100,
+            "notes": "Zafari was added above"
+        },
+        {
+            "date": "2026-06-17",
+            "type": "moved",
+            "oldPlacement": 98,
+            "placement": 99,
+            "notes": "64 was added above"
+        },
+        {
+            "date": "2026-06-17",
+            "type": "moved",
+            "oldPlacement": 97,
+            "placement": 98,
+            "notes": "Hopes and Dreams was added above"
+        },
+        {
             "date": "2026-06-12",
             "type": "moved",
             "oldPlacement": 96,
@@ -68,24 +89,17 @@
             "notes": "Nilscapes was added above"
         },
         {
-            "date": "2026-04-21",
-            "type": "added",
-            "placement": 3,
-            "notes": "Cataclysm added to the list"
-        },
-        {
-            "date": "2026-04-26",
-            "type": "moved",
-            "oldPlacement": 3,
-            "placement": 4,
-            "notes": "Sakupen Hell was added above."
-        },
-        {
             "date": "2026-06-01",
             "type": "moved",
             "oldPlacement": 90,
             "placement": 91,
             "notes": "Robi was added above"
+        },
+        {
+            "date": "2026-04-21",
+            "type": "added",
+            "placement": 58,
+            "notes": "MaffStep added to the list"
         }
     ]
 }

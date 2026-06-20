@@ -9,6 +9,19 @@
     "verification": "https://youtu.be/ZKT1_Mq7hD0",
     "percentToQualify": 76,
     "password": "NA",
+    "tags": [
+        "2.0",
+        "Long",
+        "Timings",
+        "Ship",
+        "Overall",
+        "Chokepoints",
+        "UFO",
+        "Nerve Control",
+        "Wave",
+        "Cube",
+        "Slow-Paced"
+    ],
     "records": [
         {
             "user": "cookiedarookie",
@@ -24,6 +37,20 @@
         }
     ],
     "history": [
+        {
+            "date": "2026-06-17",
+            "type": "moved",
+            "oldPlacement": 34,
+            "placement": 35,
+            "notes": "64 was added above"
+        },
+        {
+            "date": "2026-06-17",
+            "type": "moved",
+            "oldPlacement": 33,
+            "placement": 34,
+            "notes": "Hopes and Dreams was added above"
+        },
         {
             "date": "2026-06-12",
             "type": "moved",

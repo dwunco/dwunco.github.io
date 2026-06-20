@@ -20,6 +20,34 @@
     ],
     "history": [
         {
+            "date": "2026-06-19",
+            "type": "moved",
+            "oldPlacement": 160,
+            "placement": 161,
+            "notes": "vvvvvv was added above"
+        },
+        {
+            "date": "2026-06-18",
+            "type": "moved",
+            "oldPlacement": 159,
+            "placement": 160,
+            "notes": "Zafari was added above"
+        },
+        {
+            "date": "2026-06-17",
+            "type": "moved",
+            "oldPlacement": 158,
+            "placement": 159,
+            "notes": "64 was added above"
+        },
+        {
+            "date": "2026-06-17",
+            "type": "moved",
+            "oldPlacement": 157,
+            "placement": 158,
+            "notes": "Hopes and Dreams was added above"
+        },
+        {
             "date": "2026-06-12",
             "type": "moved",
             "oldPlacement": 156,

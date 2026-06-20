@@ -19,6 +19,27 @@
     ],
     "history": [
         {
+            "date": "2026-06-18",
+            "type": "moved",
+            "oldPlacement": 97,
+            "placement": 98,
+            "notes": "Zafari was added above"
+        },
+        {
+            "date": "2026-06-17",
+            "type": "moved",
+            "oldPlacement": 96,
+            "placement": 97,
+            "notes": "64 was added above"
+        },
+        {
+            "date": "2026-06-17",
+            "type": "moved",
+            "oldPlacement": 95,
+            "placement": 96,
+            "notes": "Hopes and Dreams was added above"
+        },
+        {
             "date": "2026-06-12",
             "type": "moved",
             "oldPlacement": 94,
@@ -66,6 +87,12 @@
             "oldPlacement": 88,
             "placement": 89,
             "notes": "Robi was added above"
+        },
+        {
+            "date": "2026-05-24",
+            "type": "added",
+            "placement": 81,
+            "notes": "Death Moon added to the list"
         }
     ]
 }

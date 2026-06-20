@@ -9,8 +9,43 @@
     "verification": "https://youtu.be/NcbFuGLIm6c",
     "percentToQualify": 100,
     "password": "Free Copy",
-    "records": [],
+    "records": [
+        {
+            "user": "PixelPro11",
+            "link": "https://youtu.be/null",
+            "percent": 100,
+            "hz": 60
+        }
+    ],
     "history": [
+        {
+            "date": "2026-06-19",
+            "type": "moved",
+            "oldPlacement": 162,
+            "placement": 163,
+            "notes": "vvvvvv was added above"
+        },
+        {
+            "date": "2026-06-18",
+            "type": "moved",
+            "oldPlacement": 161,
+            "placement": 162,
+            "notes": "Zafari was added above"
+        },
+        {
+            "date": "2026-06-17",
+            "type": "moved",
+            "oldPlacement": 160,
+            "placement": 161,
+            "notes": "64 was added above"
+        },
+        {
+            "date": "2026-06-17",
+            "type": "moved",
+            "oldPlacement": 159,
+            "placement": 160,
+            "notes": "Hopes and Dreams was added above"
+        },
         {
             "date": "2026-06-12",
             "type": "moved",
