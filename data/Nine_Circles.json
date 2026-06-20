@@ -58,16 +58,16 @@
             "hz": 60
         },
         {
+            "user": "lettemix",
+            "link": "https://youtu.be/null",
+            "percent": 100,
+            "hz": 480
+        },
+        {
             "user": "mahad",
             "link": "https://youtu.be/null",
             "percent": 80,
             "hz": 60
-        },
-        {
-            "user": "lettemix",
-            "link": "https://youtu.be/null",
-            "percent": 80,
-            "hz": 360
         }
     ],
     "history": [
