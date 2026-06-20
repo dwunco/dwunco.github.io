@@ -87,6 +87,12 @@
             "oldPlacement": 88,
             "placement": 89,
             "notes": "Robi was added above"
+        },
+        {
+            "date": "2026-05-24",
+            "type": "added",
+            "placement": 81,
+            "notes": "Death Moon added to the list"
         }
     ]
 }

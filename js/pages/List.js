@@ -14,7 +14,6 @@ const roleIconMap = {
     trial: "user-lock",
 };
 
-// Organized subcategories including Gamemodes
 const TAGS_POOL = {
     "UPDATE": ["1.0", "1.1", "1.2", "1.3", "1.4", "1.5", "1.6", "1.7", "1.8", "1.9", "2.0", "2.1", "2.2"],
     "LENGTH": ["Tiny", "Short", "Medium", "Long", "XL", "XXL", "XXL+"],
@@ -31,7 +30,7 @@ export default {
         </main>
         <main v-else class="page-list">
             <div class="list-container">
-                <div class="list-search" style="padding: 15px; border-bottom: 1px solid var(--border-color, #333); background: rgba(0,0,0,0.05);">
+                <div class="list-search" style="padding: 15px; border-bottom: 1px solid var(--border-color, #333); background: rgba(0,0,0,0.05); display: flex; flex-direction: column; gap: 10px;">
                     <div style="display: flex; gap: 8px; align-items: center; width: 100%;">
                         <input 
                             type="text" 
@@ -43,34 +42,49 @@ export default {
                             Filters ▼
                         </button>
                     </div>
+
+                    <div style="display: flex; gap: 8px; align-items: center; justify-content: space-between; background: rgba(255,255,255,0.02); padding: 6px 10px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.05);">
+                        <span class="type-label-md" style="opacity: 0.9; font-weight: bold; color: var(--apply-color, #ff7300); display: flex; align-items: center; gap: 4px;">🕒 Time Machine:</span>
+                        <input 
+                            type="date" 
+                            v-model="timeMachineDate" 
+                            style="background: #111; color: #fff; border: 1px solid #333; padding: 4px 8px; border-radius: 4px; font-family: inherit; font-size: 0.85rem; cursor: pointer;"
+                        />
+                        <button v-if="timeMachineDate" @click="timeMachineDate = ''" style="background: transparent; color: #888; border: none; cursor: pointer; font-size: 0.85rem;">Reset</button>
+                    </div>
                 </div>
 
                 <table class="list" v-if="list">
                     <template v-for="([level, err], i) in filteredList">
                         
-                        <tr v-if="i === 0 && !filter && !filterNewOnly && !filterCreator && !filterVerifier && !filterUploader && filterTags.length === 0" class="list-header-row">
+                        <tr v-if="level && level.historicalRank === 1 && !filter && !filterNewOnly && !filterCreator && !filterVerifier && !filterUploader && filterTags.length === 0" class="list-header-row">
                             <td colspan="2" class="list-header-label">Main List</td>
                         </tr>
 
-                        <tr v-slot v-if="i === 75 && !filter && !filterNewOnly && !filterCreator && !filterVerifier && !filterUploader && filterTags.length === 0" class="list-header-row">
+                        <tr v-if="level && level.historicalRank === 76 && !filter && !filterNewOnly && !filterCreator && !filterVerifier && !filterUploader && filterTags.length === 0" class="list-header-row">
                             <td colspan="2" class="list-header-label">Extended List</td>
                         </tr>
 
-                        <tr v-if="i === 150 && !filter && !filterNewOnly && !filterCreator && !filterVerifier && !filterUploader && filterTags.length === 0" class="list-header-row">
+                        <tr v-if="level && level.historicalRank === 151 && !filter && !filterNewOnly && !filterCreator && !filterVerifier && !filterUploader && filterTags.length === 0" class="list-header-row">
                             <td colspan="2" class="list-header-label">Extended+ List</td>
                         </tr>
 
                         <tr>
                             <td class="rank" style="width: 60px; min-width: 60px; max-width: 60px; text-align: left;">
-                                <p v-if="list.indexOf(filteredList[i]) + 1 <= 250" class="type-label-lg">
-                                    #{{ list.indexOf(filteredList[i]) + 1 }}
+                                <p v-if="level && level.historicalRank <= 250" class="type-label-lg">
+                                    #{{ level.historicalRank }}
                                 </p>
-                                <p v-else class="type-label-lg">Legacy</p>
+                                <p v-else-if="!level && getMasterRank(err) <= 250" class="type-label-lg">
+                                    #{{ getMasterRank(err) }}
+                                </p>
+                                <p v-else class="type-label-lg">#{{ i + 1 }}</p>
                             </td>
-                            <td class="level" :class="{ 'active': selected == list.indexOf(filteredList[i]), 'error': !level }" style="width: auto;">
-                                <button @click="selected = list.indexOf(filteredList[i]); $router.push('/level/' + (level ? level.id : err))" style="overflow: visible; width: 100%; text-align: left;">
+                            <td class="level" :class="{ 'active': selected === getMasterIndex(level, err), 'error': !level }" style="width: auto;">
+                                <button @click="setSelectedByLevel(level, err)" style="overflow: visible; width: 100%; text-align: left;">
                                     <div style="display: flex; align-items: center; white-space: nowrap; overflow: visible; padding: 2px 0;">
-                                        <span class="type-label-lg" style="line-height: 1.2; display: inline-block;">{{ level ? level.name : 'Error (' + err + '.json)' }}</span>
+                                        <span class="type-label-lg" style="line-height: 1.2; display: inline-block;">
+                                            {{ level && level.name ? level.name : (err ? err.toUpperCase() : 'BROKEN_FILE_' + (i + 1)) }}
+                                        </span>
                                         <span v-if="level && isNewLevel(level.history)" style="color: #ff4d4d; font-weight: bold; margin-left: 8px; font-size: 0.85rem; letter-spacing: 0.5px; flex-shrink: 0;">NEW!</span>
                                     </div>
                                 </button>
@@ -81,34 +95,38 @@ export default {
             </div>
             
             <div class="level-container">
-                <div class="level" v-if="level">
-                    <h1>{{ level.name }}</h1>
+                <div class="level" v-if="level || currentErrorFilename">
+                    <h1>{{ level && level.name ? level.name : (currentErrorFilename ? currentErrorFilename.toUpperCase() : 'UNREADABLE TIMELINE ENTRY') }}</h1>
                     
                     <LevelAuthors 
-                        :author="isBlacklisted(level.author) ? '-' : level.author" 
-                        :creators="level.creators ? level.creators.filter(c => !isBlacklisted(c)) : []" 
-                        :verifier="isBlacklisted(level.verifier) ? '-' : level.verifier">
+                        :author="level && isBlacklisted(level.author) ? '-' : (level ? level.author : '-')" 
+                        :creators="level && level.creators ? level.creators.filter(c => !isBlacklisted(c)) : []" 
+                        :verifier="level && isBlacklisted(level.verifier) ? '-' : (level ? level.verifier : '-')">
                     </LevelAuthors>
 
-                    <iframe class="video" id="videoframe" :src="video" frameborder="0"></iframe>
+                    <iframe v-if="video" class="video" id="videoframe" :src="video" frameborder="0"></iframe>
+                    <div v-else style="background: #111; border: 1px dashed #333; height: 315px; display: flex; align-items: center; justify-content: center; border-radius: 8px; margin-bottom: 15px;">
+                        <p style="color: #555; font-style: italic;">No showcase video linked (JSON missing/unreadable)</p>
+                    </div>
+
                     <ul class="stats">
                         <li>
                             <div class="type-title-sm">Points when completed</div>
-                            <p>{{ score(selected + 1, 100, level.percentToQualify) }}</p>
+                            <p>{{ (level && level.historicalRank && level.percentToQualify) ? score(level.historicalRank, 100, level.percentToQualify) : '-' }}</p>
                         </li>
                         <li>
                             <div class="type-title-sm">ID</div>
-                            <p>{{ level.id }}</p>
+                            <p>{{ level ? level.id : '-' }}</p>
                         </li>
                         <li>
                             <div class="type-title-sm">Password</div>
-                            <p>{{ level.password || 'Free to Copy' }}</p>
+                            <p>{{ level ? level.password || 'Free to Copy' : '-' }}</p>
                         </li>
                     </ul>
 
                     <div class="level-tags-container">
                         <span class="tags-title">Tags:</span>
-                        <template v-if="level.tags && level.tags.length > 0">
+                        <template v-if="level && level.tags && level.tags.length > 0">
                             <button 
                                 v-for="tag in level.tags" 
                                 :key="tag"
@@ -121,8 +139,9 @@ export default {
                         <span v-else class="tags-empty-state">None assigned</span>
                     </div>
                     <h2>Records</h2>
-                    <p v-if="selected + 1 <= 75"><strong>{{ level.percentToQualify }}%</strong> or better to qualify</p>
-                    <p v-else-if="selected + 1 <= 250"><strong>100%</strong> or better to qualify</p>
+                    <p v-if="level && level.historicalRank && level.historicalRank <= 75"><strong>{{ level.percentToQualify }}%</strong> or better to qualify</p>
+                    <p v-else-if="level && level.historicalRank && level.historicalRank <= 250"><strong>100%</strong> or better to qualify</p>
+                    <p v-else-if="!level && getMasterRank(currentErrorFilename) <= 75"><strong>100%</strong> or better to qualify</p>
                     <p v-else>This level does not accept new records.</p>
                     <table class="records">
                         <tr v-for="record in filteredRecords" class="record">
@@ -304,12 +323,12 @@ export default {
         store,
         tagsPool: TAGS_POOL,
         
-        // Add usernames here to fully mask their records and verification tags dynamically
         blacklist: [
             "cookiedarookie"
         ],
         
         searchQuery: "", 
+        timeMachineDate: "", 
         filter: "",
         showModal: false, 
         
@@ -331,16 +350,36 @@ export default {
     }),
     computed: {
         level() {
-            return this.list && this.list[this.selected]?.[0];
+            if (!this.list || this.selected >= this.list.length) return null;
+            
+            // Get the immutable fallback reference from the primary static master file array
+            const masterPair = this.list[this.selected];
+            const originalLevelObj = masterPair ? masterPair[0] : null;
+            if (!originalLevelObj) return null;
+
+            // Find the active time machine processed level entry sharing the matching level unique ID
+            const activeTimeMatch = this.filteredList.find(([l]) => l && l.id === originalLevelObj.id);
+            
+            if (activeTimeMatch && activeTimeMatch[0]) {
+                return {
+                    ...originalLevelObj,
+                    historicalRank: activeTimeMatch[0].historicalRank
+                };
+            }
+            return originalLevelObj;
+        },
+        currentErrorFilename() {
+            if (!this.list || this.selected >= this.list.length) return null;
+            return this.list[this.selected]?.[1];
         },
         filteredRecords() {
             if (!this.level || !this.level.records) return [];
-            // Completely hides any rows on individual level leaderboards belonging to blacklisted accounts
             return this.level.records.filter(record => !this.isBlacklisted(record.user));
         },
         video() {
-            if (!this.level?.showcase) {
-                return embed(this.level?.verification);
+            if (!this.level) return null;
+            if (!this.level.showcase) {
+                return embed(this.level.verification);
             }
             return embed(
                 this.toggledShowcase
@@ -377,14 +416,70 @@ export default {
         filteredList() {
             if (!this.list) return [];
             
-            return this.list.filter(([level, err]) => {
+            let timeFilteredList = [];
+
+            // --- TIME MACHINE CALCULATION ENGINE ---
+            if (this.timeMachineDate) {
+                const targetTime = new Date(this.timeMachineDate).getTime();
+
+                this.list.forEach(([level, err]) => {
+                    if (!level) {
+                        timeFilteredList.push([level, err]);
+                        return;
+                    }
+
+                    const history = level.history || [];
+                    const sortedHistory = [...history].sort((a, b) => new Date(a.date) - new Date(b.date));
+
+                    const addedLog = sortedHistory.find(log => log.type === 'added');
+                    if (addedLog) {
+                        const addedTime = new Date(addedLog.date).getTime();
+                        if (addedTime > targetTime) return; 
+                    }
+
+                    const validPastLogs = sortedHistory.filter(log => new Date(log.date).getTime() <= targetTime);
+                    let historicalPlacement = null;
+
+                    for (const log of validPastLogs) {
+                        if (log.placement) {
+                            historicalPlacement = parseInt(log.placement, 10);
+                        }
+                    }
+
+                    if (historicalPlacement === null) {
+                        historicalPlacement = this.list.findIndex(([l]) => l && l.id === level.id) + 1;
+                    }
+
+                    timeFilteredList.push([{
+                        ...level,
+                        historicalRank: historicalPlacement
+                    }, err]);
+                });
+
+                timeFilteredList.sort((a, b) => {
+                    const rankA = a[0] ? a[0].historicalRank : 9999;
+                    const rankB = b[0] ? b[0].historicalRank : 9999;
+                    return rankA - rankB;
+                });
+
+            } else {
+                timeFilteredList = this.list.map(([level, err], idx) => {
+                    if (level) {
+                        return [{ ...level, historicalRank: idx + 1 }, err];
+                    }
+                    return [level, err];
+                });
+            }
+
+            // --- SEARCH INPUT & ADVANCED MODAL FILTERS ---
+            return timeFilteredList.filter(([level, err]) => {
                 if (!level) {
                     return !this.searchQuery && !this.filterNewOnly && !this.filterVerifier && !this.filterUploader && !this.filterCreator && this.filterTags.length === 0;
                 }
 
                 if (this.searchQuery) {
                     const cleanFilter = this.searchQuery.toLowerCase().trim();
-                    if (!level.name.toLowerCase().includes(cleanFilter)) return false;
+                    if (!level.name || !level.name.toLowerCase().includes(cleanFilter)) return false;
                 }
 
                 if (this.filterNewOnly) {
@@ -475,6 +570,23 @@ export default {
             });
             if (index !== -1) {
                 this.selected = index;
+            }
+        },
+        getMasterIndex(level, err) {
+            if (!level) {
+                return this.list.findIndex(([_, e]) => e === err);
+            }
+            return this.list.findIndex(([l]) => l && l.id === level.id);
+        },
+        getMasterRank(err) {
+            if (!err) return 9999;
+            return this.list.findIndex(([_, e]) => e === err) + 1;
+        },
+        setSelectedByLevel(level, err) {
+            const index = this.getMasterIndex(level, err);
+            if (index !== -1) {
+                this.selected = index;
+                this.$router.push('/level/' + (level ? level.id : err));
             }
         },
         getLogTypeLabel(log) {

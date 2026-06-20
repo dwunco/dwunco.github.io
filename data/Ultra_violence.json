@@ -12,6 +12,13 @@
     "records": [],
     "history": [
         {
+            "date": "2026-06-19",
+            "type": "moved",
+            "oldPlacement": 64,
+            "placement": 63,
+            "notes": "Metamorphosis was moved down past this demon"
+        },
+        {
             "date": "2026-06-17",
             "type": "moved",
             "oldPlacement": 63,
