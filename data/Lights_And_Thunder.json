@@ -9,7 +9,14 @@
     "verification": "https://youtu.be/Ru4Ut2IXSqE",
     "percentToQualify": 100,
     "password": "Free Copy",
-    "records": [],
+    "records": [
+        {
+            "user": "afeefmatter03",
+            "link": "https://youtu.be/null",
+            "percent": 100,
+            "hz": 60
+        }
+    ],
     "history": [
         {
             "date": "2026-06-21",

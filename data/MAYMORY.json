@@ -5,11 +5,27 @@
     "creators": [
         "ItzKiba"
     ],
-    "verifier": "dwunco",
+    "verifier": "WawLzerz",
     "verification": "https://youtu.be/EKP5rGdOf_o",
     "percentToQualify": 100,
     "password": "Free Copy",
+    "tags": [
+        "2.1",
+        "Long",
+        "Memory",
+        "Learny",
+        "Gimmicky",
+        "Slow-Paced",
+        "Wave",
+        "Chokepoints"
+    ],
     "records": [
+        {
+            "user": "dwunco",
+            "link": "https://youtu.be/null",
+            "percent": 100,
+            "hz": 60
+        },
         {
             "user": "cookiedarookie",
             "link": "https://youtu.be/null",

@@ -5,11 +5,26 @@
     "creators": [
         "Z3R3P"
     ],
-    "verifier": "aCUB3R",
+    "verifier": "WawLzerz",
     "verification": "https://youtu.be/zyfa1aHAqM8",
     "percentToQualify": 100,
     "password": "Free Copy",
+    "tags": [
+        "2.1",
+        "Long",
+        "Overall",
+        "Ship",
+        "Timings",
+        "Chokepoints"
+    ],
     "records": [
+        {
+            "user": "aCUB3R",
+            "link": "https://youtu.be/watch?v=null",
+            "percent": 100,
+            "hz": 60,
+            "mobile": true
+        },
         {
             "user": "PixelPro11",
             "link": "https://youtu.be/watch?v=null",
