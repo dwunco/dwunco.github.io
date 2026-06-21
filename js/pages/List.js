@@ -417,51 +417,72 @@ export default {
             if (!this.list) return [];
             
             let timeFilteredList = [];
-
+    
             // --- TIME MACHINE CALCULATION ENGINE ---
             if (this.timeMachineDate) {
-                const targetTime = new Date(this.timeMachineDate).getTime();
-
+                // Set target time to the very end of the selected day (23:59:59.999) 
+                // so it encompasses all changes made throughout that entire date.
+                const targetTime = new Date(this.timeMachineDate);
+                targetTime.setHours(23, 59, 59, 999);
+                const targetTimestamp = targetTime.getTime();
+    
                 this.list.forEach(([level, err]) => {
                     if (!level) {
                         timeFilteredList.push([level, err]);
                         return;
                     }
-
+    
                     const history = level.history || [];
-                    const sortedHistory = [...history].sort((a, b) => new Date(a.date) - new Date(b.date));
 
+                    // 1. Map item to include its raw array position index from the file
+                    const sortedHistory = history
+                        .map((log, index) => ({ ...log, originalIndex: index }))
+                        .sort((a, b) => {
+                            const timeA = new Date(a.date).getTime();
+                            const timeB = new Date(b.date).getTime();
+                            
+                            // 2. Tiebreaker: If dates are identical, make sure the one closer to the 
+                            // top of the file (smaller index) comes LAST in the sorted array
+                            if (timeA === timeB) {
+                                return b.originalIndex - a.originalIndex; 
+                            }
+                            return timeA - timeB;
+                        }); 
+    
                     const addedLog = sortedHistory.find(log => log.type === 'added');
                     if (addedLog) {
                         const addedTime = new Date(addedLog.date).getTime();
-                        if (addedTime > targetTime) return; 
+                        if (addedTime > targetTimestamp) return; 
                     }
-
-                    const validPastLogs = sortedHistory.filter(log => new Date(log.date).getTime() <= targetTime);
+    
+                    const validPastLogs = sortedHistory.filter(log => new Date(log.date).getTime() <= targetTimestamp);
                     let historicalPlacement = null;
-
+    
+                    // Loop through all valid actions up to that date.
+                    // Consecutive changes on the same day will continually overwrite the placement,
+                    // leaving you with the absolute LAST placement set.
                     for (const log of validPastLogs) {
                         if (log.placement) {
                             historicalPlacement = parseInt(log.placement, 10);
                         }
                     }
-
+    
                     if (historicalPlacement === null) {
                         historicalPlacement = this.list.findIndex(([l]) => l && l.id === level.id) + 1;
                     }
-
+    
                     timeFilteredList.push([{
                         ...level,
                         historicalRank: historicalPlacement
                     }, err]);
                 });
-
+    
                 timeFilteredList.sort((a, b) => {
                     const rankA = a[0] ? a[0].historicalRank : 9999;
                     const rankB = b[0] ? b[0].historicalRank : 9999;
                     return rankA - rankB;
                 });
-
+    
             } else {
                 timeFilteredList = this.list.map(([level, err], idx) => {
                     if (level) {
@@ -470,37 +491,37 @@ export default {
                     return [level, err];
                 });
             }
-
+    
             // --- SEARCH INPUT & ADVANCED MODAL FILTERS ---
             return timeFilteredList.filter(([level, err]) => {
                 if (!level) {
                     return !this.searchQuery && !this.filterNewOnly && !this.filterVerifier && !this.filterUploader && !this.filterCreator && this.filterTags.length === 0;
                 }
-
+    
                 if (this.searchQuery) {
                     const cleanFilter = this.searchQuery.toLowerCase().trim();
                     if (!level.name || !level.name.toLowerCase().includes(cleanFilter)) return false;
                 }
-
+    
                 if (this.filterNewOnly) {
                     if (!this.isNewLevel(level.history)) return false;
                 }
-
+    
                 if (this.filterVerifier) {
                     const cleanVerifier = this.filterVerifier.toLowerCase().trim();
                     if (!level.verifier || !level.verifier.toLowerCase().includes(cleanVerifier)) return false;
                 }
-
+    
                 if (this.filterUploader) {
                     const cleanUploader = this.filterUploader.toLowerCase().trim();
                     if (!level.author || !level.author.toLowerCase().includes(cleanUploader)) return false;
                 }
-
+    
                 if (this.filterCreator) {
                     const cleanCreator = this.filterCreator.toLowerCase().trim();
                     if (!level.creators || !level.creators.some(c => c.toLowerCase().includes(cleanCreator))) return false;
                 }
-
+    
                 if (this.filterTags.length > 0) {
                     if (!level.tags || !Array.isArray(level.tags)) return false;
                     
@@ -516,10 +537,11 @@ export default {
                         if (!hasAnyTag) return false;
                     }
                 }
-
+    
                 return true;
             });
         }
+
     },
     async mounted() {
         this.list = await fetchList();

@@ -11,6 +11,12 @@
     "password": "NA",
     "records": [
         {
+            "user": "WawLzerz",
+            "link": "https://youtu.be/null",
+            "percent": 100,
+            "hz": 60
+        },
+        {
             "user": "IShowMonkeyGMD",
             "link": "https://youtu.be/null",
             "percent": 100,
@@ -41,9 +47,22 @@
             "link": "https://youtu.be/null",
             "percent": 100,
             "hz": 60
+        },
+        {
+            "user": "lettemix",
+            "link": "https://youtu.be/null",
+            "percent": 100,
+            "hz": 60
         }
     ],
     "history": [
+        {
+            "date": "2026-06-21",
+            "type": "moved",
+            "oldPlacement": 117,
+            "placement": 118,
+            "notes": "Critical Hit (GenteelNoobie) was added above"
+        },
         {
             "date": "2026-06-18",
             "type": "moved",

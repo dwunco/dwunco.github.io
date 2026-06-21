@@ -50,6 +50,13 @@
             "notes": "Sweater Weather was added above"
         },
         {
+            "date": "2026-06-01",
+            "type": "moved",
+            "oldPlacement": 9,
+            "placement": 10,
+            "notes": "Robi was added above"
+        },
+        {
             "date": "2026-05-23",
             "type": "moved",
             "oldPlacement": 10,
@@ -89,20 +96,13 @@
             "type": "moved",
             "oldPlacement": 7,
             "placement": 8,
-            "notes": "Sakupen Hell was added above."
+            "notes": "Sakupen Hell was added above"
         },
         {
             "date": "2026-04-24",
             "type": "added",
             "placement": 7,
             "notes": "Lunatic Doom Machine added to the list"
-        },
-        {
-            "date": "2026-06-01",
-            "type": "moved",
-            "oldPlacement": 9,
-            "placement": 10,
-            "notes": "Robi was added above"
         }
     ]
 }

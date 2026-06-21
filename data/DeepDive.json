@@ -5,11 +5,18 @@
     "creators": [
         "Vealt"
     ],
-    "verifier": "IShowMonkeyGMD",
+    "verifier": "WawLzerz",
     "verification": "https://youtu.be/l3pjobAw6ak",
     "percentToQualify": 100,
     "password": "Free Copy",
-    "records": [],
+    "records": [
+        {
+            "user": "IShowMonkeyGMD",
+            "link": "https://youtu.be/null",
+            "percent": 100,
+            "hz": 60
+        }
+    ],
     "history": [
         {
             "date": "2026-06-19",

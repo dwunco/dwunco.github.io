@@ -43,6 +43,13 @@
             "notes": "Sweater Weather was added above"
         },
         {
+            "date": "2026-06-01",
+            "type": "moved",
+            "oldPlacement": 7,
+            "placement": 8,
+            "notes": "Robi was added above"
+        },
+        {
             "date": "2026-05-25",
             "type": "moved",
             "oldPlacement": 8,
@@ -73,29 +80,15 @@
         {
             "date": "2026-04-26",
             "type": "moved",
-            "oldPlacement": 6,
+            "oldPlacement": 8,
             "placement": 7,
             "notes": "Sakupen Hell was added above."
-        },
-        {
-            "date": "2026-04-24",
-            "type": "moved",
-            "oldPlacement": 8,
-            "placement": 9,
-            "notes": "Lunatic Doom Machine was added above."
         },
         {
             "date": "2026-04-21",
             "type": "added",
             "placement": 6,
             "notes": "Through The Decay added to the list"
-        },
-        {
-            "date": "2026-06-01",
-            "type": "moved",
-            "oldPlacement": 7,
-            "placement": 8,
-            "notes": "Robi was added above"
         }
     ]
 }

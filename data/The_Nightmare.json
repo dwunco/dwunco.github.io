@@ -99,6 +99,13 @@
     ],
     "history": [
         {
+            "date": "2026-06-21",
+            "type": "moved",
+            "oldPlacement": 182,
+            "placement": 183,
+            "notes": "Critical Hit (GenteelNoobie) was added above"
+        },
+        {
             "date": "2026-06-19",
             "type": "moved",
             "oldPlacement": 181,

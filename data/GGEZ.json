@@ -12,6 +12,13 @@
     "records": [],
     "history": [
         {
+            "date": "2026-06-21",
+            "type": "moved",
+            "oldPlacement": 141,
+            "placement": 142,
+            "notes": "Critical Hit (GenteelNoobie) was added above"
+        },
+        {
             "date": "2026-06-18",
             "type": "moved",
             "oldPlacement": 140,

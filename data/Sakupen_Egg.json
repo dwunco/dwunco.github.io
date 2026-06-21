@@ -17,11 +17,17 @@
         "Andhika",
         "CDMusic"
     ],
-    "verifier": "IShowMonkeyGMD",
+    "verifier": "WawLzerz",
     "verification": "https://youtu.be/30MYwESIT8g",
     "percentToQualify": 100,
     "password": "Free Copy",
     "records": [
+        {
+            "user": "IShowMonkeyGMD",
+            "link": "https://youtu.be/null",
+            "percent": 100,
+            "hz": 60
+        },
         {
             "user": "aCUB3R",
             "link": "https://youtu.be/null",

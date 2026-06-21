@@ -11,6 +11,12 @@
     "password": "697469",
     "records": [
         {
+            "user": "WawLzerz",
+            "link": "https://youtu.be/null",
+            "percent": 100,
+            "hz": 60
+        },
+        {
             "user": "IShowMonkeyGMD",
             "link": "https://youtu.be/null",
             "percent": 100,
@@ -37,6 +43,13 @@
         }
     ],
     "history": [
+        {
+            "date": "2026-06-21",
+            "type": "moved",
+            "oldPlacement": 148,
+            "placement": 149,
+            "notes": "Critical Hit (GenteelNoobie) was added above"
+        },
         {
             "date": "2026-06-18",
             "type": "moved",

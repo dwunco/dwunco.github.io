@@ -9,8 +9,22 @@
     "verification": "https://youtu.be/tgwp2wmyaGY",
     "percentToQualify": 100,
     "password": "Free Copy",
+    "tags": [
+        "2.1",
+        "XL",
+        "Gimmicky",
+        "Chokepoints",
+        "Timings"
+    ],
     "records": [],
     "history": [
+        {
+            "date": "2026-06-21",
+            "type": "moved",
+            "oldPlacement": 158,
+            "placement": 159,
+            "notes": "Critical Hit (GenteelNoobie) was added above"
+        },
         {
             "date": "2026-06-19",
             "type": "added",

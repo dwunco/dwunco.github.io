@@ -22,6 +22,12 @@
     ],
     "records": [
         {
+            "user": "WawLzerz",
+            "link": "https://youtu.be/null",
+            "percent": 100,
+            "hz": 60
+        },
+        {
             "user": "IShowMonkeyGMD",
             "link": "https://youtu.be/null",
             "percent": 100,
@@ -74,6 +80,13 @@
         }
     ],
     "history": [
+        {
+            "date": "2026-06-21",
+            "type": "moved",
+            "oldPlacement": 181,
+            "placement": 182,
+            "notes": "Critical Hit (GenteelNoobie) was added above"
+        },
         {
             "date": "2026-06-19",
             "type": "moved",
