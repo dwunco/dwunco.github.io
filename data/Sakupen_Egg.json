@@ -19,7 +19,7 @@
     ],
     "verifier": "WawLzerz",
     "verification": "https://youtu.be/30MYwESIT8g",
-    "percentToQualify": 100,
+    "percentToQualify": 70,
     "password": "Free Copy",
     "records": [
         {
@@ -39,6 +39,12 @@
             "link": "https://youtu.be/null",
             "percent": 100,
             "hz": 240
+        },
+        {
+            "user": "Fragment1345",
+            "link": "https://youtu.be/null",
+            "percent": 73,
+            "hz": 60
         }
     ],
     "history": [

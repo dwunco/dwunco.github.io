@@ -316,6 +316,7 @@ export default {
     data: () => ({
         list: [],
         editors: [],
+        packs: [],
         loading: true,
         selected: 0,
         errors: [],

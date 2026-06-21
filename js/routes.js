@@ -2,6 +2,7 @@ import List from './pages/List.js';
 import Leaderboard from './pages/Leaderboard.js';
 import Roulette from './pages/Roulette.js';
 import Welcome from './pages/Welcome.js';
+import Packs from './pages/Packs.js';
 
 export default [
     // 1. When someone lands on the base site (/#/), instantly redirect them to the welcome route
@@ -14,5 +15,6 @@ export default [
     { path: '/list', component: List },
     { path: '/leaderboard', component: Leaderboard },
     { path: '/roulette', component: Roulette },
-    { path: '/level/:id', component: List }
+    { path: '/level/:id', component: List },
+    { path: '/packs', component: Packs }
 ];

@@ -1,17 +1,32 @@
 [
     {
         "name": "Sillow Pack",
-        "difficulty": 1,
-        "levels": ["1001", "1002", "1003"]
-    },
-    {
-        "name": "Hellish Trials",
         "difficulty": 3,
-        "levels": ["1054", "1089"]
+        "levels": ["62214792", "65731116", "62909889", "61417747"]
     },
     {
-        "name": "Annihilation Trio",
+        "name": "CraZy Trilogy",
         "difficulty": 2,
-        "levels": ["1002", "1115"]
+        "levels": ["47620786", "40945673"]
+    },
+    {
+        "name": "Timings Pack",
+        "difficulty": 3,
+        "levels": ["88172786", "81148582", "61079355", "114933189"]
+    },
+    {
+        "name": "Sakupen Pack",
+        "difficulty": 3,
+        "levels": ["23262780", "58002670"]
+    },
+    {
+        "name": "Top 1 Pack",
+        "difficulty": 3,
+        "levels": ["23262780", "10565740", "3979721"]
+    },
+    {
+        "name": "Demon Pack 3",
+        "difficulty": 1,
+        "levels": ["186646", "55520", "13519"]
     }
 ]
