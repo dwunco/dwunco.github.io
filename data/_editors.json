@@ -5,23 +5,8 @@
         "link": "https://www.youtube.com/@dwunco"
     },
     {
-        "role": "admin",
-        "name": "cookiedarookie",
-        "link": "https://www.youtube.com/@cookiedarookiee"
-    },
-    {
-        "role": "helper",
-        "name": "List Helper",
-        "link": "https://www.youtube.com/@Prometheus_Alt"
-    },
-    {
-        "role": "trial",
-        "name": "Trial List Helper",
-        "link": "https://www.youtube.com/@Prometheus_Alt"
-    },
-    {
         "role": "dev",
-        "name": "List Coder",
+        "name": "nav.md",
         "link": "https://www.youtube.com/@Prometheus_Alt"
     }
 ]

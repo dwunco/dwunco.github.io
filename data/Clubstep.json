@@ -9,6 +9,7 @@
     "verification": "https://youtu.be/F5SLbJ-9WSU",
     "percentToQualify": 100,
     "password": "NA",
+    "rank": "Beginner",
     "records": [
         {
             "user": "WawLzerz",
@@ -44,6 +45,12 @@
         },
         {
             "user": "hxavenlydxvil",
+            "link": "https://youtu.be/null",
+            "percent": 100,
+            "hz": 60
+        },
+        {
+            "user": "BanoUndertale",
             "link": "https://youtu.be/null",
             "percent": 100,
             "hz": 60

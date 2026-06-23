@@ -9,6 +9,7 @@
     "verification": "https://youtu.be/smwunc7UiHk",
     "percentToQualify": 100,
     "password": "808080",
+    "rank": "Beginner",
     "tags": [
         "1.2",
         "2.0",
@@ -62,6 +63,12 @@
         },
         {
             "user": "hxavenlydxvil",
+            "link": "https://youtu.be/null",
+            "percent": 100,
+            "hz": 60
+        },
+        {
+            "user": "BanoUndertale",
             "link": "https://youtu.be/null",
             "percent": 100,
             "hz": 60

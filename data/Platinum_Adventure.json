@@ -9,6 +9,7 @@
     "verification": "https://youtu.be/vKIo0d3a9bA",
     "percentToQualify": 100,
     "password": "0000",
+    "rank": "Beginner",
     "records": [
         {
             "user": "IShowMonkeyGMD",
@@ -44,6 +45,12 @@
         },
         {
             "user": "hxavenlydxvil",
+            "link": "https://youtu.be/null",
+            "percent": 100,
+            "hz": 60
+        },
+        {
+            "user": "BanoUndertale",
             "link": "https://youtu.be/null",
             "percent": 100,
             "hz": 60

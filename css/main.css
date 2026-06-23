@@ -407,3 +407,296 @@ tr.verifier-highlight .badge {
 .modal-btn-apply { background-color: #e67e22; color: #fff; } /* Custom Accent Color option */
 .modal-btn-cancel { background-color: #34495e; color: #fff; }
 .modal-btn-reset { background-color: #e74c3c; color: #fff; margin-left: auto; order: -1; } /* Aligns reset button left */
+
+/* ==========================================================================
+   LEVEL PACKS PAGE STYLES
+   ========================================================================== */
+
+   .page-packs-main {
+    grid-column: 2;
+    display: flex;
+    flex-direction: column;
+    padding: 40px 0;
+    height: auto;
+    font-family: 'Inter', 'Montserrat', system-ui, -apple-system, sans-serif;
+}
+
+.packs-header-block {
+    margin-bottom: 30px;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.15);
+    padding-bottom: 20px;
+}
+
+.packs-header-block h1 {
+    font-size: 2.2rem;
+    margin: 0 0 6px 0;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+}
+
+.packs-header-block p {
+    margin: 0;
+    font-size: 1rem;
+    opacity: 0.6;
+}
+
+.packs-grid-matrix {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 20px;
+    width: 100%;
+}
+
+.pack-card-container {
+    background-color: var(--color-background-hover);
+    border: 1px solid rgba(128, 128, 128, 0.15);
+    border-radius: 8px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.pack-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.pack-card-header h2 {
+    font-size: 1.25rem;
+    margin: 0;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.pack-difficulty-badge {
+    padding: 4px 10px;
+    border-radius: 5px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.pack-levels-list {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 20px;
+}
+
+.pack-level-row {
+    background-color: var(--color-background);
+    border: 1px solid rgba(128, 128, 128, 0.1);
+    border-radius: 6px;
+    padding: 10px 12px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.pack-level-rank-prefix {
+    font-size: 0.85rem;
+    font-weight: 800;
+    flex-shrink: 0;
+    min-width: 35px;
+}
+
+.pack-level-name-text {
+    font-size: 0.9rem;
+    font-weight: 600;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.pack-card-footer {
+    border-top: 1px solid rgba(128, 128, 128, 0.15);
+    padding-top: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.8rem;
+    opacity: 0.6;
+}
+
+.pack-card-footer .label {
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 700;
+    font-size: 0.75rem;
+}
+
+.pack-card-footer .count {
+    font-weight: 700;
+}
+
+.pack-card-footer .count-num {
+    font-size: 0.95rem;
+}
+
+/* Tier Columns Kanban Layout Grid */
+.tier-columns-container {
+    display: flex;
+    gap: 24px;
+    overflow-x: auto;
+    padding: 10px 5px 25px 5px;
+    width: 100%;
+    align-items: flex-start;
+    scroll-behavior: smooth;
+}
+
+/* Ensure scrollbars look modern on webkit browsers */
+.tier-columns-container::-webkit-scrollbar,
+.tier-column-scrollable::-webkit-scrollbar {
+    height: 8px;
+    width: 6px;
+}
+.tier-columns-container::-webkit-scrollbar-thumb,
+.tier-column-scrollable::-webkit-scrollbar-thumb {
+    background: rgba(128, 128, 128, 0.3);
+    border-radius: 4px;
+}
+
+.tier-column {
+    flex: 0 0 320px; /* Locks the column width so they stay side-by-side */
+    background-color: var(--color-background-hover);
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    max-height: 75vh;
+    border: 1px solid rgba(128, 128, 128, 0.15);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.tier-column-header {
+    padding: 16px 20px;
+    background-color: rgba(128, 128, 128, 0.05);
+    border-top: 4px solid var(--color-primary);
+    border-bottom: 1px solid rgba(128, 128, 128, 0.1);
+    border-radius: 12px 12px 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tier-column-title {
+    margin: 0;
+    font-size: 1.15rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.tier-pack-count {
+    font-size: 0.75rem;
+    opacity: 0.6;
+    font-weight: 700;
+    background-color: rgba(128, 128, 128, 0.15);
+    padding: 2px 8px;
+    border-radius: 12px;
+}
+
+.tier-column-scrollable {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    overflow-y: auto;
+}
+
+/* Pack Cards inside columns */
+.pack-card-container.interactive-card {
+    background-color: var(--color-background);
+    border: 1px solid rgba(128, 128, 128, 0.12);
+    border-radius: 8px;
+    padding: 16px;
+    cursor: pointer;
+    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.pack-card-container.interactive-card:hover {
+    transform: translateY(-2px);
+    border-color: rgba(128, 128, 128, 0.3);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Split Page Core Container Layout */
+.packs-split-layout {
+    display: flex;
+    gap: 30px;
+    width: 100%;
+    height: 75vh; /* Sets a strict height bound for the split workspace */
+    align-items: stretch;
+}
+
+/* Left Half Layout Container - Formatted Vertically */
+.packs-split-left {
+    flex: 0 0 340px; /* Locks the left navigation track to a clean fixed width */
+    width: 340px;
+    display: flex;
+    flex-direction: column; /* Switches layout tracking from horizontal to vertical */
+    gap: 20px;
+    overflow-y: auto; /* Enables vertical scrolling across your tier categories */
+    padding-right: 8px;
+}
+
+/* Right Half Layout Panel remains pristine */
+.packs-split-right {
+    flex: 1;
+    background-color: var(--color-background-hover);
+    border: 1px solid rgba(128, 128, 128, 0.15);
+    border-radius: 12px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    overflow-y: auto;
+}
+
+/* Left Half Layout Container - Two-Column Vertical Grid Track */
+.packs-split-left {
+    flex: 0 0 540px; /* Widened to fit two columns comfortably side-by-side */
+    width: 540px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Enforces exactly two equal-width columns */
+    gap: 16px;
+    overflow-y: auto; /* Handles the collective vertical scrolling */
+    padding-right: 8px;
+    align-content: flex-start;
+}
+
+/* Right Half Layout Panel remains responsive */
+.packs-split-right {
+    flex: 1;
+    background-color: var(--color-background-hover);
+    border: 1px solid rgba(128, 128, 128, 0.15);
+    border-radius: 12px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    overflow-y: auto;
+}
+
+/* Structure rules for cards wrapping inside the grid layout */
+.packs-split-left .tier-column {
+    width: 100%;
+}
+
+.packs-split-left .tier-column-scrollable {
+    overflow-y: visible;
+    max-height: none;
+}
+
+.interactive-card.active-selected-pack {
+    border-color: var(--color-primary) !important;
+    background-color: rgba(128, 128, 128, 0.05);
+    box-shadow: inset 3px 0 0 var(--color-primary);
+}

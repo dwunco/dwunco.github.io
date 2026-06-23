@@ -9,6 +9,7 @@
     "verification": "https://youtu.be/40HzFkEpwIM",
     "percentToQualify": 100,
     "password": "NA",
+    "rank": "Beginner",
     "records": [
         {
             "user": "aCUB3R",
@@ -42,6 +43,12 @@
         },
         {
             "user": "aThingToEx",
+            "link": "https://youtu.be/null",
+            "percent": 100,
+            "hz": 60
+        },
+        {
+            "user": "BanoUndertale",
             "link": "https://youtu.be/null",
             "percent": 100,
             "hz": 60

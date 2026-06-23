@@ -4,77 +4,99 @@ export default {
     template: `
         <main v-if="loading" class="page-packs">
             <div class="spinner">
-                <p style="font-family: 'Inter', 'Montserrat', system-ui, -apple-system, sans-serif; font-weight: 700; opacity: 0.6; margin: 0;">Loading Custom Packs...</p>
+                <p class="pack-loading-text">Loading Custom Packs...</p>
             </div>
         </main>
         
-        <main v-else class="page-packs" style="grid-column: 2; display: flex; flex-direction: column; padding: 40px 0; height: auto; font-family: 'Inter', 'Montserrat', system-ui, -apple-system, sans-serif;">
+        <main v-else class="page-packs-main" style="max-width: 100%; padding: 40px 20px;">
             
-            <div style="margin-bottom: 30px; border-bottom: 1px solid rgba(128,128,128,0.15); padding-bottom: 20px; font-family: 'Inter', 'Montserrat', system-ui, -apple-system, sans-serif;">
-                <h1 style="font-size: 2.2rem; margin: 0 0 6px 0; font-weight: 800; letter-spacing: -0.5px; font-family: 'Inter', 'Montserrat', system-ui, -apple-system, sans-serif;">Level Packs</h1>
-                <p style="margin: 0; font-size: 1rem; opacity: 0.6; font-family: 'Inter', 'Montserrat', system-ui, -apple-system, sans-serif;">Complete custom challenges to earn community badges</p>
+            <div class="packs-header-block">
+                <h1>Level Packs</h1>
+                <p>Complete custom challenges to earn community badges</p>
             </div>
 
-            <div class="packs-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 20px; width: 100%; font-family: 'Inter', 'Montserrat', system-ui, -apple-system, sans-serif;">
-                <div v-for="pack in sortedPacks" :key="pack.name" 
-                     style="background-color: var(--color-background-hover); border: 1px solid rgba(128,128,128,0.15); border-radius: 8px; padding: 20px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 4px 12px rgba(0,0,0,0.05); font-family: 'Inter', 'Montserrat', system-ui, -apple-system, sans-serif;"
-                     class="pack-card">
-                    
-                    <div style="font-family: 'Inter', 'Montserrat', system-ui, -apple-system, sans-serif;">
-                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; font-family: 'Inter', 'Montserrat', system-ui, -apple-system, sans-serif;">
-                            <h2 style="font-size: 1.25rem; margin: 0; font-weight: 700; display: flex; align-items: center; gap: 8px; font-family: 'Inter', 'Montserrat', system-ui, -apple-system, sans-serif;">
-                                {{ pack.name }}
-                            </h2>
-                            <span :style="{ 
-                                backgroundColor: getDifficultyColor(pack.difficulty) + '15',
-                                border: '1px solid ' + getDifficultyColor(pack.difficulty),
-                                color: getDifficultyColor(pack.difficulty)
-                            }" style="padding: 4px 10px; border-radius: 5px; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; white-space: nowrap; font-family: 'Inter', 'Montserrat', system-ui, -apple-system, sans-serif;">
-                                Rank {{ pack.difficulty }}
-                            </span>
+            <div class="packs-split-layout">
+                
+                <div class="packs-split-left">
+                    <div v-for="(tier, idx) in tiers" :key="tier" class="tier-column">
+                        <div class="tier-column-header" :style="{ borderTopColor: getTierColor(tier) }">
+                            <h3 class="tier-column-title" :style="{ color: getTierColor(tier) }">{{ tier }}</h3>
+                            <span class="tier-pack-count">{{ getPacksByTier(tier, idx).length }}</span>
                         </div>
-
-                        <div style="display: flex; flex-direction: column; gap: 6px; margin-bottom: 20px; font-family: 'Inter', 'Montserrat', system-ui, -apple-system, sans-serif;">
-                            <div v-for="levelId in pack.levels" :key="levelId" 
-                                 style="background-color: var(--color-background); border: 1px solid rgba(128,128,128,0.1); border-radius: 6px; padding: 10px 12px; display: flex; align-items: center; justify-content: space-between; font-family: 'Inter', 'Montserrat', system-ui, -apple-system, sans-serif;">
-                                <div style="display: flex; align-items: center; gap: 10px; overflow: hidden; white-space: nowrap; font-family: 'Inter', 'Montserrat', system-ui, -apple-system, sans-serif;">
-                                    <span :style="{ color: getDifficultyColor(pack.difficulty) }" style="font-size: 0.75rem; flex-shrink: 0;">◆</span>
-                                    <span style="font-size: 0.9rem; font-weight: 600; overflow: hidden; text-overflow: ellipsis; font-family: 'Inter', 'Montserrat', system-ui, -apple-system, sans-serif;">
-                                        {{ getLevelData(levelId).name }}
-                                    </span>
+                        
+                        <div class="tier-column-scrollable">
+                            <div v-if="getPacksByTier(tier, idx).length === 0" class="empty-tier-text">
+                                No packs assigned
+                            </div>
+                            <div v-for="pack in getPacksByTier(tier, idx)" 
+                                 :key="pack.name" 
+                                 :class="['pack-card-container interactive-card', { 'active-selected-pack': selectedPack && selectedPack.name === pack.name }]"
+                                 @click="selectPack(pack)">
+                                <div class="pack-card-header" style="margin: 0;">
+                                    <h2 style="font-size: 1rem; font-weight: 700; margin: 0;">📦 {{ pack.name }}</h2>
                                 </div>
-                                <span style="font-size: 0.85rem; font-weight: bold; color: var(--color-primary); padding-left: 10px; flex-shrink: 0; font-family: 'Inter', 'Montserrat', system-ui, -apple-system, sans-serif;">
-                                    {{ getLevelData(levelId).rank }}
-                                </span>
+                                <div style="display: flex; justify-content: space-between; margin-top: 8px; font-size: 0.75rem; opacity: 0.6; font-weight: 700;">
+                                    <span>Maps:</span>
+                                    <span>{{ pack.levels ? pack.levels.length : 0 }}</span>
+                                </div>
                             </div>
                         </div>
                     </div>
+                </div>
 
-                    <div style="border-top: 1px solid rgba(128,128,128,0.15); padding-top: 12px; display: flex; justify-content: space-between; align-items: center; font-size: 0.8rem; opacity: 0.6; font-family: 'Inter', 'Montserrat', system-ui, -apple-system, sans-serif;">
-                        <span style="text-transform: uppercase; letter-spacing: 0.5px; font-weight: 700; font-size: 0.75rem; font-family: 'Inter', 'Montserrat', system-ui, -apple-system, sans-serif;">Requirements</span>
-                        <span style="font-weight: 700; font-family: 'Inter', 'Montserrat', system-ui, -apple-system, sans-serif;">
-                            <span style="font-size: 0.95rem; font-family: 'Inter', 'Montserrat', system-ui, -apple-system, sans-serif;">{{ pack.levels ? pack.levels.length : 0 }}</span> Levels
-                        </span>
+                <div class="packs-split-right">
+                    <div v-if="selectedPack" style="display: flex; flex-direction: column; height: 100%;">
+                        <div class="pack-modal-header" style="margin-bottom: 20px; padding-bottom: 12px;">
+                            <h2 style="font-size: 1.5rem; font-weight: 800; margin: 0;">📦 {{ selectedPack.name }}</h2>
+                        </div>
+                        
+                        <div class="pack-levels-list" style="overflow-y: auto; flex-grow: 1; padding-right: 4px;">
+                            <div v-for="levelId in selectedPack.levels" :key="levelId" class="pack-level-row" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+                                <div class="pack-level-left-side">
+                                    <span :style="{ color: getTierColor(getLevelData(levelId).customRank) }" class="pack-level-rank-prefix">
+                                        {{ getLevelData(levelId).customRank }}
+                                    </span>
+                                    <span class="pack-level-name-text">
+                                        {{ getLevelData(levelId).name }}
+                                    </span>
+                                </div>
+                                
+                                <span class="pack-level-list-rank-text">
+                                    {{ getLevelData(levelId).listRank }}
+                                </span>
+                            </div>
+                        </div>
+                        
+                        <div class="pack-modal-footer" style="margin-top: auto; padding-top: 16px;">
+                            <span>Total Tracked Maps: <strong>{{ selectedPack.levels ? selectedPack.levels.length : 0 }}</strong></span>
+                        </div>
+                    </div>
+
+                    <div v-else class="pack-empty-panel-placeholder">
+                        <span>📦</span>
+                        <p>Select a custom level pack from the left to view required list clears</p>
                     </div>
                 </div>
+
             </div>
         </main>
     `,
     data: () => ({
         packs: [],
         masterList: [],
-        loading: true
+        loading: true,
+        selectedPack: null,
+        tiers: [
+            "beginner",
+            "bronze",
+            "silver",
+            "gold",
+            "amber",
+            "platinum",
+            "sapphire",
+            "diamond"
+        ]
     }),
-    computed: {
-        sortedPacks() {
-            if (!this.packs) return [];
-            return [...this.packs].sort((a, b) => {
-                const diffA = parseInt(a.difficulty, 10) || 0;
-                const diffB = parseInt(b.difficulty, 10) || 0;
-                return diffA - diffB;
-            });
-        }
-    },
     async mounted() {
         try {
             this.masterList = await fetchList();
@@ -83,32 +105,52 @@ export default {
                 this.packs = await res.json();
             }
         } catch (e) {
-            console.error("Could not parse or establish packs array definitions:", e);
+            console.error("Could not parse packs definitions:", e);
         } finally {
             this.loading = false;
         }
     },
     methods: {
+        getPacksByTier(tierName, index) {
+            if (!this.packs) return [];
+            return this.packs.filter(pack => {
+                const rawDiff = String(pack.difficulty || "").toLowerCase().trim();
+                return rawDiff === tierName || rawDiff === String(index + 1);
+            });
+        },
+        selectPack(pack) {
+            this.selectedPack = pack;
+        },
         getLevelData(id) {
-            if (!this.masterList) return { name: "Loading...", rank: "" };
+            if (!this.masterList) return { name: "Loading...", listRank: "", customRank: "" };
             
             const index = this.masterList.findIndex(([level]) => level && String(level.id) === String(id));
             
             if (index !== -1 && this.masterList[index][0]) {
+                const levelObj = this.masterList[index][0];
                 return {
-                    name: this.masterList[index][0].name,
-                    rank: `#${index + 1}`
+                    name: levelObj.name,
+                    listRank: `#${index + 1}`,
+                    customRank: levelObj.ran || "—" 
                 };
             }
             
-            return { name: `Unknown Level (#${id})`, rank: "—" };
+            return { name: `Unknown Level (#${id})`, listRank: "—", customRank: "—" };
         },
-        getDifficultyColor(diff) {
-            const num = parseInt(diff, 10) || 1;
-            if (num <= 1) return "#25c059"; // Vibrant Green
-            if (num === 2) return "#ffb700"; // Rich Gold
-            if (num === 3) return "#ff6f00"; // Deep Orange
-            return "#ff3333"; // Crimson Red
+        getTierColor(tierName) {
+            if (!tierName) return "var(--color-primary)";
+            
+            const tier = tierName.toLowerCase().trim();
+            if (tier.includes("beginner")) return "#a3a3a3"; 
+            if (tier.includes("bronze"))   return "#cd7f32"; 
+            if (tier.includes("silver"))   return "#b5c2c7"; 
+            if (tier.includes("gold"))     return "#ffb700"; 
+            if (tier.includes("amber"))    return "#ff7b00"; 
+            if (tier.includes("platinum")) return "#3de0be"; 
+            if (tier.includes("sapphire")) return "#2b7fff"; 
+            if (tier.includes("diamond"))  return "#aadeff"; 
+            
+            return "var(--color-primary)"; 
         }
     }
 };

@@ -1,32 +1,42 @@
 [
     {
         "name": "Sillow Pack",
-        "difficulty": 3,
+        "difficulty": "platinum",
         "levels": ["62214792", "65731116", "62909889", "61417747"]
     },
     {
         "name": "CraZy Trilogy",
-        "difficulty": 2,
+        "difficulty": "amber",
         "levels": ["47620786", "40945673"]
     },
     {
         "name": "Timings Pack",
-        "difficulty": 3,
+        "difficulty": "platinum",
         "levels": ["88172786", "81148582", "61079355", "114933189"]
     },
     {
         "name": "Sakupen Pack",
-        "difficulty": 3,
+        "difficulty": "sapphire",
         "levels": ["23262780", "58002670"]
     },
     {
         "name": "Top 1 Pack",
-        "difficulty": 3,
+        "difficulty": "sapphire",
         "levels": ["23262780", "10565740", "3979721"]
     },
     {
         "name": "Demon Pack 3",
-        "difficulty": 1,
+        "difficulty": "beginner",
         "levels": ["186646", "55520", "13519"]
+    },
+    {
+        "name": "Epileptic Trilogy",
+        "difficulty": "silver",
+        "levels": ["5310094", "4284013", "6939821"]
+    },
+    {
+        "name": "Beginner Insanes Pack",
+        "difficulty": "gold",
+        "levels": ["68372319", "68983167", "4957691", "56568010"]
     }
 ]
