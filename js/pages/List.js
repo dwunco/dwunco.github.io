@@ -19,7 +19,7 @@ const TAGS_POOL = {
     "LENGTH": ["Tiny", "Short", "Medium", "Long", "XL", "XXL", "XXL+"],
     "GAMEPLAY": ["Timings", "Clicksync", "Chokepoints", "High CPS", "Flow", "Memory", "Gimmicky", "Learny", "Fast-Paced", "Slow-Paced", "Overall"],
     "GAMEMODES": ["Cube", "Ship", "Ball", "UFO", "Wave", "Robot", "Spider", "Swing", "Mirror", "Duals"],
-    "MISCELLANEOUS": ["NONG"]
+    "MISCELLANEOUS": ["2P", "NONG"]
 };
 
 export default {
@@ -71,7 +71,7 @@ export default {
 
                         <tr>
                             <td class="rank" style="width: 60px; min-width: 60px; max-width: 60px; text-align: left;">
-                                <p v-if="level && level.historicalRank <= 250" class="type-label-lg">
+                                <p v-if="level && level.historicalRank <= 250" class="type-label-lg" :style="getTierStyle(level.rank)">
                                     #{{ level.historicalRank }}
                                 </p>
                                 <p v-else-if="!level && getMasterRank(err) <= 250" class="type-label-lg">
@@ -80,11 +80,13 @@ export default {
                                 <p v-else class="type-label-lg">#{{ i + 1 }}</p>
                             </td>
                             <td class="level" :class="{ 'active': selected === getMasterIndex(level, err), 'error': !level }" style="width: auto;">
-                                <button @click="setSelectedByLevel(level, err)" style="overflow: visible; width: 100%; text-align: left;">
-                                    <div style="display: flex; align-items: center; white-space: nowrap; overflow: visible; padding: 2px 0;">
-                                        <span class="type-label-lg" style="line-height: 1.2; display: inline-block;">
+                                <button @click="setSelectedByLevel(level, err)" style="overflow: visible !important; width: 100%; text-align: left; padding-right: 12px;">
+                                    <div style="display: flex; align-items: center; white-space: nowrap; overflow: visible !important; padding: 2px 0; width: 100%;">
+                                        
+                                        <span class="type-label-lg" :style="[{ 'line-height': '1.2', 'display': 'inline-block', 'overflow': 'visible' }, getTierStyle(level.rank, true)]">
                                             {{ level && level.name ? level.name : (err ? err.toUpperCase() : 'BROKEN_FILE_' + (i + 1)) }}
                                         </span>
+                                        
                                         <span v-if="level && isNewLevel(level.history)" style="color: #ff4d4d; font-weight: bold; margin-left: 8px; font-size: 0.85rem; letter-spacing: 0.5px; flex-shrink: 0;">NEW!</span>
                                     </div>
                                 </button>
@@ -223,6 +225,11 @@ export default {
                                 </span>
                             </label>
 
+                            <label class="advanced-filter-label" style="display: flex; align-items: center; gap: 8px; cursor: pointer; user-select: none; margin-bottom: 12px;">
+                                <input type="checkbox" v-model="modalLocal.rankColoringEnabled" style="cursor: pointer;" />
+                                <span class="type-label-md">Enable Custom Tier Colors</span>
+                            </label>
+
                             <div style="display: flex; flex-direction: column; gap: 8px;">
                                 <input v-model="modalLocal.filterCreator" type="text" placeholder="Filter by Creator..." class="advanced-filter-input" />
                                 <input v-model="modalLocal.filterVerifier" type="text" placeholder="Filter by Verifier..." class="advanced-filter-input" />
@@ -333,6 +340,7 @@ export default {
         filter: "",
         showModal: false, 
         
+        rankColoringEnabled: true,
         filterNewOnly: false,
         filterVerifier: "",
         filterUploader: "",
@@ -341,6 +349,7 @@ export default {
         tagMode: "all", 
 
         modalLocal: {
+            rankColoringEnabled: true,
             filterNewOnly: false,
             filterVerifier: "",
             filterUploader: "",
@@ -353,12 +362,10 @@ export default {
         level() {
             if (!this.list || this.selected >= this.list.length) return null;
             
-            // Get the immutable fallback reference from the primary static master file array
             const masterPair = this.list[this.selected];
             const originalLevelObj = masterPair ? masterPair[0] : null;
             if (!originalLevelObj) return null;
 
-            // Find the active time machine processed level entry sharing the matching level unique ID
             const activeTimeMatch = this.filteredList.find(([l]) => l && l.id === originalLevelObj.id);
             
             if (activeTimeMatch && activeTimeMatch[0]) {
@@ -419,10 +426,7 @@ export default {
             
             let timeFilteredList = [];
     
-            // --- TIME MACHINE CALCULATION ENGINE ---
             if (this.timeMachineDate) {
-                // Set target time to the very end of the selected day (23:59:59.999) 
-                // so it encompasses all changes made throughout that entire date.
                 const targetTime = new Date(this.timeMachineDate);
                 targetTime.setHours(23, 59, 59, 999);
                 const targetTimestamp = targetTime.getTime();
@@ -435,15 +439,12 @@ export default {
     
                     const history = level.history || [];
 
-                    // 1. Map item to include its raw array position index from the file
                     const sortedHistory = history
                         .map((log, index) => ({ ...log, originalIndex: index }))
                         .sort((a, b) => {
                             const timeA = new Date(a.date).getTime();
                             const timeB = new Date(b.date).getTime();
                             
-                            // 2. Tiebreaker: If dates are identical, make sure the one closer to the 
-                            // top of the file (smaller index) comes LAST in the sorted array
                             if (timeA === timeB) {
                                 return b.originalIndex - a.originalIndex; 
                             }
@@ -459,9 +460,6 @@ export default {
                     const validPastLogs = sortedHistory.filter(log => new Date(log.date).getTime() <= targetTimestamp);
                     let historicalPlacement = null;
     
-                    // Loop through all valid actions up to that date.
-                    // Consecutive changes on the same day will continually overwrite the placement,
-                    // leaving you with the absolute LAST placement set.
                     for (const log of validPastLogs) {
                         if (log.placement) {
                             historicalPlacement = parseInt(log.placement, 10);
@@ -493,7 +491,6 @@ export default {
                 });
             }
     
-            // --- SEARCH INPUT & ADVANCED MODAL FILTERS ---
             return timeFilteredList.filter(([level, err]) => {
                 if (!level) {
                     return !this.searchQuery && !this.filterNewOnly && !this.filterVerifier && !this.filterUploader && !this.filterCreator && this.filterTags.length === 0;
@@ -585,6 +582,64 @@ export default {
             if (!username) return false;
             return this.blacklist.some(b => b.toLowerCase().trim() === username.toLowerCase().trim());
         },
+        getTierStyle(tierName, isLevelName = false) {
+            // Structural rules that every single item must share
+            let sharedStructure = {
+                display: "inline-block",
+                paddingRight: "20px",    // Visual frame breathing room for text edges
+                marginRight: "-20px",    // Keeps the layout box footprint identical
+                overflow: "visible", 
+                lineHeight: "1.2",
+                verticalAlign: "baseline",
+                backgroundClip: "text",
+                "-webkit-background-clip": "text",
+                "-webkit-text-fill-color": "transparent"
+            };
+        
+            // If disabled or empty, return default text with matching gradient rendering rules
+            if (!this.rankColoringEnabled || !tierName) {
+                return { 
+                    ...sharedStructure, 
+                    background: "linear-gradient(90deg, var(--color-text, #fff), var(--color-text, #fff))" 
+                };
+            }
+        
+            const tier = tierName.toLowerCase().trim();
+            
+            // Solid colors turned into gradients so they match in rendering weight and size
+            if (tier.includes("beginner")) {
+                return { ...sharedStructure, background: "linear-gradient(90deg, #a3a3a3, #a3a3a3)" };
+            }
+            if (tier.includes("bronze")) {
+                return { ...sharedStructure, background: "linear-gradient(90deg, #cd7f32, #cd7f32)" };
+            }
+            if (tier.includes("silver")) {
+                return { ...sharedStructure, background: "linear-gradient(90deg, #b5c2c7, #b5c2c7)" };
+            }
+            if (tier.includes("gold")) {
+                return { ...sharedStructure, background: "linear-gradient(90deg, #ffb700, #ffb700)" };
+            }
+        
+            // Actual moving gradients
+            if (tier.includes("amber")) {
+                return { ...sharedStructure, background: "linear-gradient(90deg, #ff6a00, #ffb700)" };
+            } 
+            if (tier.includes("platinum")) {
+                return { ...sharedStructure, background: "linear-gradient(90deg, #00c6ff, #0072ff)" };
+            } 
+            if (tier.includes("sapphire")) {
+                return { ...sharedStructure, background: "linear-gradient(90deg, #3a7bd5, #3a6073)" };
+            } 
+            if (tier.includes("diamond")) {
+                return { ...sharedStructure, background: "linear-gradient(90deg, #b993d6, #8ca6db)" };
+            } 
+        
+            // Fallback default gradient
+            return { 
+                ...sharedStructure, 
+                background: "linear-gradient(90deg, var(--color-text, #fff), var(--color-text, #fff))" 
+            }; 
+        },
         selectLevelById(id) {
             if (!this.list) return;
             const index = this.list.findIndex(([level, err]) => {
@@ -651,6 +706,7 @@ export default {
             return (currentDate - addedDate) < sevenDaysInMs;
         },
         openModal() {
+            this.modalLocal.rankColoringEnabled = this.rankColoringEnabled;
             this.modalLocal.filterNewOnly = this.filterNewOnly;
             this.modalLocal.filterCreator = this.filterCreator;
             this.modalLocal.filterVerifier = this.filterVerifier;
@@ -660,6 +716,7 @@ export default {
             this.showModal = true;
         },
         applyFilters() {
+            this.rankColoringEnabled = this.modalLocal.rankColoringEnabled;
             this.filterNewOnly = this.modalLocal.filterNewOnly;
             this.filterCreator = this.modalLocal.filterCreator;
             this.filterVerifier = this.modalLocal.filterVerifier;
@@ -685,6 +742,7 @@ export default {
             }
         },
         resetModalFilters() {
+            this.modalLocal.rankColoringEnabled = true;
             this.modalLocal.filterNewOnly = false;
             this.modalLocal.filterCreator = "";
             this.modalLocal.filterVerifier = "";

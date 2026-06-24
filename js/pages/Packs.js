@@ -33,7 +33,7 @@ export default {
                                  :class="['pack-card-container interactive-card', { 'active-selected-pack': selectedPack && selectedPack.name === pack.name }]"
                                  @click="selectPack(pack)">
                                 <div class="pack-card-header" style="margin: 0;">
-                                    <h2 style="font-size: 1rem; font-weight: 700; margin: 0;">📦 {{ pack.name }}</h2>
+                                    <h2 style="font-size: 1rem; font-weight: 700; margin: 0;">{{ pack.name }}</h2>
                                 </div>
                                 <div style="display: flex; justify-content: space-between; margin-top: 8px; font-size: 0.75rem; opacity: 0.6; font-weight: 700;">
                                     <span>Maps:</span>
@@ -52,8 +52,8 @@ export default {
                         
                         <div class="pack-levels-list" style="overflow-y: auto; flex-grow: 1; padding-right: 4px;">
                             <div v-for="levelId in selectedPack.levels" :key="levelId" class="pack-level-row" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
-                                <div class="pack-level-left-side">
-                                    <span :style="{ color: getTierColor(getLevelData(levelId).customRank) }" class="pack-level-rank-prefix">
+                                <div class="pack-level-left-side" style="display: flex; align-items: center;">
+                                    <span :style="{ color: getTierColor(getLevelData(levelId).customRank) }" class="pack-level-rank-prefix" style="margin-right: 15px;">
                                         {{ getLevelData(levelId).customRank }}
                                     </span>
                                     <span class="pack-level-name-text">
@@ -73,7 +73,6 @@ export default {
                     </div>
 
                     <div v-else class="pack-empty-panel-placeholder">
-                        <span>📦</span>
                         <p>Select a custom level pack from the left to view required list clears</p>
                     </div>
                 </div>
@@ -131,7 +130,7 @@ export default {
                 return {
                     name: levelObj.name,
                     listRank: `#${index + 1}`,
-                    customRank: levelObj.ran || "—" 
+                    customRank: levelObj.rank || "—" 
                 };
             }
             

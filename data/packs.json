@@ -38,5 +38,16 @@
         "name": "Beginner Insanes Pack",
         "difficulty": "gold",
         "levels": ["68372319", "68983167", "4957691", "56568010"]
+    },
+    {
+        "name": "Demon Gauntlet",
+        "difficulty": "bronze",
+        "levels": ["25706351", "27786218", "18025697"]
+    },
+    {
+        "name": "Michigun Temples",
+        "difficulty": "silver",
+        "levels": ["11402965", "14880818", "2891681", "1864168", "2842129", "4727649"]
     }
+
 ]

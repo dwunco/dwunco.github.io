@@ -9,6 +9,7 @@
     "verification": "https://youtu.be/g_MP6BENHEs",
     "percentToQualify": 73,
     "password": "Free Copy",
+    "rank": "Silver",
     "records": [
         {
             "user": "aCUB3R",
@@ -16,6 +17,16 @@
             "percent": 100,
             "hz": 60
         }
+    ],
+    "tags": [
+        "2.1",
+        "Long",
+        "Chokepoints",
+        "Timings",
+        "Overall",
+        "Fast-Paced",
+        "Nerve Control",
+        "High CPS"
     ],
     "history": [
         {
