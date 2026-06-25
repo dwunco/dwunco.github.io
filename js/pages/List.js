@@ -19,7 +19,7 @@ const TAGS_POOL = {
     "LENGTH": ["Tiny", "Short", "Medium", "Long", "XL", "XXL", "XXL+"],
     "GAMEPLAY": ["Timings", "Clicksync", "Chokepoints", "High CPS", "Flow", "Memory", "Gimmicky", "Learny", "Fast-Paced", "Slow-Paced", "Overall"],
     "GAMEMODES": ["Cube", "Ship", "Ball", "UFO", "Wave", "Robot", "Spider", "Swing", "Mirror", "Duals"],
-    "MISCELLANEOUS": ["2P", "NONG"]
+    "MISCELLANEOUS": ["NONG"]
 };
 
 export default {
@@ -71,7 +71,7 @@ export default {
 
                         <tr>
                             <td class="rank" style="width: 60px; min-width: 60px; max-width: 60px; text-align: left;">
-                                <p v-if="level && level.historicalRank <= 250" class="type-label-lg" :style="getTierStyle(level.rank)">
+                                <p v-if="level && level.historicalRank <= 250" class="type-label-lg">
                                     #{{ level.historicalRank }}
                                 </p>
                                 <p v-else-if="!level && getMasterRank(err) <= 250" class="type-label-lg">
@@ -80,13 +80,11 @@ export default {
                                 <p v-else class="type-label-lg">#{{ i + 1 }}</p>
                             </td>
                             <td class="level" :class="{ 'active': selected === getMasterIndex(level, err), 'error': !level }" style="width: auto;">
-                                <button @click="setSelectedByLevel(level, err)" style="width: 100%; text-align: left;">
-                                    <div style="display: flex; align-items: center; white-space: nowrap; padding: 2px 0; width: 100%;">
-                                        
-                                        <span class="type-label-lg" :style="[{ 'line-height': '1.2', 'display': 'inline-block' }, getTierStyle(level.rank, true)]">
-                                            {{ (level && level.name ? level.name : (err ? err.toUpperCase() : 'BROKEN_FILE_' + (i + 1))) + ' ' }}
+                                <button @click="setSelectedByLevel(level, err)" style="overflow: visible; width: 100%; text-align: left;">
+                                    <div style="display: flex; align-items: center; white-space: nowrap; overflow: visible; padding: 2px 0;">
+                                        <span class="type-label-lg" style="line-height: 1.2; display: inline-block;">
+                                            {{ level && level.name ? level.name : (err ? err.toUpperCase() : 'BROKEN_FILE_' + (i + 1)) }}
                                         </span>
-                                        
                                         <span v-if="level && isNewLevel(level.history)" style="color: #ff4d4d; font-weight: bold; margin-left: 8px; font-size: 0.85rem; letter-spacing: 0.5px; flex-shrink: 0;">NEW!</span>
                                     </div>
                                 </button>
@@ -225,11 +223,6 @@ export default {
                                 </span>
                             </label>
 
-                            <label class="advanced-filter-label" style="display: flex; align-items: center; gap: 8px; cursor: pointer; user-select: none; margin-bottom: 12px;">
-                                <input type="checkbox" v-model="modalLocal.rankColoringEnabled" style="cursor: pointer;" />
-                                <span class="type-label-md">Enable Custom Tier Colors</span>
-                            </label>
-
                             <div style="display: flex; flex-direction: column; gap: 8px;">
                                 <input v-model="modalLocal.filterCreator" type="text" placeholder="Filter by Creator..." class="advanced-filter-input" />
                                 <input v-model="modalLocal.filterVerifier" type="text" placeholder="Filter by Verifier..." class="advanced-filter-input" />
@@ -340,7 +333,6 @@ export default {
         filter: "",
         showModal: false, 
         
-        rankColoringEnabled: true,
         filterNewOnly: false,
         filterVerifier: "",
         filterUploader: "",
@@ -349,7 +341,6 @@ export default {
         tagMode: "all", 
 
         modalLocal: {
-            rankColoringEnabled: true,
             filterNewOnly: false,
             filterVerifier: "",
             filterUploader: "",
@@ -362,10 +353,12 @@ export default {
         level() {
             if (!this.list || this.selected >= this.list.length) return null;
             
+            // Get the immutable fallback reference from the primary static master file array
             const masterPair = this.list[this.selected];
             const originalLevelObj = masterPair ? masterPair[0] : null;
             if (!originalLevelObj) return null;
 
+            // Find the active time machine processed level entry sharing the matching level unique ID
             const activeTimeMatch = this.filteredList.find(([l]) => l && l.id === originalLevelObj.id);
             
             if (activeTimeMatch && activeTimeMatch[0]) {
@@ -426,7 +419,10 @@ export default {
             
             let timeFilteredList = [];
     
+            // --- TIME MACHINE CALCULATION ENGINE ---
             if (this.timeMachineDate) {
+                // Set target time to the very end of the selected day (23:59:59.999) 
+                // so it encompasses all changes made throughout that entire date.
                 const targetTime = new Date(this.timeMachineDate);
                 targetTime.setHours(23, 59, 59, 999);
                 const targetTimestamp = targetTime.getTime();
@@ -439,12 +435,15 @@ export default {
     
                     const history = level.history || [];
 
+                    // 1. Map item to include its raw array position index from the file
                     const sortedHistory = history
                         .map((log, index) => ({ ...log, originalIndex: index }))
                         .sort((a, b) => {
                             const timeA = new Date(a.date).getTime();
                             const timeB = new Date(b.date).getTime();
                             
+                            // 2. Tiebreaker: If dates are identical, make sure the one closer to the 
+                            // top of the file (smaller index) comes LAST in the sorted array
                             if (timeA === timeB) {
                                 return b.originalIndex - a.originalIndex; 
                             }
@@ -460,6 +459,9 @@ export default {
                     const validPastLogs = sortedHistory.filter(log => new Date(log.date).getTime() <= targetTimestamp);
                     let historicalPlacement = null;
     
+                    // Loop through all valid actions up to that date.
+                    // Consecutive changes on the same day will continually overwrite the placement,
+                    // leaving you with the absolute LAST placement set.
                     for (const log of validPastLogs) {
                         if (log.placement) {
                             historicalPlacement = parseInt(log.placement, 10);
@@ -491,6 +493,7 @@ export default {
                 });
             }
     
+            // --- SEARCH INPUT & ADVANCED MODAL FILTERS ---
             return timeFilteredList.filter(([level, err]) => {
                 if (!level) {
                     return !this.searchQuery && !this.filterNewOnly && !this.filterVerifier && !this.filterUploader && !this.filterCreator && this.filterTags.length === 0;
@@ -582,39 +585,6 @@ export default {
             if (!username) return false;
             return this.blacklist.some(b => b.toLowerCase().trim() === username.toLowerCase().trim());
         },
-        getTierStyle(tierName, isLevelName = false) {
-            if (!this.rankColoringEnabled || !tierName) {
-                return isLevelName ? { color: "var(--color-text, #fff)" } : { color: "inherit" };
-            }
-        
-            const tier = tierName.toLowerCase().trim();
-            if (tier.includes("beginner")) return { color: "#a3a3a3" }; 
-            if (tier.includes("bronze"))   return { color: "#cd7f32" }; 
-            if (tier.includes("silver"))   return { color: "#b5c2c7" }; 
-            if (tier.includes("gold"))     return { color: "#ffb700" }; 
-        
-            let baseGradientStyle = {
-                backgroundClip: "text",
-                "-webkit-background-clip": "text",
-                "-webkit-text-fill-color": "transparent"
-            };
-        
-            if (tier.includes("amber")) {
-                return { ...baseGradientStyle, background: "linear-gradient(90deg, #ff6a00, #ffb700)" };
-            } 
-            if (tier.includes("platinum")) {
-                return { ...baseGradientStyle, background: "linear-gradient(90deg, #00c6ff, #0072ff)" };
-            } 
-            if (tier.includes("sapphire")) {
-                // FIXED: Changed ...style to ...baseGradientStyle
-                return { ...baseGradientStyle, background: "linear-gradient(90deg, #3a7bd5, #3a6073)" };
-            } 
-            if (tier.includes("diamond")) {
-                return { ...baseGradientStyle, background: "linear-gradient(90deg, #b993d6, #8ca6db)" };
-            } 
-        
-            return isLevelName ? { color: "var(--color-text, #fff)" } : { color: "inherit" }; 
-        },
         selectLevelById(id) {
             if (!this.list) return;
             const index = this.list.findIndex(([level, err]) => {
@@ -681,7 +651,6 @@ export default {
             return (currentDate - addedDate) < sevenDaysInMs;
         },
         openModal() {
-            this.modalLocal.rankColoringEnabled = this.rankColoringEnabled;
             this.modalLocal.filterNewOnly = this.filterNewOnly;
             this.modalLocal.filterCreator = this.filterCreator;
             this.modalLocal.filterVerifier = this.filterVerifier;
@@ -691,7 +660,6 @@ export default {
             this.showModal = true;
         },
         applyFilters() {
-            this.rankColoringEnabled = this.modalLocal.rankColoringEnabled;
             this.filterNewOnly = this.modalLocal.filterNewOnly;
             this.filterCreator = this.modalLocal.filterCreator;
             this.filterVerifier = this.modalLocal.filterVerifier;
@@ -717,7 +685,6 @@ export default {
             }
         },
         resetModalFilters() {
-            this.modalLocal.rankColoringEnabled = true;
             this.modalLocal.filterNewOnly = false;
             this.modalLocal.filterCreator = "";
             this.modalLocal.filterVerifier = "";
