@@ -80,11 +80,11 @@ export default {
                                 <p v-else class="type-label-lg">#{{ i + 1 }}</p>
                             </td>
                             <td class="level" :class="{ 'active': selected === getMasterIndex(level, err), 'error': !level }" style="width: auto;">
-                                <button @click="setSelectedByLevel(level, err)" style="overflow: visible !important; width: 100%; text-align: left; padding-right: 12px;">
-                                    <div style="display: flex; align-items: center; white-space: nowrap; overflow: visible !important; padding: 2px 0; width: 100%;">
+                                <button @click="setSelectedByLevel(level, err)" style="width: 100%; text-align: left;">
+                                    <div style="display: flex; align-items: center; white-space: nowrap; padding: 2px 0; width: 100%;">
                                         
-                                        <span class="type-label-lg" :style="[{ 'line-height': '1.2', 'display': 'inline-block', 'overflow': 'visible' }, getTierStyle(level.rank, true)]">
-                                            {{ level && level.name ? level.name : (err ? err.toUpperCase() : 'BROKEN_FILE_' + (i + 1)) }}
+                                        <span class="type-label-lg" :style="[{ 'line-height': '1.2', 'display': 'inline-block' }, getTierStyle(level.rank, true)]">
+                                            {{ (level && level.name ? level.name : (err ? err.toUpperCase() : 'BROKEN_FILE_' + (i + 1))) + ' ' }}
                                         </span>
                                         
                                         <span v-if="level && isNewLevel(level.history)" style="color: #ff4d4d; font-weight: bold; margin-left: 8px; font-size: 0.85rem; letter-spacing: 0.5px; flex-shrink: 0;">NEW!</span>
@@ -583,62 +583,37 @@ export default {
             return this.blacklist.some(b => b.toLowerCase().trim() === username.toLowerCase().trim());
         },
         getTierStyle(tierName, isLevelName = false) {
-            // Structural rules that every single item must share
-            let sharedStructure = {
-                display: "inline-block",
-                paddingRight: "20px",    // Visual frame breathing room for text edges
-                marginRight: "-20px",    // Keeps the layout box footprint identical
-                overflow: "visible", 
-                lineHeight: "1.2",
-                verticalAlign: "baseline",
+            if (!this.rankColoringEnabled || !tierName) {
+                return isLevelName ? { color: "var(--color-text, #fff)" } : { color: "inherit" };
+            }
+        
+            const tier = tierName.toLowerCase().trim();
+            if (tier.includes("beginner")) return { color: "#a3a3a3" }; 
+            if (tier.includes("bronze"))   return { color: "#cd7f32" }; 
+            if (tier.includes("silver"))   return { color: "#b5c2c7" }; 
+            if (tier.includes("gold"))     return { color: "#ffb700" }; 
+        
+            let baseGradientStyle = {
                 backgroundClip: "text",
                 "-webkit-background-clip": "text",
                 "-webkit-text-fill-color": "transparent"
             };
         
-            // If disabled or empty, return default text with matching gradient rendering rules
-            if (!this.rankColoringEnabled || !tierName) {
-                return { 
-                    ...sharedStructure, 
-                    background: "linear-gradient(90deg, var(--color-text, #fff), var(--color-text, #fff))" 
-                };
-            }
-        
-            const tier = tierName.toLowerCase().trim();
-            
-            // Solid colors turned into gradients so they match in rendering weight and size
-            if (tier.includes("beginner")) {
-                return { ...sharedStructure, background: "linear-gradient(90deg, #a3a3a3, #a3a3a3)" };
-            }
-            if (tier.includes("bronze")) {
-                return { ...sharedStructure, background: "linear-gradient(90deg, #cd7f32, #cd7f32)" };
-            }
-            if (tier.includes("silver")) {
-                return { ...sharedStructure, background: "linear-gradient(90deg, #b5c2c7, #b5c2c7)" };
-            }
-            if (tier.includes("gold")) {
-                return { ...sharedStructure, background: "linear-gradient(90deg, #ffb700, #ffb700)" };
-            }
-        
-            // Actual moving gradients
             if (tier.includes("amber")) {
-                return { ...sharedStructure, background: "linear-gradient(90deg, #ff6a00, #ffb700)" };
+                return { ...baseGradientStyle, background: "linear-gradient(90deg, #ff6a00, #ffb700)" };
             } 
             if (tier.includes("platinum")) {
-                return { ...sharedStructure, background: "linear-gradient(90deg, #00c6ff, #0072ff)" };
+                return { ...baseGradientStyle, background: "linear-gradient(90deg, #00c6ff, #0072ff)" };
             } 
             if (tier.includes("sapphire")) {
-                return { ...sharedStructure, background: "linear-gradient(90deg, #3a7bd5, #3a6073)" };
+                // FIXED: Changed ...style to ...baseGradientStyle
+                return { ...baseGradientStyle, background: "linear-gradient(90deg, #3a7bd5, #3a6073)" };
             } 
             if (tier.includes("diamond")) {
-                return { ...sharedStructure, background: "linear-gradient(90deg, #b993d6, #8ca6db)" };
+                return { ...baseGradientStyle, background: "linear-gradient(90deg, #b993d6, #8ca6db)" };
             } 
         
-            // Fallback default gradient
-            return { 
-                ...sharedStructure, 
-                background: "linear-gradient(90deg, var(--color-text, #fff), var(--color-text, #fff))" 
-            }; 
+            return isLevelName ? { color: "var(--color-text, #fff)" } : { color: "inherit" }; 
         },
         selectLevelById(id) {
             if (!this.list) return;
