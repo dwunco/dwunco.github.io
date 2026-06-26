@@ -32,9 +32,30 @@
             "percent": 100,
             "hz": 60,
             "mobile": true
+        },
+        {
+            "user": "dwunco",
+            "link": "https://youtu.be/watch?v=null",
+            "percent": 100,
+            "hz": 60,
+            "mobile": true
         }
     ],
     "history": [
+        {
+            "date": "2026-06-26",
+            "type": "moved",
+            "oldPlacement": 182,
+            "placement": 183,
+            "notes": "I Cant Fix You was added above"
+        },
+        {
+            "date": "2026-06-25",
+            "type": "moved",
+            "oldPlacement": 181,
+            "placement": 182,
+            "notes": "Troll Madness was added above"
+        },
         {
             "date": "2026-06-21",
             "type": "moved",

@@ -45,6 +45,20 @@
     ],
     "history": [
         {
+            "date": "2026-06-26",
+            "type": "moved",
+            "oldPlacement": 108,
+            "placement": 109,
+            "notes": "I Cant Fix You was added above"
+        },
+        {
+            "date": "2026-06-25",
+            "type": "moved",
+            "oldPlacement": 107,
+            "placement": 108,
+            "notes": "Troll Madness was added above"
+        },
+        {
             "date": "2026-06-21",
             "type": "moved",
             "oldPlacement": 106,

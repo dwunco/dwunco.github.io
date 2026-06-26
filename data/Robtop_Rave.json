@@ -33,6 +33,13 @@
     "records": [],
     "history": [
         {
+            "date": "2026-06-26",
+            "type": "moved",
+            "oldPlacement": 37,
+            "placement": 38,
+            "notes": "I Cant Fix You was added above"
+        },
+        {
             "date": "2026-06-17",
             "type": "moved",
             "oldPlacement": 36,

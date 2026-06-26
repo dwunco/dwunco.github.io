@@ -1,0 +1,33 @@
+{
+    "name": "Troll Madness",
+    "id": 114532158,
+    "author": "zyphur",
+    "creators": [
+        "zyphur"
+    ],
+    "verifier": "dwunco",
+    "verification": "https://youtu.be/null",
+    "percentToQualify": 89,
+    "password": "Free Copy",
+    "rank": "Bronze",
+    "tags": [
+        "2.2",
+        "Long"
+    ],
+    "records": [],
+    "history": [
+        {
+            "date": "2026-06-26",
+            "type": "moved",
+            "oldPlacement": 56,
+            "placement": 57,
+            "notes": "I Cant Fix You was added above"
+        },
+        {
+            "date": "2026-06-25",
+            "type": "added",
+            "placement": 56,
+            "notes": "Troll Madness added to the list"
+        }
+    ]
+}

@@ -13,6 +13,20 @@
     "records": [],
     "history": [
         {
+            "date": "2026-06-26",
+            "type": "moved",
+            "oldPlacement": 81,
+            "placement": 82,
+            "notes": "I Cant Fix You was added above"
+        },
+        {
+            "date": "2026-06-25",
+            "type": "moved",
+            "oldPlacement": 80,
+            "placement": 81,
+            "notes": "Troll Madness was added above"
+        },
+        {
             "date": "2026-06-19",
             "type": "moved",
             "oldPlacement": 81,

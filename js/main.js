@@ -11,6 +11,10 @@ export const store = Vue.reactive({
 const app = Vue.createApp({
     data: () => ({ store }),
 });
+
+// Make the store globally accessible
+app.provide('store', store);
+
 const router = VueRouter.createRouter({
     history: VueRouter.createWebHashHistory(),
     routes,
@@ -18,3 +22,4 @@ const router = VueRouter.createRouter({
 
 app.use(router);
 app.mount('#app');
+console.log('Vue app mounted');

@@ -21,6 +21,13 @@
     ],
     "history": [
         {
+            "date": "2026-06-26",
+            "type": "moved",
+            "oldPlacement": 43,
+            "placement": 44,
+            "notes": "I Cant Fix You was added above"
+        },
+        {
             "date": "2026-06-17",
             "type": "moved",
             "oldPlacement": 42,

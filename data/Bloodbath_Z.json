@@ -7,11 +7,25 @@
     ],
     "verifier": "cookiedarookie",
     "verification": "https://youtu.be/56zdqVAfFIM",
-    "percentToQualify": 100,
+    "percentToQualify": 65,
     "password": "Free Copy",
     "rank": "Bronze",
-    "records": [],
+    "records": [
+        {
+            "user": "dwunco",
+            "link": "https://youtu.be/null",
+            "percent": 100,
+            "hz": 60
+        }
+    ],
     "history": [
+        {
+            "date": "2026-06-26",
+            "type": "moved",
+            "oldPlacement": 55,
+            "placement": 56,
+            "notes": "I Cant Fix You was added above"
+        },
         {
             "date": "2026-06-17",
             "type": "moved",
