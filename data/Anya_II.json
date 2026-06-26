@@ -56,6 +56,82 @@
             "oldPlacement": 26,
             "placement": 27,
             "notes": "Robi was added above"
+        },
+        {
+            "date": "2026-05-25",
+            "type": "moved",
+            "oldPlacement": 25,
+            "placement": 26,
+            "notes": "CraZy II was moved up past this demon"
+        },
+        {
+            "date": "2026-05-25",
+            "type": "moved",
+            "oldPlacement": 21,
+            "placement": 25,
+            "notes": "Moved"
+        },
+        {
+            "date": "2026-05-25",
+            "type": "moved",
+            "oldPlacement": 20,
+            "placement": 21,
+            "notes": "Death Note was moved up past this demon"
+        },
+        {
+            "date": "2026-05-24",
+            "type": "moved",
+            "oldPlacement": 19,
+            "placement": 20,
+            "notes": "FFFFFF was added above"
+        },
+        {
+            "date": "2026-05-23",
+            "type": "moved",
+            "oldPlacement": 18,
+            "placement": 19,
+            "notes": "Buff This was added above"
+        },
+        {
+            "date": "2026-05-23",
+            "type": "moved",
+            "oldPlacement": 19,
+            "placement": 18,
+            "notes": "Denouement was moved down past this demon"
+        },
+        {
+            "date": "2026-05-23",
+            "type": "moved",
+            "oldPlacement": 18,
+            "placement": 19,
+            "notes": "CHROMA was added above"
+        },
+        {
+            "date": "2026-05-17",
+            "type": "moved",
+            "oldPlacement": 19,
+            "placement": 18,
+            "notes": "Sonic Wave was removed from the list"
+        },
+        {
+            "date": "2026-05-15",
+            "type": "moved",
+            "oldPlacement": 18,
+            "placement": 19,
+            "notes": "Sonic Wave was added above (prank)"
+        },
+        {
+            "date": "2026-05-12",
+            "type": "moved",
+            "oldPlacement": 17,
+            "placement": 18,
+            "notes": "Gunslinga Corridor was added above"
+        },
+        {
+            "date": "2026-05-05",
+            "type": "added",
+            "placement": 17,
+            "notes": "Anya II added to the list"
         }
     ]
 }

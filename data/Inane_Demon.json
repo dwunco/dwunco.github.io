@@ -63,6 +63,19 @@
             "oldPlacement": 25,
             "placement": 26,
             "notes": "Robi was added above"
+        },
+        {
+            "date": "2026-05-25",
+            "type": "moved",
+            "oldPlacement": 26,
+            "placement": 25,
+            "notes": "CraZy II was moved down past this demon"
+        },
+        {
+            "date": "2026-05-24",
+            "type": "added",
+            "placement": 26,
+            "notes": "Inane Demon added to the list"
         }
     ]
 }
