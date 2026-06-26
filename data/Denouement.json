@@ -88,23 +88,58 @@
         {
             "date": "2026-05-23",
             "type": "moved",
-            "oldPlacement": 14,
+            "oldPlacement": 13,
             "placement": 19,
             "notes": "Moved"
+        },
+        {
+            "date": "2026-05-17",
+            "type": "moved",
+            "oldPlacement": 14,
+            "placement": 13,
+            "notes": "Sonic Wave was removed from the list"
+        },
+        {
+            "date": "2026-05-15",
+            "type": "moved",
+            "oldPlacement": 13,
+            "placement": 14,
+            "notes": "Sonic Wave was added above (prank)"
+        },
+        {
+            "date": "2026-05-12",
+            "type": "moved",
+            "oldPlacement": 12,
+            "placement": 13,
+            "notes": "Gunslinga Corridor was added above"
         },
         {
             "date": "2026-04-26",
             "type": "moved",
             "oldPlacement": 13,
-            "placement": 14,
+            "placement": 12,
+            "notes": "CraZy II was moved down past this demon"
+        },
+        {
+            "date": "2026-04-26",
+            "type": "moved",
+            "oldPlacement": 12,
+            "placement": 13,
             "notes": "Sakupen Hell was added above"
         },
         {
             "date": "2026-04-24",
             "type": "moved",
-            "oldPlacement": 12,
-            "placement": 13,
+            "oldPlacement": 11,
+            "placement": 12,
             "notes": "Lunatic Doom Machine was added above"
+        },
+        {
+            "date": "2026-04-23",
+            "type": "moved",
+            "oldPlacement": 12,
+            "placement": 11,
+            "notes": "Moved"
         },
         {
             "date": "2026-04-22",

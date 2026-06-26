@@ -10,6 +10,16 @@
     "percentToQualify": 72,
     "password": "Free Copy",
     "rank": "Silver",
+    "tags": [
+        "2.1",
+        "Long",
+        "Ship",
+        "Chokepoints",
+        "Fast-Paced",
+        "Timings",
+        "Nerve Control",
+        "Ball"
+    ],
     "records": [
         {
             "user": "IShowMonkeyGMD",
@@ -75,17 +85,143 @@
             "notes": "Nilscapes was added above"
         },
         {
-            "date": "2026-04-21",
-            "type": "added",
-            "placement": 21,
-            "notes": "ThermoDynamix added to the list"
-        },
-        {
             "date": "2026-06-01",
             "type": "moved",
             "oldPlacement": 37,
             "placement": 38,
             "notes": "Robi was added above"
+        },
+        {
+            "date": "2026-05-24",
+            "type": "moved",
+            "oldPlacement": 36,
+            "placement": 37,
+            "notes": "FFFFFF was added above"
+        },
+        {
+            "date": "2026-05-24",
+            "type": "moved",
+            "oldPlacement": 35,
+            "placement": 36,
+            "notes": "Inane Demon was added above"
+        },
+        {
+            "date": "2026-05-24",
+            "type": "moved",
+            "oldPlacement": 34,
+            "placement": 35,
+            "notes": "CraZy was moved up past this demon"
+        },
+        {
+            "date": "2026-05-24",
+            "type": "moved",
+            "oldPlacement": 33,
+            "placement": 34,
+            "notes": "Trip was added above"
+        },
+        {
+            "date": "2026-05-23",
+            "type": "moved",
+            "oldPlacement": 32,
+            "placement": 33,
+            "notes": "Buff This was added above"
+        },
+        {
+            "date": "2026-05-23",
+            "type": "moved",
+            "oldPlacement": 31,
+            "placement": 32,
+            "notes": "CHROMA was added above"
+        },
+        {
+            "date": "2026-05-22",
+            "type": "moved",
+            "oldPlacement": 30,
+            "placement": 31,
+            "notes": "Robtop Rave was added above"
+        },
+        {
+            "date": "2026-05-22",
+            "type": "moved",
+            "oldPlacement": 29,
+            "placement": 30,
+            "notes": "Future Funk was moved up past this demon"
+        },
+        {
+            "date": "2026-05-17",
+            "type": "moved",
+            "oldPlacement": 30,
+            "placement": 29,
+            "notes": "Sonic Wave was removed from the list"
+        },
+        {
+            "date": "2026-05-15",
+            "type": "moved",
+            "oldPlacement": 29,
+            "placement": 30,
+            "notes": "Sonic Wave was added above (prank)"
+        },
+        {
+            "date": "2026-05-12",
+            "type": "moved",
+            "oldPlacement": 28,
+            "placement": 29,
+            "notes": "Gunslinga Corridor was added above"
+        },
+        {
+            "date": "2026-05-08",
+            "type": "moved",
+            "oldPlacement": 27,
+            "placement": 28,
+            "notes": "Death Note was added above"
+        },
+        {
+            "date": "2026-05-05",
+            "type": "moved",
+            "oldPlacement": 26,
+            "placement": 27,
+            "notes": "Anya II was added above"
+        },
+        {
+            "date": "2026-04-28",
+            "type": "moved",
+            "oldPlacement": 25,
+            "placement": 26,
+            "notes": "Desert Temple was added above"
+        },
+        {
+            "date": "2026-04-26",
+            "type": "moved",
+            "oldPlacement": 24,
+            "placement": 25,
+            "notes": "Sakupen Hell was added above"
+        },
+        {
+            "date": "2026-04-24",
+            "type": "moved",
+            "oldPlacement": 23,
+            "placement": 24,
+            "notes": "Lunatic Doom Machine was added above"
+        },
+        {
+            "date": "2026-04-23",
+            "type": "moved",
+            "oldPlacement": 22,
+            "placement": 23,
+            "notes": "Forsaken Neon was added above"
+        },
+        {
+            "date": "2026-04-21",
+            "type": "moved",
+            "oldPlacement": 21,
+            "placement": 22,
+            "notes": "CraZy II was added above"
+        },
+        {
+            "date": "2026-04-21",
+            "type": "added",
+            "placement": 21,
+            "notes": "ThermoDynamix added to the list"
         }
     ]
 }

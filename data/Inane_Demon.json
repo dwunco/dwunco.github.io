@@ -65,11 +65,39 @@
             "notes": "Robi was added above"
         },
         {
+            "date": "2026-05-27",
+            "type": "moved",
+            "oldPlacement": 24,
+            "placement": 25,
+            "notes": "CraZy II was moved up past this demon"
+        },
+        {
+            "date": "2026-05-25",
+            "type": "moved",
+            "oldPlacement": 25,
+            "placement": 24,
+            "notes": "Anya II was moved down past this demon"
+        },
+        {
             "date": "2026-05-25",
             "type": "moved",
             "oldPlacement": 26,
             "placement": 25,
             "notes": "CraZy II was moved down past this demon"
+        },
+        {
+            "date": "2026-05-25",
+            "type": "moved",
+            "oldPlacement": 27,
+            "placement": 26,
+            "notes": "Moved"
+        },
+        {
+            "date": "2026-05-24",
+            "type": "moved",
+            "oldPlacement": 26,
+            "placement": 27,
+            "notes": "FFFFFF was added above"
         },
         {
             "date": "2026-05-24",

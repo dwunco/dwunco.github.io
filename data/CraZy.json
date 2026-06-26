@@ -10,14 +10,6 @@
     "percentToQualify": 73,
     "password": "Free Copy",
     "rank": "Silver",
-    "records": [
-        {
-            "user": "aCUB3R",
-            "link": "https://youtu.be/null",
-            "percent": 100,
-            "hz": 60
-        }
-    ],
     "tags": [
         "2.1",
         "Long",
@@ -27,6 +19,14 @@
         "Fast-Paced",
         "Nerve Control",
         "High CPS"
+    ],
+    "records": [
+        {
+            "user": "aCUB3R",
+            "link": "https://youtu.be/null",
+            "percent": 100,
+            "hz": 60
+        }
     ],
     "history": [
         {
@@ -84,6 +84,124 @@
             "oldPlacement": 35,
             "placement": 36,
             "notes": "Robi was added above"
+        },
+        {
+            "date": "2026-05-24",
+            "type": "moved",
+            "oldPlacement": 34,
+            "placement": 35,
+            "notes": "FFFFFF was added above"
+        },
+        {
+            "date": "2026-05-24",
+            "type": "moved",
+            "oldPlacement": 33,
+            "placement": 34,
+            "notes": "Inane Demon was added above"
+        },
+        {
+            "date": "2026-05-24",
+            "type": "moved",
+            "oldPlacement": 35,
+            "placement": 33,
+            "notes": "Moved"
+        },
+        {
+            "date": "2026-05-24",
+            "type": "moved",
+            "oldPlacement": 34,
+            "placement": 35,
+            "notes": "Trip was added above"
+        },
+        {
+            "date": "2026-05-23",
+            "type": "moved",
+            "oldPlacement": 33,
+            "placement": 34,
+            "notes": "Buff This was added above"
+        },
+        {
+            "date": "2026-05-23",
+            "type": "moved",
+            "oldPlacement": 32,
+            "placement": 33,
+            "notes": "CHROMA was added above"
+        },
+        {
+            "date": "2026-05-22",
+            "type": "moved",
+            "oldPlacement": 31,
+            "placement": 32,
+            "notes": "Robtop Rave was added above"
+        },
+        {
+            "date": "2026-05-17",
+            "type": "moved",
+            "oldPlacement": 32,
+            "placement": 31,
+            "notes": "Sonic Wave was removed from the list"
+        },
+        {
+            "date": "2026-05-17",
+            "type": "moved",
+            "oldPlacement": 31,
+            "placement": 32,
+            "notes": "Future Funk was added above"
+        },
+        {
+            "date": "2026-05-15",
+            "type": "moved",
+            "oldPlacement": 30,
+            "placement": 31,
+            "notes": "Sonic Wave was added above (prank)"
+        },
+        {
+            "date": "2026-05-12",
+            "type": "moved",
+            "oldPlacement": 29,
+            "placement": 30,
+            "notes": "Gunslinga Corridor was added above"
+        },
+        {
+            "date": "2026-05-08",
+            "type": "moved",
+            "oldPlacement": 28,
+            "placement": 29,
+            "notes": "Death Note was added above"
+        },
+        {
+            "date": "2026-05-05",
+            "type": "moved",
+            "oldPlacement": 27,
+            "placement": 28,
+            "notes": "Anya II was added above"
+        },
+        {
+            "date": "2026-04-26",
+            "type": "moved",
+            "oldPlacement": 26,
+            "placement": 27,
+            "notes": "Sakupen Hell was added above"
+        },
+        {
+            "date": "2026-04-24",
+            "type": "moved",
+            "oldPlacement": 25,
+            "placement": 26,
+            "notes": "Lunatic Doom Machine was added above"
+        },
+        {
+            "date": "2026-04-23",
+            "type": "moved",
+            "oldPlacement": 24,
+            "placement": 25,
+            "notes": "Forsaken Neon was added above"
+        },
+        {
+            "date": "2026-04-21",
+            "type": "added",
+            "placement": 24,
+            "notes": "CraZy added to the list"
         }
     ]
 }

@@ -75,6 +75,117 @@
             "oldPlacement": 33,
             "placement": 34,
             "notes": "Robi was added above"
+        },
+        {
+            "date": "2026-05-24",
+            "type": "moved",
+            "oldPlacement": 32,
+            "placement": 33,
+            "notes": "FFFFFF was added above"
+        },
+        {
+            "date": "2026-05-24",
+            "type": "moved",
+            "oldPlacement": 31,
+            "placement": 32,
+            "notes": "Inane Demon was added above"
+        },
+        {
+            "date": "2026-05-24",
+            "type": "moved",
+            "oldPlacement": 30,
+            "placement": 31,
+            "notes": "Trip was added above"
+        },
+        {
+            "date": "2026-05-23",
+            "type": "moved",
+            "oldPlacement": 29,
+            "placement": 30,
+            "notes": "Buff This was added above"
+        },
+        {
+            "date": "2026-05-23",
+            "type": "moved",
+            "oldPlacement": 28,
+            "placement": 29,
+            "notes": "CHROMA was added above"
+        },
+        {
+            "date": "2026-05-22",
+            "type": "moved",
+            "oldPlacement": 27,
+            "placement": 28,
+            "notes": "Robtop Rave was added above"
+        },
+        {
+            "date": "2026-05-17",
+            "type": "moved",
+            "oldPlacement": 28,
+            "placement": 27,
+            "notes": "Sonic Wave was removed from the list"
+        },
+        {
+            "date": "2026-05-15",
+            "type": "moved",
+            "oldPlacement": 27,
+            "placement": 28,
+            "notes": "Sonic Wave was added above (prank)"
+        },
+        {
+            "date": "2026-05-12",
+            "type": "moved",
+            "oldPlacement": 26,
+            "placement": 27,
+            "notes": "Gunslinga Corridor was added above"
+        },
+        {
+            "date": "2026-05-08",
+            "type": "moved",
+            "oldPlacement": 25,
+            "placement": 26,
+            "notes": "Death Note was added above"
+        },
+        {
+            "date": "2026-05-05",
+            "type": "moved",
+            "oldPlacement": 24,
+            "placement": 25,
+            "notes": "Anya II was added above"
+        },
+        {
+            "date": "2026-04-26",
+            "type": "moved",
+            "oldPlacement": 23,
+            "placement": 24,
+            "notes": "Sakupen Hell was added above"
+        },
+        {
+            "date": "2026-04-24",
+            "type": "moved",
+            "oldPlacement": 22,
+            "placement": 23,
+            "notes": "Lunatic Doom Machine was added above"
+        },
+        {
+            "date": "2026-04-23",
+            "type": "moved",
+            "oldPlacement": 21,
+            "placement": 22,
+            "notes": "Forsaken Neon was added above"
+        },
+        {
+            "date": "2026-04-21",
+            "type": "moved",
+            "oldPlacement": 20,
+            "placement": 21,
+            "notes": "CraZy II was added above"
+        },
+        {
+            "date": "2026-04-21",
+            "type": "added",
+            "placement": 20,
+            "notes": "Shadow Temple added to the list"
         }
     ]
 }

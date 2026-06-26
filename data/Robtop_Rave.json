@@ -87,6 +87,54 @@
             "oldPlacement": 30,
             "placement": 31,
             "notes": "Robi was added above"
+        },
+        {
+            "date": "2026-05-24",
+            "type": "moved",
+            "oldPlacement": 31,
+            "placement": 30,
+            "notes": "Dance Massacre was moved down past this demon"
+        },
+        {
+            "date": "2026-05-24",
+            "type": "moved",
+            "oldPlacement": 30,
+            "placement": 31,
+            "notes": "FFFFFF was added above"
+        },
+        {
+            "date": "2026-05-24",
+            "type": "moved",
+            "oldPlacement": 29,
+            "placement": 30,
+            "notes": "Inane Demon was added above"
+        },
+        {
+            "date": "2026-05-24",
+            "type": "moved",
+            "oldPlacement": 28,
+            "placement": 29,
+            "notes": "Trip was added above"
+        },
+        {
+            "date": "2026-05-23",
+            "type": "moved",
+            "oldPlacement": 27,
+            "placement": 28,
+            "notes": "Buff This was added above"
+        },
+        {
+            "date": "2026-05-23",
+            "type": "moved",
+            "oldPlacement": 26,
+            "placement": 27,
+            "notes": "CHROMA was added above"
+        },
+        {
+            "date": "2026-05-22",
+            "type": "added",
+            "placement": 26,
+            "notes": "Robtop Rave added to the list"
         }
     ]
 }
