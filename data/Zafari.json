@@ -15,6 +15,13 @@
         {
             "date": "2026-06-27",
             "type": "moved",
+            "oldPlacement": 95,
+            "placement": 96,
+            "notes": "No Time To Die was added above"
+        },
+        {
+            "date": "2026-06-27",
+            "type": "moved",
             "oldPlacement": 94,
             "placement": 95,
             "notes": "ToE II v2 was added above"
