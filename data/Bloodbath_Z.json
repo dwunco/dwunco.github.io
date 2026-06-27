@@ -20,6 +20,13 @@
     ],
     "history": [
         {
+            "date": "2026-06-27",
+            "type": "moved",
+            "oldPlacement": 56,
+            "placement": 57,
+            "notes": "ToE II v2 was added above"
+        },
+        {
             "date": "2026-06-26",
             "type": "moved",
             "oldPlacement": 55,

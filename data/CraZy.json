@@ -177,25 +177,38 @@
             "notes": "Anya II was added above"
         },
         {
-            "date": "2026-04-26",
+            "date": "2026-04-28",
             "type": "moved",
             "oldPlacement": 26,
             "placement": 27,
+            "notes": "Desert Temple was added above"
+        },
+        {
+            "date": "2026-04-26",
+            "type": "moved",
+            "oldPlacement": 25,
+            "placement": 26,
             "notes": "Sakupen Hell was added above"
         },
         {
             "date": "2026-04-24",
             "type": "moved",
-            "oldPlacement": 25,
-            "placement": 26,
+            "oldPlacement": 24,
+            "placement": 25,
             "notes": "Lunatic Doom Machine was added above"
         },
         {
             "date": "2026-04-23",
             "type": "moved",
-            "oldPlacement": 24,
-            "placement": 25,
+            "oldPlacement": 23,
+            "placement": 24,
             "notes": "Forsaken Neon was added above"
+        },
+        {
+            "date": "2026-04-21",
+            "type": "added",
+            "placement": 23,
+            "notes": "Moved"
         },
         {
             "date": "2026-04-21",

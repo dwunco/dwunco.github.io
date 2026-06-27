@@ -31,6 +31,13 @@
     ],
     "history": [
         {
+            "date": "2026-06-27",
+            "type": "moved",
+            "oldPlacement": 50,
+            "placement": 51,
+            "notes": "ToE II v2 was added above"
+        },
+        {
             "date": "2026-06-26",
             "type": "moved",
             "oldPlacement": 49,
@@ -92,6 +99,159 @@
             "oldPlacement": 41,
             "placement": 42,
             "notes": "Robi was added above"
+        },
+        {
+            "date": "2026-05-24",
+            "type": "moved",
+            "oldPlacement": 39,
+            "placement": 41,
+            "notes": "FFFFFF was added above"
+        },
+        {
+            "date": "2026-05-28",
+            "type": "moved",
+            "oldPlacement": 42,
+            "placement": 41,
+            "notes": "ToE 3 was moved down past this demon"
+        },
+        {
+            "date": "2026-05-24",
+            "type": "moved",
+            "oldPlacement": 41,
+            "placement": 42,
+            "notes": "Inane Demon was added above"
+        },
+        {
+            "date": "2026-05-24",
+            "type": "moved",
+            "oldPlacement": 40,
+            "placement": 41,
+            "notes": "GD10 was added above"
+        },
+        {
+            "date": "2026-05-24",
+            "type": "moved",
+            "oldPlacement": 39,
+            "placement": 40,
+            "notes": "Trip was added above"
+        },
+        {
+            "date": "2026-05-23",
+            "type": "moved",
+            "oldPlacement": 38,
+            "placement": 39,
+            "notes": "Buff This was added above"
+        },
+        {
+            "date": "2026-05-23",
+            "type": "moved",
+            "oldPlacement": 37,
+            "placement": 38,
+            "notes": "CHROMA was added above"
+        },
+        {
+            "date": "2026-05-22",
+            "type": "moved",
+            "oldPlacement": 36,
+            "placement": 37,
+            "notes": "Robtop Rave was added above"
+        },
+        {
+            "date": "2026-05-17",
+            "type": "moved",
+            "oldPlacement": 37,
+            "placement": 36,
+            "notes": "Sonic Wave was removed from the list"
+        },
+        {
+            "date": "2026-05-17",
+            "type": "moved",
+            "oldPlacement": 36,
+            "placement": 37,
+            "notes": "Future Funk was added above"
+        },
+        {
+            "date": "2026-05-15",
+            "type": "moved",
+            "oldPlacement": 35,
+            "placement": 36,
+            "notes": "Sonic Wave was added above (prank)"
+        },
+        {
+            "date": "2026-05-12",
+            "type": "moved",
+            "oldPlacement": 34,
+            "placement": 35,
+            "notes": "Gunslinga Corridor was added above"
+        },
+        {
+            "date": "2026-05-08",
+            "type": "moved",
+            "oldPlacement": 33,
+            "placement": 34,
+            "notes": "Death Note was added above"
+        },
+        {
+            "date": "2026-05-05",
+            "type": "moved",
+            "oldPlacement": 32,
+            "placement": 33,
+            "notes": "Anya II was added above"
+        },
+        {
+            "date": "2026-04-28",
+            "type": "moved",
+            "oldPlacement": 31,
+            "placement": 32,
+            "notes": "Desert Temple was added above"
+        },
+        {
+            "date": "2026-04-26",
+            "type": "moved",
+            "oldPlacement": 29,
+            "placement": 31,
+            "notes": "Sakupen Hell was added above"
+        },
+        {
+            "date": "2026-04-24",
+            "type": "moved",
+            "oldPlacement": 29,
+            "placement": 30,
+            "notes": "Lunatic Doom Machine was added above"
+        },
+        {
+            "date": "2026-04-23",
+            "type": "moved",
+            "oldPlacement": 28,
+            "placement": 29,
+            "notes": "Forsaken Neon was added above"
+        },
+        {
+            "date": "2026-04-21",
+            "type": "moved",
+            "oldPlacement": 27,
+            "placement": 28,
+            "notes": "Critical Hit was added above"
+        },
+        {
+            "date": "2026-04-21",
+            "type": "moved",
+            "oldPlacement": 26,
+            "placement": 27,
+            "notes": "CraZy was added above"
+        },
+        {
+            "date": "2026-04-21",
+            "type": "moved",
+            "oldPlacement": 25,
+            "placement": 26,
+            "notes": "CraZy II was added above"
+        },
+        {
+            "date": "2026-04-21",
+            "type": "added",
+            "placement": 25,
+            "notes": "RGB added to the list"
         }
     ]
 }
