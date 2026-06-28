@@ -11,6 +11,14 @@
     "percentToQualify": 66,
     "password": "NA",
     "rank": "Silver",
+    "tags": [
+        "2.1",
+        "XXL",
+        "Chokepoints",
+        "Nerve Control",
+        "Learny",
+        "Overall"
+    ],
     "records": [],
     "history": [
         {
@@ -68,6 +76,26 @@
             "oldPlacement": 38,
             "placement": 39,
             "notes": "Robi was added above"
+        },
+        {
+            "date": "2026-05-24",
+            "type": "moved",
+            "oldPlacement": 37,
+            "placement": 38,
+            "notes": "FFFFFF was added above"
+        },
+        {
+            "date": "2026-05-24",
+            "type": "moved",
+            "oldPlacement": 36,
+            "placement": 37,
+            "notes": "Inane Demon was added above"
+        },
+        {
+            "date": "2026-05-24",
+            "type": "added",
+            "placement": 36,
+            "notes": "GD10 added to the list"
         }
     ]
 }
