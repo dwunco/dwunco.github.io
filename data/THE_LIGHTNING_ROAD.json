@@ -302,6 +302,26 @@
             "oldPlacement": 156,
             "placement": 157,
             "notes": "Robi was added above"
+        },
+        {
+            "date": "2026-05-29",
+            "type": "moved",
+            "oldPlacement": 99,
+            "placement": 100,
+            "notes": "Shiver was added above"
+        },
+        {
+            "date": "2026-05-29",
+            "type": "moved",
+            "oldPlacement": 98,
+            "placement": 99,
+            "notes": "Platinum Adventure was added above"
+        },
+        {
+            "date": "2026-05-29",
+            "type": "added",
+            "placement": 98,
+            "notes": "The Nightmare added to the list"
         }
     ]
 }

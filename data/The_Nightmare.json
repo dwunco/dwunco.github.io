@@ -320,6 +320,82 @@
             "oldPlacement": 157,
             "placement": 158,
             "notes": "Robi was added above"
+        },
+        {
+            "date": "2026-05-29",
+            "type": "moved",
+            "oldPlacement": 104,
+            "placement": 105,
+            "notes": "Xstep v2 was added above"
+        },
+        {
+            "date": "2026-05-29",
+            "type": "moved",
+            "oldPlacement": 103,
+            "placement": 104,
+            "notes": "lucent garden was added above"
+        },
+        {
+            "date": "2026-05-29",
+            "type": "moved",
+            "oldPlacement": 104,
+            "placement": 103,
+            "notes": "Depressure was removed from the list"
+        },
+        {
+            "date": "2026-05-29",
+            "type": "moved",
+            "oldPlacement": 103,
+            "placement": 104,
+            "notes": "iS was added above"
+        },
+        {
+            "date": "2026-05-29",
+            "type": "moved",
+            "oldPlacement": 102,
+            "placement": 103,
+            "notes": "iSpyWithMyLittleEye was added above"
+        },
+        {
+            "date": "2026-05-29",
+            "type": "moved",
+            "oldPlacement": 101,
+            "placement": 102,
+            "notes": "Sidestep was added above"
+        },
+        {
+            "date": "2026-05-29",
+            "type": "moved",
+            "oldPlacement": 101,
+            "placement": 102,
+            "notes": "Sidestep was added above"
+        },
+        {
+            "date": "2026-05-29",
+            "type": "moved",
+            "oldPlacement": 100,
+            "placement": 101,
+            "notes": "Shiver was added above"
+        },
+        {
+            "date": "2026-05-29",
+            "type": "moved",
+            "oldPlacement": 99,
+            "placement": 100,
+            "notes": "Platinum Adventure was added above"
+        },
+        {
+            "date": "2026-05-29",
+            "type": "moved",
+            "oldPlacement": 98,
+            "placement": 99,
+            "notes": "THE LIGHTNING ROAD was added above"
+        },
+        {
+            "date": "2026-05-29",
+            "type": "added",
+            "placement": 98,
+            "notes": "The Nightmare added to the list"
         }
     ]
 }

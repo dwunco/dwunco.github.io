@@ -23,6 +23,13 @@
     "records": [],
     "history": [
         {
+            "date": "2026-06-30",
+            "type": "moved",
+            "oldPlacement": 18,
+            "placement": 19,
+            "notes": "Nilscapes was moved up past this demon"
+        },
+        {
             "date": "2026-06-15",
             "type": "moved",
             "oldPlacement": 17,

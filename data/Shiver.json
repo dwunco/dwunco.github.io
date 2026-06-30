@@ -232,6 +232,12 @@
             "oldPlacement": 149,
             "placement": 150,
             "notes": "Robi was added above"
+        },
+        {
+            "date": "2026-05-29",
+            "type": "added",
+            "placement": 98,
+            "notes": "Shiver added to the list"
         }
     ]
 }
