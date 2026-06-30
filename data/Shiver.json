@@ -52,6 +52,13 @@
     ],
     "history": [
         {
+            "date": "2026-06-30",
+            "type": "moved",
+            "oldPlacement": 175,
+            "placement": 176,
+            "notes": "Hypnotic Travel was added above"
+        },
+        {
             "date": "2026-06-27",
             "type": "moved",
             "oldPlacement": 174,

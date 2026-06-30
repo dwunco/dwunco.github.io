@@ -112,6 +112,13 @@
     ],
     "history": [
         {
+            "date": "2026-06-30",
+            "type": "moved",
+            "oldPlacement": 187,
+            "placement": 188,
+            "notes": "Hypnotic Travel was added above"
+        },
+        {
             "date": "2026-06-27",
             "type": "moved",
             "oldPlacement": 186,
@@ -320,6 +327,104 @@
             "oldPlacement": 157,
             "placement": 158,
             "notes": "Robi was added above"
+        },
+        {
+            "date": "2026-05-29",
+            "type": "moved",
+            "oldPlacement": 118,
+            "placement": 119,
+            "notes": "DJ was added above"
+        },
+        {
+            "date": "2026-05-29",
+            "type": "moved",
+            "oldPlacement": 117,
+            "placement": 118,
+            "notes": "Volcano was added above"
+        },
+        {
+            "date": "2026-05-29",
+            "type": "moved",
+            "oldPlacement": 116,
+            "placement": 117,
+            "notes": "Locomomentum was added above"
+        },
+        {
+            "date": "2026-05-29",
+            "type": "moved",
+            "oldPlacement": 115,
+            "placement": 116,
+            "notes": "I Made This 4 Fun was added above"
+        },
+        {
+            "date": "2026-05-29",
+            "type": "moved",
+            "oldPlacement": 114,
+            "placement": 115,
+            "notes": "dorabaedifficult4 was added above"
+        },
+        {
+            "date": "2026-05-29",
+            "type": "moved",
+            "oldPlacement": 113,
+            "placement": 114,
+            "notes": "phjork was added above"
+        },
+        {
+            "date": "2026-05-29",
+            "type": "moved",
+            "oldPlacement": 112,
+            "placement": 113,
+            "notes": "Lights And Thunder was added above"
+        },
+        {
+            "date": "2026-05-29",
+            "type": "moved",
+            "oldPlacement": 111,
+            "placement": 112,
+            "notes": "Retro Circles was added above"
+        },
+        {
+            "date": "2026-05-29",
+            "type": "moved",
+            "oldPlacement": 110,
+            "placement": 111,
+            "notes": "demon mixed was added above"
+        },
+        {
+            "date": "2026-05-29",
+            "type": "moved",
+            "oldPlacement": 109,
+            "placement": 110,
+            "notes": "Change of Scene was added above"
+        },
+        {
+            "date": "2026-05-29",
+            "type": "moved",
+            "oldPlacement": 108,
+            "placement": 109,
+            "notes": "Crescendo was added above"
+        },
+        {
+            "date": "2026-05-29",
+            "type": "moved",
+            "oldPlacement": 107,
+            "placement": 108,
+            "notes": "BUTTON MASHER was added above"
+        },
+        {
+            "date": "2026-05-29",
+            "type": "moved",
+            "oldPlacement": 106,
+            "placement": 107,
+            "notes": "Trump Circles was added above"
+        },
+        {
+            "date": "2026-05-29",
+            "type": "moved",
+            "oldPlacement": 105,
+            "placement": 106,
+            "notes": "Speed of Light was added above"
         },
         {
             "date": "2026-05-29",
