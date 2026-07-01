@@ -15,6 +15,16 @@
     "percentToQualify": 100,
     "password": "NA",
     "rank": "Beginner",
+    "tags": [
+        "2.1",
+        "Long",
+        "Circles",
+        "Timings",
+        "Wave",
+        "Ship",
+        "Chokepoints",
+        "Ball"
+    ],
     "records": [
         {
             "user": "dwunco",
