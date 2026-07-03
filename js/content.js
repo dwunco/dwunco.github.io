@@ -5,7 +5,7 @@ import { round, score } from './score.js';
  */
 const dir = './data';
 
-// Inside /js/content.js
+// Updated to accept listType parameter ('classic' or 'platformer')
 export async function fetchList(listType = 'classic') {
     // 1. Determine the master index file to read
     const listFileName = listType === 'platformer' ? 'platformer-list.json' : '_classic-list.json';
@@ -28,10 +28,12 @@ export async function fetchList(listType = 'classic') {
             
             const data = await res.json();
             
+            // Normalize layout structure to protect downstream components
             if (data && !data.author) {
                 data.author = data.uploader || (data.creators && data.creators[0]) || "Unknown";
             }
             
+            // Critical Leaderboard Safety: Ensure records array exists so .forEach loop doesn't crash
             if (data && !data.records) {
                 data.records = [];
             }

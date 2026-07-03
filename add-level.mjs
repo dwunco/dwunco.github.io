@@ -40,7 +40,7 @@ finalLogDate = finalLogDate.replace(/\//g, '-');
 
 const dataDir = path.join(__dirname, 'data');
 
-// Fix: Determine the targeted subdirectory name based on listType
+// Determine the targeted subdirectory name based on listType
 const subFolder = listType === 'platformer' ? 'platformer' : 'classic';
 const targetSubfolderPath = path.join(dataDir, subFolder);
 
@@ -78,7 +78,7 @@ console.log(`\n📝 Spliced level into ${listFileName}. Generating history casca
 
 // Update history arrays across every single shifted level file downstream
 shiftedLevels.forEach((existingFileName) => {
-    // Fix: Look inside the specific subfolder for file updates (data/classic/ or data/platformer/)
+    // Look inside the specific subfolder for file updates (data/classic/ or data/platformer/)
     const filePath = path.join(targetSubfolderPath, `${existingFileName}.json`);
     
     if (fs.existsSync(filePath)) {
@@ -134,7 +134,7 @@ if (customRank && customRank.trim() !== "") {
     newLevelData.rank = customRank.trim();
 }
 
-// Fix: Write the new level data file directly into the correct subfolder
+// Write the new level data file directly into the correct subfolder
 const levelFilePath = path.join(targetSubfolderPath, `${fileName}.json`);
 fs.writeFileSync(levelFilePath, JSON.stringify(newLevelData, null, 4));
 

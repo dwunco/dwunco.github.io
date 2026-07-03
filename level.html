@@ -42,47 +42,80 @@
             loadLevelData(levelId);
         }
 
-        // 2. Fetch the specific JSON file and inject it into the HTML
+        // 2. Fetch the specific JSON file by checking subfolders sequentially
         async function loadLevelData(id) {
+            let response;
+            let data = null;
+
+            // Step A: Try fetching from the classic subfolder first
             try {
-                // Adjust this path if your JSON files live somewhere else relative to level.html
-                const response = await fetch(`data/${id}.json`);
-                if (!response.ok) throw new Error("File not found");
-                
-                const data = await response.json();
-
-                // Update basic text
-                document.getElementById('level-name').innerText = data.name || id;
-                document.getElementById('level-meta').innerText = `Creator: ${data.creator || 'Unknown'} | Verifier: ${data.verifier || 'Unknown'}`;
-
-                // Loop through records array
-                const recordsList = document.getElementById('records-list');
-                if (data.records && data.records.length > 0) {
-                    data.records.forEach(rec => {
-                        const li = document.createElement('li');
-                        li.innerHTML = `<strong>${rec.player}</strong> - ${rec.progress}% (<a href="${rec.link}" target="_blank">Video</a>)`;
-                        recordsList.appendChild(li);
-                    });
-                } else {
-                    recordsList.innerHTML = "<li>No records submitted yet!</li>";
+                response = await fetch(`data/classic/${id}.json`);
+                if (!response.ok) {
+                    // Try lowercase fallback within classic folder
+                    response = await fetch(`data/classic/${id.toLowerCase()}.json`);
                 }
-
-                // Loop through history array (displays newest events first)
-                const historyList = document.getElementById('history-list');
-                if (data.history && data.history.length > 0) {
-                    // .reverse() puts newest entries at the top, or omit it to keep chronological order
-                    data.history.forEach(event => {
-                        const li = document.createElement('li');
-                        li.innerHTML = `<small>[${event.date || 'Date N/A'}]</small> ${event.note || 'Rank/status shift'}`;
-                        historyList.appendChild(li);
-                    });
-                } else {
-                    historyList.innerHTML = "<li>No history logged for this level.</li>";
+                if (response.ok) {
+                    data = await response.json();
                 }
+            } catch (e) {
+                // Drop classic failure to try platformer next
+            }
 
-            } catch (error) {
-                console.error(error);
+            // Step B: If not found in classic, try fetching from the platformer subfolder
+            if (!data) {
+                try {
+                    response = await fetch(`data/platformer/${id}.json`);
+                    if (!response.ok) {
+                        // Try lowercase fallback within platformer folder
+                        response = await fetch(`data/platformer/${id.toLowerCase()}.json`);
+                    }
+                    if (response.ok) {
+                        data = await response.json();
+                    }
+                } catch (e) {
+                    // Drop error
+                }
+            }
+
+            // Step C: Render data or throw error if completely missing from both paths
+            if (!data) {
                 document.getElementById('level-name').innerText = "Error loading level data.";
+                document.getElementById('level-meta').innerText = "Level could not be found in classic or platformer folders.";
+                return;
+            }
+
+            // Update basic text properties
+            document.getElementById('level-name').innerText = data.name || id;
+            
+            const authorText = data.author || data.creator || (data.creators && data.creators[0]) || 'Unknown';
+            document.getElementById('level-meta').innerText = `Creator: ${authorText} | Verifier: ${data.verifier || 'Unknown'}`;
+
+            // Loop through records array
+            const recordsList = document.getElementById('records-list');
+            if (data.records && data.records.length > 0) {
+                data.records.forEach(rec => {
+                    const li = document.createElement('li');
+                    const name = rec.player || rec.user || "Unknown";
+                    const progress = rec.progress !== undefined ? rec.progress : rec.percent;
+                    
+                    li.innerHTML = `<strong>${name}</strong> - ${progress}% (<a href="${rec.link}" target="_blank">Video</a>)`;
+                    recordsList.appendChild(li);
+                });
+            } else {
+                recordsList.innerHTML = "<li>No records submitted yet!</li>";
+            }
+
+            // Loop through history array (displays newest events first)
+            const historyList = document.getElementById('history-list');
+            if (data.history && data.history.length > 0) {
+                data.history.forEach(event => {
+                    const li = document.createElement('li');
+                    const noteText = event.notes || event.note || `Level ${event.type || 'updated'}`;
+                    li.innerHTML = `<small>[${event.date || 'Date N/A'}]</small> ${noteText}`;
+                    historyList.appendChild(li);
+                });
+            } else {
+                historyList.innerHTML = "<li>No history logged for this level.</li>";
             }
         }
     </script>
