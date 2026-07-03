@@ -7,12 +7,12 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const DATA_FOLDER = path.resolve(__dirname, './data');
 const MASTER_CHANGELOG_PATH = path.resolve(__dirname, './data/_changelog.json');
-const LIST_PATH = path.resolve(__dirname, './data/_list.json');
+const LIST_PATH = path.resolve(__dirname, './data/_classic-list.json');
 
 function distributeChangelog() {
     // 1. Verify required source files exist
     if (!fs.existsSync(MASTER_CHANGELOG_PATH) || !fs.existsSync(LIST_PATH)) {
-        console.error('\x1b[31m%s\x1b[0m', 'Error: Master _changelog.json or _list.json not found!');
+        console.error('\x1b[31m%s\x1b[0m', 'Error: Master _changelog.json or _classic-list.json not found!');
         process.exit(1);
     }
 
@@ -21,7 +21,7 @@ function distributeChangelog() {
     const listData = JSON.parse(fs.readFileSync(LIST_PATH, 'utf-8'));
 
     // 2. Map IDs to filenames so we know which ID belongs to which file
-    // Assumes your individual filenames match the string names in your _list.json
+    // Assumes your individual filenames match the string names in your _classic-list.json
     const idToFileMap = new Map();
     
     for (const item of listData) {

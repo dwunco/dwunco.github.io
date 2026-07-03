@@ -1,34 +1,37 @@
 import { round, score } from './score.js';
 
 /**
- * Path to directory containing `_list.json` and all levels
+ * Path to directory containing lists and all levels
  */
 const dir = './data';
 
-export async function fetchList() {
-    const list = await fetch('/data/_list.json').then(res => res.json());
+// Inside /js/content.js
+export async function fetchList(listType = 'classic') {
+    // 1. Determine the master index file to read
+    const listFileName = listType === 'platformer' ? 'platformer-list.json' : '_classic-list.json';
+    const list = await fetch(`/data/${listFileName}`).then(res => res.json());
+    
+    // 2. Identify the subfolder where the level JSONs are saved
+    const folder = listType === 'platformer' ? 'platformer' : 'classic';
     
     const levelPromises = list.map(async (name) => {
         try {
-            // Method B Fallback Logic:
-            // 1. Try loading the exact case from the list array (e.g., Robi.json)
-            let res = await fetch(`/data/${name}.json`);
+            // Try loading from the designated subfolder (e.g., /data/classic/Robi.json)
+            let res = await fetch(`/data/${folder}/${name}.json`);
             
-            // 2. If it 404s, seamlessly try loading the lowercase file variant (e.g., robi.json)
+            // Fallback to lowercase version in that same subfolder if needed
             if (!res.ok) {
-                res = await fetch(`/data/${name.toLowerCase()}.json`);
+                res = await fetch(`/data/${folder}/${name.toLowerCase()}.json`);
             }
             
             if (!res.ok) throw new Error(name);
             
             const data = await res.json();
             
-            // Normalize layout structure to protect downstream components
             if (data && !data.author) {
                 data.author = data.uploader || (data.creators && data.creators[0]) || "Unknown";
             }
             
-            // Critical Leaderboard Safety: Ensure records array exists so .forEach loop doesn't crash
             if (data && !data.records) {
                 data.records = [];
             }
@@ -52,8 +55,10 @@ export async function fetchEditors() {
     }
 }
 
-export async function fetchLeaderboard() {
-    const list = await fetchList();
+// Updated to pass listType parameter into the scoring pipeline
+export async function fetchLeaderboard(listType = 'classic') {
+    // Pass the active list selection down into the fetcher
+    const list = await fetchList(listType);
 
     const scoreMap = {};
     const errs = [];

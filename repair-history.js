@@ -2,13 +2,13 @@ import fs from 'fs';
 import path from 'path';
 
 const DATA_DIR = path.join(process.cwd(), 'data');
-const LIST_PATH = path.join(DATA_DIR, '_list.json');
+const LIST_PATH = path.join(DATA_DIR, '_classic-list.json');
 
 async function backfillShiftHistory() {
     try {
         // 1. Verify and read the master list file
         if (!fs.existsSync(LIST_PATH)) {
-            console.error('❌ Error: _list.json not found in the data directory.');
+            console.error('❌ Error: _classic-list.json not found in the data directory.');
             return;
         }
         const list = JSON.parse(fs.readFileSync(LIST_PATH, 'utf-8'));

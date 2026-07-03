@@ -8,7 +8,7 @@ const __dirname = path.dirname(__filename);
 
 // Paths to your local data resources
 const DATA_DIR = path.join(__dirname, 'data');
-const LIST_JSON_PATH = path.join(DATA_DIR, '_list.json');
+const LIST_JSON_PATH = path.join(DATA_DIR, '_classic-list.json');
 
 function main() {
     // Read command line arguments: node update-ranks.mjs "The Nightmare" "Bronze"
@@ -26,7 +26,7 @@ function main() {
         process.exit(1);
     }
 
-    console.log(`⏳ Reading local _list.json file...`);
+    console.log(`⏳ Reading local _classic-list.json file...`);
     const masterList = JSON.parse(fs.readFileSync(LIST_JSON_PATH, 'utf8'));
 
     // Find the index position of our target level in your master array string list
@@ -38,7 +38,7 @@ function main() {
     });
 
     if (targetIndex === -1) {
-        console.error(`❌ Error: Could not find any level named "${targetName}" inside _list.json.`);
+        console.error(`❌ Error: Could not find any level named "${targetName}" inside _classic-list.json.`);
         process.exit(1);
     }
 

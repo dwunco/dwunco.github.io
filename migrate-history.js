@@ -40,7 +40,7 @@ async function migrateHistory() {
 
         // 3. Scan the data directory for individual level files
         const files = fs.readdirSync(DATA_DIR);
-        const jsonFiles = files.filter(file => file.endsWith('.json') && file !== '_changelog.json' && file !== '_list.json');
+        const jsonFiles = files.filter(file => file.endsWith('.json') && file !== '_changelog.json' && file !== '_classic-list.json');
 
         console.log(`📂 Found ${jsonFiles.length} individual level files to process.`);
         let updatedCount = 0;

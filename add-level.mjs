@@ -5,58 +5,81 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
+// Argument mapping based on your specified order
 const levelName     = process.argv[2];
-const placement     = parseInt(process.argv[3], 10);
-const levelId       = parseInt(process.argv[4], 10) || 0;
-const fileName      = process.argv[5];
-const uploader      = process.argv[6] || "Unknown";
-const creatorsRaw   = process.argv[7] || "";
-const verifier      = process.argv[8] || "Unknown";
-const ytUrl         = process.argv[9] || "";
-const listPercent   = parseInt(process.argv[10], 10) || 100;
-const password      = process.argv[11] || "Free Copy";
-const customDate    = process.argv[12];
+const listType      = process.argv[3] ? process.argv[3].toLowerCase().trim() : "classic";
+const placement     = parseInt(process.argv[4], 10);
+const levelId       = parseInt(process.argv[5], 10) || 0;
+const fileName      = process.argv[6];
+const uploader      = process.argv[7] || "Unknown";
+const creatorsRaw   = process.argv[8] || "";
+const verifier      = process.argv[9] || "Unknown";
+const ytUrl         = process.argv[10] || "";
+const listPercent   = parseInt(process.argv[11], 10) || 100;
+const password      = process.argv[12] || "Free Copy";
+const tagsRaw       = process.argv[13] || ""; // Format: "[tag1, tag2]" or "tag1, tag2"
+const customRank    = process.argv[14] || ""; // Optional rank property for level data structures
+const customDate    = process.argv[15];
 
-if (!levelName || isNaN(placement) || !fileName) {
-    console.error('❌ Error: Missing required arguments.');
+// Validation check
+if (!levelName || !fileName || isNaN(placement)) {
+    console.error('❌ Error: Missing required arguments. (Usage: node add-level.mjs "Name" "classic/platformer" placement id "file_name" ...)');
     process.exit(1);
 }
 
+// Clean and array-parse creators list
 const creatorsArray = creatorsRaw.split(',').map(c => c.trim()).filter(c => c !== "");
+
+// Clean and array-parse tags string (stripping out enclosing bracket wrappers if passed)
+const cleanTags = tagsRaw.replace(/[\[\]]/g, '');
+const tagsArray = cleanTags.split(',').map(t => t.trim()).filter(t => t !== "");
 
 // Standardize incoming date strictly to YYYY-MM-DD format
 let finalLogDate = customDate || new Date().toISOString().split('T')[0];
 finalLogDate = finalLogDate.replace(/\//g, '-'); 
 
 const dataDir = path.join(__dirname, 'data');
-const listPath = path.join(dataDir, '_list.json');
+
+// Fix: Determine the targeted subdirectory name based on listType
+const subFolder = listType === 'platformer' ? 'platformer' : 'classic';
+const targetSubfolderPath = path.join(dataDir, subFolder);
+
+// Ensure the subfolder (classic or platformer) exists before saving files to it
+if (!fs.existsSync(targetSubfolderPath)) {
+    fs.mkdirSync(targetSubfolderPath, { recursive: true });
+}
+
+// Choose tracking file target based on listType argument
+const listFileName = listType === 'platformer' ? 'platformer-list.json' : '_classic-list.json';
+const listPath = path.join(dataDir, listFileName);
 let masterList = [];
 
 if (fs.existsSync(listPath)) {
     masterList = JSON.parse(fs.readFileSync(listPath, 'utf8'));
 }
 
-// Strip out the level if it already exists in the list to avoid duplication
+// Strip out the level name if it already exists in the destination roster to prevent collisions
 masterList = masterList.filter(name => name.toLowerCase() !== fileName.toLowerCase());
 
-// Directly respect the user's explicit placement request
+// Respect target placement parameter safely
 let targetIndex = Math.max(0, placement - 1);
 if (targetIndex > masterList.length) {
-    targetIndex = masterList.length; // Prevent array fragmentation gaps
+    targetIndex = masterList.length; 
 }
 
-// Grab all levels sitting at or below our target insertion point
+// Grab affected files below the splice index
 const shiftedLevels = masterList.slice(targetIndex);
 
-// Inject the new file name straight into the true index position inside _list.json
+// Splice the level key safely into the file array
 masterList.splice(targetIndex, 0, fileName);
 fs.writeFileSync(listPath, JSON.stringify(masterList, null, 4));
 
-console.log(`📝 Splice Complete. Generating history cascading updates...\n`);
+console.log(`\n📝 Spliced level into ${listFileName}. Generating history cascading updates...\n`);
 
-// Update the history array inside EVERY affected level file
+// Update history arrays across every single shifted level file downstream
 shiftedLevels.forEach((existingFileName) => {
-    const filePath = path.join(dataDir, `${existingFileName}.json`);
+    // Fix: Look inside the specific subfolder for file updates (data/classic/ or data/platformer/)
+    const filePath = path.join(targetSubfolderPath, `${existingFileName}.json`);
     
     if (fs.existsSync(filePath)) {
         try {
@@ -67,7 +90,7 @@ shiftedLevels.forEach((existingFileName) => {
 
             if (!fileData.history) fileData.history = [];
 
-            // Add the "added above" notice to the history of the level that got pushed down
+            // Add the "added above" displacement alert notice
             fileData.history.unshift({
                 "date": finalLogDate,
                 "type": "moved",
@@ -77,14 +100,14 @@ shiftedLevels.forEach((existingFileName) => {
             });
 
             fs.writeFileSync(filePath, JSON.stringify(fileData, null, 4));
-            console.log(`🔄 Cascaded update to ${existingFileName}.json (Moved #${oldRank} -> #${newRank})`);
+            console.log(`   🔄 Cascaded displacement update to ${subFolder}/${existingFileName}.json (Moved #${oldRank} -> #${newRank})`);
         } catch (e) {
-            console.error(`⚠️ Failed to cascade update to ${existingFileName}.json:`, e.message);
+            console.error(`   ⚠️ Failed to cascade update to ${subFolder}/${existingFileName}.json:`, e.message);
         }
     }
 });
 
-// Generate the new level's individual JSON file
+// Prepare individual level payload data layout
 const newLevelData = {
     "name": levelName,
     "id": levelId,
@@ -95,6 +118,7 @@ const newLevelData = {
     "percentToQualify": listPercent,
     "password": password,
     "records": [],
+    "tags": tagsArray, // Injected tags array parameter
     "history": [
         {
             "date": finalLogDate,
@@ -105,6 +129,13 @@ const newLevelData = {
     ]
 };
 
-const levelFilePath = path.join(dataDir, `${fileName}.json`);
+// If a custom rank label parameter (e.g. Bronze, Gold, Diamond) was specified, add it to the level data root
+if (customRank && customRank.trim() !== "") {
+    newLevelData.rank = customRank.trim();
+}
+
+// Fix: Write the new level data file directly into the correct subfolder
+const levelFilePath = path.join(targetSubfolderPath, `${fileName}.json`);
 fs.writeFileSync(levelFilePath, JSON.stringify(newLevelData, null, 4));
-console.log(`\n✅ Successfully generated ${levelFilePath} at ranking position #${targetIndex + 1}`);
+
+console.log(`\n✅ Successfully generated ${subFolder}/${fileName}.json at ranking position #${targetIndex + 1} (${listType.toUpperCase()})`);

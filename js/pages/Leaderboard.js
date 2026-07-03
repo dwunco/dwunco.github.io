@@ -8,6 +8,7 @@ export default {
         Spinner,
     },
     data: () => ({
+        currentListType: 'classic', // Default selected list state
         leaderboard: [],
         loading: true,
         selected: 0,
@@ -23,7 +24,30 @@ export default {
             <Spinner></Spinner>
         </main>
         <main v-else class="page-leaderboard-container">
-            <div class="page-leaderboard">
+            <div style="display: flex; gap: 8px; padding: 15px 15px 0 15px; margin-bottom: -15px; max-width: 400px;">
+                <button 
+                    @click="setListType('classic')" 
+                    style="flex: 1; padding: 10px; border-radius: 6px; font-weight: 700; font-family: 'Lexend Deca', sans-serif; cursor: pointer; border: none; transition: background-color 0.2s, color 0.2s; background: var(--border-color, #222); color: #fff;"
+                    :style="{
+                        background: currentListType === 'classic' ? '#0072ff' : 'rgba(255,255,255,0.05)',
+                        opacity: currentListType === 'classic' ? '1' : '0.6'
+                    }"
+                >
+                    Classic
+                </button>
+                <button 
+                    @click="setListType('platformer')" 
+                    style="flex: 1; padding: 10px; border-radius: 6px; font-weight: 700; font-family: 'Lexend Deca', sans-serif; cursor: pointer; border: none; transition: background-color 0.2s, color 0.2s; background: var(--border-color, #222); color: #fff;"
+                    :style="{
+                        background: currentListType === 'platformer' ? '#0072ff' : 'rgba(255,255,255,0.05)',
+                        opacity: currentListType === 'platformer' ? '1' : '0.6'
+                    }"
+                >
+                    Platformer
+                </button>
+            </div>
+
+            <div class="page-leaderboard" style="margin-top: 25px;">
                 <div class="error-container">
                     <p class="error" v-if="err.length > 0">
                         Leaderboard may be incorrect, as the following levels could not be loaded: {{ err.join(', ') }}
@@ -68,7 +92,7 @@ export default {
                             </tr>
                         </table>
 
-                        <h2 v-if="entry.progressed.length > 0">Progressed ({{entry.progressed.length}})</h2>
+                        <h2 v-if="entry.progressed && entry.progressed.length > 0">Progressed ({{entry.progressed.length}})</h2>
                         <table class="table">
                             <tr v-for="score in entry.progressed">
                                 <td class="rank">
@@ -108,16 +132,36 @@ export default {
         }
     },
     async mounted() {
-        const [leaderboard, err] = await fetchLeaderboard();
-        this.leaderboard = leaderboard;
-        this.err = err;
-        this.loading = false;
+        await this.loadLeaderboardData();
     },
     methods: {
         localize,
         isBlacklisted(username) {
             if (!username) return false;
             return this.blacklist.some(b => b.toLowerCase().trim() === username.toLowerCase().trim());
+        },
+        async loadLeaderboardData() {
+            this.loading = true;
+            try {
+                // If your fetchLeaderboard logic inside content.js accepts a source argument, 
+                // we feed it 'classic' or 'platformer'. If not, it falls back gracefully to standard lists.
+                const [leaderboard, err] = await fetchLeaderboard(this.currentListType);
+                this.leaderboard = leaderboard || [];
+                this.err = err || [];
+            } catch (e) {
+                this.err = [e.message];
+            }
+            this.loading = false;
+        },
+        async setListType(type) {
+            if (this.currentListType === type) return;
+            this.currentListType = type;
+            
+            // Snaps selection index position tracking back to rank #1 player spot on change
+            this.selected = 0;
+            
+            // Triggers real-time dataset re-fetch configuration sequence 
+            await this.loadLeaderboardData();
         }
     },
 };

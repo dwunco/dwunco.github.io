@@ -30,6 +30,29 @@ export default {
         </main>
         <main v-else class="page-list">
             <div class="list-container">
+                <div style="display: flex; gap: 8px; padding: 15px 15px 0 15px; background: rgba(0,0,0,0.05);">
+                    <button 
+                        @click="setListType('classic')" 
+                        style="flex: 1; padding: 10px; border-radius: 6px; font-weight: 700; font-family: 'Lexend Deca', sans-serif; cursor: pointer; border: none; transition: background-color 0.2s, color 0.2s; background: var(--border-color, #222); color: #fff;"
+                        :style="{
+                            background: currentListType === 'classic' ? '#0072ff' : 'rgba(255,255,255,0.05)',
+                            opacity: currentListType === 'classic' ? '1' : '0.6'
+                        }"
+                    >
+                        Classic
+                    </button>
+                    <button 
+                        @click="setListType('platformer')" 
+                        style="flex: 1; padding: 10px; border-radius: 6px; font-weight: 700; font-family: 'Lexend Deca', sans-serif; cursor: pointer; border: none; transition: background-color 0.2s, color 0.2s; background: var(--border-color, #222); color: #fff;"
+                        :style="{
+                            background: currentListType === 'platformer' ? '#0072ff' : 'rgba(255,255,255,0.05)',
+                            opacity: currentListType === 'platformer' ? '1' : '0.6'
+                        }"
+                    >
+                        Platformer
+                    </button>
+                </div>
+
                 <div class="list-search" style="padding: 15px; border-bottom: 1px solid var(--border-color, #333); background: rgba(0,0,0,0.05); display: flex; flex-direction: column; gap: 10px;">
                     <div style="display: flex; gap: 8px; align-items: center; width: 100%;">
                         <input 
@@ -57,15 +80,15 @@ export default {
                 <table class="list" v-if="list">
                     <template v-for="([level, err], i) in filteredList">
                         
-                        <tr v-if="level && level.historicalRank === 1 && !filter && !filterNewOnly && !filterCreator && !filterVerifier && !filterUploader && filterTags.length === 0" class="list-header-row">
+                        <tr v-if="level && level.historicalRank === 1 && !searchQuery && !filterNewOnly && !filterCreator && !filterVerifier && !filterUploader && filterTags.length === 0" class="list-header-row">
                             <td colspan="2" class="list-header-label">Main List</td>
                         </tr>
 
-                        <tr v-if="level && level.historicalRank === 76 && !filter && !filterNewOnly && !filterCreator && !filterVerifier && !filterUploader && filterTags.length === 0" class="list-header-row">
+                        <tr v-if="level && level.historicalRank === 76 && !searchQuery && !filterNewOnly && !filterCreator && !filterVerifier && !filterUploader && filterTags.length === 0" class="list-header-row">
                             <td colspan="2" class="list-header-label">Extended List</td>
                         </tr>
 
-                        <tr v-if="level && level.historicalRank === 151 && !filter && !filterNewOnly && !filterCreator && !filterVerifier && !filterUploader && filterTags.length === 0" class="list-header-row">
+                        <tr v-if="level && level.historicalRank === 151 && !searchQuery && !filterNewOnly && !filterCreator && !filterVerifier && !filterUploader && filterTags.length === 0" class="list-header-row">
                             <td colspan="2" class="list-header-label">Extended+ List</td>
                         </tr>
 
@@ -205,84 +228,44 @@ export default {
 
             <div v-if="showModal" class="modal-backdrop" @click.self="showModal = false">
                 <div class="modal-window">
-                    
                     <div class="modal-header">
                         <h2>List Search Settings</h2>
                         <button class="modal-close-btn" @click="showModal = false">✕</button>
                     </div>
-
                     <div class="modal-body">
-                        
                         <div class="modal-column">
                             <h3>Filters</h3>
-                            
                             <label class="advanced-filter-label" style="display: flex; align-items: center; gap: 8px; cursor: pointer; user-select: none; margin-bottom: 12px;">
                                 <input type="checkbox" v-model="modalLocal.filterNewOnly" style="cursor: pointer;" />
-                                <span class="type-label-md">
-                                    Show Only <span style="color: #ff4d4d; font-weight: bold;">NEW!</span> Levels
-                                </span>
+                                <span class="type-label-md">Show Only <span style="color: #ff4d4d; font-weight: bold;">NEW!</span> Levels</span>
                             </label>
-
                             <div style="display: flex; flex-direction: column; gap: 8px;">
                                 <input v-model="modalLocal.filterCreator" type="text" placeholder="Filter by Creator..." class="advanced-filter-input" />
                                 <input v-model="modalLocal.filterVerifier" type="text" placeholder="Filter by Verifier..." class="advanced-filter-input" />
                                 <input v-model="modalLocal.filterUploader" type="text" placeholder="Filter by Uploader..." class="advanced-filter-input" />
                             </div>
                         </div>
-
                         <div class="modal-column" style="max-height: 400px; overflow-y: auto; padding-right: 5px;">
                             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
                                 <h3 style="margin: 0;">Tags</h3>
-                                
                                 <div style="display: flex; background: rgba(255,255,255,0.08); padding: 2px; border-radius: 6px; gap: 2px;">
-                                    <button 
-                                        @click="modalLocal.tagMode = 'all'"
-                                        style="font-size: 0.75rem; border: none; padding: 4px 8px; border-radius: 4px; cursor: pointer; transition: background 0.2s;"
-                                        :style="{ 
-                                            background: modalLocal.tagMode === 'all' ? 'var(--apply-color, #ff7300)' : 'transparent',
-                                            color: modalLocal.tagMode === 'all' ? '#fff' : '#888',
-                                            fontWeight: modalLocal.tagMode === 'all' ? 'bold' : 'normal'
-                                        }">
-                                        Match All
-                                    </button>
-                                    <button 
-                                        @click="modalLocal.tagMode = 'any'"
-                                        style="font-size: 0.75rem; border: none; padding: 4px 8px; border-radius: 4px; cursor: pointer; transition: background 0.2s;"
-                                        :style="{ 
-                                            background: modalLocal.tagMode === 'any' ? 'var(--apply-color, #ff7300)' : 'transparent',
-                                            color: modalLocal.tagMode === 'any' ? '#fff' : '#888',
-                                            fontWeight: modalLocal.tagMode === 'any' ? 'bold' : 'normal'
-                                        }">
-                                        Match Any
-                                    </button>
+                                    <button @click="modalLocal.tagMode = 'all'" style="font-size: 0.75rem; border: none; padding: 4px 8px; border-radius: 4px; cursor: pointer; transition: background 0.2s;" :style="{ background: modalLocal.tagMode === 'all' ? 'var(--apply-color, #ff7300)' : 'transparent', color: modalLocal.tagMode === 'all' ? '#fff' : '#888', fontWeight: modalLocal.tagMode === 'all' ? 'bold' : 'normal' }">Match All</button>
+                                    <button @click="modalLocal.tagMode = 'any'" style="font-size: 0.75rem; border: none; padding: 4px 8px; border-radius: 4px; cursor: pointer; transition: background 0.2s;" :style="{ background: modalLocal.tagMode === 'any' ? 'var(--apply-color, #ff7300)' : 'transparent', color: modalLocal.tagMode === 'any' ? '#fff' : '#888', fontWeight: modalLocal.tagMode === 'any' ? 'bold' : 'normal' }">Match Any</button>
                                 </div>
                             </div>
-
                             <div v-for="(tags, category) in tagsPool" :key="category" style="margin-bottom: 16px;">
-                                <span class="type-title-sm" style="display: block; margin-bottom: 6px; font-weight: bold; font-size: 0.85rem; opacity: 0.7;">
-                                    {{ category }}
-                                </span>
+                                <span class="type-title-sm" style="display: block; margin-bottom: 6px; font-weight: bold; font-size: 0.85rem; opacity: 0.7;">{{ category }}</span>
                                 <div style="display: flex; flex-wrap: wrap; gap: 6px;">
-                                    <button 
-                                         v-for="tag in tags" 
-                                        :key="tag"
-                                        @click="toggleModalTag(tag)"
-                                        class="tag-btn"
-                                        :class="{ 'is-active': modalLocal.filterTags.includes(tag) }">
-                                        {{ tag }} <span v-if="modalLocal.filterTags.includes(tag)">×</span>
-                                    </button>
+                                    <button v-for="tag in tags" :key="tag" @click="toggleModalTag(tag)" class="tag-btn" :class="{ 'is-active': modalLocal.filterTags.includes(tag) }">{{ tag }} <span v-if="modalLocal.filterTags.includes(tag)">×</span></button>
                                 </div>
                             </div>
                         </div>
-
                     </div>
-
                     <div class="modal-footer">
                         <button class="modal-btn-apply" @click="applyFilters">Apply</button>
                         <button class="modal-btn-cancel" @click="showModal = false">Cancel</button>
                         <button class="modal-btn-reset" @click="resetModalFilters">Reset all</button>
                     </div>
-
                 </div>
             </div>
 
@@ -314,7 +297,11 @@ export default {
         </main>
     `,
     data: () => ({
+        currentListType: 'classic', // "classic" or "platformer"
+        classicList: [],
+        platformerList: [],
         list: [],
+        
         editors: [],
         packs: [],
         loading: true,
@@ -353,12 +340,10 @@ export default {
         level() {
             if (!this.list || this.selected >= this.list.length) return null;
             
-            // Get the immutable fallback reference from the primary static master file array
             const masterPair = this.list[this.selected];
             const originalLevelObj = masterPair ? masterPair[0] : null;
             if (!originalLevelObj) return null;
 
-            // Find the active time machine processed level entry sharing the matching level unique ID
             const activeTimeMatch = this.filteredList.find(([l]) => l && l.id === originalLevelObj.id);
             
             if (activeTimeMatch && activeTimeMatch[0]) {
@@ -419,10 +404,7 @@ export default {
             
             let timeFilteredList = [];
     
-            // --- TIME MACHINE CALCULATION ENGINE ---
             if (this.timeMachineDate) {
-                // Set target time to the very end of the selected day (23:59:59.999) 
-                // so it encompasses all changes made throughout that entire date.
                 const targetTime = new Date(this.timeMachineDate);
                 targetTime.setHours(23, 59, 59, 999);
                 const targetTimestamp = targetTime.getTime();
@@ -434,16 +416,11 @@ export default {
                     }
     
                     const history = level.history || [];
-
-                    // 1. Map item to include its raw array position index from the file
                     const sortedHistory = history
                         .map((log, index) => ({ ...log, originalIndex: index }))
                         .sort((a, b) => {
                             const timeA = new Date(a.date).getTime();
                             const timeB = new Date(b.date).getTime();
-                            
-                            // 2. Tiebreaker: If dates are identical, make sure the one closer to the 
-                            // top of the file (smaller index) comes LAST in the sorted array
                             if (timeA === timeB) {
                                 return b.originalIndex - a.originalIndex; 
                             }
@@ -459,9 +436,6 @@ export default {
                     const validPastLogs = sortedHistory.filter(log => new Date(log.date).getTime() <= targetTimestamp);
                     let historicalPlacement = null;
     
-                    // Loop through all valid actions up to that date.
-                    // Consecutive changes on the same day will continually overwrite the placement,
-                    // leaving you with the absolute LAST placement set.
                     for (const log of validPastLogs) {
                         if (log.placement) {
                             historicalPlacement = parseInt(log.placement, 10);
@@ -493,7 +467,6 @@ export default {
                 });
             }
     
-            // --- SEARCH INPUT & ADVANCED MODAL FILTERS ---
             return timeFilteredList.filter(([level, err]) => {
                 if (!level) {
                     return !this.searchQuery && !this.filterNewOnly && !this.filterVerifier && !this.filterUploader && !this.filterCreator && this.filterTags.length === 0;
@@ -542,41 +515,53 @@ export default {
                 return true;
             });
         }
-
     },
+    // Inside /js/pages/List.js -> mounted() hook
     async mounted() {
-        this.list = await fetchList();
-        this.editors = await fetchEditors();
+        try {
+            const [classicData, platformerData, editorsData] = await Promise.all([
+                fetchList('classic'), 
+                fetchList('platformer'),
+                fetchEditors()
+            ]);
 
-        if (!this.list) {
-            this.errors = [
-                "Failed to load list. Retry in a few minutes or notify list staff.",
-            ];
-        } else {
-            this.errors.push(
-                ...this.list
-                    .filter(([_, err]) => err)
-                    .map(([_, err]) => {
-                        return `Failed to load level. (${err}.json)`;
-                    })
-            );
-            if (!this.editors) {
-                this.errors.push("Failed to load list editors.");
-            }
+            this.classicList = classicData || [];
+            this.platformerList = platformerData || [];
+            this.editors = editorsData || [];
+
+            // Determine initial list view assignment
+            this.list = this.classicList;
 
             if (this.$route.params.id) {
-                this.selectLevelById(this.$route.params.id);
+                const targetId = String(this.$route.params.id);
+                
+                // Check if the route level is a classic level
+                let index = this.classicList.findIndex(([l, err]) => String(l ? l.id : err) === targetId);
+                if (index !== -1) {
+                    this.currentListType = 'classic';
+                    this.list = this.classicList;
+                    this.selected = index;
+                } else {
+                    // Otherwise check if it lives in the platformer dataset
+                    index = this.platformerList.findIndex(([l, err]) => String(l ? l.id : err) === targetId);
+                    if (index !== -1) {
+                        this.currentListType = 'platformer';
+                        this.list = this.platformerList;
+                        this.selected = index;
+                    }
+                }
             }
+
+            // Error log handling
+            this.errors.push(
+                ...this.classicList.filter(([_, err]) => err).map(([_, err]) => `Failed to load classic level: ${err}.json`),
+                ...this.platformerList.filter(([_, err]) => err).map(([_, err]) => `Failed to load platformer level: ${err}.json`)
+            );
+        } catch (e) {
+            this.errors.push("Fatal error loading list configurations: " + e.message);
         }
 
         this.loading = false;
-    },
-    watch: {
-        '$route.params.id'(newId) {
-            if (newId) {
-                this.selectLevelById(newId);
-            }
-        }
     },
     methods: {
         embed,
@@ -610,6 +595,21 @@ export default {
             if (index !== -1) {
                 this.selected = index;
                 this.$router.push('/level/' + (level ? level.id : err));
+            }
+        },
+        setListType(type) {
+            if (this.currentListType === type) return;
+            this.currentListType = type;
+            
+            // Seamless dataset swaps
+            this.list = type === 'classic' ? this.classicList : this.platformerList;
+            
+            // Snap selection tracking state directly to rank #1 item on switch
+            this.selected = 0;
+            
+            if (this.list.length > 0) {
+                const first = this.list[0];
+                if (first && first[0]) this.$router.push('/level/' + first[0].id);
             }
         },
         getLogTypeLabel(log) {
