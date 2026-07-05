@@ -9,15 +9,29 @@
     "verification": "https://youtu.be/ULzuKtO_tm4",
     "percentToQualify": 100,
     "password": "Free Copy",
-    "records": [],
+    "records": [
+        {
+            "user": "aThingToEx",
+            "link": "https://youtu.be/null",
+            "percent": 100,
+            "hz": 60
+        }
+    ],
     "tags": [
         "2.2"
     ],
     "history": [
         {
             "date": "2026-07-05",
+            "type": "moved",
+            "oldPlacement": 9,
+            "placement": 10,
+            "notes": "ShiftLeaf Temple was added above"
+        },
+        {
+            "date": "2026-07-05",
             "type": "added",
-            "placement": 7,
+            "placement": 9,
             "notes": "Maethrillian added to the list"
         }
     ],
