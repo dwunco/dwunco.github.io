@@ -5,7 +5,7 @@
     "creators": [
         "burningmagma"
     ],
-    "verifier": "dwunco",
+    "verifier": "aThingToEx",
     "verification": "https://youtu.be/SBlE6slJAOo",
     "percentToQualify": 100,
     "password": "Free Copy",
@@ -15,6 +15,13 @@
         "Gimmicky"
     ],
     "history": [
+        {
+            "date": "2026-07-05",
+            "type": "moved",
+            "oldPlacement": 9,
+            "placement": 10,
+            "notes": "Maethrillian was added above"
+        },
         {
             "date": "2026-07-05",
             "type": "added",
