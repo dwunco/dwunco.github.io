@@ -1,12 +1,12 @@
 {
-    "name": "The Towerverse",
-    "id": 102814497,
+    "name": "The Towerverse_II",
+    "id": 125070012,
     "author": "16lord",
     "creators": [
         "16lord"
     ],
     "verifier": "aThingToEx",
-    "verification": "https://youtu.be/3_QN8vgbFFM",
+    "verification": "https://youtu.be/s1hS9x7w8Uk",
     "percentToQualify": 100,
     "password": "Free Copy",
     "records": [],
@@ -18,9 +18,9 @@
         {
             "date": "2026-07-05",
             "type": "added",
-            "placement": 2,
-            "notes": "The Towerverse added to the list"
+            "placement": 5,
+            "notes": "The Towerverse_II added to the list"
         }
     ],
-    "rank": "Silver"
+    "rank": "Beginner"
 }
