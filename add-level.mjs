@@ -50,7 +50,7 @@ if (!fs.existsSync(targetSubfolderPath)) {
 }
 
 // Choose tracking file target based on listType argument
-const listFileName = listType === 'platformer' ? 'platformer-list.json' : '_classic-list.json';
+const listFileName = listType === 'platformer' ? '_platformer-list.json' : '_classic-list.json';
 const listPath = path.join(dataDir, listFileName);
 let masterList = [];
 

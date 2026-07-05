@@ -23,7 +23,7 @@ if (!fileNameArg || isNaN(targetPlacementArg)) {
 const subFolder = listType === 'platformer' ? 'platformer' : 'classic';
 const targetSubfolderPath = path.join(dataDir, subFolder);
 
-const listFileName = listType === 'platformer' ? 'platformer-list.json' : '_classic-list.json';
+const listFileName = listType === 'platformer' ? '_platformer-list.json' : '_classic-list.json';
 const listPath = path.join(dataDir, listFileName);
 
 // Standardize incoming date strictly to YYYY-MM-DD format

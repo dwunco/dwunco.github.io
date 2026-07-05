@@ -8,7 +8,7 @@ const dir = './data';
 // Updated to accept listType parameter ('classic' or 'platformer')
 export async function fetchList(listType = 'classic') {
     // 1. Determine the master index file to read
-    const listFileName = listType === 'platformer' ? 'platformer-list.json' : '_classic-list.json';
+    const listFileName = listType === 'platformer' ? '_platformer-list.json' : '_classic-list.json';
     const list = await fetch(`/data/${listFileName}`).then(res => res.json());
     
     // 2. Identify the subfolder where the level JSONs are saved

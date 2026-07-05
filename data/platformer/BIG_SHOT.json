@@ -21,6 +21,13 @@
         {
             "date": "2026-07-05",
             "type": "moved",
+            "oldPlacement": 4,
+            "placement": 5,
+            "notes": "Coaster Mountain was added above"
+        },
+        {
+            "date": "2026-07-05",
+            "type": "moved",
             "oldPlacement": 3,
             "placement": 4,
             "notes": "The Towerverse was added above"

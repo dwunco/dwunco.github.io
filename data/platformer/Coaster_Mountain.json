@@ -1,0 +1,25 @@
+{
+    "name": "Coaster Mountain",
+    "id": 98170000,
+    "author": "Serponge",
+    "creators": [
+        "Serponge"
+    ],
+    "verifier": "dwunco",
+    "verification": "https://youtu.be/E_NU3k8_vQc",
+    "percentToQualify": 100,
+    "password": "Free Copy",
+    "records": [],
+    "tags": [
+        "2.2"
+    ],
+    "history": [
+        {
+            "date": "2026-07-05",
+            "type": "added",
+            "placement": 4,
+            "notes": "Coaster Mountain added to the list"
+        }
+    ],
+    "rank": "Bronze"
+}

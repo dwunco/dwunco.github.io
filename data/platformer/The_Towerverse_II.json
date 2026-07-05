@@ -1,5 +1,5 @@
 {
-    "name": "The Towerverse_II",
+    "name": "The Towerverse II",
     "id": 125070012,
     "author": "16lord",
     "creators": [
@@ -15,6 +15,13 @@
         "Gimmicky"
     ],
     "history": [
+        {
+            "date": "2026-07-05",
+            "type": "moved",
+            "oldPlacement": 5,
+            "placement": 6,
+            "notes": "Coaster Mountain was added above"
+        },
         {
             "date": "2026-07-05",
             "type": "added",
