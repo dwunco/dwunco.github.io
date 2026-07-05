@@ -6,15 +6,29 @@
         "LightPotatoDev"
     ],
     "verifier": "dwunco",
-    "verification": "https://youtu.be/E_NU3k8_vQc",
+    "verification": "https://youtu.be/5pdhzAA1dgM",
     "percentToQualify": 100,
     "password": "Free Copy",
-    "records": [],
+    "records": [
+        {
+            "user": "aThingToEx",
+            "link": "https://youtu.be/null",
+            "percent": 100,
+            "hz": 60
+        }
+    ],
     "tags": [
         "2.2",
         "Gimmicky"
     ],
     "history": [
+        {
+            "date": "2026-07-05",
+            "type": "moved",
+            "oldPlacement": 7,
+            "placement": 8,
+            "notes": "Flipswap Factory was added above"
+        },
         {
             "date": "2026-07-05",
             "type": "added",

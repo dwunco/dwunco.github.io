@@ -18,6 +18,13 @@
         {
             "date": "2026-07-05",
             "type": "moved",
+            "oldPlacement": 6,
+            "placement": 7,
+            "notes": "Flipswap Factory was added above"
+        },
+        {
+            "date": "2026-07-05",
+            "type": "moved",
             "oldPlacement": 5,
             "placement": 6,
             "notes": "Coaster Mountain was added above"
