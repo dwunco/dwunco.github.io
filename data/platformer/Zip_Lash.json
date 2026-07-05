@@ -21,6 +21,13 @@
     ],
     "history": [
         {
+            "date": "2026-07-05",
+            "type": "moved",
+            "oldPlacement": 2,
+            "placement": 3,
+            "notes": "The Towerverse was added above"
+        },
+        {
             "date": "2026-07-03",
             "type": "added",
             "placement": 2,
