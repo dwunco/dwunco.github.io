@@ -25,6 +25,13 @@
         {
             "date": "2026-07-05",
             "type": "moved",
+            "oldPlacement": 8,
+            "placement": 9,
+            "notes": "would you rather was added above"
+        },
+        {
+            "date": "2026-07-05",
+            "type": "moved",
             "oldPlacement": 7,
             "placement": 8,
             "notes": "Flipswap Factory was added above"

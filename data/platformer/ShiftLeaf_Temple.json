@@ -16,6 +16,13 @@
     "history": [
         {
             "date": "2026-07-05",
+            "type": "moved",
+            "oldPlacement": 9,
+            "placement": 10,
+            "notes": "would you rather was added above"
+        },
+        {
+            "date": "2026-07-05",
             "type": "added",
             "placement": 9,
             "notes": "ShiftLeaf Temple added to the list"

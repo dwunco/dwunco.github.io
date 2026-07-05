@@ -24,6 +24,13 @@
         {
             "date": "2026-07-05",
             "type": "moved",
+            "oldPlacement": 10,
+            "placement": 11,
+            "notes": "would you rather was added above"
+        },
+        {
+            "date": "2026-07-05",
+            "type": "moved",
             "oldPlacement": 9,
             "placement": 10,
             "notes": "ShiftLeaf Temple was added above"
