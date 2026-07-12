@@ -29,6 +29,13 @@
     ],
     "history": [
         {
+            "date": "2026-07-12",
+            "type": "moved",
+            "oldPlacement": 6,
+            "placement": 4,
+            "notes": "Swapped with Azurite"
+        },
+        {
             "date": "2026-06-12",
             "type": "moved",
             "oldPlacement": 5,
