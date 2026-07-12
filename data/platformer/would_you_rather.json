@@ -24,6 +24,13 @@
         {
             "date": "2026-07-12",
             "type": "moved",
+            "oldPlacement": 10,
+            "placement": 11,
+            "notes": "Tower of Rage was added above"
+        },
+        {
+            "date": "2026-07-12",
+            "type": "moved",
             "oldPlacement": 9,
             "placement": 10,
             "notes": "GD Squid Game was added above"
