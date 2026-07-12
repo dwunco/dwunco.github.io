@@ -24,6 +24,13 @@
         {
             "date": "2026-07-12",
             "type": "moved",
+            "oldPlacement": 9,
+            "placement": 10,
+            "notes": "GD Squid Game was added above"
+        },
+        {
+            "date": "2026-07-12",
+            "type": "moved",
             "oldPlacement": 8,
             "placement": 9,
             "notes": "Active Volcanic Mine was added above"

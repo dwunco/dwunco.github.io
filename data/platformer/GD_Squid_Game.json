@@ -1,0 +1,32 @@
+{
+    "name": "GD Squid Game",
+    "id": 122327226,
+    "author": "Androxma",
+    "creators": [
+        "Androxma"
+    ],
+    "verifier": "dwunco",
+    "verification": "https://youtu.be/IC6zIoBk-KA",
+    "percentToQualify": 100,
+    "password": "Free Copy",
+    "records": [
+        {
+            "user": "aThingToEx",
+            "link": "https://youtu.be/null",
+            "percent": 100,
+            "hz": 60
+        }
+    ],
+    "tags": [
+        "2.2"
+    ],
+    "history": [
+        {
+            "date": "2026-07-12",
+            "type": "added",
+            "placement": 9,
+            "notes": "GD Squid Game added to the list"
+        }
+    ],
+    "rank": "beginner"
+}
