@@ -16,6 +16,13 @@
     ],
     "history": [
         {
+            "date": "2026-07-12",
+            "type": "moved",
+            "oldPlacement": 7,
+            "placement": 8,
+            "notes": "Active Volcanic Mine was added above"
+        },
+        {
             "date": "2026-07-05",
             "type": "moved",
             "oldPlacement": 6,
