@@ -14,6 +14,27 @@
     "records": [],
     "history": [
         {
+            "date": "2026-07-15",
+            "type": "moved",
+            "oldPlacement": 174,
+            "placement": 175,
+            "notes": "Brave New World was added above"
+        },
+        {
+            "date": "2026-07-15",
+            "type": "moved",
+            "oldPlacement": 173,
+            "placement": 174,
+            "notes": "Kingdom of Hearts was added above"
+        },
+        {
+            "date": "2026-07-15",
+            "type": "moved",
+            "oldPlacement": 172,
+            "placement": 173,
+            "notes": "Stomp was added above"
+        },
+        {
             "date": "2026-06-30",
             "type": "moved",
             "oldPlacement": 171,

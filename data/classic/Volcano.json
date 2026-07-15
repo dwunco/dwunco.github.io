@@ -20,6 +20,27 @@
     ],
     "history": [
         {
+            "date": "2026-07-15",
+            "type": "moved",
+            "oldPlacement": 171,
+            "placement": 172,
+            "notes": "Brave New World was added above"
+        },
+        {
+            "date": "2026-07-15",
+            "type": "moved",
+            "oldPlacement": 170,
+            "placement": 171,
+            "notes": "Kingdom of Hearts was added above"
+        },
+        {
+            "date": "2026-07-15",
+            "type": "moved",
+            "oldPlacement": 169,
+            "placement": 170,
+            "notes": "Stomp was added above"
+        },
+        {
             "date": "2026-06-30",
             "type": "moved",
             "oldPlacement": 168,
