@@ -43,6 +43,13 @@
         {
             "date": "2026-07-15",
             "type": "moved",
+            "oldPlacement": 175,
+            "placement": 176,
+            "notes": "Kingdom of Hearts was added above"
+        },
+        {
+            "date": "2026-07-15",
+            "type": "moved",
             "oldPlacement": 174,
             "placement": 175,
             "notes": "Stomp was added above"
