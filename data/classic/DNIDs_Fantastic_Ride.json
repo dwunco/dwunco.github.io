@@ -15,6 +15,13 @@
         {
             "date": "2026-07-15",
             "type": "moved",
+            "oldPlacement": 150,
+            "placement": 151,
+            "notes": "Brave New World was added above"
+        },
+        {
+            "date": "2026-07-15",
+            "type": "moved",
             "oldPlacement": 149,
             "placement": 150,
             "notes": "Stomp was added above"

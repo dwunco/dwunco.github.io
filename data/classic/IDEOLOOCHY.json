@@ -24,6 +24,13 @@
         {
             "date": "2026-07-15",
             "type": "moved",
+            "oldPlacement": 187,
+            "placement": 188,
+            "notes": "Brave New World was added above"
+        },
+        {
+            "date": "2026-07-15",
+            "type": "moved",
             "oldPlacement": 186,
             "placement": 187,
             "notes": "Kingdom of Hearts was added above"

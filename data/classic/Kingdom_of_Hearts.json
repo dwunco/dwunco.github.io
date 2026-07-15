@@ -6,7 +6,7 @@
         "Bpi"
     ],
     "verifier": "cookiedarookie",
-    "verification": "https://youtu.be/null",
+    "verification": "https://youtu.be/Al1-RKv0YoI",
     "percentToQualify": 100,
     "password": "Free Copy",
     "records": [],
@@ -20,6 +20,13 @@
         "Cube"
     ],
     "history": [
+        {
+            "date": "2026-07-15",
+            "type": "moved",
+            "oldPlacement": 170,
+            "placement": 171,
+            "notes": "Brave New World was added above"
+        },
         {
             "date": "2026-07-15",
             "type": "added",
