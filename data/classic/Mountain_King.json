@@ -13,6 +13,13 @@
     "records": [],
     "history": [
         {
+            "date": "2026-07-15",
+            "type": "moved",
+            "oldPlacement": 70,
+            "placement": 71,
+            "notes": "Chaoz Airflow was moved up past this demon"
+        },
+        {
             "date": "2026-06-30",
             "type": "moved",
             "oldPlacement": 69,
