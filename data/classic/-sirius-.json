@@ -15,6 +15,13 @@
         {
             "date": "2026-07-15",
             "type": "moved",
+            "oldPlacement": 65,
+            "placement": 66,
+            "notes": "DeepDive was moved up past this demon"
+        },
+        {
+            "date": "2026-07-15",
+            "type": "moved",
             "oldPlacement": 75,
             "placement": 65,
             "notes": "Moved"

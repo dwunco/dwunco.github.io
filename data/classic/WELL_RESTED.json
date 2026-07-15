@@ -13,6 +13,13 @@
     "records": [],
     "history": [
         {
+            "date": "2026-07-15",
+            "type": "moved",
+            "oldPlacement": 76,
+            "placement": 77,
+            "notes": "DeepDive was moved up past this demon"
+        },
+        {
             "date": "2026-06-30",
             "type": "moved",
             "oldPlacement": 75,
