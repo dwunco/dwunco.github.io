@@ -30,6 +30,13 @@
         {
             "date": "2026-07-15",
             "type": "moved",
+            "oldPlacement": 62,
+            "placement": 63,
+            "notes": "Artificial Powder was moved up past this demon"
+        },
+        {
+            "date": "2026-07-15",
+            "type": "moved",
             "oldPlacement": 63,
             "placement": 62,
             "notes": "VxIN SLxT was moved down past this demon"

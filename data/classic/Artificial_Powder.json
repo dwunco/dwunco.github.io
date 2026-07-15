@@ -9,9 +9,27 @@
     "verification": "https://youtu.be/Ang1etdP_UQ",
     "percentToQualify": 100,
     "password": "Free Copy",
+    "tags": [
+        "2.2",
+        "Long",
+        "Robot",
+        "Chokepoints",
+        "Learny",
+        "Nerve Control",
+        "Fast-Paced",
+        "Duals",
+        "Timings"
+    ],
     "rank": "Bronze",
     "records": [],
     "history": [
+        {
+            "date": "2026-07-15",
+            "type": "moved",
+            "oldPlacement": 81,
+            "placement": 60,
+            "notes": "Moved"
+        },
         {
             "date": "2026-07-15",
             "type": "moved",

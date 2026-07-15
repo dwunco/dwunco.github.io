@@ -23,6 +23,13 @@
         {
             "date": "2026-07-15",
             "type": "moved",
+            "oldPlacement": 80,
+            "placement": 81,
+            "notes": "Artificial Powder was moved up past this demon"
+        },
+        {
+            "date": "2026-07-15",
+            "type": "moved",
             "oldPlacement": 79,
             "placement": 80,
             "notes": "DeepDive was moved up past this demon"

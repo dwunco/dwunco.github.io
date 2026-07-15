@@ -7,7 +7,7 @@
     ],
     "verifier": "WawLzerz",
     "verification": "https://youtu.be/nAzToC-2ZjI",
-    "percentToQualify": 100,
+    "percentToQualify": 83,
     "password": "Free Copy",
     "rank": "Bronze",
     "records": [
@@ -19,6 +19,13 @@
         }
     ],
     "history": [
+        {
+            "date": "2026-07-15",
+            "type": "moved",
+            "oldPlacement": 71,
+            "placement": 72,
+            "notes": "Artificial Powder was moved up past this demon"
+        },
         {
             "date": "2026-07-15",
             "type": "moved",
