@@ -52,6 +52,13 @@
         {
             "date": "2026-07-15",
             "type": "moved",
+            "oldPlacement": 68,
+            "placement": 69,
+            "notes": "Mountain King was moved up past this demon"
+        },
+        {
+            "date": "2026-07-15",
+            "type": "moved",
             "oldPlacement": 67,
             "placement": 68,
             "notes": "Artificial Powder was moved up past this demon"
