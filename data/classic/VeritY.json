@@ -28,6 +28,13 @@
         {
             "date": "2026-07-15",
             "type": "moved",
+            "oldPlacement": 71,
+            "placement": 72,
+            "notes": "Ultra violence was moved up past this demon"
+        },
+        {
+            "date": "2026-07-15",
+            "type": "moved",
             "oldPlacement": 70,
             "placement": 71,
             "notes": "red dart was moved up past this demon"

@@ -7,11 +7,18 @@
     ],
     "verifier": "dwunco",
     "verification": "https://youtu.be/s4JpEodss18",
-    "percentToQualify": 100,
+    "percentToQualify": 80,
     "password": "080557",
     "rank": "Bronze",
     "records": [],
     "history": [
+        {
+            "date": "2026-07-15",
+            "type": "moved",
+            "oldPlacement": 73,
+            "placement": 67,
+            "notes": "Moved"
+        },
         {
             "date": "2026-07-15",
             "type": "moved",
