@@ -28,6 +28,13 @@
     ],
     "history": [
         {
+            "date": "2026-07-15",
+            "type": "moved",
+            "oldPlacement": 63,
+            "placement": 62,
+            "notes": "VxIN SLxT was moved down past this demon"
+        },
+        {
             "date": "2026-06-30",
             "type": "moved",
             "oldPlacement": 62,
