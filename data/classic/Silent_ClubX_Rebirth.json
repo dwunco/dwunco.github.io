@@ -15,6 +15,13 @@
         {
             "date": "2026-07-15",
             "type": "moved",
+            "oldPlacement": 67,
+            "placement": 68,
+            "notes": "-sirius- was moved up past this demon"
+        },
+        {
+            "date": "2026-07-15",
+            "type": "moved",
             "oldPlacement": 66,
             "placement": 67,
             "notes": "Chaoz Airflow was moved up past this demon"
