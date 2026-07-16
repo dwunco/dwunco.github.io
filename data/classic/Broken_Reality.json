@@ -14,6 +14,13 @@
     "records": [],
     "history": [
         {
+            "date": "2026-07-16",
+            "type": "moved",
+            "oldPlacement": 77,
+            "placement": 78,
+            "notes": "dorabae choose way4 was moved up past this demon"
+        },
+        {
             "date": "2026-07-15",
             "type": "moved",
             "oldPlacement": 76,

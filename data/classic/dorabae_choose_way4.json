@@ -13,6 +13,13 @@
     "records": [],
     "history": [
         {
+            "date": "2026-07-16",
+            "type": "moved",
+            "oldPlacement": 84,
+            "placement": 68,
+            "notes": "Moved"
+        },
+        {
             "date": "2026-06-30",
             "type": "moved",
             "oldPlacement": 83,
