@@ -15,6 +15,13 @@
         {
             "date": "2026-07-16",
             "type": "moved",
+            "oldPlacement": 143,
+            "placement": 144,
+            "notes": "launch was added above"
+        },
+        {
+            "date": "2026-07-16",
+            "type": "moved",
             "oldPlacement": 142,
             "placement": 143,
             "notes": "Everyday was added above"
