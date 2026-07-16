@@ -59,6 +59,13 @@
         {
             "date": "2026-07-16",
             "type": "moved",
+            "oldPlacement": 83,
+            "placement": 84,
+            "notes": "Everyday was added above"
+        },
+        {
+            "date": "2026-07-16",
+            "type": "moved",
             "oldPlacement": 82,
             "placement": 83,
             "notes": "dorabae choose way4 was moved up past this demon"

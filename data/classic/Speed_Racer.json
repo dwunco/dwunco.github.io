@@ -45,6 +45,13 @@
     ],
     "history": [
         {
+            "date": "2026-07-16",
+            "type": "moved",
+            "oldPlacement": 156,
+            "placement": 157,
+            "notes": "Everyday was added above"
+        },
+        {
             "date": "2026-07-15",
             "type": "moved",
             "oldPlacement": 155,

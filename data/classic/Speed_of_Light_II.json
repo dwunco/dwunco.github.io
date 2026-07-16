@@ -15,6 +15,13 @@
         {
             "date": "2026-07-16",
             "type": "moved",
+            "oldPlacement": 82,
+            "placement": 83,
+            "notes": "Everyday was added above"
+        },
+        {
+            "date": "2026-07-16",
+            "type": "moved",
             "oldPlacement": 80,
             "placement": 82,
             "notes": "Moved"

@@ -13,6 +13,13 @@
     "records": [],
     "history": [
         {
+            "date": "2026-07-16",
+            "type": "moved",
+            "oldPlacement": 86,
+            "placement": 87,
+            "notes": "Everyday was added above"
+        },
+        {
             "date": "2026-06-30",
             "type": "moved",
             "oldPlacement": 85,

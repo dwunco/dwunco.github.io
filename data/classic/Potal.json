@@ -15,6 +15,13 @@
         {
             "date": "2026-07-16",
             "type": "moved",
+            "oldPlacement": 80,
+            "placement": 81,
+            "notes": "Everyday was added above"
+        },
+        {
+            "date": "2026-07-16",
+            "type": "moved",
             "oldPlacement": 81,
             "placement": 80,
             "notes": "Speed of Light II was moved down past this demon"
