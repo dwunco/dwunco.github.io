@@ -28,6 +28,13 @@
         {
             "date": "2026-07-16",
             "type": "moved",
+            "oldPlacement": 75,
+            "placement": 73,
+            "notes": "Swapped with red dart"
+        },
+        {
+            "date": "2026-07-16",
+            "type": "moved",
             "oldPlacement": 74,
             "placement": 75,
             "notes": "Broken Reality was moved up past this demon"

@@ -22,6 +22,13 @@
         {
             "date": "2026-07-16",
             "type": "moved",
+            "oldPlacement": 73,
+            "placement": 75,
+            "notes": "Swapped with VeritY"
+        },
+        {
+            "date": "2026-07-16",
+            "type": "moved",
             "oldPlacement": 72,
             "placement": 73,
             "notes": "Broken Reality was moved up past this demon"
