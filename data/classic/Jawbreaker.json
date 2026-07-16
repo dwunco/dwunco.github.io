@@ -131,18 +131,18 @@
             "notes": "Robi was added above"
         },
         {
-            "date": "2026-05-24",
-            "type": "moved",
-            "oldPlacement": 39,
-            "placement": 40,
-            "notes": "FFFFFF was added above"
-        },
-        {
             "date": "2026-05-28",
             "type": "moved",
-            "oldPlacement": 40,
-            "placement": 39,
+            "oldPlacement": 41,
+            "placement": 40,
             "notes": "ToE 3 was moved down past this demon"
+        },
+        {
+            "date": "2026-05-24",
+            "type": "moved",
+            "oldPlacement": 40,
+            "placement": 41,
+            "notes": "FFFFFF was added above"
         },
         {
             "date": "2026-05-24",
