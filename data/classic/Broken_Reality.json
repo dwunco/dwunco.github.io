@@ -16,6 +16,13 @@
         {
             "date": "2026-07-16",
             "type": "moved",
+            "oldPlacement": 79,
+            "placement": 80,
+            "notes": "WELL RESTED was moved up past this demon"
+        },
+        {
+            "date": "2026-07-16",
+            "type": "moved",
             "oldPlacement": 78,
             "placement": 79,
             "notes": "Mechanical Showdown was moved up past this demon"

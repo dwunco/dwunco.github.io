@@ -15,6 +15,13 @@
         {
             "date": "2026-07-16",
             "type": "moved",
+            "oldPlacement": 80,
+            "placement": 69,
+            "notes": "Moved"
+        },
+        {
+            "date": "2026-07-16",
+            "type": "moved",
             "oldPlacement": 79,
             "placement": 80,
             "notes": "Mechanical Showdown was moved up past this demon"
