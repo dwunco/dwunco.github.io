@@ -68,6 +68,9 @@ export default {
                                 </button>
                             </td>
                         </tr>
+                        <tr style="height: 100px; pointer-events: none; background: transparent;">
+                            <td colspan="3" style="border: none; background: transparent;"></td>
+                        </tr>
                     </table>
                 </div>
                 <div class="player-container">
@@ -90,6 +93,9 @@ export default {
                                     <p>+{{ localize(score.score) }}</p>
                                 </td>
                             </tr>
+                            <tr style="height: 80px; pointer-events: none; background: transparent;">
+                                <td colspan="3" style="border: none; background: transparent;"></td>
+                            </tr>
                         </table>
 
                         <h2 v-if="entry.progressed && entry.progressed.length > 0">Progressed ({{entry.progressed.length}})</h2>
@@ -104,6 +110,9 @@ export default {
                                 <td class="score">
                                     <p>+{{ localize(score.score) }}</p>
                                 </td>
+                            </tr>
+                            <tr style="height: 80px; pointer-events: none; background: transparent;">
+                                <td colspan="3" style="border: none; background: transparent;"></td>
                             </tr>
                         </table>
                     </div>
