@@ -23,6 +23,13 @@
         {
             "date": "2026-07-16",
             "type": "moved",
+            "oldPlacement": 82,
+            "placement": 81,
+            "notes": "Speed of Light II was moved down past this demon"
+        },
+        {
+            "date": "2026-07-16",
+            "type": "moved",
             "oldPlacement": 81,
             "placement": 82,
             "notes": "dorabae choose way4 was moved up past this demon"

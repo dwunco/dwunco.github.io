@@ -15,6 +15,20 @@
         {
             "date": "2026-07-16",
             "type": "moved",
+            "oldPlacement": 80,
+            "placement": 82,
+            "notes": "Moved"
+        },
+        {
+            "date": "2026-07-16",
+            "type": "moved",
+            "oldPlacement": 79,
+            "placement": 80,
+            "notes": "Broken Reality was moved up past this demon"
+        },
+        {
+            "date": "2026-07-16",
+            "type": "moved",
             "oldPlacement": 78,
             "placement": 79,
             "notes": "WELL RESTED was moved up past this demon"

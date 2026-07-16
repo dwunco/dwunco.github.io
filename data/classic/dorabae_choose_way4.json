@@ -15,6 +15,13 @@
         {
             "date": "2026-07-16",
             "type": "moved",
+            "oldPlacement": 68,
+            "placement": 69,
+            "notes": "Broken Reality was moved up past this demon"
+        },
+        {
+            "date": "2026-07-16",
+            "type": "moved",
             "oldPlacement": 84,
             "placement": 68,
             "notes": "Moved"
