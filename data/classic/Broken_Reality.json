@@ -16,6 +16,13 @@
         {
             "date": "2026-07-16",
             "type": "moved",
+            "oldPlacement": 78,
+            "placement": 79,
+            "notes": "Mechanical Showdown was moved up past this demon"
+        },
+        {
+            "date": "2026-07-16",
+            "type": "moved",
             "oldPlacement": 77,
             "placement": 78,
             "notes": "dorabae choose way4 was moved up past this demon"
