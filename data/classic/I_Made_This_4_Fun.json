@@ -45,6 +45,13 @@
         {
             "date": "2026-07-17",
             "type": "moved",
+            "oldPlacement": 194,
+            "placement": 195,
+            "notes": "Subterra was added above"
+        },
+        {
+            "date": "2026-07-17",
+            "type": "moved",
             "oldPlacement": 193,
             "placement": 194,
             "notes": "RECLUSE was added above"
