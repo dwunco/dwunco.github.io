@@ -12,6 +12,13 @@
     "records": [],
     "history": [
         {
+            "date": "2026-07-17",
+            "type": "moved",
+            "oldPlacement": 2,
+            "placement": 3,
+            "notes": "Moved"
+        },
+        {
             "date": "2026-07-05",
             "type": "added",
             "placement": 2,
