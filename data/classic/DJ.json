@@ -35,6 +35,13 @@
         {
             "date": "2026-07-17",
             "type": "moved",
+            "oldPlacement": 170,
+            "placement": 171,
+            "notes": "Que Hollowero was added above"
+        },
+        {
+            "date": "2026-07-17",
+            "type": "moved",
             "oldPlacement": 169,
             "placement": 170,
             "notes": "STRANDED was added above"

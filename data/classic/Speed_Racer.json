@@ -45,6 +45,13 @@
     ],
     "history": [
         {
+            "date": "2026-07-17",
+            "type": "moved",
+            "oldPlacement": 158,
+            "placement": 159,
+            "notes": "Que Hollowero was added above"
+        },
+        {
             "date": "2026-07-16",
             "type": "moved",
             "oldPlacement": 157,
