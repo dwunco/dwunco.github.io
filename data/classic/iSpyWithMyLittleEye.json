@@ -59,6 +59,13 @@
         {
             "date": "2026-07-17",
             "type": "moved",
+            "oldPlacement": 158,
+            "placement": 159,
+            "notes": "RECLUSE was added above"
+        },
+        {
+            "date": "2026-07-17",
+            "type": "moved",
             "oldPlacement": 157,
             "placement": 158,
             "notes": "Que Hollowero was added above"

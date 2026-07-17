@@ -25,6 +25,13 @@
     "history": [
         {
             "date": "2026-07-17",
+            "type": "moved",
+            "oldPlacement": 151,
+            "placement": 152,
+            "notes": "RECLUSE was added above"
+        },
+        {
+            "date": "2026-07-17",
             "type": "added",
             "placement": 151,
             "notes": "Que Hollowero added to the list"
