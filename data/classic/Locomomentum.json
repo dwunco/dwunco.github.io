@@ -21,6 +21,13 @@
     ],
     "history": [
         {
+            "date": "2026-07-17",
+            "type": "moved",
+            "oldPlacement": 171,
+            "placement": 172,
+            "notes": "STRANDED was added above"
+        },
+        {
             "date": "2026-07-16",
             "type": "moved",
             "oldPlacement": 170,
