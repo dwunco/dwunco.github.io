@@ -14,6 +14,13 @@
     "history": [
         {
             "date": "2026-07-22",
+            "type": "moved",
+            "oldPlacement": 14,
+            "placement": 15,
+            "notes": "72 was added above"
+        },
+        {
+            "date": "2026-07-22",
             "type": "added",
             "placement": 14,
             "notes": "how to Spiderr added to the list"

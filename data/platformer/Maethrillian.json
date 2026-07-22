@@ -21,6 +21,13 @@
         {
             "date": "2026-07-22",
             "type": "moved",
+            "oldPlacement": 15,
+            "placement": 16,
+            "notes": "72 was added above"
+        },
+        {
+            "date": "2026-07-22",
+            "type": "moved",
             "oldPlacement": 14,
             "placement": 15,
             "notes": "how to Spiderr was added above"

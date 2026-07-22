@@ -1,3 +1,3 @@
-string = """node add-level.mjs “how to Spiderr” "platformer" 14 122370463 “how_to_Spiderr” “TheGoloro” "TheGoloro" “aThingToEx” "https://youtu.be/8Ju3e7iB_SQ” 100 “Free Copy” "" “beginner”"""
+string = """node add-level.mjs “72" "platformer" 3 112603907 “72” “Polarbeahr” "Polarbeahr" “cookiedarookie” "https://youtu.be/LiT1SygzBXc" 100 “Free Copy” "" “silver”"""
 newstring = string.replace("“", '"').replace("”", '"')
 print(newstring)
