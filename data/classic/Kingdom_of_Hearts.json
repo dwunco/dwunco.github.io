@@ -21,6 +21,13 @@
     ],
     "history": [
         {
+            "date": "2026-07-22",
+            "type": "moved",
+            "oldPlacement": 176,
+            "placement": 177,
+            "notes": "Lonely travel was added above"
+        },
+        {
             "date": "2026-07-17",
             "type": "moved",
             "oldPlacement": 175,
