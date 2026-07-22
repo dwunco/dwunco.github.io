@@ -28,6 +28,13 @@
         {
             "date": "2026-07-22",
             "type": "moved",
+            "oldPlacement": 167,
+            "placement": 168,
+            "notes": "Boxing Boxes was added above"
+        },
+        {
+            "date": "2026-07-22",
+            "type": "moved",
             "oldPlacement": 166,
             "placement": 167,
             "notes": "Lonely travel was added above"
