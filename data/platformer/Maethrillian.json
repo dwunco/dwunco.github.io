@@ -21,6 +21,13 @@
         {
             "date": "2026-07-22",
             "type": "moved",
+            "oldPlacement": 16,
+            "placement": 17,
+            "notes": "Twenty Trials was added above"
+        },
+        {
+            "date": "2026-07-22",
+            "type": "moved",
             "oldPlacement": 15,
             "placement": 16,
             "notes": "72 was added above"
