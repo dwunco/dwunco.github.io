@@ -28,6 +28,13 @@
         {
             "date": "2026-07-24",
             "type": "moved",
+            "oldPlacement": 101,
+            "placement": 102,
+            "notes": "KILN was added above"
+        },
+        {
+            "date": "2026-07-24",
+            "type": "moved",
             "oldPlacement": 100,
             "placement": 101,
             "notes": "Scarlet Devil was added above"
