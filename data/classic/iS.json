@@ -28,6 +28,13 @@
         {
             "date": "2026-07-24",
             "type": "moved",
+            "oldPlacement": 182,
+            "placement": 183,
+            "notes": "Next Cab Soon was added above"
+        },
+        {
+            "date": "2026-07-24",
+            "type": "moved",
             "oldPlacement": 181,
             "placement": 182,
             "notes": "KILN was added above"
