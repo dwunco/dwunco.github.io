@@ -25,6 +25,13 @@
         {
             "date": "2026-07-24",
             "type": "moved",
+            "oldPlacement": 120,
+            "placement": 121,
+            "notes": "Incinerator was added above"
+        },
+        {
+            "date": "2026-07-24",
+            "type": "moved",
             "oldPlacement": 119,
             "placement": 120,
             "notes": "KILN was added above"

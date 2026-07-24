@@ -26,6 +26,13 @@
         {
             "date": "2026-07-24",
             "type": "moved",
+            "oldPlacement": 157,
+            "placement": 158,
+            "notes": "Incinerator was added above"
+        },
+        {
+            "date": "2026-07-24",
+            "type": "moved",
             "oldPlacement": 156,
             "placement": 157,
             "notes": "Next Cab Soon was added above"

@@ -59,6 +59,13 @@
         {
             "date": "2026-07-24",
             "type": "moved",
+            "oldPlacement": 86,
+            "placement": 87,
+            "notes": "Incinerator was added above"
+        },
+        {
+            "date": "2026-07-24",
+            "type": "moved",
             "oldPlacement": 85,
             "placement": 86,
             "notes": "Scarlet Devil was added above"
