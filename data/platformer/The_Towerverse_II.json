@@ -12,6 +12,13 @@
     "records": [],
     "history": [
         {
+            "date": "2026-07-24",
+            "type": "moved",
+            "oldPlacement": 9,
+            "placement": 10,
+            "notes": "i wanna be tombstone was added above"
+        },
+        {
             "date": "2026-07-22",
             "type": "moved",
             "oldPlacement": 8,
