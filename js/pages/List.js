@@ -312,7 +312,7 @@ export default {
         tagsPool: TAGS_POOL,
         
         blacklist: [
-            "cookiedarookie"
+            ""
         ],
         
         searchQuery: "", 

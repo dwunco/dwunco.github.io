@@ -16,7 +16,7 @@ export default {
         
         // Add usernames here to completely wipe them off the global rankings dynamically
         blacklist: [
-            "cookiedarookie"
+            ""
         ],
     }),
     template: `

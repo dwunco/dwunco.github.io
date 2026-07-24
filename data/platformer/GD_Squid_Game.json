@@ -5,13 +5,13 @@
     "creators": [
         "Androxma"
     ],
-    "verifier": "dwunco",
+    "verifier": "aThingToEx",
     "verification": "https://youtu.be/IC6zIoBk-KA",
     "percentToQualify": 100,
     "password": "Free Copy",
     "records": [
         {
-            "user": "aThingToEx",
+            "user": "dwunco",
             "link": "https://youtu.be/null",
             "percent": 100,
             "hz": 60

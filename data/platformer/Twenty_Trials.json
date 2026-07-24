@@ -15,6 +15,13 @@
         {
             "date": "2026-07-24",
             "type": "moved",
+            "oldPlacement": 16,
+            "placement": 17,
+            "notes": "Hole in the Wall was added above"
+        },
+        {
+            "date": "2026-07-24",
+            "type": "moved",
             "oldPlacement": 15,
             "placement": 16,
             "notes": "i wanna be tombstone was added above"
