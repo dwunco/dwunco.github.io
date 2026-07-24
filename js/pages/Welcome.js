@@ -14,7 +14,7 @@ export default {
                     <router-link to="/list" class="nav__cta type-label-lg" style="text-decoration: none; padding: 15px 30px;">
                         View the List
                     </router-link>
-                    <router-link to="/leaderboard" class="nav__cta type-label-lg" style="text-decoration: none; padding: 15px 30px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);">
+                    <router-link to="/leaderboard" class="nav__cta type-label-lg" style="text-decoration: none; padding: 15px 30px; background: var(--color-surface-elevated); border: 1px solid var(--color-border-subtle);">
                         Leaderboard
                     </router-link>
                 </div>

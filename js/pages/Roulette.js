@@ -12,7 +12,7 @@ export default {
         </main>
         <main v-else class="page-roulette">
             <div class="sidebar">
-                <p class="type-label-md" style="color: #aaa">
+                <p class="type-label-md" style="color: var(--color-text-soft)">
                     Shameless copy of the Extreme Demon Roulette by <a href="https://matcool.github.io/extreme-demon-roulette/" target="_blank">matcool</a>.
                 </p>
                 <form class="options">
@@ -30,7 +30,7 @@ export default {
                     </div>
                     <Btn @click.native.prevent="onStart">{{ levels.length === 0 ? 'Start' : 'Restart'}}</Btn>
                 </form>
-                <p class="type-label-md" style="color: #aaa">
+                <p class="type-label-md" style="color: var(--color-text-soft)">
                     The roulette saves automatically.
                 </p>
                 <form class="save">

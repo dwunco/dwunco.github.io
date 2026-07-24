@@ -30,30 +30,32 @@ export default {
         </main>
         <main v-else class="page-list">
             <div class="list-container">
-                <div style="display: flex; gap: 8px; padding: 15px 15px 0 15px; background: rgba(0,0,0,0.05);">
+                <div style="display: flex; gap: 8px; padding: 15px 15px 0 15px; background: var(--color-surface-muted);">
                     <button 
                         @click="setListType('classic')" 
-                        style="flex: 1; padding: 10px; border-radius: 6px; font-weight: 700; font-family: 'Lexend Deca', sans-serif; cursor: pointer; border: none; transition: background-color 0.2s, color 0.2s; background: var(--border-color, #222); color: #fff;"
+                        style="flex: 1; padding: 10px; border-radius: 6px; font-weight: 700; font-family: 'Lexend Deca', sans-serif; cursor: pointer; border: none; transition: background-color 0.2s, color 0.2s;"
                         :style="{
-                            background: currentListType === 'classic' ? '#0072ff' : 'rgba(255,255,255,0.05)',
-                            opacity: currentListType === 'classic' ? '1' : '0.6'
+                            background: currentListType === 'classic' ? '#0072ff' : 'var(--color-surface-elevated)',
+                            color: currentListType === 'classic' ? 'var(--color-on-primary)' : 'var(--color-on-background)',
+                            opacity: currentListType === 'classic' ? '1' : '0.7'
                         }"
                     >
                         Classic
                     </button>
                     <button 
                         @click="setListType('platformer')" 
-                        style="flex: 1; padding: 10px; border-radius: 6px; font-weight: 700; font-family: 'Lexend Deca', sans-serif; cursor: pointer; border: none; transition: background-color 0.2s, color 0.2s; background: var(--border-color, #222); color: #fff;"
+                        style="flex: 1; padding: 10px; border-radius: 6px; font-weight: 700; font-family: 'Lexend Deca', sans-serif; cursor: pointer; border: none; transition: background-color 0.2s, color 0.2s;"
                         :style="{
-                            background: currentListType === 'platformer' ? '#0072ff' : 'rgba(255,255,255,0.05)',
-                            opacity: currentListType === 'platformer' ? '1' : '0.6'
+                            background: currentListType === 'platformer' ? '#0072ff' : 'var(--color-surface-elevated)',
+                            color: currentListType === 'platformer' ? 'var(--color-on-primary)' : 'var(--color-on-background)',
+                            opacity: currentListType === 'platformer' ? '1' : '0.7'
                         }"
                     >
                         Platformer
                     </button>
                 </div>
 
-                <div class="list-search" style="padding: 15px; border-bottom: 1px solid var(--border-color, #333); background: rgba(0,0,0,0.05); display: flex; flex-direction: column; gap: 10px;">
+                <div class="list-search" style="padding: 15px; border-bottom: 1px solid var(--color-border-subtle); background: var(--color-surface-muted); display: flex; flex-direction: column; gap: 10px;">
                     <div style="display: flex; gap: 8px; align-items: center; width: 100%;">
                         <input 
                             type="text" 
@@ -66,14 +68,14 @@ export default {
                         </button>
                     </div>
 
-                    <div style="display: flex; gap: 8px; align-items: center; justify-content: space-between; background: rgba(255,255,255,0.02); padding: 6px 10px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.05);">
+                    <div style="display: flex; gap: 8px; align-items: center; justify-content: space-between; background: var(--color-surface-subtle); padding: 6px 10px; border-radius: 6px; border: 1px solid var(--color-border-subtle);">
                         <span class="type-label-md" style="opacity: 0.9; font-weight: bold; color: var(--apply-color, #ff7300); display: flex; align-items: center; gap: 4px;">🕒 Time Machine:</span>
                         <input 
                             type="date" 
                             v-model="timeMachineDate" 
-                            style="background: #111; color: #fff; border: 1px solid #333; padding: 4px 8px; border-radius: 4px; font-family: inherit; font-size: 0.85rem; cursor: pointer;"
+                            style="background: var(--color-background); color: var(--color-on-background); border: 1px solid var(--color-border-subtle); padding: 4px 8px; border-radius: 4px; font-family: inherit; font-size: 0.85rem; cursor: pointer;"
                         />
-                        <button v-if="timeMachineDate" @click="timeMachineDate = ''" style="background: transparent; color: #888; border: none; cursor: pointer; font-size: 0.85rem;">Reset</button>
+                        <button v-if="timeMachineDate" @click="timeMachineDate = ''" style="background: transparent; color: var(--color-text-soft); border: none; cursor: pointer; font-size: 0.85rem;">Reset</button>
                     </div>
                 </div>
 
@@ -128,8 +130,8 @@ export default {
                     </LevelAuthors>
 
                     <iframe v-if="video" class="video" id="videoframe" :src="video" frameborder="0"></iframe>
-                    <div v-else style="background: #111; border: 1px dashed #333; height: 315px; display: flex; align-items: center; justify-content: center; border-radius: 8px; margin-bottom: 15px;">
-                        <p style="color: #555; font-style: italic;">No showcase video linked (JSON missing/unreadable)</p>
+                    <div v-else style="background: var(--color-background); border: 1px dashed var(--color-border-subtle); height: 315px; display: flex; align-items: center; justify-content: center; border-radius: 8px; margin-bottom: 15px;">
+                        <p style="color: var(--color-text-muted); font-style: italic;">No showcase video linked (JSON missing/unreadable)</p>
                     </div>
 
                     <ul class="stats">
@@ -183,12 +185,12 @@ export default {
                         </tr>
                     </table>
 
-                    <div class="changelog-panel" style="margin-top: 30px; border-top: 2px solid var(--border-color, #333); padding-top: 20px;">
+                    <div class="changelog-panel" style="margin-top: 30px; border-top: 2px solid var(--color-border-subtle); padding-top: 20px;">
                         <h2>Changelog History</h2>
                         <div v-if="levelHistory.length > 0" style="display: flex; flex-direction: column; margin-top: 15px;">
                             <div v-for="log in levelHistory" :key="log.date + log.type + log.notes" 
                                 :style="{
-                                    background: 'rgba(255,255,255,0.03)',
+                                    background: 'var(--color-surface-subtle)',
                                     borderLeft: '4px solid ' + getLogColor(log.type, log),
                                     padding: '10px 15px',
                                     borderRadius: '0 4px 4px 0',
@@ -197,13 +199,13 @@ export default {
                                 }">
                                 
                                 <div style="position: absolute; top: 10px; right: 15px; display: flex; flex-direction: column; align-items: flex-end; line-height: 1.1;">
-                                    <span style="font-size: 0.85rem; color: #888;">{{ log.date }}</span>
-                                    <span v-if="log.rankLabel" style="font-size: 0.85rem; color: #aaa; font-family: monospace; letter-spacing: 0.5px; margin-top: 2px;">
+                                    <span style="font-size: 0.85rem; color: var(--color-text-soft);">{{ log.date }}</span>
+                                    <span v-if="log.rankLabel" style="font-size: 0.85rem; color: var(--color-text-muted); font-family: monospace; letter-spacing: 0.5px; margin-top: 2px;">
                                         {{ log.rankLabel }}
                                     </span>
                                 </div>
 
-                                <p style="margin: 0; font-size: 0.95rem; line-height: 1.25; color: #ddd; padding-right: 90px;">
+                                <p style="margin: 0; font-size: 0.95rem; line-height: 1.25; color: var(--color-on-background); padding-right: 90px;">
                                     <span :style="{
                                         fontWeight: 'bold',
                                         textTransform: 'uppercase',
@@ -217,7 +219,7 @@ export default {
 
                             </div>
                         </div>
-                        <p v-else style="color: #666; font-style: italic; margin-top: 15px;">No structural changes recorded for this level.</p>
+                        <p v-else style="color: var(--color-text-muted); font-style: italic; margin-top: 15px;">No structural changes recorded for this level.</p>
                     </div>
 
                 </div>
@@ -248,9 +250,9 @@ export default {
                         <div class="modal-column" style="max-height: 400px; overflow-y: auto; padding-right: 5px;">
                             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
                                 <h3 style="margin: 0;">Tags</h3>
-                                <div style="display: flex; background: rgba(255,255,255,0.08); padding: 2px; border-radius: 6px; gap: 2px;">
-                                    <button @click="modalLocal.tagMode = 'all'" style="font-size: 0.75rem; border: none; padding: 4px 8px; border-radius: 4px; cursor: pointer; transition: background 0.2s;" :style="{ background: modalLocal.tagMode === 'all' ? 'var(--apply-color, #ff7300)' : 'transparent', color: modalLocal.tagMode === 'all' ? '#fff' : '#888', fontWeight: modalLocal.tagMode === 'all' ? 'bold' : 'normal' }">Match All</button>
-                                    <button @click="modalLocal.tagMode = 'any'" style="font-size: 0.75rem; border: none; padding: 4px 8px; border-radius: 4px; cursor: pointer; transition: background 0.2s;" :style="{ background: modalLocal.tagMode === 'any' ? 'var(--apply-color, #ff7300)' : 'transparent', color: modalLocal.tagMode === 'any' ? '#fff' : '#888', fontWeight: modalLocal.tagMode === 'any' ? 'bold' : 'normal' }">Match Any</button>
+                                <div style="display: flex; background: var(--color-surface-muted); padding: 2px; border-radius: 6px; gap: 2px;">
+                                    <button @click="modalLocal.tagMode = 'all'" style="font-size: 0.75rem; border: none; padding: 4px 8px; border-radius: 4px; cursor: pointer; transition: background 0.2s;" :style="{ background: modalLocal.tagMode === 'all' ? 'var(--apply-color, #ff7300)' : 'transparent', color: modalLocal.tagMode === 'all' ? 'var(--color-on-primary)' : 'var(--color-text-soft)', fontWeight: modalLocal.tagMode === 'all' ? 'bold' : 'normal' }">Match All</button>
+                                    <button @click="modalLocal.tagMode = 'any'" style="font-size: 0.75rem; border: none; padding: 4px 8px; border-radius: 4px; cursor: pointer; transition: background 0.2s;" :style="{ background: modalLocal.tagMode === 'any' ? 'var(--apply-color, #ff7300)' : 'transparent', color: modalLocal.tagMode === 'any' ? 'var(--color-on-primary)' : 'var(--color-text-soft)', fontWeight: modalLocal.tagMode === 'any' ? 'bold' : 'normal' }">Match Any</button>
                                 </div>
                             </div>
                             <div v-for="(tags, category) in tagsPool" :key="category" style="margin-bottom: 16px;">
@@ -635,7 +637,7 @@ export default {
                 case 'moved-down':
                     return '#ff4d4d';
                 default:
-                    return '#888888';
+                    return 'var(--color-text-soft)';
             }
         },
         isNewLevel(historyArray) {

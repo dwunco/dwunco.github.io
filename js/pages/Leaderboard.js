@@ -27,20 +27,22 @@ export default {
             <div style="display: flex; gap: 8px; padding: 15px 15px 0 15px; margin-bottom: -15px; max-width: 400px;">
                 <button 
                     @click="setListType('classic')" 
-                    style="flex: 1; padding: 10px; border-radius: 6px; font-weight: 700; font-family: 'Lexend Deca', sans-serif; cursor: pointer; border: none; transition: background-color 0.2s, color 0.2s; background: var(--border-color, #222); color: #fff;"
+                    style="flex: 1; padding: 10px; border-radius: 6px; font-weight: 700; font-family: 'Lexend Deca', sans-serif; cursor: pointer; border: none; transition: background-color 0.2s, color 0.2s;"
                     :style="{
-                        background: currentListType === 'classic' ? '#0072ff' : 'rgba(255,255,255,0.05)',
-                        opacity: currentListType === 'classic' ? '1' : '0.6'
+                        background: currentListType === 'classic' ? '#0072ff' : 'var(--color-surface-elevated)',
+                        color: currentListType === 'classic' ? 'var(--color-on-primary)' : 'var(--color-on-background)',
+                        opacity: currentListType === 'classic' ? '1' : '0.7'
                     }"
                 >
                     Classic
                 </button>
                 <button 
                     @click="setListType('platformer')" 
-                    style="flex: 1; padding: 10px; border-radius: 6px; font-weight: 700; font-family: 'Lexend Deca', sans-serif; cursor: pointer; border: none; transition: background-color 0.2s, color 0.2s; background: var(--border-color, #222); color: #fff;"
+                    style="flex: 1; padding: 10px; border-radius: 6px; font-weight: 700; font-family: 'Lexend Deca', sans-serif; cursor: pointer; border: none; transition: background-color 0.2s, color 0.2s;"
                     :style="{
-                        background: currentListType === 'platformer' ? '#0072ff' : 'rgba(255,255,255,0.05)',
-                        opacity: currentListType === 'platformer' ? '1' : '0.6'
+                        background: currentListType === 'platformer' ? '#0072ff' : 'var(--color-surface-elevated)',
+                        color: currentListType === 'platformer' ? 'var(--color-on-primary)' : 'var(--color-on-background)',
+                        opacity: currentListType === 'platformer' ? '1' : '0.7'
                     }"
                 >
                     Platformer

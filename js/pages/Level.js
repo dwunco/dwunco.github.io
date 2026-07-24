@@ -29,12 +29,12 @@ export default {
                         Verifier: <strong>{{ level.verifier || 'Unknown' }}</strong>
                     </p>
 
-                    <section class="section-card" style="background: rgba(255,255,255,0.03); padding: 25px; border-radius: 8px; margin-bottom: 25px; border: 1px solid rgba(255,255,255,0.05);">
+                    <section class="section-card" style="background: var(--color-surface-subtle); padding: 25px; border-radius: 8px; margin-bottom: 25px; border: 1px solid var(--color-border-subtle);">
                         <h3 class="type-title-md" style="margin-bottom: 15px; display: flex; align-items: center; gap: 10px;">
                             <span>🏆</span> Records ({{ level.records ? level.records.length : 0 }})
                         </h3>
                         <ul style="list-style: none; padding: 0;">
-                            <li v-for="rec in level.records" style="padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.05); display: flex; justify-content: space-between; align-items: center;">
+                            <li v-for="rec in level.records" style="padding: 12px 0; border-bottom: 1px solid var(--color-border-subtle); display: flex; justify-content: space-between; align-items: center;">
                                 <span class="type-body-md">
                                     <strong>{{ rec.player }}</strong> - {{ rec.progress }}%
                                 </span>
@@ -46,12 +46,12 @@ export default {
                         </ul>
                     </section>
 
-                    <section class="section-card" style="background: rgba(255,255,255,0.03); padding: 25px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.05);">
+                    <section class="section-card" style="background: var(--color-surface-subtle); padding: 25px; border-radius: 8px; border: 1px solid var(--color-border-subtle);">
                         <h3 class="type-title-md" style="margin-bottom: 15px; display: flex; align-items: center; gap: 10px;">
                             <span>📜</span> Historical Log
                         </h3>
                         <ul style="list-style: none; padding: 0;">
-                            <li v-for="event in level.history" style="padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.05); line-height: 1.4;">
+                            <li v-for="event in level.history" style="padding: 12px 0; border-bottom: 1px solid var(--color-border-subtle); line-height: 1.4;">
                                 <div class="type-body-md">
                                     <span style="opacity: 0.4; font-family: monospace; margin-right: 10px;">[{{ event.date || 'DATE N/A' }}]</span>
                                     <span>{{ event.note }}</span>
