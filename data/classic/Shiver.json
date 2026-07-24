@@ -52,6 +52,13 @@
     ],
     "history": [
         {
+            "date": "2026-07-24",
+            "type": "moved",
+            "oldPlacement": 187,
+            "placement": 188,
+            "notes": "Scarlet Devil was added above"
+        },
+        {
             "date": "2026-07-22",
             "type": "moved",
             "oldPlacement": 186,

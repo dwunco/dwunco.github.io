@@ -13,6 +13,13 @@
     "records": [],
     "history": [
         {
+            "date": "2026-07-24",
+            "type": "moved",
+            "oldPlacement": 81,
+            "placement": 82,
+            "notes": "Scarlet Devil was added above"
+        },
+        {
             "date": "2026-07-16",
             "type": "moved",
             "oldPlacement": 80,
