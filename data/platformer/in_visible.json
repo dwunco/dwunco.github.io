@@ -15,6 +15,13 @@
     ],
     "history": [
         {
+            "date": "2026-07-25",
+            "type": "moved",
+            "oldPlacement": 20,
+            "placement": 21,
+            "notes": "I wanna be the guy was added above"
+        },
+        {
             "date": "2026-07-24",
             "type": "added",
             "placement": 20,
