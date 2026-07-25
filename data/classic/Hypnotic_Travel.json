@@ -5,7 +5,7 @@
     "creators": [
         "Alkatraz"
     ],
-    "verifier": "Fragment1345",
+    "verifier": "cookiedarookie",
     "verification": "https://youtu.be/tdr69pnXVJQ",
     "percentToQualify": 61,
     "password": "Free Copy",
@@ -17,7 +17,14 @@
         "Slow-Paced",
         "Chokepoints"
     ],
-    "records": [],
+    "records": [
+        {
+            "user": "Fragment1345",
+            "link": "https://youtu.be/null",
+            "percent": 100,
+            "hz": 60
+        }
+    ],
     "history": [
         {
             "date": "2026-06-30",
