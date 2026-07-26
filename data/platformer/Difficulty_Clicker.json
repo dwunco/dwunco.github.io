@@ -14,6 +14,13 @@
         {
             "date": "2026-07-26",
             "type": "moved",
+            "oldPlacement": 23,
+            "placement": 24,
+            "notes": "Arcturan was added above"
+        },
+        {
+            "date": "2026-07-26",
+            "type": "moved",
             "oldPlacement": 22,
             "placement": 23,
             "notes": "NOTHING LEFT was added above"
