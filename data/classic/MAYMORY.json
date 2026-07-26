@@ -38,6 +38,13 @@
         {
             "date": "2026-07-26",
             "type": "moved",
+            "oldPlacement": 148,
+            "placement": 149,
+            "notes": "Soar was added above"
+        },
+        {
+            "date": "2026-07-26",
+            "type": "moved",
             "oldPlacement": 147,
             "placement": 148,
             "notes": "Ocean Rush was added above"
