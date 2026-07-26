@@ -13,6 +13,13 @@
     "tags": [],
     "history": [
         {
+            "date": "2026-07-26",
+            "type": "moved",
+            "oldPlacement": 2,
+            "placement": 3,
+            "notes": "NOTHING LEFT was added above"
+        },
+        {
             "date": "2026-07-25",
             "type": "added",
             "placement": 2,
