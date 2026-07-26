@@ -9,7 +9,14 @@
     "verification": "https://youtu.be/bXPk1Q3566Y",
     "percentToQualify": 100,
     "password": "Free Copy",
-    "records": [],
+    "records": [
+        {
+            "user": "dwunco",
+            "link": "https://youtu.be/null",
+            "percent": 100,
+            "hz": 288
+        }
+    ],
     "tags": [
         "2.2",
         "Long",
