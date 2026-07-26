@@ -23,6 +23,13 @@
     "records": [],
     "history": [
         {
+            "date": "2026-07-26",
+            "type": "moved",
+            "oldPlacement": 96,
+            "placement": 97,
+            "notes": "Psychosis was added above"
+        },
+        {
             "date": "2026-07-24",
             "type": "moved",
             "oldPlacement": 95,

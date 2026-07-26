@@ -57,6 +57,13 @@
     ],
     "history": [
         {
+            "date": "2026-07-26",
+            "type": "moved",
+            "oldPlacement": 106,
+            "placement": 107,
+            "notes": "Psychosis was added above"
+        },
+        {
             "date": "2026-07-24",
             "type": "moved",
             "oldPlacement": 105,
