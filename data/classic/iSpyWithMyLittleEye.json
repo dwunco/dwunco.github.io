@@ -59,6 +59,13 @@
         {
             "date": "2026-07-26",
             "type": "moved",
+            "oldPlacement": 166,
+            "placement": 167,
+            "notes": "Ocean Rush was added above"
+        },
+        {
+            "date": "2026-07-26",
+            "type": "moved",
             "oldPlacement": 165,
             "placement": 166,
             "notes": "Psychosis was added above"
