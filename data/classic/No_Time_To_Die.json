@@ -29,6 +29,13 @@
         {
             "date": "2026-07-26",
             "type": "moved",
+            "oldPlacement": 94,
+            "placement": 95,
+            "notes": "Sidestep was moved up past this demon"
+        },
+        {
+            "date": "2026-07-26",
+            "type": "moved",
             "oldPlacement": 93,
             "placement": 94,
             "notes": "Soar was added above"
