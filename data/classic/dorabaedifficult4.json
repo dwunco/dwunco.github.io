@@ -27,6 +27,13 @@
     ],
     "history": [
         {
+            "date": "2026-07-27",
+            "type": "moved",
+            "oldPlacement": 191,
+            "placement": 192,
+            "notes": "Trek was added above"
+        },
+        {
             "date": "2026-07-26",
             "type": "moved",
             "oldPlacement": 190,
