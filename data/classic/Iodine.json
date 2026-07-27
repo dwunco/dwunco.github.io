@@ -25,6 +25,13 @@
         {
             "date": "2026-07-27",
             "type": "moved",
+            "oldPlacement": 101,
+            "placement": 102,
+            "notes": "CALYPSO BLITZ was added above"
+        },
+        {
+            "date": "2026-07-27",
+            "type": "moved",
             "oldPlacement": 100,
             "placement": 101,
             "notes": "Trek was added above"

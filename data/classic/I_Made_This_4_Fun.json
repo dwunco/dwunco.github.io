@@ -45,6 +45,13 @@
         {
             "date": "2026-07-27",
             "type": "moved",
+            "oldPlacement": 206,
+            "placement": 207,
+            "notes": "CALYPSO BLITZ was added above"
+        },
+        {
+            "date": "2026-07-27",
+            "type": "moved",
             "oldPlacement": 205,
             "placement": 206,
             "notes": "Submerged was added above"
