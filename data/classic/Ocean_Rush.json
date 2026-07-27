@@ -20,6 +20,13 @@
     ],
     "history": [
         {
+            "date": "2026-07-27",
+            "type": "moved",
+            "oldPlacement": 70,
+            "placement": 69,
+            "notes": "Troll Madness was moved down past this demon"
+        },
+        {
             "date": "2026-07-26",
             "type": "added",
             "placement": 70,

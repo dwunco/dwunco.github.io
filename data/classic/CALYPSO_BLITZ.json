@@ -43,6 +43,13 @@
     "history": [
         {
             "date": "2026-07-27",
+            "type": "moved",
+            "oldPlacement": 73,
+            "placement": 72,
+            "notes": "Troll Madness was moved down past this demon"
+        },
+        {
+            "date": "2026-07-27",
             "type": "added",
             "placement": 73,
             "notes": "CALYPSO BLITZ added to the list"
