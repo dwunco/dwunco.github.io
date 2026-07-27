@@ -55,6 +55,13 @@
         {
             "date": "2026-07-27",
             "type": "moved",
+            "oldPlacement": 177,
+            "placement": 178,
+            "notes": "Submerged was added above"
+        },
+        {
+            "date": "2026-07-27",
+            "type": "moved",
             "oldPlacement": 176,
             "placement": 177,
             "notes": "Trek was added above"
