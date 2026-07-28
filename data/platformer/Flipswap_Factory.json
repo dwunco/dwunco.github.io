@@ -19,6 +19,13 @@
     ],
     "history": [
         {
+            "date": "2026-07-28",
+            "type": "moved",
+            "oldPlacement": 12,
+            "placement": 13,
+            "notes": "Not Sunspike was added above"
+        },
+        {
             "date": "2026-07-26",
             "type": "moved",
             "oldPlacement": 11,
