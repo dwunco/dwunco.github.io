@@ -13,6 +13,13 @@
     "records": [],
     "history": [
         {
+            "date": "2026-07-28",
+            "type": "moved",
+            "oldPlacement": 70,
+            "placement": 71,
+            "notes": "Supersonic was added above"
+        },
+        {
             "date": "2026-07-27",
             "type": "moved",
             "oldPlacement": 71,

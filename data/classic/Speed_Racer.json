@@ -45,6 +45,13 @@
     ],
     "history": [
         {
+            "date": "2026-07-28",
+            "type": "moved",
+            "oldPlacement": 172,
+            "placement": 173,
+            "notes": "Supersonic was added above"
+        },
+        {
             "date": "2026-07-27",
             "type": "moved",
             "oldPlacement": 171,
