@@ -1,0 +1,37 @@
+{
+    "name": "Gateway",
+    "id": 98322118,
+    "author": "vyp",
+    "creators": [
+        "vyp",
+        "RayZN"
+    ],
+    "verifier": "dwunco",
+    "verification": "https://youtu.be/T1rrjamzRFs",
+    "percentToQualify": 100,
+    "password": "Free Copy",
+    "records": [
+        {
+            "user": "aThingToEx",
+            "link": "https://youtu.be/null",
+            "percent": 100,
+            "hz": 60
+        },
+        {
+            "user": "BanoUndertale",
+            "link": "https://youtu.be/null",
+            "percent": 100,
+            "hz": 60
+        }
+    ],
+    "tags": [],
+    "history": [
+        {
+            "date": "2026-07-30",
+            "type": "added",
+            "placement": 24,
+            "notes": "Gateway added to the list"
+        }
+    ],
+    "rank": "Beginner"
+}

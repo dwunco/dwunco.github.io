@@ -12,6 +12,13 @@
     "records": [],
     "history": [
         {
+            "date": "2026-07-30",
+            "type": "moved",
+            "oldPlacement": 26,
+            "placement": 27,
+            "notes": "Gateway was added above"
+        },
+        {
             "date": "2026-07-29",
             "type": "moved",
             "oldPlacement": 25,
