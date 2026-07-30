@@ -9,7 +9,14 @@
     "verification": "https://youtu.be/yLjHPvQnG6w",
     "percentToQualify": 100,
     "password": "Free Copy",
-    "records": [],
+    "records": [
+        {
+            "user": "aThingToEx",
+            "link": "https://youtu.be/null",
+            "percent": 100,
+            "hz": 60
+        }
+    ],
     "tags": [],
     "history": [
         {
