@@ -1,0 +1,30 @@
+{
+    "name": "orbmaster",
+    "id": 104087362,
+    "author": "w0lfram23",
+    "creators": [
+        "w0lfram23"
+    ],
+    "verifier": "aThingToEx",
+    "verification": "https://youtu.be/RpwX-9UphK4",
+    "percentToQualify": 100,
+    "password": "Free Copy",
+    "records": [
+        {
+            "user": "dwunco",
+            "link": "https://youtu.be/null",
+            "percent": 100,
+            "hz": 60
+        }
+    ],
+    "tags": [],
+    "history": [
+        {
+            "date": "2026-07-30",
+            "type": "added",
+            "placement": 24,
+            "notes": "orbmaster added to the list"
+        }
+    ],
+    "rank": "Beginner"
+}

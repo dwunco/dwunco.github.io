@@ -14,6 +14,13 @@
         {
             "date": "2026-07-30",
             "type": "moved",
+            "oldPlacement": 27,
+            "placement": 28,
+            "notes": "orbmaster was added above"
+        },
+        {
+            "date": "2026-07-30",
+            "type": "moved",
             "oldPlacement": 26,
             "placement": 27,
             "notes": "Gateway was added above"
