@@ -12,6 +12,13 @@
     "records": [],
     "history": [
         {
+            "date": "2026-07-31",
+            "type": "moved",
+            "oldPlacement": 28,
+            "placement": 29,
+            "notes": "Ore clicker II was added above"
+        },
+        {
             "date": "2026-07-30",
             "type": "moved",
             "oldPlacement": 27,
