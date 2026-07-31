@@ -1,0 +1,31 @@
+{
+    "name": "Astronaut 13",
+    "id": 6988264,
+    "author": "Minesap",
+    "creators": [
+        "Minesap"
+    ],
+    "verifier": "dwunco",
+    "verification": "https://youtu.be/ws3hEa8umwI",
+    "percentToQualify": 50,
+    "password": "Free Copy",
+    "records": [],
+    "tags": [
+        "1.9",
+        "Long",
+        "Circles",
+        "Wave",
+        "Memory",
+        "Learny",
+        "Chokepoints"
+    ],
+    "history": [
+        {
+            "date": "2026-07-31",
+            "type": "added",
+            "placement": 40,
+            "notes": "Astronaut 13 added to the list"
+        }
+    ],
+    "rank": "Silver"
+}

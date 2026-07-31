@@ -45,6 +45,13 @@
     ],
     "history": [
         {
+            "date": "2026-07-31",
+            "type": "moved",
+            "oldPlacement": 124,
+            "placement": 125,
+            "notes": "Astronaut 13 was added above"
+        },
+        {
             "date": "2026-07-28",
             "type": "moved",
             "oldPlacement": 123,
