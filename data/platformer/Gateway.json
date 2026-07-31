@@ -29,6 +29,13 @@
         {
             "date": "2026-07-31",
             "type": "moved",
+            "oldPlacement": 26,
+            "placement": 25,
+            "notes": "orbmaster was moved down past this demon (due to incorrect placement)"
+        },
+        {
+            "date": "2026-07-31",
+            "type": "moved",
             "oldPlacement": 25,
             "placement": 26,
             "notes": "Ore clicker II was added above"
