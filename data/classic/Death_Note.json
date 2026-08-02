@@ -20,7 +20,14 @@
         "High CPS",
         "Ship"
     ],
-    "records": [],
+    "records": [
+        {
+            "user": "dwunco",
+            "link": "https://youtu.be/null",
+            "percent": 100,
+            "hz": 288
+        }
+    ],
     "history": [
         {
             "date": "2026-07-28",
