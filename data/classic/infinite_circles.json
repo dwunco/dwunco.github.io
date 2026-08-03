@@ -1,0 +1,30 @@
+{
+    "name": "infinite circles",
+    "id": 13037894,
+    "author": "startor",
+    "creators": [
+        "startor"
+    ],
+    "verifier": "dwunco",
+    "verification": "https://youtu.be/NGG9HGXtqUo",
+    "percentToQualify": 100,
+    "password": "NA",
+    "records": [],
+    "tags": [
+        "1.9",
+        "Long",
+        "Wave",
+        "Ship",
+        "Slow-Paced",
+        "Chokepoints"
+    ],
+    "history": [
+        {
+            "date": "2026-08-03",
+            "type": "added",
+            "placement": 158,
+            "notes": "infinite circles added to the list"
+        }
+    ],
+    "rank": "Beginner"
+}

@@ -15,6 +15,13 @@
         {
             "date": "2026-08-03",
             "type": "moved",
+            "oldPlacement": 202,
+            "placement": 203,
+            "notes": "infinite circles was added above"
+        },
+        {
+            "date": "2026-08-03",
+            "type": "moved",
             "oldPlacement": 201,
             "placement": 202,
             "notes": "Thermal Madness was added above"
