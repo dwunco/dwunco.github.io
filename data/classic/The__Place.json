@@ -10,7 +10,14 @@
     "percentToQualify": 66,
     "password": "Free Copy",
     "rank": "Gold",
-    "records": [],
+    "records": [
+        {
+            "user": "dwunco",
+            "link": "https://youtu.be/null",
+            "percent": 94,
+            "hz": 288
+        }
+    ],
     "tags": [
         "2.1",
         "XL",

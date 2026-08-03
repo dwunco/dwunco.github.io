@@ -57,6 +57,13 @@
     ],
     "history": [
         {
+            "date": "2026-08-03",
+            "type": "moved",
+            "oldPlacement": 93,
+            "placement": 94,
+            "notes": "Thermal Madness was added above"
+        },
+        {
             "date": "2026-07-31",
             "type": "moved",
             "oldPlacement": 92,
