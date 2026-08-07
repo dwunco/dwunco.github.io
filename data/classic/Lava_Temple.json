@@ -14,6 +14,13 @@
     "records": [],
     "history": [
         {
+            "date": "2026-08-07",
+            "type": "moved",
+            "oldPlacement": 61,
+            "placement": 60,
+            "notes": "Thermal Madness (Solo) was moved down past this demon"
+        },
+        {
             "date": "2026-08-03",
             "type": "moved",
             "oldPlacement": 60,
