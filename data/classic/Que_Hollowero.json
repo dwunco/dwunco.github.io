@@ -24,6 +24,13 @@
     ],
     "history": [
         {
+            "date": "2026-08-07",
+            "type": "moved",
+            "oldPlacement": 168,
+            "placement": 169,
+            "notes": "Big Shot was added above"
+        },
+        {
             "date": "2026-08-03",
             "type": "moved",
             "oldPlacement": 167,
