@@ -15,6 +15,13 @@
         {
             "date": "2026-08-07",
             "type": "moved",
+            "oldPlacement": 66,
+            "placement": 65,
+            "notes": "Thermal Madness (Solo) was moved down past this demon"
+        },
+        {
+            "date": "2026-08-07",
+            "type": "moved",
             "oldPlacement": 65,
             "placement": 66,
             "notes": "Big Shot was added above"
