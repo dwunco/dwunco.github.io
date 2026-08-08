@@ -9,7 +9,14 @@
     "verification": "https://youtu.be/pAvRrpZ4uBo",
     "percentToQualify": 79,
     "password": "Free Copy",
-    "records": [],
+    "records": [
+        {
+            "user": "dwunco",
+            "link": "https://youtu.be/null",
+            "percent": 100,
+            "hz": 60
+        }
+    ],
     "tags": [
         "1.9",
         "Long",
@@ -19,6 +26,13 @@
         "Gimmicky"
     ],
     "history": [
+        {
+            "date": "2026-08-08",
+            "type": "moved",
+            "oldPlacement": 65,
+            "placement": 66,
+            "notes": "Tung Tung Sahurcles was added above"
+        },
         {
             "date": "2026-08-07",
             "type": "moved",

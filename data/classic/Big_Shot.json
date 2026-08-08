@@ -28,11 +28,18 @@
     ],
     "history": [
         {
+            "date": "2026-08-08",
+            "type": "moved",
+            "oldPlacement": 61,
+            "placement": 62,
+            "notes": "Tung Tung Sahurcles was added above"
+        },
+        {
             "date": "2026-08-07",
             "type": "moved",
             "oldPlacement": 62,
             "placement": 61,
-            "notes": "Thermal Madness (Solo) was moved down past this demon"
+            "notes": "Thermal Madness was moved down past this demon"
         },
         {
             "date": "2026-08-07",

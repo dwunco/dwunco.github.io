@@ -32,6 +32,13 @@
     ],
     "history": [
         {
+            "date": "2026-08-08",
+            "type": "moved",
+            "oldPlacement": 23,
+            "placement": 24,
+            "notes": "Tung Tung Sahurcles was added above"
+        },
+        {
             "date": "2026-07-28",
             "type": "moved",
             "oldPlacement": 22,
