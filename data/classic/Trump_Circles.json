@@ -37,6 +37,13 @@
         {
             "date": "2026-08-09",
             "type": "moved",
+            "oldPlacement": 122,
+            "placement": 123,
+            "notes": "scarlet field was added above"
+        },
+        {
+            "date": "2026-08-09",
+            "type": "moved",
             "oldPlacement": 121,
             "placement": 122,
             "notes": "Lone was added above"
