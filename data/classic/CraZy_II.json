@@ -41,6 +41,13 @@
     ],
     "history": [
         {
+            "date": "2026-08-09",
+            "type": "moved",
+            "oldPlacement": 31,
+            "placement": 32,
+            "notes": "Lone was added above"
+        },
+        {
             "date": "2026-08-08",
             "type": "moved",
             "oldPlacement": 30,

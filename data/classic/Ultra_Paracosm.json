@@ -9,6 +9,15 @@
     "verification": "https://youtu.be/GN7M12XAkVE",
     "percentToQualify": 100,
     "password": "Free Copy",
+    "tags": [
+        "2.0",
+        "2.1",
+        "Long",
+        "Circles",
+        "Wave",
+        "Learny",
+        "Fast-Paced"
+    ],
     "rank": "Beginner",
     "records": [
         {
@@ -19,6 +28,13 @@
         }
     ],
     "history": [
+        {
+            "date": "2026-08-09",
+            "type": "moved",
+            "oldPlacement": 156,
+            "placement": 157,
+            "notes": "Lone was added above"
+        },
         {
             "date": "2026-08-08",
             "type": "moved",

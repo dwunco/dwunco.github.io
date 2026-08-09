@@ -13,12 +13,20 @@
     "tags": [
         "1.9",
         "Long",
+        "Circles",
         "Wave",
         "Ship",
         "Slow-Paced",
         "Chokepoints"
     ],
     "history": [
+        {
+            "date": "2026-08-09",
+            "type": "moved",
+            "oldPlacement": 160,
+            "placement": 161,
+            "notes": "Lone was added above"
+        },
         {
             "date": "2026-08-08",
             "type": "moved",
