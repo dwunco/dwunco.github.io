@@ -23,6 +23,13 @@
     "records": [],
     "history": [
         {
+            "date": "2026-08-27",
+            "type": "moved",
+            "oldPlacement": 136,
+            "placement": 137,
+            "notes": "kidsmoke was added above"
+        },
+        {
             "date": "2026-08-09",
             "type": "moved",
             "oldPlacement": 135,

@@ -30,6 +30,13 @@
     ],
     "history": [
         {
+            "date": "2026-08-27",
+            "type": "moved",
+            "oldPlacement": 30,
+            "placement": 31,
+            "notes": "kidsmoke was added above"
+        },
+        {
             "date": "2026-08-09",
             "type": "moved",
             "oldPlacement": 29,

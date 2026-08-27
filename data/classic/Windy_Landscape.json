@@ -21,8 +21,22 @@
         "Nerve Control",
         "Clicksync"
     ],
-    "records": [],
+    "records": [
+        {
+            "user": "cookiedarookie",
+            "link": "https://youtu.be/null",
+            "percent": 100,
+            "hz": 144
+        }
+    ],
     "history": [
+        {
+            "date": "2026-08-27",
+            "type": "moved",
+            "oldPlacement": 23,
+            "placement": 24,
+            "notes": "kidsmoke was added above"
+        },
         {
             "date": "2026-08-09",
             "type": "moved",
