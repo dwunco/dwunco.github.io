@@ -29,6 +29,13 @@
         {
             "date": "2026-08-27",
             "type": "moved",
+            "oldPlacement": 134,
+            "placement": 135,
+            "notes": "rauchkammer was added above"
+        },
+        {
+            "date": "2026-08-27",
+            "type": "moved",
             "oldPlacement": 133,
             "placement": 134,
             "notes": "White Album was added above"
