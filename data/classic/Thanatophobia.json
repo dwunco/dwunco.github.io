@@ -38,6 +38,13 @@
     ],
     "history": [
         {
+            "date": "2026-08-27",
+            "type": "moved",
+            "oldPlacement": 11,
+            "placement": 12,
+            "notes": "White Album was added above"
+        },
+        {
             "date": "2026-08-09",
             "type": "moved",
             "oldPlacement": 10,

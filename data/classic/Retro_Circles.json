@@ -39,6 +39,13 @@
         {
             "date": "2026-08-27",
             "type": "moved",
+            "oldPlacement": 142,
+            "placement": 143,
+            "notes": "White Album was added above"
+        },
+        {
+            "date": "2026-08-27",
+            "type": "moved",
             "oldPlacement": 141,
             "placement": 142,
             "notes": "kidsmoke was added above"

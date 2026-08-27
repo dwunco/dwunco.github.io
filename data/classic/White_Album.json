@@ -1,0 +1,29 @@
+{
+    "name": "White Album",
+    "id": 98322118,
+    "author": "Javp",
+    "creators": [
+        "Javp"
+    ],
+    "verifier": "cookiedarookie",
+    "verification": "https://youtu.be/Kc8j07PJsXY",
+    "percentToQualify": 100,
+    "password": "Free Copy",
+    "records": [],
+    "tags": [
+        "2.1",
+        "Long",
+        "Timings",
+        "Wave",
+        "Chokepoints"
+    ],
+    "history": [
+        {
+            "date": "2026-08-27",
+            "type": "added",
+            "placement": 10,
+            "notes": "White Album added to the list"
+        }
+    ],
+    "rank": "Amber"
+}
