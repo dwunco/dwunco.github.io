@@ -94,6 +94,13 @@
     ],
     "history": [
         {
+            "date": "2026-09-06",
+            "type": "moved",
+            "oldPlacement": 219,
+            "placement": 220,
+            "notes": "Eon was added above"
+        },
+        {
             "date": "2026-08-27",
             "type": "moved",
             "oldPlacement": 218,

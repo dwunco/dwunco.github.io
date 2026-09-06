@@ -1,0 +1,27 @@
+{
+    "name": "Eon",
+    "id": 101478916,
+    "author": "Renn241",
+    "creators": [
+        "Renn241"
+    ],
+    "verifier": "fractal",
+    "verification": "https://youtu.be/eYSTJC_q-8A",
+    "percentToQualify": 99,
+    "password": "Free Copy",
+    "records": [],
+    "tags": [
+        "tag1",
+        "tag2",
+        "etc."
+    ],
+    "history": [
+        {
+            "date": "2026-09-06",
+            "type": "added",
+            "placement": 3,
+            "notes": "Eon added to the list"
+        }
+    ],
+    "rank": "Sapphire"
+}

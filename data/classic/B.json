@@ -43,6 +43,12 @@
             "hz": 144
         },
         {
+            "user": "Urbanscorpion37",
+            "link": "https://youtu.be/null",
+            "percent": 100,
+            "hz": 60
+        },
+        {
             "user": "hd123401",
             "link": "https://youtu.be/null",
             "percent": 85,
@@ -56,6 +62,13 @@
         }
     ],
     "history": [
+        {
+            "date": "2026-09-06",
+            "type": "moved",
+            "oldPlacement": 101,
+            "placement": 102,
+            "notes": "Eon was added above"
+        },
         {
             "date": "2026-08-27",
             "type": "moved",
