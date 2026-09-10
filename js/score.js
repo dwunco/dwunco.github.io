@@ -17,6 +17,9 @@ export function score(rank, percent, minPercent) {
     if (rank > 75 && percent < 100) {
         return 0;
     }
+    if (rank == 1) {
+        return 500;
+    }
 
     // NEW FORMULA: 500 points at #1, decaying exponentially to ~30 points at #60
     let score = (500 * Math.exp(-0.04768 * (rank - 1))) *

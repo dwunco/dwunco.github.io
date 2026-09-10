@@ -10,7 +10,14 @@
     "percentToQualify": 67,
     "password": "NA",
     "rank": "Bronze",
-    "records": [],
+    "records": [
+        {
+            "user": "cookiedarookie",
+            "link": "https://youtu.be/null",
+            "percent": 100,
+            "hz": 144
+        }
+    ],
     "history": [
         {
             "date": "2026-09-06",

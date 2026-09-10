@@ -9,7 +9,14 @@
     "verification": "https://youtu.be/ws3hEa8umwI",
     "percentToQualify": 50,
     "password": "Free Copy",
-    "records": [],
+    "records": [
+        {
+            "user": "cookiedarookie",
+            "link": "https://youtu.be/null",
+            "percent": 100,
+            "hz": 144
+        }
+    ],
     "tags": [
         "1.9",
         "Long",
