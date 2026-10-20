@@ -19,6 +19,13 @@
     ],
     "history": [
         {
+            "date": "2026-10-20",
+            "type": "moved",
+            "oldPlacement": 169,
+            "placement": 170,
+            "notes": "Aftermath was added above"
+        },
+        {
             "date": "2026-09-06",
             "type": "moved",
             "oldPlacement": 168,
