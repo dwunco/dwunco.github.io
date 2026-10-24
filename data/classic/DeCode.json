@@ -28,6 +28,13 @@
         {
             "date": "2026-10-20",
             "type": "moved",
+            "oldPlacement": 120,
+            "placement": 124,
+            "notes": "Moved"
+        },
+        {
+            "date": "2026-10-20",
+            "type": "moved",
             "oldPlacement": 119,
             "placement": 120,
             "notes": "Aftermath was added above"

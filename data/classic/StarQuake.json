@@ -15,6 +15,13 @@
         {
             "date": "2026-10-20",
             "type": "moved",
+            "oldPlacement": 122,
+            "placement": 121,
+            "notes": "DeCode was moved down past this demon"
+        },
+        {
+            "date": "2026-10-20",
+            "type": "moved",
             "oldPlacement": 121,
             "placement": 122,
             "notes": "Aftermath was added above"
