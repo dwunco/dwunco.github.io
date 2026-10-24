@@ -35,6 +35,13 @@
     ],
     "history": [
         {
+            "date": "2026-10-24",
+            "type": "moved",
+            "oldPlacement": 68,
+            "placement": 69,
+            "notes": "Grim Grinning Ghosts was added above"
+        },
+        {
             "date": "2026-09-06",
             "type": "moved",
             "oldPlacement": 67,
